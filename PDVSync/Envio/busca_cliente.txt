@@ -1,0 +1,3 @@
+{
+   "listIdProprietario": "&LjRetComp(self:aArrayFil[self:nFil][2],'CADASTRO DE LOJA')"
+}

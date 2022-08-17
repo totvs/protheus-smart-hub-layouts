@@ -1,0 +1,7 @@
+{
+    "url": "https://.../api/retaguarda/clienteMensagens/",
+    "ChaveUni": [
+        "CpfCnpj",
+        "DataAtualizacao"
+    ]
+}
