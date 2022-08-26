@@ -1,5 +1,6 @@
 {
     "url_lote": "https://.../api/retaguarda/inquilinolotesexternos",
     "inquilino": "",
-    "url_consultalote": "https://.../api/retaguarda/loteexternoretornos"
+    "url_consultalote": "https://.../api/retaguarda/loteexternoretornos",
+	"configPSH": { "Version": "1.0" }
 }

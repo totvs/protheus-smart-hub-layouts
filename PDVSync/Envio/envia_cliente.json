@@ -26,5 +26,6 @@
     "_expandables": [
         "string"
     ],
-    "enviarpnet": 0
+    "enviarpnet": 0,
+	"configPSH": { "Version": "1.0" }
 }

@@ -16,5 +16,6 @@
     "A1_COD_MUN": "&Posicione('CC2',4,xFilial('CC2')+self:oRegistro['Estado']+UPPER(PADR(self:oRegistro['Cidade'],TamSX3('CC2_MUN')[1])),'CC2_CODMUN')",
     "A1_MSBLQL": "2",
     "A1_EMAIL": "&self:oRegistro['Email']",
-    "A1_DTNASC": "&self:oRegistro['DataNascimento']"
+    "A1_DTNASC": "&self:oRegistro['DataNascimento']",
+	"configPSH": { "Version": "1.0" }
 }

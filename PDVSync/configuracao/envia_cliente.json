@@ -1,5 +1,6 @@
 {
-    "url":"https://...cliente....app/api/retaguarda/clientes",
+    "url":"https://...cliente...app/api/retaguarda/clientes",
    "codigotipo":"0",
-   "descricaotipo":"Cliente"
+   "descricaotipo":"Cliente",
+   "configPSH": { "Version": "1.0" }
 }
