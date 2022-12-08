@@ -3,7 +3,7 @@
 	"inquilino": "",
 	"url_consultalote": "https://...controle.../api/retaguarda/loteexternoretornos",
 	"autenticacao": {
-		"environment": "",
+		"environment": 2,
 		"tenent": "",
 		"user": "",
 		"password": "",
