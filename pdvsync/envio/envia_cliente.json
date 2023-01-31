@@ -1,0 +1,31 @@
+{
+    "nome": "&self:oPublica['A1_NOME']",
+    "endereco": "&self:oPublica['A1_END']",
+    "numero": "",
+    "complemento": "&self:oPublica['A1_COMPLEM']",
+    "bairro": "&self:oPublica['A1_BAIRRO']",
+    "cidade": "&self:oPublica['A1_MUN']",
+    "estado": "&self:oPublica['A1_EST']",
+    "cep": "&self:oPublica['A1_CEP']",
+    "telefone": "&self:oPublica['A1_DDD'] + self:oPublica['A1_TEL']",
+    "email": "&self:oPublica['A1_EMAIL']",
+    "dataNascimento": "&FwTimeStamp( 6, SToD(self:oPublica['A1_DTNASC']) )",
+    "situacao": "&IIF(self:oPublica['A1_MSBLQL'] == '1' .OR. self:cEvento == '2', 0, 1)",
+    "pessoaFisica": "&IIF(self:oPublica['A1_PESSOA'] == 'F', 0, 1)",
+    "cpfCnpj": "&self:oPublica['A1_CGC']",
+    "rgInscricao": "&self:oPublica['A1_RG']",
+    "atividade": "&self:oPublica['A1_ATIVIDA']",
+    "idInquilino": "&self:oConfAssin['inquilino']",
+    "idRetaguarda": "&self:oPublica['A1_COD'] + self:oPublica['A1_LOJA']",
+    "dataAtualizacao": "&FwTimeStamp(6)",
+    "dataCadastro": "&FwTimeStamp( 6, StoD(self:oPublica['A1_DTCAD']) )",
+    "idProprietario": "&LjRetComp()",
+    "loteOrigem": "&self:cLote",
+    "lote": 0,
+    "sequencial": 0,
+    "_expandables": [
+        "string"
+    ],
+    "enviarpnet": 0,
+	"configPSH": { "Version": "1.0" }
+}
