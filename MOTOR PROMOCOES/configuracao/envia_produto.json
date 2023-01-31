@@ -1,0 +1,7 @@
+{
+    "url":"https://...produto...app/api/retaguarda/produtos",
+    "codigotipo":"12",
+    "descricaotipo":"Produto",
+    "qtdEnvio": 1,
+    "configPSH": { "Version": "1.1" }
+}
