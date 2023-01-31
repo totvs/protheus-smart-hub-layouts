@@ -1,0 +1,6 @@
+{
+    "url":"https://...formapagto...app/api/retaguarda/formapagtos",
+    "codigotipo": "18",
+    "descricaotipo": "FormaPagto",
+	"configPSH": { "Version": "1.0" }
+}

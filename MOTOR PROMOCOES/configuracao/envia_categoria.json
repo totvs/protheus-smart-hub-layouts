@@ -1,0 +1,6 @@
+{
+    "url":"https://...categoria...app/api/retaguarda/classificacoesproduto",
+    "codigotipo":"11",
+    "descricaotipo":"ClassificacaoProduto",
+	"configPSH": { "Version": "1.0" }
+}

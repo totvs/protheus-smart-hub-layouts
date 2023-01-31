@@ -1,0 +1,13 @@
+{
+    "url": "https://...comercial.../api/retaguarda/vendaMensagens/",
+    "listasPublicacao": {
+        "SL2": "self:oRegistro['VendaItems']",
+        "SL4": "self:oRegistro['VendaPagamentos']"
+    },
+    "ChaveUni": [
+        "Loja:IdRetaguarda",
+        "Ccf",
+        "SerieNota"
+    ],
+	"configPSH": { "Version": "1.0" }
+}
