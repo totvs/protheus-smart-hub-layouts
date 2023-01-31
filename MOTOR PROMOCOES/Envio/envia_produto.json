@@ -1,0 +1,78 @@
+{
+    "descricao": "&self:oPublica['B1_DESC']",
+    "unidadeMedida": "&self:oPublica['B1_UM']",
+    "descontoMaximo": "99",
+    "arredondaTrunca": 1,
+    "codigoProduto": "&self:oPublica['B1_COD']",
+    "codigoAlternativo": "&self:oPublica['B1_CODBAR']",
+    "origemProduto": "&IIF(self:oPublica['B1_ORIGEM'] <> '0', 1, 0 )",
+    "situacao": "&IIF( self:oPublica['B1_ATIVO'] == 'S', 1, 0)",
+    "imagem": "",
+    "tipoProduto": "&IIF( self:oPublica['B1_TIPO'] == 'KT', 'KIT', 'ProdutoAcabado')",
+    "fracionado": false,
+    "cnpjFornecedor": "",
+    "escalaRelevante": true,
+    "cstIcms": true,
+    "percentualReducaoIcms": 1,
+    "aliquotaIcms": true,
+    "vlicmsret": 1,
+    "cest": "&self:oPublica['B1_CEST']",
+    "produtoKits": [
+        {
+            "TableNode": "MEV",
+            "idRetaguardaProduto": "&self:oPublica['MEV'][nItem]['MEV_PRODUT']",
+            "idRetaguardaProdutoKit": "",
+            "descricao": "&POSICIONE('SB1',1,xFilial('SB1') + self:oPublica['MEV'][nItem]['MEV_PRODUT'],'B1_DESC')",
+            "quantidadeVendaKit": "&self:oPublica['MEV'][nItem]['MEV_QTD']",
+            "tipoValorKit": 0,
+            "situacao": "&IIF( self:oPublica['B1_ATIVO'] == 'S', 1, 0)",
+            "valorDesconto": "&self:oPublica['MEV'][nItem]['MEV_DESCNT']",
+            "novoValorUnitario": 0
+        }
+    ],
+    "fcps": [
+        {
+            "TableNode": "MIL_FECP",
+            "valorBaseFcp": "&self:oPublica['MIL_FECP'][nItem]['IT_BASFECP']",
+            "percentualFcp": "&self:oPublica['MIL_FECP'][nItem]['IT_ALIQFECP']",
+            "codigoBeneficioFiscal": "&self:oPublica['MIL_FECP'][nItem]['IT_CODDECL']",
+            "motivoDesoneracaoIcms": "&Val(self:oPublica['MIL_FECP'][nItem]['LF_MOTICMS'])",
+            "descontaDesoneracaoNf": "&self:oPublica['MIL_FECP'][nItem]['descontaDesoneracaoNf']",
+            "IdProprietario": "&LjRetComp( PadR( self:oPublica['MIL_FECP'][nItem]['MIL_FILENT'], TamSx3('MIL_FILENT')[1] ),'CADASTRO DE LOJA')"
+        }
+    ],
+    "impostos": [
+        {
+            "TableNode": "MIL_ICMS",
+            "idRetaguarda": "&self:oPublica['MIL_ICMS'][nItem]['MIL_SAIDA']",
+            "idProprietario": "&LjRetComp( PadR( self:oPublica['MIL_ICMS'][nItem]['MIL_FILENT'], TamSx3('MIL_FILENT')[1] ),'CADASTRO DE LOJA')"
+        }
+    ],
+    "pisCofins": [
+        {
+            "TableNode": "MIL_PIS/COFINS",
+            "IdRetaguarda": "&self:oPublica['MIL_PIS/COFINS'][nItem]['MIL_SAIDA']",
+            "IdProprietario": "&LjRetComp( PadR( self:oPublica['MIL_PIS/COFINS'][nItem]['MIL_FILENT'], TamSx3('MIL_FILENT')[1] ),'CADASTRO DE LOJA')"
+        }
+    ],
+    "ncms": [
+        {
+            "TableNode": "B1_POSIPI",
+            "idRetaguarda": "&self:oPublica['B1_POSIPI']",
+            "IdProprietario": "&LjRetComp()"
+        }
+    ],
+    "id": "&self:oPublica['B1_COD']",
+    "idInquilino": "&self:oConfAssin['inquilino']",
+    "idRetaguarda": "&self:oPublica['B1_COD']",
+    "dataAtualizacao": "&FwTimeStamp(6)",
+    "dataCadastro": "&FwTimeStamp(6)",
+    "idProprietario": "&LjRetComp()",
+    "loteOrigem": "&Self:cLote",
+    "lote": 0,
+    "sequencial": 0,
+    "_expandables": [
+        "string"
+    ],
+	"configPSH": { "Version": "1.0" }
+}
