@@ -1,37 +1,82 @@
 {
-    "descricao": "&self:oPublica['descricao']",
-    "descricaoFiscal": "&self:oPublica['descricaofiscal']",
-    "permiteTroco": "&IIF(self:oPublica['permitetroco'] == .T., 1,0)",
-    "idFormaPagamentoTroco": "&self:oPublica['idFormaPagamentoTroco']",
-    "valorMinimoAceito": "&cValtoChar(self:oPublica['valorminimoaceito'])",
-    "codigoSistemaExterno": "&self:oPublica['MIH_ID']",
-    "situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 1, 0)",
-    "tipo": "&cValtoChar(self:oPublica['tipo'])",
-    "sequencial": 0,
-    "idInquilino": "&self:oConfAssin['inquilino']",
-    "idRetaguarda": "&self:oPublica['forma']",
-    "dataAtualizacao": "&self:oPublica['MIH_DATALT']",
-    "dataCadastro": "&self:oPublica['MIH_DATINC']",
-    "idProprietario": "&LjRetComp()",
-    "loteOrigem": "&Self:cLote",
-    "formasPagtoCondicoes": [
-        {
-            "TableNode": "condicaoPagamento",
-            "idRetaguarda": "&AllTrim( xFilial('SAE') + StrTokArr(Self:oPublica['condicaoPagamento'], ';')[nItem] )",
-            "idRetaguardaFormaPagto": "&self:oPublica['forma']",
-            "idRetaguardaCondicaoPagto": "&AllTrim( xFilial('SAE') + StrTokArr(Self:oPublica['condicaoPagamento'], ';')[nItem] )",
-            "situacao": "&IIF(self:cEvento == '1', 1, 0)"
-        }
-    ],
-    "formasPagtoDadosComplementares": [
-        {
-            "TableNode": "dadosComplementares",
-            "idRetaguarda": "&StrTokArr(Self:oPublica['dadosComplementares'], ';')[nItem]",
-            "idRetaguardaFormaPagto": "&self:oPublica['forma']",
-            "idRetaguardaDadoComplementarPagto": "&StrTokArr(Self:oPublica['dadosComplementares'], ';')[nItem]",
-            "situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 1, 0)",
-            "ordem": "&nItem"
-        }
-    ],
-	"configPSH": { "Version": "1.0" }
+        "elementosIntegracao" :   [
+                {
+                        "ativo" :   true ,
+
+                        "id" :   "1" ,
+
+                        "descricao" :   "DINHEIRO"
+                },
+                {
+                        "ativo" :   true ,
+
+                        "id" :   "2" ,
+
+                        "descricao" :   "CHEQUE"
+                },
+
+                {
+
+                        "ativo" :   true ,
+
+                        "id" :   "3" ,
+
+                        "descricao" :   "CHEQUE   PRE"
+
+                },
+
+                {
+
+                        "ativo" :   true ,
+
+                        "id" :   "4" ,
+
+                        "descricao" :   "CARTAO"
+
+                },
+
+                {
+
+                        "ativo" :   true ,
+
+                        "id" :   "7" ,
+
+                        "descricao" :   "PROMISSORIA"
+
+                },
+
+                {
+
+                        "ativo" :   true ,
+
+                        "id" :   "9" ,
+
+                        "descricao" :   "VALE   TROCA"
+
+                },
+
+                {
+
+                        "ativo" :   true ,
+
+                        "id" :   "80" ,
+
+                        "descricao" :   "TEF   DEBITO"
+
+                },
+
+                {
+
+                        "ativo" :   true ,
+
+                        "id" :   "81" ,
+
+                        "descricao" :   "TEF   CREDITO"
+
+                }
+
+        ],
+
+        "tipoIntegracao" :   "1"
+
 }
