@@ -1,0 +1,17 @@
+{
+
+        "elementosIntegracao" :   [
+
+                {
+
+                        "id" :   "1" ,
+
+                        "descricao" :   "REGIAO"
+
+                }
+
+        ],
+
+        "tipoIntegracao" :   "1"
+
+}
