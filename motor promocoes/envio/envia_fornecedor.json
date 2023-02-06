@@ -1,20 +1,11 @@
 {
-
-        "elementosIntegracao" :   [
-
-                {
-
-                        "ativo" :   false ,
-
-                        "cnpj" :   "11111111111111" ,
-
-                        "id" :   "1" ,
-
-                        "nomeFantasia" :   "FORNECEDOR   PADRÃO"
-
-                }
-        ],
-
-        "tipoIntegracao" :   "1"
-
+	"elementosIntegracao": [
+		{
+			"ativo": "&IIF(self:oPublica['A2_MSBLQL'] =='2' .Or. Empty(self:oPublica['A2_MSBLQL']),.T.,.F.)",
+			"cnpj": "&self:oPublica['A2_CGC']",
+			"id": "&self:oPublica['A2_COD']+self:oPublica['A2_LOJA']",
+			"nomeFantasia": "&self:oPublica['A2_NOME']"
+		}
+	],
+	"tipoIntegracao": "1"
 }
