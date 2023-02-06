@@ -1,0 +1,25 @@
+{
+
+        "elementosIntegracao" :   [
+
+                {
+
+                        "ativo" :   true ,
+
+                        "id" :   "51818378" ,
+
+                        "descricao" :   "CENTRAL   MARFRIG" ,
+
+                        "filiais" :   [
+
+                                "51818379"
+
+                        ]
+
+                }
+
+        ],
+
+        "tipoIntegracao" :   "1"
+
+}
