@@ -12,20 +12,7 @@
 
                         "nomeFantasia" :   "FORNECEDOR   PADRÃO"
 
-                },
-
-                {
-
-                        "ativo" :   true ,
-
-                        "cnpj" :   "08142803000192" ,
-
-                        "id" :   "10089090" ,
-
-                        "nomeFantasia" :   "NOVA   MIX   INDUSTRIAL   E   COMERCIAL   DE   ALIMENTOS   LTDA"
-
                 }
-
         ],
 
         "tipoIntegracao" :   "1"
