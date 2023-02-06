@@ -1,0 +1,11 @@
+{
+    "elementosIntegracao" :   [
+        {
+            "descricao" :   "BRASIL" ,
+            "id" :   "1"
+        }
+
+    ],
+
+    "tipoIntegracao" :   "1"
+}
