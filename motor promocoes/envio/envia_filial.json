@@ -1,0 +1,31 @@
+{
+
+        "elementosIntegracao" :   [
+
+                {
+
+                        "ativo" :   true ,
+
+                        "cidade" :   "10004" ,
+
+                        "estado" :   "SP" ,
+
+                        "cnpj" :   "34677543000160" ,
+
+                        "id" :   null ,
+
+                        "nomeFantasia" :   "LJ-PC   MOGI" ,
+
+                        "pais" :   "1" ,
+
+                        "praca" :   "1" ,
+
+                        "regiao" :   "1"
+
+                }
+
+        ],
+
+        "tipoIntegracao" :   "1"
+
+}
