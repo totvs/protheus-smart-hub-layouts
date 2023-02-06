@@ -1,6 +1,0 @@
-{
-    "url":"https://...formapagto...app/api/retaguarda/dadocomplementarpagtos",
-    "codigotipo": "16",
-    "descricaotipo": "DadoComplementarPagto",
-	"configPSH": { "Version": "1.0" }
-}
