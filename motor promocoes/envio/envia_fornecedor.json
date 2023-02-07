@@ -8,4 +8,5 @@
 		}
 	],
 	"tipoIntegracao": "1"
+	"configPSH": { "Version": "1.0" }
 }
