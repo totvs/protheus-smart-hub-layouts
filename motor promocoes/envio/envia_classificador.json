@@ -1,57 +1,12 @@
 {
-
-        "elementosIntegracao" :   [
-
-                {
-
-                        "ativo" :   true ,
-
-                        "id" :   "1" ,
-
-                        "idPai" :   "" ,
-
-                        "nome" :   "MASTER"
-
-                },
-
-                {
-
-                        "ativo" :   true ,
-
-                        "id" :   "56" ,
-
-                        "idPai" :   "1" ,
-
-                        "nome" :   "PESCADO"
-
-                },
-
-                {
-
-                        "ativo" :   true ,
-
-                        "id" :   "5657" ,
-
-                        "idPai" :   "56" ,
-
-                        "nome" :   "BACALHAU"
-
-                },
-
-                {
-
-                        "ativo" :   true ,
-
-                        "id" :   "5657111" ,
-
-                        "idPai" :   "5657" ,
-
-                        "nome" :   "BACALHAU"
-
-                }
-
-        ],
-
-        "tipoIntegracao" :   "1"
-
+	"elementosIntegracao": [
+		{
+			"ativo": "&IIF(self:oPublica['ACU_MSBLQL'] =='2' .Or. Empty(self:oPublica['ACU_MSBLQL']),.T.,.F.)",
+			"id": "&self:oPublica['ACU_COD']",
+			"idPai": "&self:oPublica['ACU_CODPAI']",
+			"nome": "&self:oPublica['ACU_DESC']"
+		}
+	],
+	"tipoIntegracao": "1"
+	"configPSH": { "Version": "1.0" }
 }
