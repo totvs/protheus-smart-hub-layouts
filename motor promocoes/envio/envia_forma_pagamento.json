@@ -1,82 +1,10 @@
 {
-        "elementosIntegracao" :   [
-                {
-                        "ativo" :   true ,
-
-                        "id" :   "1" ,
-
-                        "descricao" :   "DINHEIRO"
-                },
-                {
-                        "ativo" :   true ,
-
-                        "id" :   "2" ,
-
-                        "descricao" :   "CHEQUE"
-                },
-
-                {
-
-                        "ativo" :   true ,
-
-                        "id" :   "3" ,
-
-                        "descricao" :   "CHEQUE   PRE"
-
-                },
-
-                {
-
-                        "ativo" :   true ,
-
-                        "id" :   "4" ,
-
-                        "descricao" :   "CARTAO"
-
-                },
-
-                {
-
-                        "ativo" :   true ,
-
-                        "id" :   "7" ,
-
-                        "descricao" :   "PROMISSORIA"
-
-                },
-
-                {
-
-                        "ativo" :   true ,
-
-                        "id" :   "9" ,
-
-                        "descricao" :   "VALE   TROCA"
-
-                },
-
-                {
-
-                        "ativo" :   true ,
-
-                        "id" :   "80" ,
-
-                        "descricao" :   "TEF   DEBITO"
-
-                },
-
-                {
-
-                        "ativo" :   true ,
-
-                        "id" :   "81" ,
-
-                        "descricao" :   "TEF   CREDITO"
-
-                }
-
-        ],
-
-        "tipoIntegracao" :   "1"
-
+	"elementosIntegracao": [
+		{
+			"ativo": true,
+			"id": "000067",
+			"descricao": "BOLETO"
+		}
+	],
+	"tipoIntegracao": "1"
 }
