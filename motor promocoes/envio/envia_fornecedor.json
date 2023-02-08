@@ -7,6 +7,6 @@
 			"nomeFantasia": "&self:oPublica['A2_NOME']"
 		}
 	],
-	"tipoIntegracao": "1"
+	"tipoIntegracao": "1",
 	"configPSH": { "Version": "1.0" }
 }
