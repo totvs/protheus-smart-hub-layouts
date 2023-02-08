@@ -11,5 +11,6 @@
 			"codigo3": "&self:oPublica['B1_COD']"
 		}
 	],
-	"tipoIntegracao": "1"
+	"tipoIntegracao": "1",
+	"configPSH": { "Version": "1.0" }
 }
