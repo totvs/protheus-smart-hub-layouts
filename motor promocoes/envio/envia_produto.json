@@ -1,29 +1,15 @@
 {
-
-    "elementosIntegracao" :   [
-
-        {
-
-            "ativo" :   true ,
-
-            "classificador" :   "11" ,
-
-            "descricao" :   "CRUSHED   CRYSTALS   ESMALTE   PINK   CRYSTAL   10ML" ,
-
-            "fornecedor" :   "1" ,
-
-            "sku" :   "10025947" ,
-
-            "codigo1" :   "7909189136575" ,
-
-            "codigo2" :   "1909189136575" ,
-
-            "codigo3" :   "2909189136575"
-
-        }
-
-    ],
-
-    "tipoIntegracao" :   "1"
-
+	"elementosIntegracao": [
+		{
+			"ativo": "&IIF( self:oPublica['B1_MSBLQL'] == '2',.T.,.F.)",
+			"classificador": "&Posicione('ACV',5,xFilial('ACV')+PadR(self:oPublica['B1_COD'],TamSx3('B1_COD')[1]),'ACV_CATEGO')",
+			"descricao": "&Alltrim(self:oPublica['B1_DESC'])",
+			"fornecedor": "&Alltrim(self:oPublica['B1_PROC'])+Alltrim(self:oPublica['B1_LOJPROC'])",
+			"sku": "&self:oPublica['B1_CODBAR']",
+			"codigo1": "&self:oPublica['B1_COD']",
+			"codigo2": "&self:oPublica['B1_COD']",
+			"codigo3": "&self:oPublica['B1_COD']"
+		}
+	],
+	"tipoIntegracao": "1"
 }
