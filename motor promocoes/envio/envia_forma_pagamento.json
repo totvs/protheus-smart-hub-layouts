@@ -6,5 +6,6 @@
 			"descricao": "&Alltrim(self:oPublica['descricao'])"
 		}
 	],
-	"tipoIntegracao": "1"
+	"tipoIntegracao": "1",
+	"configPSH": { "Version": "1.0" }
 }
