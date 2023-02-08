@@ -1,9 +1,9 @@
 {
 	"elementosIntegracao": [
 		{
-			"ativo": true,
-			"id": "000067",
-			"descricao": "BOLETO"
+			"ativo": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', .T., .F.)",
+			"id": "&self:oPublica['MIH_ID']",
+			"descricao": "&Alltrim(self:oPublica['descricao'])"
 		}
 	],
 	"tipoIntegracao": "1"
