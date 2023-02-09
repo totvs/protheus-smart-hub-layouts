@@ -7,5 +7,6 @@
             "sku":"&self:oPublica['LK_CODBAR']"
         }
     ],
-    "tipoIntegracao" :   "1"
+    "tipoIntegracao" :   "1",
+    "configPSH": { "Version": "1.0" }
 }
