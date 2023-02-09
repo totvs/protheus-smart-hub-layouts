@@ -5,10 +5,10 @@
 			"classificador": "&Posicione('ACV',5,xFilial('ACV')+PadR(self:oPublica['B1_COD'],TamSx3('B1_COD')[1]),'ACV_CATEGO')",
 			"descricao": "&Alltrim(self:oPublica['B1_DESC'])",
 			"fornecedor": "&Alltrim(self:oPublica['B1_PROC'])+Alltrim(self:oPublica['B1_LOJPROC'])",
-			"sku": "&self:oPublica['B1_CODBAR']",
-			"codigo1": "&self:oPublica['B1_COD']",
-			"codigo2": "&self:oPublica['B1_COD']",
-			"codigo3": "&self:oPublica['B1_COD']"
+			"sku": "&self:oPublica['B1_COD']",
+			"codigo1": "&self:oPublica['B1_CODBAR']",
+			"codigo2": "&self:oPublica['B1_CODBAR']",
+			"codigo3": "&self:oPublica['B1_CODBAR']"
 		}
 	],
 	"tipoIntegracao": "1",
