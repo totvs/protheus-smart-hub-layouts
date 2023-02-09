@@ -1,0 +1,11 @@
+{
+    "elementosIntegracao" :   [
+		{
+            "ativo":"&IIF(self:cEvento == '1', .T., .F.)" ,
+            "codigo":"&self:oPublica['LK_CODIGO']" ,
+            "descricao":"EMBALAGEM" ,
+            "sku":"&self:oPublica['LK_CODBAR']"
+        }
+    ],
+    "tipoIntegracao" :   "1"
+}
