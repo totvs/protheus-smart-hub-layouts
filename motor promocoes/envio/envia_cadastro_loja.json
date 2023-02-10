@@ -12,5 +12,6 @@
             "regiao":"&SubStr(self:oPublica['Regiao'],1,1)"
         }
     ],
-    "tipoIntegracao" :   "1"
+    "tipoIntegracao" :   "1",
+	"configPSH": { "Version": "1.0" }
 }
