@@ -1,0 +1,16 @@
+{
+    "elementosIntegracao" :   [
+        {
+            "ativo": "&IIF(self:oPublica['MIH_ATIVO'] == '1',.T.,.F.)" ,
+            "cidade": "&self:oPublica['CodigoMunicipio']" ,
+            "estado": "&self:oPublica['Estado']" ,
+            "cnpj": "&self:oPublica['CNPJ']" ,
+            "id":"&self:oPublica['MIH_ID']" ,
+            "nomeFantasia":"&self:oPublica['MIH_DESC']" ,
+            "pais":"&SubStr(self:oPublica['Pais'],1,1)" ,
+            "praca":"&SubStr(self:oPublica['Praca'],1,1)" ,
+            "regiao":"&SubStr(self:oPublica['Regiao'],1,1)"
+        }
+    ],
+    "tipoIntegracao" :   "1"
+}
