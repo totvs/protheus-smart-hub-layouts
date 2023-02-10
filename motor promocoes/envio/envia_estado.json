@@ -6,5 +6,6 @@
             "uf":"&self:oPublica['Estado']"
         }
     ],
-    "tipoIntegracao" :   "1"
+    "tipoIntegracao" :   "1",
+	"configPSH": { "Version": "1.0" }
 }
