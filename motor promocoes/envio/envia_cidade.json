@@ -1,0 +1,11 @@
+{
+    "elementosIntegracao" :   [
+		{
+			"id":"&self:oPublica['CodigoMunicipio']" ,
+            "estado":"&self:oPublica['Estado']",
+            "descricao":"&self:oPublica['Cidade']"
+        }
+    ],
+    "tipoIntegracao" :   "1"
+
+}
