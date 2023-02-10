@@ -1,0 +1,9 @@
+{
+    "elementosIntegracao" :   [
+        {
+            "id":"&SubStr(self:oPublica['Praca'],1,1)" ,
+            "descricao":"&SubStr(self:oPublica['Praca'],3,Len(self:oPublica['Praca']))"
+        }
+    ],
+    "tipoIntegracao" :   "1"
+}
