@@ -1,7 +1,7 @@
 {
 	"elementosIntegracao": [
 		{
-			"ativo": "&IIF(self:oPublica['A2_MSBLQL'] =='2' .Or. Empty(self:oPublica['A2_MSBLQL']),.T.,.F.)",
+			"ativo": "&IIF((self:oPublica['A2_MSBLQL'] =='2' .Or. Empty(self:oPublica['A2_MSBLQL'])) .AND. self:cEvento == '1',.T.,.F.)",
 			"cnpj": "&self:oPublica['A2_CGC']",
 			"id": "&self:oPublica['A2_COD']+self:oPublica['A2_LOJA']",
 			"nomeFantasia": "&self:oPublica['A2_NOME']"
