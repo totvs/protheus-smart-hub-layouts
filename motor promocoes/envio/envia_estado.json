@@ -1,9 +1,9 @@
 {
     "elementosIntegracao" :   [
         {
-			"descricao":"&Alltrim(fDesc( 'SX5','12'+self:oPublica['Estado'],'X5_DESCRI',30))",
-            "pais":"&SubStr(self:oPublica['Pais'],1,1)",
-            "uf":"&self:oPublica['Estado']"
+		"descricao":"&Alltrim(fDesc( 'SX5','12'+self:oPublica['Estado'],'X5_DESCRI',30))",
+        	"pais":"&SubStr(self:oPublica['Pais'],1,1)",
+            	"uf":"&self:oPublica['Estado']"
         }
     ],
     "tipoIntegracao" :   "1",
