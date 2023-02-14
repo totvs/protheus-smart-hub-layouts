@@ -1,7 +1,7 @@
 {
 	"elementosIntegracao": [
 		{
-			"ativo": "&IIF(self:oPublica['ACU_MSBLQL'] =='2' .Or. Empty(self:oPublica['ACU_MSBLQL']),.T.,.F.)",
+			"ativo": "&IIF((self:oPublica['ACU_MSBLQL'] =='2' .Or. Empty(self:oPublica['ACU_MSBLQL'])) .AND. self:cEvento == '1',.T.,.F.)",
 			"id": "&self:oPublica['ACU_COD']",
 			"idPai": "&self:oPublica['ACU_CODPAI']",
 			"nome": "&self:oPublica['ACU_DESC']"
