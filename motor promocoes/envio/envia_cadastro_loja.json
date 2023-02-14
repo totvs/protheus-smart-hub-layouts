@@ -1,7 +1,7 @@
 {
     "elementosIntegracao" :   [
         {
-            "ativo": "&IIF(self:oPublica['MIH_ATIVO'] == '1',.T.,.F.)" ,
+            "ativo": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .AND. self:cEvento == '1' ,.T.,.F.)" ,
             "cidade": "&self:oPublica['CodigoMunicipio']" ,
             "estado": "&self:oPublica['Estado']" ,
             "cnpj": "&self:oPublica['CNPJ']" ,
