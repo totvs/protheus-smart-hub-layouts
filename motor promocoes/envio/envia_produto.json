@@ -1,7 +1,7 @@
 {
 	"elementosIntegracao": [
 		{
-			"ativo": "&IIF( self:oPublica['B1_MSBLQL'] == '2',.T.,.F.)",
+			"ativo": "&IIF( self:oPublica['B1_MSBLQL'] == '2' .AND. self:cEvento == '1',.T.,.F.)",
 			"classificador": "&Posicione('ACV',5,xFilial('ACV')+PadR(self:oPublica['B1_COD'],TamSx3('B1_COD')[1]),'ACV_CATEGO')",
 			"descricao": "&Alltrim(self:oPublica['B1_DESC'])",
 			"fornecedor": "&Alltrim(self:oPublica['B1_PROC'])+Alltrim(self:oPublica['B1_LOJPROC'])",
