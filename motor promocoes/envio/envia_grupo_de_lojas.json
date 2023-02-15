@@ -1,0 +1,11 @@
+{
+	"elementosIntegracao": [
+		{
+			"ativo": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .AND. self:cEvento == '1' ,.T.,.F.)",
+			"id": "&self:oPublica['MIH_ID']",
+			"descricao": "&self:oPublica['MIH_DESC']",
+			"filiais":"&StrTokArr(Self:oPublica['Lojas'],';')"
+		}
+	],
+	"tipoIntegracao": "1"
+}
