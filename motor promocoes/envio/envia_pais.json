@@ -1,8 +1,8 @@
 {
     "elementosIntegracao" :   [
         {
-            "descricao":"&self:oPublica['Pais']",
-            "id":"&self:oPublica['PaisDesc']"
+            "descricao":"&self:oPublica['PaisDesc']",
+            "id":"&self:oPublica['Pais']"
         }
     ],
     "tipoIntegracao":"1",
