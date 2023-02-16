@@ -7,9 +7,9 @@
             "cnpj": "&self:oPublica['CNPJ']" ,
             "id":"&self:oPublica['MIH_ID']" ,
             "nomeFantasia":"&self:oPublica['MIH_DESC']" ,
-            "pais":"&SubStr(self:oPublica['Pais'],1,1)" ,
+            "pais":"&self:oPublica['Pais']" ,
             "praca":"&self:oPublica['Praca']" ,
-            "regiao":"&SubStr(self:oPublica['Regiao'],1,1)"
+            "regiao":"&self:oPublica['Regiao']"
         }
     ],
     "tipoIntegracao" :   "1",
