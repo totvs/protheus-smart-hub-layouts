@@ -1,7 +1,7 @@
 {
     "elementosIntegracao":[
         {
-            "id":"&Sself:oPublica['Regiao']",
+            "id":"&self:oPublica['Regiao']",
             "descricao":"&self:oPublica['RegiaoDesc']"
         }
     ],
