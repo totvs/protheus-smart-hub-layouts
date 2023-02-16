@@ -1,8 +1,8 @@
 {
     "elementosIntegracao" :   [
         {
-            "id":"&self:oPublica['Praca']" ,
-            "descricao":"&self:oPublica['NomePraca']"
+            "id":"&self:oPublica['MIH_ID']",
+            "descricao":"&self:oPublica['MIH_DESC']"
         }
     ],
     "tipoIntegracao" :   "1",
