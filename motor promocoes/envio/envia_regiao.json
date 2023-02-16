@@ -1,8 +1,8 @@
 {
     "elementosIntegracao":[
         {
-            "id":"&SubStr(self:oPublica['Regiao'],1,1)",
-            "descricao":"&SubStr(self:oPublica['Regiao'],3,Len(self:oPublica['Regiao']))"
+            "id":"&Sself:oPublica['Regiao']",
+            "descricao":"&self:oPublica['RegiaoDesc']"
         }
     ],
     "tipoIntegracao":"1",
