@@ -1,0 +1,19 @@
+{
+	"elementosIntegracao" :   [
+    {
+			 "custo":   0 ,
+			 "diasVenda":   0 ,
+			 "diasVendaPromocao": 0 ,
+			 "embalagem":"&Posicione('ACV',5,xFilial('ACV')+PadR(self:oPublica['B1_COD'],TamSx3('B1_COD')[1]),'ACV_CATEGO')",
+			 "estoqueSeguranca":0,
+			 "filial":"&RmiDePaRet('MOTOR PROMOCOES', 'SM0',self:oPublica['B1_FILIAL'],.T.)",
+			 "margemAtual":0,
+			 "mediaVenda":0,
+			 "mediaVendaPromocao":0,
+			 "precoVenda":0,
+			 "situacaoProduto":"&IIF( self:oPublica['B1_MSBLQL'] == '2' .AND. self:cEvento == '1','1','0')" ,
+			 "sku":"&self:oPublica['B1_COD']"
+		}
+   ],
+   "tipoIntegracao" :   "1"
+}
