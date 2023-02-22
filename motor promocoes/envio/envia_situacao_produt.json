@@ -1,0 +1,10 @@
+{
+	"elementosIntegracao" :   [
+		{
+			"codigo":"&IIF( self:oPublica['B1_MSBLQL'] == '2' .AND. self:cEvento == '1','1','0')" ,
+			"descricao":"&IIF( self:oPublica['B1_MSBLQL'] == '2' .AND. self:cEvento == '1','ATIVADO','DESATIVO')"
+		}
+    ],
+    "tipoIntegracao":"1",
+    "configPSH":{ "Version": "1.0" }
+}
