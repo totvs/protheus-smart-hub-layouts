@@ -6,7 +6,7 @@
 			 "diasVendaPromocao": 0 ,
 			 "embalagem":"&Posicione('ACV',5,xFilial('ACV')+PadR(self:oPublica['B1_COD'],TamSx3('B1_COD')[1]),'ACV_CATEGO')",
 			 "estoqueSeguranca":0,
-			 "filial":"&self:oPublica['B1_FILIAL']",
+			 "filial":"&RmiDePaRet('MOTOR PROMOCOES', 'SM0',self:oPublica['B1_FILIAL'],.T.)",
 			 "margemAtual":0,
 			 "mediaVenda":0,
 			 "mediaVendaPromocao":0,
