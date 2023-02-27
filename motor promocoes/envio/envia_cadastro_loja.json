@@ -5,7 +5,7 @@
             "cidade": "&self:oPublica['CodigoMunicipio']" ,
             "estado": "&self:oPublica['Estado']" ,
             "cnpj": "&self:oPublica['CNPJ']" ,
-            "id":"&self:oPublica['MIH_ID']" ,
+            "id":"&self:oPublica['IDFilialProtheus']" ,
             "nomeFantasia":"&self:oPublica['MIH_DESC']" ,
             "pais":"&self:oPublica['Pais']" ,
             "praca":"&self:oPublica['Praca']" ,
