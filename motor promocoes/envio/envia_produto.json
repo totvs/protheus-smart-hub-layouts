@@ -2,7 +2,7 @@
 	"elementosIntegracao": [
 		{
 			"ativo": "&IIF( self:oPublica['B1_MSBLQL'] == '2' .AND. self:cEvento == '1',.T.,.F.)",
-			"classificador": "&Posicione('ACV',5,xFilial('ACV')+PadR(self:oPublica['B1_COD'],TamSx3('B1_COD')[1]),'ACV_CATEGO')",
+			"classificador": "&RmixGetCat(self:oPublica['B1_COD'], self:oPublica['B1_GRUPO'], 'C')[1]",
 			"descricao": "&Alltrim(self:oPublica['B1_DESC'])",
 			"fornecedor": "&Alltrim(self:oPublica['B1_PROC'])+Alltrim(self:oPublica['B1_LOJPROC'])",
 			"sku": "&self:oPublica['B1_COD']",
