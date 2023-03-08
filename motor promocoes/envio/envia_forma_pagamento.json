@@ -2,7 +2,7 @@
 	"elementosIntegracao": [
 		{
 			"ativo": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', .T., .F.)",
-			"id": "&self:oPublica['MIH_ID']",
+			"id": "&IIF(self:oPublica['forma'] == 'R$','1',self:oPublica['forma']) ",
 			"descricao": "&Alltrim(self:oPublica['descricao'])"
 		}
 	],
