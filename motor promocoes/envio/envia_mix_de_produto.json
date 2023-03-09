@@ -4,7 +4,7 @@
 			 "custo":   0 ,
 			 "diasVenda":   0 ,
 			 "diasVendaPromocao": 0 ,
-			 "embalagem":"&Posicione('ACV',5,xFilial('ACV')+PadR(self:oPublica['B1_COD'],TamSx3('B1_COD')[1]),'ACV_CATEGO')",
+			 "embalagem":"&Posicione('SLK',2,xFilial('SLK')+PadR(self:oPublica['B1_COD'],TamSx3('LK_CODIGO')[1]),'LK_CODBAR')",
 			 "estoqueSeguranca":0,
 			 "filial":"&self:oPublica['B1_FILIAL']",
 			 "margemAtual":0,
