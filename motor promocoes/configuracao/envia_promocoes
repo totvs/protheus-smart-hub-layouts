@@ -1,0 +1,6 @@
+{  
+  "url":"https://homologacao.promocoes.live.totvs.com.br/integracao_protheus/rest/consulta/calcularPromocao",
+  "configPSH": { 
+  "Version": "1.0" 
+  } 
+}
