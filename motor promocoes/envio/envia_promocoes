@@ -1,0 +1,36 @@
+{
+	"modalidade": "1",
+	"codigoPromocional": null,
+	"formaPagamento": null,
+	"identificadorVenda": {
+		"codVenda": "&M->LQ_NUM",
+		"codFilial": "&cFilant",
+		"codCanalVenda": "PDV",
+		"codExternoCanalVenda": "1"
+	},
+	"dadosCliente": {
+		"cpfCliente": null,
+		"pais": null,
+		"cidade": null,
+		"estado": null,
+		"estadoCivil": null,
+		"fidelizado": false,
+		"idade": 0,
+		"nomeFantasia": null,
+		"convenio": null,
+		"profissao": null,
+		"sexo": null,
+		"primeiraCompra": null,
+		"grupoCliente": null
+	},
+	"produtos": [
+		{
+			"posicaoItem": "&nX",
+			"codProduto": "%LR_PRODUTO",
+			"qtd": "%LR_QUANT",
+			"descontoManual": 0,
+			"codEmbalagem": "&Alltrim(Posicione('SLK',2,xFilial('SLK')+PadR(oBody['produtos'][nX]['codProduto'],TamSx3('LK_CODIGO')[1]),'LK_CODBAR'))",
+			"valorUnitario": "%LR_VRUNIT"
+		}
+	]
+}
