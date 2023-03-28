@@ -1,0 +1,13 @@
+{
+    "url": "https://xxx.xxxxxx.yyy.br/2.0/orderdemand",  
+    "tagretorno": "success",
+    "listasPublicacao": {
+        "SL2": "self:oRegistro['Itens']",
+        "SL4": "self:oRegistro['Pagamento']"
+    },
+    "ChaveUni": [        
+        "Filial",
+        "IdOrigem",
+        "StatusPedido"  
+    ]
+}
