@@ -1,0 +1,7 @@
+{
+    "token": "&Self:cToken",
+    "shortname": "&AllTrim(Self:oPublica['AH_UNIMED'])",
+    "description": "&AllTrim(Self:oPublica['AH_DESCPO'])",
+    "code": "&AllTrim(Self:oPublica['AH_UNIMED'])",
+    "status": "&IIF(self:cEvento == '1', .T., .F.)"
+}
