@@ -1,0 +1,34 @@
+{
+    "token": "&Self:cToken",
+    "name": "&self:oPublica['B1_DESC']",
+    "description": "&self:oPublica['SB5'][1]['B5_ECDESCR']",
+    "technicalspecification": "&self:oPublica['SB5'][1]['B5_ECDESCR']",
+    "order": 1,
+    "code": "&self:oPublica['B1_COD']",
+    "classification_code": "&self:oPublica['ACV'][1]['ACV_CATEGO']",
+    "type": "&IIF( self:oPublica['B1_TIPO'] == 'KT', 'KIT', 'product')",
+    "status": "&IIF(self:oPublica['B1_MSBLQL'] == '2' .and. self:cEvento == '1', .T., .F.)",   
+    "measurementunit_code": "&self:oPublica['B1_UM']",
+    "parent": "",
+    "mark_code": "&self:oPublica['SB5'][1]['B5_MARCA']",
+    "images": "",
+    "fractions": "",
+    "stocksimple": "",
+    "sku": "&self:oPublica['B1_COD']",
+    "gtin": "&self:oPublica['B1_CODGTIN']",
+    "ncm": "&self:oPublica['B1_POSIPI']",
+    "weight": "&self:oPublica['SB5'][1]['B5_PESO']",
+    "height": "&self:oPublica['SB5'][1]['B5_ALTURA']",
+    "width": "&self:oPublica['SB5'][1]['B5_ECLARGU']",
+    "depth": "&self:oPublica['SB5'][1]['B5_ECPROFU']",
+    "kit": "",
+    "grid_name": "&IIF(self:oPublica:hasProperty('PRODUTOGRADE'),self:oPublica['PRODUTOGRADE']['B4_DESC'],'')",
+    "grid_code": "&IIF(self:oPublica:hasProperty('PRODUTOGRADE'),self:oPublica['PRODUTOGRADE']['B4_COD'],'')",    
+    "variations": [
+        {
+            "TableNode": "GRADE",
+            "name": "&self:oPublica['GRADE'][nItem]['BV_DESCTAB']",
+            "value": "&self:oPublica['GRADE'][nItem]['BV_DESCRI']"
+        }
+    ]
+}
