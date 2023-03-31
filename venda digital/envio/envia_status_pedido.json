@@ -1,0 +1,10 @@
+{
+    "token": "&self:cToken",
+    "status": [{
+            "order_id": "&self:oPublica['pedidoOrigem']",
+            "status": "&IIF(self:oPublica['status'] == 'reservado', 'reserved', self:oPublica['status'])",
+            "read": "noread",
+            "content": "&self:oPublica['detalhe']"
+        }
+    ]
+}
