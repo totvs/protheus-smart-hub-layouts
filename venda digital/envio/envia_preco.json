@@ -1,0 +1,7 @@
+{
+    "token": "&Self:cToken",
+    "product_code": "&Self:oPublica['DA1_CODPRO']",
+    "price": "&Self:oPublica['DA1_PRCVEN']",
+    "status": "&IIF(Self:oPublica['DA0'][1]['DA0_ATIVO'] == '1' .AND. Self:oPublica['DA1_ATIVO'] == '1' .and. self:cEvento == '1', .T., .F.)"
+
+}
