@@ -1,0 +1,7 @@
+{
+    "token": "&Self:cToken",
+    "name": "%MIH_DESC%",
+    "description": "%MIH_DESC%",
+    "status": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', .T., .F.)",
+    "code": "%MIH_DESC%"
+}
