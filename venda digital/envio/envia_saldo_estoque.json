@@ -1,0 +1,6 @@
+{
+    "token": "&Self:cToken",
+    "product_code": "&AllTrim(Self:oPublica['B2_COD'])",
+    "minimum_stock": 0,
+    "value": "&cValToChar(RsSaldoPrd(Self:oPublica['B2_COD']))"
+}
