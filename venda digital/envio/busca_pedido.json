@@ -3,9 +3,9 @@
     "token": "&Self:cToken",
     "status_order": "generated",
     "status_payment": [
-        "Pending",
+        "pending",
         "confirmed",
-        "cancelled"
+        "canceled"
     ],
     "read": "noread"
 }
