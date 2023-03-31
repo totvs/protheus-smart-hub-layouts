@@ -1,0 +1,10 @@
+{
+    "Content-Type": "application/json",
+    "token": "&Self:cToken",
+    "status_order": "reserved",
+    "status_payment": [
+        "confirmed",
+        "cancelled"
+    ],
+    "read": "noread"
+}
