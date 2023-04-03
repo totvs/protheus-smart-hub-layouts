@@ -1,8 +1,8 @@
 {
     "url": "https://homologacao.promocoes.live.totvs.com.br/",
     "Header": {
-        "token": "SEU TOKEN",
+        "token": "d0dc55771fa5cfda9aee88a2af034a4a",
         "Content-Type": "application/json"
     },
-    "Path": "SUA-URL../rest/consulta/calcularPromocao"
+    "Path": "integracao_protheus/rest/consulta/calcularPromocao"
 }
