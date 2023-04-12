@@ -1,7 +1,7 @@
 {
 	"modalidade": "1",
 	"codigoPromocional": "null",
-	"formaPagamento": "&Self:aFormPgt",
+	"formaPagamento": "&StrTokArr(RmiDePaRet('MOTOR PROMOCOES', 'SX5', self:oPublica['LQ_FORMA'] ,.F.),',')",
 	"identificadorVenda": {
 		"codVenda": "&self:oPublica['LQ_NUM']",
 		"codFilial": "&self:oPublica['LQ_FILIAL']",
