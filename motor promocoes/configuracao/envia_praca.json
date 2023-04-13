@@ -1,5 +1,10 @@
 {
   "url":"https://homologacao.promocoes.live.totvs.com.br/integracao_protheus/rest/motor2/api/v1/integracao/praca",
+  "qtdereenvio": [
+               0.1,
+               1,
+              6
+   ], 
   "configPSH": { 
   "Version": "1.0" 
   } 
