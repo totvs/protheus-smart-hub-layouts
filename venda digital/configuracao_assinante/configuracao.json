@@ -2,7 +2,7 @@
 	"usuario": "",
 	"senha": "",
 	"token": "",
-	"url_Confirma": "https://nis-development.pluginbot.ai/api/protheus/status",	
-	"url_token": "https://nis-development.pluginbot.ai/api/protheus/token",
+	"url_Confirma": "https://nis.pluginbot.ai/api/protheus/status",	
+	"url_token": "https://nis.pluginbot.ai/api/protheus/token",
 	"configPSH": { "Version": "1.0" }
 }
