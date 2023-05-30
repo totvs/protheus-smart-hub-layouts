@@ -46,7 +46,7 @@
 					"F3": "",
 					"Trigger": null,
 					"Required": true,
-					"Picture": "@R 999.999.999.999",
+					"Picture": "",
 					"CanChange": true,
 					"Valid": "Vazio()",
 					"Messages": null,
@@ -55,7 +55,51 @@
 				"ComponentLabel": "Endereço IP"
 			},
 			"ComponentContent": ""
+		},
+		{	
+			"ContentType": "String",
+			"IdComponent": "porta",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "03",
+					"List": null,
+					"Size": 10,
+					"F3": "",
+					"Trigger": null,
+					"Required": true,
+					"Picture": "",
+					"CanChange": true,
+					"Valid": "Vazio()",
+					"Messages": null,
+					"IniPad": ""
+				},
+				"ComponentLabel": "Porta TCP"
+			},
+			"ComponentContent": ""
+		},
+		{	
+			"ContentType": "String",
+			"IdComponent": "ambiente",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "03",
+					"List": null,
+					"Size": 10,
+					"F3": "",
+					"Trigger": null,
+					"Required": true,
+					"Picture": "",
+					"CanChange": true,
+					"Valid": "Vazio()",
+					"Messages": null,
+					"IniPad": ""
+				},
+				"ComponentLabel": "Ambiente Protheus"
+			},
+			"ComponentContent": ""
 		}
 	],
-	"LayoutVersion": 1.2
+	"LayoutVersion": 1.3
 }
