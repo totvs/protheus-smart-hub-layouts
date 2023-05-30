@@ -1,0 +1,108 @@
+{
+    "Components": [                
+        {
+            "ContentType": "Number",
+            "IdComponent": "IT_ALIQFECP",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "Order": "01",
+                    "List": null,
+                    "Size": 4,
+                    "F3": null,
+                    "Required": false,
+                    "Picture": "@E 99.99",
+                    "Valid": null,
+                    "IniPad": null,
+                    "CanChange": false,
+                    "Trigger": null
+                },
+                "ComponentLabel": "Alíquota FECP"
+            },
+            "ComponentContent": 0
+        },
+        {
+            "ContentType": "Number",
+            "IdComponent": "IT_BASFECP",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "Order": "02",
+                    "List": null,
+                    "Size": 14,
+                    "F3": null,
+                    "Required": false,
+                    "Picture": "@E 99,999,999,999.99",
+                    "Valid": null,
+                    "IniPad": null,
+                    "CanChange": false,
+                    "Trigger": null
+                },
+                "ComponentLabel": "Base FECP"
+            },
+            "ComponentContent": 0
+        }, 
+        {
+            "ContentType": "Number",
+            "IdComponent": "IT_CODDECL",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "Order": "03",
+                    "List": null,
+                    "Size": 8,
+                    "F3": null,
+                    "Required": false,
+                    "Picture": null,
+                    "Valid": null,
+                    "IniPad": null,
+                    "CanChange": false,
+                    "Trigger": null
+                },
+                "ComponentLabel": "Código Benefício Fiscal"
+            },
+            "ComponentContent": ""
+        },   
+    {
+        "ContentType": "Number",
+        "IdComponent": "LF_MOTICMS",
+        "Component": {
+            "ComponentType": "GET",
+            "Parameters": {
+                "Order": "04",
+                "List": null,
+                "Size": 8,
+                "F3": null,
+                "Required": false,
+                "Picture": null,
+                "Valid": null,
+                "IniPad": null,
+                "CanChange": false,
+                "Trigger": null
+            },
+            "ComponentLabel": "Motivo Desoneracao"
+        },
+        "ComponentContent": 0
+    },
+    {
+        "ContentType": "Logical",
+        "IdComponent": "descontaDesoneracaoNf",
+        "Component": {
+            "ComponentType": "CheckBox",
+            "Parameters": {
+                "List": null,
+                "Size": 1,
+                "F3": null,
+                "Required": null,
+                "Picture": null,
+                "Valid": null,
+                "CanChange": true,
+                "Trigger": null
+            },
+            "ComponentLabel": "Desconta desoneração ICMS"
+        },
+        "ComponentContent": true
+    }                                               
+    ],
+    "LayoutVersion": 1.0
+}
