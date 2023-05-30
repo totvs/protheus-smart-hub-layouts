@@ -1,0 +1,31 @@
+{
+    "Components": [
+        {
+            "ContentType": "String",
+            "IdComponent": "Perfil",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "List": null,
+                    "Size": "TAMSX3('MIH_DESC')[1]",
+                    "F3": null,
+                    "Required": false,
+                    "Picture": null,
+                    "Valid": null,
+                    "CanChange": true,
+                    "Trigger": 
+                        [
+                            {
+                                "FieldTrigger": "MIH_DESC",
+                                "TargetIdField": "MIH_DESC",
+                                "SetValue": "oModel := FWModelActive(),oModel:LoadValue('MIHDETAIL', 'Perfil', M->MIH_DESC )"
+                            }
+                        ]
+                },
+                "ComponentLabel": "Perfil"
+            },
+            "ComponentContent": ""
+        }
+    ],
+    "LayoutVersion": 1.2
+}  
