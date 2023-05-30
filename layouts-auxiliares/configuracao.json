@@ -8,6 +8,7 @@
                 "Parameters": {
                     "Order": "01",
                     "List": [
+                        "    ",
                         "RMIBUSCA",
                         "RMIENVIA",
                         "RMIPUBLICA",
@@ -17,17 +18,17 @@
                     "Size": 30,
                     "F3": "",
                     "Trigger": null,
-                    "Required": false,
+                    "Required": true,
                     "Picture": "@!",
                     "CanChange": true,
-                    "Valid": "LjAuxMsg( LjAuxValid('CONFIGURACAO', 'servico', xValor), 'servico', 'M1')",
+                    "Valid": "Vazio(), LjAuxMsg( LjAuxValid('CONFIGURACAO', 'servico', xValor), 'servico', 'M1')",
                     "Messages":[
                         {
                             "Id": "M1",
                             "Message": "Ops! Já existe uma configuração para este serviço."
                         }
                     ],
-                    "IniPad": null
+                    "IniPad": "    "
                 },
                 "ComponentLabel": "Serviço"
             },
