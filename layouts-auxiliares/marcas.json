@@ -1,0 +1,26 @@
+{
+    "Components": [                
+        {
+            "ContentType": "String",
+            "IdComponent": "Marca",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "Order": "01",
+                    "List": null,
+                    "Size": "TamSx3('B5_MARCA')[1]",
+                    "F3": null,
+                    "Required": false,
+                    "Picture": "@!",
+                    "Valid": null,
+                    "IniPad": null,
+                    "CanChange": false,
+                    "Trigger": null
+                },
+                "ComponentLabel": "Marca"
+            },
+            "ComponentContent": ""
+        }               
+    ],
+    "LayoutVersion": 1.0
+}
