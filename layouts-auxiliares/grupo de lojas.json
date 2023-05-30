@@ -1,0 +1,32 @@
+{
+    "Components": [
+        {
+            "ContentType": "String",
+            "IdComponent": "Lojas",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "Order": "01",
+                    "List": null,
+                    "Size": 280,
+                    "F3": "RMISM0",
+                    "Trigger": null,
+                    "Required": false,
+                    "Picture": "@S20!",
+                    "CanChange": true,
+                    "Valid": "Vazio() .Or. LjAuxMsg( At(';', xValor) > 0, 'Lojas', 'M1')",
+                    "Messages": [
+                        {
+                            "Id": "M1",
+                            "Message": "Ops! Lojas fora do padrão esperado."
+                        }
+                    ],
+                    "IniPad": null
+                },
+                "ComponentLabel": "Códigos de loja"
+            },
+            "ComponentContent": ""
+        }
+    ],
+    "LayoutVersion": 1.0
+}
