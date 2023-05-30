@@ -33,7 +33,29 @@
                 "ComponentLabel": "Serviço"
             },
             "ComponentContent": ""
+        },
+        {
+            "ContentType": "String",
+            "IdComponent": "ip",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "Order": "02",
+                    "List": null
+                    "Size": 15,
+                    "F3": "",
+                    "Trigger": null,
+                    "Required": true,
+                    "Picture": "@R 999.999.999.999",
+                    "CanChange": true,
+                    "Valid": "Vazio()",
+                    "Messages":null
+                    "IniPad": ""
+                },
+                "ComponentLabel": "Endereço IP"
+            },
+            "ComponentContent": ""
         }
     ],
-    "LayoutVersion": 1.1
+    "LayoutVersion": 1.2
 }
