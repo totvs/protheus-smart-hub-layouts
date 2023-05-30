@@ -1,0 +1,135 @@
+{
+    "Components": [                
+        {
+            "ContentType": "String",
+            "IdComponent": "IdProprietario",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "List": null,
+                    "Size": 6,
+                    "F3": null,
+                    "Required": true,
+                    "Picture": "999999",
+                    "Valid": null,
+                    "IniPad": "M->MIH_ID",                            
+                    "CanChange": false,
+                    "Trigger": null
+                },
+                "ComponentLabel": "ID Proprietário"
+            },
+            "ComponentContent": ""
+        },
+        {
+            "ContentType": "String",
+            "IdComponent": "NomeCompartilha",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "List": null,
+                    "Size": 30,
+                    "F3": null,
+                    "Required": true,
+                    "Picture": null,
+                    "Valid": null,
+                    "CanChange": true,
+                    "Trigger": null
+                },
+                "ComponentLabel": "Nome Compartilhamento"
+            },
+            "ComponentContent": ""
+        },
+        {
+            "ContentType": "String",
+            "IdComponent": "nivel",
+            "Component": {
+                "ComponentType": "COMBO",
+                "Parameters": {
+                    "Size": 1,
+                    "F3": null,
+                    "Required": true,
+                    "Picture": null,
+                    "Valid": "IIf (xValor == '0',LjAuxMsg(LjAuxValid('COMPARTILHAMENTOS','nivel',xValor),'nivel','M1'),IIf(xValor $ '1|2',LjAuxMsg(!LjAuxValid('COMPARTILHAMENTOS','nivel','0'),'nivel','M2'),.T.))",
+                    "CanChange": true,
+                    "Trigger": 
+                        [
+                            {
+                                "TargetIdField": "IdRetaguardaPai",
+                                "SetValue": "IIf(oModel:GetValue('nivel') == '1',LjAuxPosic('COMPARTILHAMENTOS','nivel','0','IdProprietario'),'')"
+                            }
+                        ],
+                    "List": [
+                        " ",
+                        "0",
+                        "1",
+                        "2"
+                    ], 
+                    "Messages":
+                    [
+                       {
+                        "Id":"M1",
+                        "Message":"Compartilhamento de nível 0 já existente."
+                       },
+                       {"Id":"M2",
+                       "Message":"Compartilhamento de nível 0 não existe."
+                       }     
+                    ]
+                },
+                "ComponentLabel": "Nível"
+            },
+            "ComponentContent": ""
+        },
+        {
+            "ContentType": "String",
+            "IdComponent": "IdRetaguardaPai",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "List": null,
+                    "Size": 6,
+                    "F3": "{|| LjCadAuxF3('MIH', \"AllTrim(MIH->MIH_TIPCAD) == 'COMPARTILHAMENTOS' .And. MIH->MIH_ATIVO == '1'\", '1')}",
+                    "Required": false,
+                    "Picture": "999999",
+                    "Valid": "IIf(oModel:GetValue('nivel') == '2',LjAuxMsg(LjAuxPosic('COMPARTILHAMENTOS','IdProprietario',xValor,'nivel') != '0','IdRetaguardaPai','M1'),.T.)",
+                    "CanChange": "IIf(oModel:GetValue('nivel') == '2',.T.,.F.)",
+                    "Trigger": 
+                        [
+                            {
+                            "TargetIdField": "CodigoLoja",
+                            "SetValue": "IIf(oModel:GetValue('nivel') == '1','',oModel:GetValue('CodigoLoja'))"
+                            }
+                        ],
+                    "Messages":
+                    [
+                       {
+                        "Id":"M1",
+                        "Message":"Não é permitido IdRetaguardaPai de nível 0 quando cadastro for de nível 2"
+                       }
+                    ]                            
+                },
+                "ComponentLabel": "Id Retaguarda Pai"
+            },
+            "ComponentContent": ""
+        },
+        {
+            "ContentType": "String",
+            "IdComponent": "CodigoLoja",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "List": null,
+                    "Size": 6,
+                    "F3": "{|| LjCadAuxF3('MIH', \"AllTrim(MIH->MIH_TIPCAD) == 'CADASTRO DE LOJA' .And. MIH->MIH_ATIVO == '1'\", '1')}",
+                    "Required": false,
+                    "Picture": null,
+                    "Valid": null,
+                    "CanChange": "IIf(oModel:GetValue('nivel') == '2',.T.,.F.)",
+                    "Trigger": null
+                },
+                "ComponentLabel": "Codigo da Loja"
+            },
+            "ComponentContent": ""
+        }
+    ],
+    "LayoutVersion": 1.0
+}
