@@ -86,7 +86,7 @@
 				"Parameters": {
 					"Order": "03",
 					"List": null,
-					"Size": 10,
+					"Size": 25,
 					"F3": "",
 					"Trigger": null,
 					"Required": true,
