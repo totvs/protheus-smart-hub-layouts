@@ -1,61 +1,61 @@
 {
-    "Components": [
-        {
-            "ContentType": "String",
-            "IdComponent": "servico",
-            "Component": {
-                "ComponentType": "COMBO",
-                "Parameters": {
-                    "Order": "01",
-                    "List": [
-                        "    ",
-                        "RMIBUSCA",
-                        "RMIENVIA",
-                        "RMIPUBLICA",
-                        "RMIDISTRIB",
-                        "RMICONTROL"
-                    ],
-                    "Size": 30,
-                    "F3": "",
-                    "Trigger": null,
-                    "Required": true,
-                    "Picture": "@!",
-                    "CanChange": true,
-                    "Valid": "Vazio(), LjAuxMsg( LjAuxValid('CONFIGURACAO', 'servico', xValor), 'servico', 'M1')",
-                    "Messages":[
-                        {
-                            "Id": "M1",
-                            "Message": "Ops! Já existe uma configuração para este serviço."
-                        }
-                    ],
-                    "IniPad": "    "
-                },
-                "ComponentLabel": "Serviço"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "ip",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "02",
-                    "List": null
-                    "Size": 15,
-                    "F3": "",
-                    "Trigger": null,
-                    "Required": true,
-                    "Picture": "@R 999.999.999.999",
-                    "CanChange": true,
-                    "Valid": "Vazio()",
-                    "Messages":null
-                    "IniPad": ""
-                },
-                "ComponentLabel": "Endereço IP"
-            },
-            "ComponentContent": ""
-        }
-    ],
-    "LayoutVersion": 1.2
+	"Components": [
+		{
+			"ContentType": "String",
+			"IdComponent": "servico",
+			"Component": {
+				"ComponentType": "COMBO",
+				"Parameters": {
+					"Order": "01",
+					"List": [
+						"    ",
+						"RMIBUSCA",
+						"RMIENVIA",
+						"RMIPUBLICA",
+						"RMIDISTRIB",
+						"RMICONTROL"
+					],
+					"Size": 30,
+					"F3": "",
+					"Trigger": null,
+					"Required": true,
+					"Picture": "@!",
+					"CanChange": true,
+					"Valid": "Vazio(), LjAuxMsg( LjAuxValid('CONFIGURACAO', 'servico', xValor), 'servico', 'M1')",
+					"Messages": [
+						{
+							"Id": "M1",
+							"Message": "Ops! Já existe uma configuração para este serviço."
+						}
+					],
+					"IniPad": "    "
+				},
+				"ComponentLabel": "Serviço"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "ip",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "02",
+					"List": null,
+					"Size": 15,
+					"F3": "",
+					"Trigger": null,
+					"Required": true,
+					"Picture": "@R 999.999.999.999",
+					"CanChange": true,
+					"Valid": "Vazio()",
+					"Messages": null,
+					"IniPad": ""
+				},
+				"ComponentLabel": "Endereço IP"
+			},
+			"ComponentContent": ""
+		}
+	],
+	"LayoutVersion": 1.2
 }
