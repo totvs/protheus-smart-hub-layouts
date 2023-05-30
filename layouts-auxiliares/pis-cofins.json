@@ -1,0 +1,89 @@
+{
+    "Components": [                
+        {
+            "ContentType": "String",
+            "IdComponent": "LF_CSTPIS",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "Order": "01",
+                    "List": null,
+                    "Size": 2,
+                    "F3": null,
+                    "Required": false,
+                    "Picture": "@E 99",
+                    "Valid": null,
+                    "IniPad": null,
+                    "CanChange": false,
+                    "Trigger": null
+                },
+                "ComponentLabel": "Sit. Trib. PIS"
+            },
+            "ComponentContent": ""
+        },
+        {
+            "ContentType": "Number",
+            "IdComponent": "IT_ALIQPIS",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "Order": "02",
+                    "List": null,
+                    "Size": 2,
+                    "F3": null,
+                    "Required": false,
+                    "Picture": "@E 99.99",
+                    "Valid": null,
+                    "IniPad": null,
+                    "CanChange": false,
+                    "Trigger": null
+                },
+                "ComponentLabel": "Alíquota PIS"
+            },
+            "ComponentContent": 0
+        }, 
+        {
+            "ContentType": "String",
+            "IdComponent": "LF_CSTCOF",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "Order": "03",
+                    "List": null,
+                    "Size": 2,
+                    "F3": null,
+                    "Required": false,
+                    "Picture": "@E 99",
+                    "Valid": null,
+                    "IniPad": null,
+                    "CanChange": false,
+                    "Trigger": null
+                },
+                "ComponentLabel": "Sit. Trib. COFINS"
+            },
+            "ComponentContent": ""
+        },
+        {
+            "ContentType": "Number",
+            "IdComponent": "IT_ALIQCOF",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "Order": "04",
+                    "List": null,
+                    "Size": 2,
+                    "F3": null,
+                    "Required": false,
+                    "Picture": "@E 99.99",
+                    "Valid": null,
+                    "IniPad": null,
+                    "CanChange": false,
+                    "Trigger": null
+                },
+                "ComponentLabel": "Alíquota COFINS"
+            },
+            "ComponentContent": ""
+        }                 
+    ],
+    "LayoutVersion": 1.0
+}
