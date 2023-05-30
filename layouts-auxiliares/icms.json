@@ -1,0 +1,114 @@
+{
+    "Components": [                
+        {
+            "ContentType": "Number",
+            "IdComponent": "IT_ALIQICM",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "Order": "01",
+                    "List": null,
+                    "Size": 4,
+                    "F3": null,
+                    "Required": false,
+                    "Picture": "@E 99.99",
+                    "Valid": null,
+                    "IniPad": null,
+                    "CanChange": false,
+                    "Trigger": null
+                },
+                "ComponentLabel": "Alíquota Tributo"
+            },
+            "ComponentContent": 0
+        },
+  {
+            "ContentType": "String",
+            "IdComponent": "Tipo",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "Order": "02",
+                    "List": [
+                        "",
+                        "0=ICMS",
+                        "1=ISS"
+                    ],
+                    "Size": 20,
+                    "F3": null,
+                    "Required": false,
+                    "Picture": "@!",
+                    "Valid": null,
+                    "IniPad": null,
+                    "CanChange": false,
+                    "Trigger": null
+                },
+                "ComponentLabel": "Tipo"
+            },
+            "ComponentContent": "0"
+        },
+        {
+            "ContentType": "String",
+            "IdComponent": "Modalidade",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "Order": "03",
+                    "List": null,
+                    "Size": 30,
+                    "F3": null,
+                    "Required": false,
+                    "Picture": "@!",
+                    "Valid": null,
+                    "IniPad": null,
+                    "CanChange": false,
+                    "Trigger": null
+                },
+                "ComponentLabel": "Modalidade"
+            },
+            "ComponentContent": ""
+        }, 
+        {
+            "ContentType": "Number",
+            "IdComponent": "IT_PREDIC",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "Order": "04",
+                    "List": null,
+                    "Size": 4,
+                    "F3": null,
+                    "Required": false,
+                    "Picture": "@E 99.99",
+                    "Valid": null,
+                    "IniPad": null,
+                    "CanChange": false,
+                    "Trigger": null
+                },
+                "ComponentLabel": "Redução Base de Calculo"
+            },
+            "ComponentContent": ""
+        },
+  {
+            "ContentType": "String",
+            "IdComponent": "Simbolo",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "Order": "05",
+                    "List": null,
+                    "Size": 8,
+                    "F3": null,
+                    "Required": false,
+                    "Picture": null,
+                    "Valid": null,
+                    "IniPad": null,
+                    "CanChange": false,
+                    "Trigger": null
+                },
+                "ComponentLabel": "Simbolo"
+            },
+            "ComponentContent": ""
+        }               
+    ],
+    "LayoutVersion": 1.0
+}
