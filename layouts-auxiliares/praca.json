@@ -1,0 +1,31 @@
+{
+    "Components": [
+        {
+            "ContentType": "String",
+            "IdComponent": "DescPraca",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "List": null,
+                    "Size": "TAMSX3('MIH_DESC')[1]",
+                    "F3": null,
+                    "Required": false,
+                    "Picture": null,
+                    "Valid": null,
+                    "CanChange": false,
+                    "Trigger": 
+                        [
+                            {
+                                "FieldTrigger": "MIH_DESC",
+                                "TargetIdField": "MIH_DESC",
+                                "SetValue": "oModel := FWModelActive(),oModel:LoadValue('MIHDETAIL', 'DescPraca', Alltrim(M->MIH_DESC))"
+                            }
+                        ]
+                },
+                "ComponentLabel": "Nome da Praça"
+            },
+            "ComponentContent": ""
+        }
+    ],
+    "LayoutVersion": 1.0
+}
