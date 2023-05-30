@@ -1,0 +1,123 @@
+{
+    "Components": [
+        {
+            "ContentType": "String",
+            "IdComponent": "descricao",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "Order": "01",
+                    "List": null,
+                    "Size": 30,
+                    "Trigger": null,
+                    "F3": null,
+                    "Required": true,
+                    "Picture": null,
+                    "CanChange": true,
+                    "Valid": null,
+                    "IniPad": null
+                },
+                "ComponentLabel": "Descrição"
+            },
+            "ComponentContent": ""
+        },
+        {
+            "ContentType": "String",
+            "IdComponent": "tipo",
+            "Component": {
+                "ComponentType": "COMBO",
+                "Parameters": {
+                    "Order": "02",                            
+                    "Size": 1,
+                    "F3": null,
+                    "Required": true,
+                    "Picture": null,
+                    "Valid": null,
+                    "CanChange": true,
+                    "Trigger": null,
+                    "List": [
+                        "",
+                        "0=Alfanumerico",
+                        "1=Numerico",
+                        "2=Data",
+                        "3=ListaSelecao"
+                    ]
+                },
+                "ComponentLabel": "Tipo"
+            },
+            "ComponentContent": ""
+        },
+        {
+            "ContentType": "Number",
+            "IdComponent": "tamanho",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "Order": "03",                            
+                    "Size": 5,
+                    "F3": null,
+                    "Required": true,
+                    "Picture": "@E 99999",
+                    "Valid": null,
+                    "CanChange": true,
+                    "Trigger": null,
+                    "List": null
+                },
+                "ComponentLabel": "Tamanho"
+            },
+            "ComponentContent": ""
+        },                
+        {
+            "ContentType": "String",
+            "IdComponent": "obrigatorio",
+            "Component": {
+                "ComponentType": "COMBO",
+                "Parameters": {
+                    "Order": "04",                            
+                    "Size": 1,
+                    "F3": null,
+                    "Required": true,
+                    "Picture": null,
+                    "Valid": null,
+                    "CanChange": true,
+                    "Trigger": null,
+                    "List": [
+                        "",
+                        "0=Sim",
+                        "1=Não"
+                    ]
+                },
+                "ComponentLabel": "Obrigatorio"
+            },
+            "ComponentContent": ""
+        },
+        {
+            "ContentType": "String",
+            "IdComponent": "campoProtheus",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "Order": "05",
+                    "List": null,
+                    "Size": 10,
+                    "F3": "SX3SL4",
+                    "Trigger": null,
+                    "Required": true,
+                    "Picture": "@!",
+                    "CanChange": true,
+                    "Valid": "LjAuxMsg( SL4->( ColumnPos(xValor) ) > 0, 'campoProtheus', 'M1')",
+                    "Messages": [
+                        {
+                            "Id": "M1",
+                            "Message": "Ops! Campo inválido, apenas são permitidos campos que existem na tabela SL4."
+                        }
+                    ],
+                    "IniPad": null
+                },
+                "ComponentLabel": "Campo para Gravação"
+            },
+            "ComponentContent": ""
+        }
+    ],
+    "LayoutVersion": 2.0
+}
