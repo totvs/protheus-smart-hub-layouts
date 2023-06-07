@@ -56,7 +56,7 @@
 			},
 			"ComponentContent": ""
 		},
-		{	
+		{
 			"ContentType": "String",
 			"IdComponent": "porta",
 			"Component": {
@@ -78,7 +78,7 @@
 			},
 			"ComponentContent": ""
 		},
-		{	
+		{
 			"ContentType": "String",
 			"IdComponent": "ambiente",
 			"Component": {
@@ -101,5 +101,19 @@
 			"ComponentContent": ""
 		}
 	],
-	"LayoutVersion": 1.4
+	"Index": [
+		[
+			"servico"
+		],
+		[
+			"ip"
+		],
+		[
+			"porta"
+		],
+		[
+			"ambiente"
+		]
+	],
+	"LayoutVersion": 1.5
 }
