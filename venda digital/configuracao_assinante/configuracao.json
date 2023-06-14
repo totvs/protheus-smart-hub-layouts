@@ -3,6 +3,6 @@
 	"senha": "",
 	"token": "",
 	"url_Confirma": "https://nis.ninegrid.com.br/api/protheus/status",	
-	"url_token": "https://nis.ninegrid.com.br/api/protheus/token/erro",
+	"url_token": "https://nis.ninegrid.com.br/api/protheus/token",
 	"configPSH": { "Version": "1.0" }
 }
