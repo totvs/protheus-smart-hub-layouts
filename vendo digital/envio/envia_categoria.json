@@ -1,0 +1,10 @@
+{
+    "parent": "&AllTrim(Self:oPublica['ACU_CODPAI'])",
+    "code": "&AllTrim(Self:oPublica['ACU_COD'])",
+    "name": "%ACU_DESC%",
+    "shortname": "%ACU_DESC%",
+    "order": "%ACU_SEQ%",
+    "img": "",
+    "status": "&IIF(self:oPublica['ACU_MSBLQL'] == '2' .and. self:cEvento == '1', .T., .F.)",
+    "token": "&Self:cToken"
+}
