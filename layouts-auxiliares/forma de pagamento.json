@@ -71,7 +71,7 @@
                     "Picture": null,
                     "Valid": null,
                     "CanChange": true,
-                    "help":["teste","teste"]
+                    "help":["teste","teste"],
                     "Trigger": null
                 },
                 "ComponentLabel": "Descrição Fiscal"
