@@ -13,6 +13,7 @@
                     "Required": true,
                     "Picture": null,
                     "Valid": "ExistCpo('SX5', '24' + xValor)",
+                    "help":["Codigo da forma de pagamento (Seleção da SX5 tabela 24)"],
                     "CanChange": true,
                     "Trigger": [
                         {
@@ -40,6 +41,7 @@
                     "Size": 40,
                     "F3": null,
                     "Required": true,
+                    "help": ["Descrição da forma de pagamento."],
                     "Picture": "@!",
                     "Valid": "LjAuxMsg( LjAuxValid('FORMA DE PAGAMENTO', 'descricao', xValor), 'descricao', 'M1')",
                     "Messages": [
