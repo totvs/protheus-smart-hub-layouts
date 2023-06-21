@@ -45,13 +45,13 @@
 					"Messages": [
 						{
 							"Id": "M1",
-							"Message": "Ops! Já existe uma forma de pagamento com a mesma descrição."
+							"Message": "Ops! JÃ¡ existe uma forma de pagamento com a mesma descriÃ§Ã£o."
 						}
 					],
 					"CanChange": true,
 					"Trigger": null
 				},
-				"ComponentLabel": "Descrição"
+				"ComponentLabel": "DescriÃ§Ã£o"
 			},
 			"ComponentContent": ""
 		},
@@ -71,7 +71,7 @@
 					"CanChange": true,
 					"Trigger": null
 				},
-				"ComponentLabel": "Descrição Fiscal"
+				"ComponentLabel": "DescriÃ§Ã£o Fiscal"
 			},
 			"ComponentContent": ""
 		},
@@ -184,7 +184,7 @@
 					"Order": "08",
 					"List": null,
 					"Size": 40,
-					"F3": "{|| LjCadAuxF3('LJF3MU', '', '1', {'AE_COD', 'AE_DESC', 'Condições de Pagamento'})}",
+					"F3": "{|| LjCadAuxF3('LJF3MU', '', '1', {'AE_COD', 'AE_DESC', 'CondiÃ§Ãµes de Pagamento'})}",
 					"Trigger": null,
 					"Required": false,
 					"Picture": "@S20!",
@@ -193,12 +193,12 @@
 					"Messages": [
 						{
 							"Id": "M1",
-							"Message": "Ops! Condições de Pagamento fora do padrão esperado."
+							"Message": "Ops! CondiÃ§Ãµes de Pagamento fora do padrÃ£o esperado."
 						}
 					],
 					"IniPad": null
 				},
-				"ComponentLabel": "Condições de Pagamento"
+				"ComponentLabel": "CondiÃ§Ãµes de Pagamento"
 			},
 			"ComponentContent": ""
 		},
@@ -241,7 +241,7 @@
 					"Messages": [
 						{
 							"Id": "M1",
-							"Message": "Ops! Campos Complementares fora do padrão esperado."
+							"Message": "Ops! Campos Complementares fora do padrÃ£o esperado."
 						}
 					],
 					"IniPad": null
@@ -338,14 +338,14 @@
 					"visible": true,
 					"List": [
 						"",
-						"0=Não",
+						"0=NÃ£o",
 						"1=Sim"
 					]
 				},
-				"ComponentLabel": "Consulta Crédito"
+				"ComponentLabel": "Consulta CrÃ©dito"
 			},
 			"ComponentContent": ""
 		}
 	],
-	"LayoutVersion": 4.1
+	"LayoutVersion": 4.3
 }
