@@ -1,324 +1,351 @@
 {
-    "Components": [
-        {
-            "ContentType": "String",
-            "IdComponent": "forma",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "01",
-                    "List": null,
-                    "Size": 3,
-                    "F3": "24",
-                    "Required": true,
-                    "Picture": null,
-                    "Valid": "ExistCpo('SX5', '24' + xValor)",
-                    "help":["Codigo da forma de pagamento (SeleÃ§Ã£o da SX5 tabela 24)","aaaaaaaaaaaaaaaaaaaaaaaa"],
-                    "CanChange": true,
-                    "Trigger": [
-                        {
-                            "TargetIdField": "codigoFiscal",
-                            "SetValue": "AllTrim( Posicione('MHW', 2, xFilial('MHW') + oModel:GetValue('forma'), 'MHW_CDNFCE') )"
-                        },
-                        {
-                            "TargetIdField": "idModelo",
-                            "SetValue": "AllTrim( Posicione('MHW', 2, xFilial('MHW') + oModel:GetValue('forma'), 'MHW_CODIGO') )"
-                        }
-                    ]
-                },
-                "ComponentLabel": "Forma"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "descricao",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "02",
-                    "List": null,
-                    "Size": 40,
-                    "F3": null,
-                    "Required": true,
-                    "help": ["DescriÃ§Ã£o da forma de pagamento.","aaaaaaaaaaaaaaaaaaaaaaa testestes"],
-                    "Picture": "@!",
-                    "Valid": "LjAuxMsg( LjAuxValid('FORMA DE PAGAMENTO', 'descricao', xValor), 'descricao', 'M1')",
-                    "Messages": [
-                        {
-                            "Id": "M1",
-                            "Message": "Ops! JÃ¡ existe uma forma de pagamento com a mesma descriÃ§Ã£o."
-                        }
-                    ],
-                    "CanChange": true,
-                    "Trigger": null
-                },
-                "ComponentLabel": "DescriÃ§Ã£o"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "descricaofiscal",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "03",
-                    "List": null,
-                    "Size": 20,
-                    "F3": null,
-                    "Required": true,
-                    "Picture": null,
-                    "Valid": null,
-                    "CanChange": true,
-                    "help":["teste","teste"],
-                    "Trigger": null
-                },
-                "ComponentLabel": "DescriÃ§Ã£o Fiscal"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "Logical",
-            "IdComponent": "permitetroco",
-            "Component": {
-                "ComponentType": "CheckBox",
-                "Parameters": {
-                    "Order": "04",
-                    "List": null,
-                    "Size": 1,
-                    "F3": null,
-                    "Required": null,
-                    "Picture": null,
-                    "Valid": null,
-                    "CanChange": true,
-                    "Trigger": null
-                },
-                "ComponentLabel": "Permite Troco"
-            },
-            "ComponentContent": false
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "idFormaPagamentoTroco",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "05",
-                    "List": null,
-                    "Size": 30,
-                    "F3": "{|| LjCadAuxF3('MIH', \"AllTrim(MIH->MIH_TIPCAD) == 'FORMA DE PAGAMENTO' .And. MIH->MIH_ATIVO == '1'\", '1')}",
-                    "Required": false,
-                    "Picture": "@!",
-                    "Valid": "Vazio() .Or. ExistCpo('MIH', PadR('FORMA DE PAGAMENTO', TamSx3('MIH_TIPCAD')[1]) + xValor, 1)",
-                    "CanChange": true,
-                    "Trigger": null
-                },
-                "ComponentLabel": "Forma Pagamento Troco"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "Number",
-            "IdComponent": "valorminimoaceito",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "06",
-                    "List": null,
-                    "Size": 16,
-                    "F3": null,
-                    "Required": true,
-                    "Picture": "@E 9,999,999,999,999.99",
-                    "Valid": null,
-                    "CanChange": true,
-                    "Trigger": null
-                },
-                "ComponentLabel": "Valor Minimo Aceito"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "tipo",
-            "Component": {
-                "ComponentType": "COMBO",
-                "Parameters": {
-                    "Order": "07",
-                    "Size": 2,
-                    "F3": null,
-                    "Required": true,
-                    "Picture": null,
-                    "Valid": null,
-                    "CanChange": true,
-                    "Trigger": null,
-                    "List": [
-                        "",
-                        "0=OUTROS",
-                        "1=DINHEIRO",
-                        "2=CREDITO",
-                        "3=DEBITO",
-                        "4=CHEQUE",
-                        "5=POS",
-                        "6=TROCA",
-                        "8=GIFT",
-                        "10=QRCODE"
-                    ]
-                },
-                "ComponentLabel": "Tipo Forma Pagamento"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "condicaoPagamento",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "08",
-                    "List": null,
-                    "Size": 40,
-                    "F3": "{|| LjCadAuxF3('LJF3MU', '', '1', {'AE_COD', 'AE_DESC', 'CondiÃ§Ãµes de Pagamento'})}",
-                    "Trigger": null,
-                    "Required": false,
-                    "Picture": "@S20!",
-                    "CanChange": true,
-                    "Valid": "Vazio() .Or. LjAuxMsg( At(';', xValor) > 0, 'condicaoPagamento', 'M1')",
-                    "Messages": [
-                        {
-                            "Id": "M1",
-                            "Message": "Ops! CondiÃ§Ãµes de Pagamento fora do padrÃ£o esperado."
-                        }
-                    ],
-                    "IniPad": null
-                },
-                "ComponentLabel": "CondiÃ§Ãµes de Pagamento"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "camposComplementares",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "09",
-                    "List": null,
-                    "Size": 70,
-                    "F3": "{|| LjCadAuxF3('LJF3MU', \"MIH_TIPCAD = 'COMPLEM PAGAMENTO'\", '1', {'MIH_ID', 'MIH_DESC', 'Campos Complementares'})}",
-                    "Trigger": null,
-                    "Required": false,
-                    "Picture": "@S30!",
-                    "CanChange": true,
-                    "Valid": "Vazio() .Or. LjAuxMsg( At(';', xValor) > 0, 'camposComplementares', 'M1')",
-                    "Messages": [
-                        {
-                            "Id": "M1",
-                            "Message": "Ops! Campos Complementares fora do padrÃ£o esperado."
-                        }
-                    ],
-                    "IniPad": null
-                },
-                "ComponentLabel": "Campos Complementares"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "modeloFiscal",
-            "Component": {
-                "ComponentType": "COMBO",
-                "Parameters": {
-                    "Order": "10",
-                    "Size": 16,
-                    "F3": null,
-                    "Required": true,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": null,
-                    "CanChange": true,
-                    "Trigger": null,
-                    "List": [
-                        "",
-                        "Nao Configurado",
-                        "SAT",
-                        "NFCe",
-                        "MFE"
-                    ]
-                },
-                "ComponentLabel": "Modelo Fiscal"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "codigoFiscal",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "11",
-                    "Size": 16,
-                    "F3": null,
-                    "Required": false,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": null,
-                    "CanChange": false,
-                    "Trigger": null,
-                    "List": null
-                },
-                "ComponentLabel": "Codigo Fiscal"
-            },
-            "ComponentContent": ""
-        }, 
-        {
-            "ContentType": "String",
-            "IdComponent": "idModelo",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "12",
-                    "Size": 16,
-                    "F3": null,
-                    "Required": false,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": null,
-                    "CanChange": false,
-                    "Trigger": null,
-                    "List": null,
-                    "visible": true
-                },
-                "ComponentLabel": "Codigo MHW"
-            },
-            "ComponentContent": ""
-        }, 
-        {
-            "ContentType": "String",
-            "IdComponent": "consultaCredito",
-            "Component": {
-                "ComponentType": "COMBO",
-                "Parameters": {
-                    "Order": "13",
-                    "Size": 1,
-                    "F3": null,
-                    "Required": true,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": null,
-                    "CanChange": true,
-                    "Trigger": null,
-                    "visible": true,
-                    "List": [
-                        "",
-                        "0=NÃ£o",
-                        "1=Sim"
-                    ]
-                },
-                "ComponentLabel": "Consulta CrÃ©dito"
-            },
-            "ComponentContent": ""
-        }
-    ],
-    "LayoutVersion": 4.1
+	"Components": [
+		{
+			"ContentType": "String",
+			"IdComponent": "forma",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "01",
+					"List": null,
+					"Size": 3,
+					"F3": "24",
+					"Required": true,
+					"Picture": null,
+					"Valid": "ExistCpo('SX5', '24' + xValor)",
+					"CanChange": true,
+					"Trigger": [
+						{
+							"TargetIdField": "codigoFiscal",
+							"SetValue": "AllTrim( Posicione('MHW', 2, xFilial('MHW') + oModel:GetValue('forma'), 'MHW_CDNFCE') )"
+						},
+						{
+							"TargetIdField": "idModelo",
+							"SetValue": "AllTrim( Posicione('MHW', 2, xFilial('MHW') + oModel:GetValue('forma'), 'MHW_CODIGO') )"
+						}
+					]
+				},
+				"ComponentLabel": "Forma"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "descricao",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "02",
+					"List": null,
+					"Size": 40,
+					"F3": null,
+					"Required": true,
+					"Picture": "@!",
+					"Valid": "LjAuxMsg( LjAuxValid('FORMA DE PAGAMENTO', 'descricao', xValor), 'descricao', 'M1')",
+					"Messages": [
+						{
+							"Id": "M1",
+							"Message": "Ops! Já existe uma forma de pagamento com a mesma descrição."
+						}
+					],
+					"CanChange": true,
+					"Trigger": null
+				},
+				"ComponentLabel": "Descrição"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "descricaofiscal",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "03",
+					"List": null,
+					"Size": 20,
+					"F3": null,
+					"Required": true,
+					"Picture": null,
+					"Valid": null,
+					"CanChange": true,
+					"Trigger": null
+				},
+				"ComponentLabel": "Descrição Fiscal"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "Logical",
+			"IdComponent": "permitetroco",
+			"Component": {
+				"ComponentType": "CheckBox",
+				"Parameters": {
+					"Order": "04",
+					"List": null,
+					"Size": 1,
+					"F3": null,
+					"Required": null,
+					"Picture": null,
+					"Valid": null,
+					"CanChange": true,
+					"Trigger": null
+				},
+				"ComponentLabel": "Permite Troco"
+			},
+			"ComponentContent": false
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "idFormaPagamentoTroco",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "05",
+					"List": null,
+					"Size": 30,
+					"F3": "{|| LjCadAuxF3('MIH', \"AllTrim(MIH->MIH_TIPCAD) == 'FORMA DE PAGAMENTO' .And. MIH->MIH_ATIVO == '1'\", '1')}",
+					"Required": false,
+					"Picture": "@!",
+					"Valid": "Vazio() .Or. ExistCpo('MIH', PadR('FORMA DE PAGAMENTO', TamSx3('MIH_TIPCAD')[1]) + xValor, 1)",
+					"CanChange": true,
+					"Trigger": null
+				},
+				"ComponentLabel": "Forma Pagamento Troco"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "Number",
+			"IdComponent": "valorminimoaceito",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "06",
+					"List": null,
+					"Size": 16,
+					"F3": null,
+					"Required": true,
+					"Picture": "@E 9,999,999,999,999.99",
+					"Valid": null,
+					"CanChange": true,
+					"Trigger": null
+				},
+				"ComponentLabel": "Valor Minimo Aceito"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "tipo",
+			"Component": {
+				"ComponentType": "COMBO",
+				"Parameters": {
+					"Order": "07",
+					"Size": 2,
+					"F3": null,
+					"Required": true,
+					"Picture": null,
+					"Valid": null,
+					"CanChange": true,
+					"Trigger": [
+						{
+							"TargetIdField": "condicaoPagamento",
+							"SetValue": "IIf(oModel:GetValue('tipo') == '10','',oModel:GetValue('condicaoPagamento'))"
+						},
+						{
+							"TargetIdField": "operadora",
+							"SetValue": ""
+						}
+					],
+					"List": [
+						"",
+						"0=OUTROS",
+						"1=DINHEIRO",
+						"2=CREDITO",
+						"3=DEBITO",
+						"4=CHEQUE",
+						"5=POS",
+						"6=TROCA",
+						"8=GIFT",
+						"10=QRCODE"
+					]
+				},
+				"ComponentLabel": "Tipo Forma Pagamento"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "condicaoPagamento",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "08",
+					"List": null,
+					"Size": 40,
+					"F3": "{|| LjCadAuxF3('LJF3MU', '', '1', {'AE_COD', 'AE_DESC', 'Condições de Pagamento'})}",
+					"Trigger": null,
+					"Required": false,
+					"Picture": "@S20!",
+					"CanChange": "IIf(oModel:GetValue('tipo') <> '10',.T.,.F.)",
+					"Valid": "Vazio() .Or. LjAuxMsg( At(';', xValor) > 0, 'condicaoPagamento', 'M1')",
+					"Messages": [
+						{
+							"Id": "M1",
+							"Message": "Ops! Condições de Pagamento fora do padrão esperado."
+						}
+					],
+					"IniPad": null
+				},
+				"ComponentLabel": "Condições de Pagamento"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "operadora",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "09",
+					"List": null,
+					"Size": "TamSx3('AE_COD')[1]",
+					"F3": "{|| LjCadAuxF3('SAE','', '1',{'AE_COD', 'AE_DESC', 'Operadora'})}",
+					"Trigger": null,
+					"Required": false,
+					"Picture": "@S20!",
+					"CanChange": "IIf(oModel:GetValue('tipo') == '10',.T.,.F.)",
+					"Valid": "ExistCpolc('SAE',AllTrim(xValor))",
+					"IniPad": null
+				},
+				"ComponentLabel": "Operadora"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "camposComplementares",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "10",
+					"List": null,
+					"Size": 70,
+					"F3": "{|| LjCadAuxF3('LJF3MU', \"MIH_TIPCAD = 'COMPLEM PAGAMENTO'\", '1', {'MIH_ID', 'MIH_DESC', 'Campos Complementares'})}",
+					"Trigger": null,
+					"Required": false,
+					"Picture": "@S30!",
+					"CanChange": true,
+					"Valid": "Vazio() .Or. LjAuxMsg( At(';', xValor) > 0, 'camposComplementares', 'M1')",
+					"Messages": [
+						{
+							"Id": "M1",
+							"Message": "Ops! Campos Complementares fora do padrão esperado."
+						}
+					],
+					"IniPad": null
+				},
+				"ComponentLabel": "Campos Complementares"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "modeloFiscal",
+			"Component": {
+				"ComponentType": "COMBO",
+				"Parameters": {
+					"Order": "11",
+					"Size": 16,
+					"F3": null,
+					"Required": true,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": true,
+					"Trigger": null,
+					"List": [
+						"",
+						"Nao Configurado",
+						"SAT",
+						"NFCe",
+						"MFE"
+					]
+				},
+				"ComponentLabel": "Modelo Fiscal"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "codigoFiscal",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "12",
+					"Size": 16,
+					"F3": null,
+					"Required": false,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": false,
+					"Trigger": null,
+					"List": null
+				},
+				"ComponentLabel": "Codigo Fiscal"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "idModelo",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "13",
+					"Size": 16,
+					"F3": null,
+					"Required": false,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": false,
+					"Trigger": null,
+					"List": null,
+					"visible": false
+				},
+				"ComponentLabel": "Codigo MHW"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "consultaCredito",
+			"Component": {
+				"ComponentType": "COMBO",
+				"Parameters": {
+					"Order": "14",
+					"Size": 1,
+					"F3": null,
+					"Required": true,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": true,
+					"Trigger": null,
+					"visible": true,
+					"List": [
+						"",
+						"0=Não",
+						"1=Sim"
+					]
+				},
+				"ComponentLabel": "Consulta Crédito"
+			},
+			"ComponentContent": ""
+		}
+	],
+	"LayoutVersion": 4.1
 }

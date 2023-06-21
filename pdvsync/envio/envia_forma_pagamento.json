@@ -44,7 +44,15 @@
 			"situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 1, 0)"
 		}
 	],
+	"formasPagtoOperadoras": [
+		{
+			"idRetaguarda": "&AllTrim( xFilial('SAE') + Self:oPublica['operadora'])",
+			"idRetaguardaFormaPagto": "&self:oPublica['MIH_ID']",
+			"idRetaguardaOperadoraPagto": "&AllTrim( xFilial('SAE') + Self:oPublica['operadora'])",
+			"situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 1, 0)"
+		}
+	],
 	"configPSH": {
-		"Version": "2.0"
+		"Version": "2.1"
 	}
 }
