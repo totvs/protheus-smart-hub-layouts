@@ -347,7 +347,7 @@
       "ComponentContent": ""
     }
   ],
-  "LayoutVersion": 4.4,
+  "LayoutVersion": 4.5,
   "PosValid": {
     "Condition": "LjAuxMsg(IIf(oModel:GetValue('MIHDETAIL','tipo') == '10',!Empty(oModel:GetValue('MIHDETAIL','operadora')),.T.), 'operadora', 'M1',2)",
     "Messages": [
