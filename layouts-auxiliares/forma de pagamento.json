@@ -353,7 +353,7 @@
     "Messages": [
       {
         "Id": "M1",
-        "Message": "Ops! Não será possivel prosseguir! Quando o campo o \"Tipo de Forma de Pagamento\" for igual a \"10 - QRCODE\", é obrigatorio o preenchimento do campo \"Operadora\"."
+        "Message": "Ops! Não será possivel prosseguir! Quando o campo \"Tipo de Forma de Pagamento\" for igual a \"10 - QRCODE\", é obrigatorio o preenchimento do campo \"Operadora\"."
       }
     ]
   }
