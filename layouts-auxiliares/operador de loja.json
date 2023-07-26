@@ -179,7 +179,7 @@
             "Component": {
                 "ComponentType": "GET",
                 "Parameters": {
-                    "Order": "09",
+                    "Order": "10",
                     "List": null,
                     "Size": 6,
                     "F3": "SA3",
@@ -198,7 +198,7 @@
             "Component": {
                 "ComponentType": "CHECKBOX",
                 "Parameters": {
-                    "Order": "10",
+                    "Order": "11",
                     "List": null,
                     "Size": 1,
                     "F3": null,
@@ -217,7 +217,7 @@
 			"Component": {
 				"ComponentType": "GET",
 				"Parameters": {
-					"Order": "11",
+					"Order": "09",
 					"List": null,
 					"Size": "FWSizeFilial()",
 					"F3": "SM0",
