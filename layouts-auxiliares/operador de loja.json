@@ -210,7 +210,28 @@
                 "ComponentLabel": "Número da Conta"
             },
             "ComponentContent": ""
-        }                                
+        },
+		{
+			"ContentType": "String",
+			"IdComponent": "IDFilialProtheus",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "09",
+					"List": null,
+					"Size": "FWSizeFilial()",
+					"F3": "SM0",
+					"Required": false,
+					"Picture": null,
+					"Valid": null,
+					"CanChange": true,
+					"Trigger": null,
+					"Messages": []
+				},
+				"ComponentLabel": "Filial"
+			},
+			"ComponentContent": ""
+		}		
     ],
-    "LayoutVersion": 2.3
+    "LayoutVersion": 2.4
 }
