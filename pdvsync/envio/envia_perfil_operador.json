@@ -8,11 +8,11 @@
     "idRetaguarda": "&self:oPublica['MIH_ID']",
     "dataAtualizacao": "&self:oPublica['MIH_DATALT']",
     "dataCadastro": "&self:oPublica['MIH_DATINC']",
-    "IdProprietario": "&LjRetComp( PadR( self:oPublica['IDFilialProtheus'], TamSx3('A3_FILIAL')[1] ),'CADASTRO DE LOJA')",
+    "idProprietario": "&LjRetComp()",
     "loteOrigem": "&Self:cLote",
     "lote": 0,
     "_expandables": [
         "string"
     ],
-	"configPSH": { "Version": "1.1" }
+	"configPSH": { "Version": "1.0" }
 }
