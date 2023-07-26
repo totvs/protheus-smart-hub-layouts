@@ -77,25 +77,6 @@
             "ComponentContent": ""
         },
         {
-            "ContentType": "Logical",
-            "IdComponent": "administrador",
-            "Component": {
-                "ComponentType": "CHECKBOX",
-                "Parameters": {
-                    "Order": "10",
-                    "List": null,
-                    "Size": 1,
-                    "F3": null,
-                    "Required": null,
-                    "Picture": null,
-                    "Valid": null,
-                    "CanChange": true
-                },
-                "ComponentLabel": "Administrador"
-            },
-            "ComponentContent": false
-        },
-        {
             "ContentType": "String",
             "IdComponent": "perfil",
             "Component": {
@@ -111,25 +92,6 @@
                     "CanChange": true
                 },
                 "ComponentLabel": "Id do Perfil"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "Vendedor",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "09",
-                    "List": null,
-                    "Size": 6,
-                    "F3": "SA3",
-                    "Required": false,
-                    "Picture": "@!",
-                    "Valid": "ExistCpo('SA3',xValor)",
-                    "CanChange": true
-                },
-                "ComponentLabel": "Codigo de Vendedor"
             },
             "ComponentContent": ""
         },
@@ -212,12 +174,50 @@
             "ComponentContent": ""
         },
 		{
+            "ContentType": "String",
+            "IdComponent": "Vendedor",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "Order": "09",
+                    "List": null,
+                    "Size": 6,
+                    "F3": "SA3",
+                    "Required": false,
+                    "Picture": "@!",
+                    "Valid": "ExistCpo('SA3',xValor)",
+                    "CanChange": true
+                },
+                "ComponentLabel": "Codigo de Vendedor"
+            },
+            "ComponentContent": ""
+        },
+		{
+            "ContentType": "Logical",
+            "IdComponent": "administrador",
+            "Component": {
+                "ComponentType": "CHECKBOX",
+                "Parameters": {
+                    "Order": "10",
+                    "List": null,
+                    "Size": 1,
+                    "F3": null,
+                    "Required": null,
+                    "Picture": null,
+                    "Valid": null,
+                    "CanChange": true
+                },
+                "ComponentLabel": "Administrador"
+            },
+            "ComponentContent": false
+        },
+		{
 			"ContentType": "String",
 			"IdComponent": "IDFilialProtheus",
 			"Component": {
 				"ComponentType": "GET",
 				"Parameters": {
-					"Order": "09",
+					"Order": "11",
 					"List": null,
 					"Size": "FWSizeFilial()",
 					"F3": "SM0",
@@ -233,5 +233,5 @@
 			"ComponentContent": ""
 		}		
     ],
-    "LayoutVersion": 2.4
+    "LayoutVersion": 2.5
 }
