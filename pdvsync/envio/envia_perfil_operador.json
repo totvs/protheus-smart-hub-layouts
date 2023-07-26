@@ -9,6 +9,7 @@
     "dataAtualizacao": "&self:oPublica['MIH_DATALT']",
     "dataCadastro": "&self:oPublica['MIH_DATINC']",
     "idProprietario": "&LjRetComp()",
+    "IdProprietario": "&LjRetComp( PadR( self:oPublica['IDFilialProtheus'], TamSx3('A3_FILIAL')[1] ),'CADASTRO DE LOJA')",		
     "loteOrigem": "&Self:cLote",
     "lote": 0,
     "_expandables": [
