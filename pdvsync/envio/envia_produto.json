@@ -76,5 +76,5 @@
     "_expandables": [
         "string"
     ],
-	"configPSH": { "Version": "1.0" }
+	"configPSH": { "Version": "1.1" }
 }
