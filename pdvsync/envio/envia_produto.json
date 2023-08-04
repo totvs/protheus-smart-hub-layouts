@@ -17,6 +17,8 @@
     "aliquotaIcms": true,
     "vlicmsret": 1,
     "cest": "&self:oPublica['B1_CEST']",
+    "pesoliquido": "&self:oPublica['B1_PESO']",
+    "pesobruto": "&self:oPublica['B1_PESBRU']",
     "produtoKits": [
         {
             "TableNode": "MEV",
