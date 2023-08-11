@@ -3,7 +3,7 @@
     "nome": "&self:oPublica['nome']",
     "cpf": "&self:oPublica['cpf']",
     "login": "&self:oPublica['login']",
-    "senha": "&self:oPublica['senha']",
+    "senhaCriptografada": "&self:oPublica['senha']",
     "administrador": "&IIF(self:oPublica['administrador'] == .T., 1,0)",
     "situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 1, 0)",
     "sequencial": 0,
@@ -12,8 +12,8 @@
     "idRetaguarda": "&self:oPublica['MIH_ID']",
     "dataAtualizacao": "&self:oPublica['MIH_DATALT']",
     "dataCadastro": "&self:oPublica['MIH_DATINC']",
-    "idProprietario": "&LjRetComp()",
+    "IdProprietario": "&LjRetComp( PadR( self:oPublica['IDFilialProtheus'], TamSx3('A3_FILIAL')[1] ),'CADASTRO DE LOJA')",
     "loteOrigem": "&Self:cLote",
     "lote": "string",
-	"configPSH": { "Version": "1.0" }
+	"configPSH": { "Version": "1.2" }
 }

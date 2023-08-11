@@ -17,6 +17,8 @@
     "aliquotaIcms": true,
     "vlicmsret": 1,
     "cest": "&self:oPublica['B1_CEST']",
+    "pesoliquido": "&self:oPublica['B1_PESO']",
+    "pesobruto": "&self:oPublica['B1_PESBRU']",
     "produtoKits": [
         {
             "TableNode": "MEV",
@@ -74,5 +76,5 @@
     "_expandables": [
         "string"
     ],
-	"configPSH": { "Version": "1.0" }
+	"configPSH": { "Version": "1.1" }
 }
