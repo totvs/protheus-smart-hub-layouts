@@ -1,648 +1,662 @@
 {
-    "Components": [
-        {
-            "ContentType": "String",
-            "IdComponent": "CodigoMaster",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "01",
-                    "List": null,
-                    "Size": "Len(FwCodEmp())",
-                    "F3": null,
-                    "Required": true,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": "FwCodEmp()",
-                    "CanChange": false,
-                    "Trigger": null
-                },
-                "ComponentLabel": "Codigo Master"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "NomeMaster",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "02",
-                    "List": null,
-                    "Size": "Len(FwGrpName())",
-                    "F3": null,
-                    "Required": true,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": "FwGrpName()",
-                    "CanChange": false,
-                    "Trigger": null
-                },
-                "ComponentLabel": "Nome Master"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "IDFilialProtheus",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "03",
-                    "List": null,
-                    "Size": "FWSizeFilial()",
-                    "F3": "SM0",
-                    "Required": true,
-                    "Picture": null,
-                    "Valid": "FWFilExist(,xValor) .And. LjAuxMsg(LjAuxValid('CADASTRO DE LOJA','IDFilialProtheus',xValor),'IDFilialProtheus','M1')",
-                    "IniPad": null,
-                    "CanChange": true,
-                    "Trigger": [
-                        {
-                            "TargetIdField": "RazaoSocial",
-                            "SetValue": "Alltrim(SM0->M0_NOMECOM)"
-                        },
-                        {
-                            "TargetIdField": "NomeFantasia",
-                            "SetValue": "Alltrim(SM0->M0_NOME)"
-                        },
-                        {
-                            "TargetIdField": "CNPJ",
-                            "SetValue": "Alltrim(SM0->M0_CGC)"
-                        },
-                        {
-                            "TargetIdField": "InscricaoEstadual",
-                            "SetValue": "Alltrim(SM0->M0_INSC)"
-                        },
-                        {
-                            "TargetIdField": "InscricaoMunicipal",
-                            "SetValue": "Alltrim(SM0->M0_INSCM)"
-                        },
-                        {
-                            "TargetIdField": "Endereco",
-                            "SetValue": "Alltrim(SM0->M0_ENDENT)"
-                        },
-                        {
-                            "TargetIdField": "Complemento",
-                            "SetValue": "Alltrim(SM0->M0_COMPENT)"
-                        },
-                        {
-                            "TargetIdField": "Bairro",
-                            "SetValue": "Alltrim(SM0->M0_BAIRENT)"
-                        },
-                        {
-                            "TargetIdField": "Cidade",
-                            "SetValue": "Alltrim(SM0->M0_CIDENT)"
-                        },
-                        {
-                            "TargetIdField": "Estado",
-                            "SetValue": "Alltrim(SM0->M0_ESTENT)"
-                        },
-                        {
-                            "TargetIdField": "CodigoMunicipio",
-                            "SetValue": "Alltrim(SM0->M0_CODMUN)"
-                        },
-                        {
-                            "TargetIdField": "CEP",
-                            "SetValue": "Alltrim(SM0->M0_CEPENT)"
-                        },
-                        {
-                            "TargetIdField": "Telefone",
-                            "SetValue": "Alltrim(SM0->M0_TEL)"
-                        }
-                    ],
-                    "Messages": [
-                        {
-                            "Id": "M1",
-                            "Message": "Filial Protheus já cadastrada."
-                        }
-                    ]
-                },
-                "ComponentLabel": "Filial"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "RazaoSocial",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "04",
-                    "List": null,
-                    "Size": 20,
-                    "F3": "",
-                    "Required": true,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": null,
-                    "CanChange": false,
-                    "Trigger": null
-                },
-                "ComponentLabel": "Razao Social"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "NomeFantasia",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "05",
-                    "List": null,
-                    "Size": 20,
-                    "F3": "",
-                    "Required": true,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": null,
-                    "CanChange": false,
-                    "Trigger": null
-                },
-                "ComponentLabel": "Nome Fantasia"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "CNPJ",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "06",
-                    "List": null,
-                    "Size": 20,
-                    "F3": "",
-                    "Required": true,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": null,
-                    "CanChange": false,
-                    "Trigger": null
-                },
-                "ComponentLabel": "CNPJ Loja"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "InscricaoEstadual",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "07",
-                    "List": null,
-                    "Size": 14,
-                    "F3": "",
-                    "Required": false,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": null,
-                    "CanChange": true,
-                    "Trigger": null
-                },
-                "ComponentLabel": "Inscrição Estadual"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "InscricaoMunicipal",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "08",
-                    "List": null,
-                    "Size": 25,
-                    "F3": "",
-                    "Required": false,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": null,
-                    "CanChange": true,
-                    "Trigger": null
-                },
-                "ComponentLabel": "Inscrição Municipal"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "Endereco",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "09",
-                    "List": null,
-                    "Size": 60,
-                    "F3": "",
-                    "Required": false,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": null,
-                    "CanChange": true,
-                    "Trigger": null
-                },
-                "ComponentLabel": "Endereço"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "Complemento",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "10",
-                    "List": null,
-                    "Size": 25,
-                    "F3": "",
-                    "Required": false,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": null,
-                    "CanChange": true,
-                    "Trigger": null
-                },
-                "ComponentLabel": "Complemento"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "Bairro",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "11",
-                    "List": null,
-                    "Size": 35,
-                    "F3": "",
-                    "Required": false,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": null,
-                    "CanChange": true,
-                    "Trigger": null
-                },
-                "ComponentLabel": "Bairro"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "Cidade",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "12",
-                    "List": null,
-                    "Size": 35,
-                    "F3": "",
-                    "Required": false,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": null,
-                    "CanChange": true,
-                    "Trigger": null
-                },
-                "ComponentLabel": "Cidade"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "Estado",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "13",
-                    "List": null,
-                    "Size": 2,
-                    "F3": "",
-                    "Required": false,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": null,
-                    "CanChange": true,
-                    "Trigger": null
-                },
-                "ComponentLabel": "Estado"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "CodigoMunicipio",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "14",
-                    "List": null,
-                    "Size": 7,
-                    "F3": "",
-                    "Required": false,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": null,
-                    "CanChange": true,
-                    "Trigger": null
-                },
-                "ComponentLabel": "Codigo Municipio"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "CEP",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "15",
-                    "List": null,
-                    "Size": 8,
-                    "F3": "",
-                    "Required": false,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": null,
-                    "CanChange": true,
-                    "Trigger": null
-                },
-                "ComponentLabel": "CEP"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "Telefone",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "16",
-                    "List": null,
-                    "Size": 14,
-                    "F3": "",
-                    "Required": false,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": null,
-                    "CanChange": true,
-                    "Trigger": null
-                },
-                "ComponentLabel": "Telefone"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "CodigoIdentificacaoLoja",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "17",
-                    "List": null,
-                    "Size": 20,
-                    "F3": "",
-                    "Required": true,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": null,
-                    "CanChange": true,
-                    "Trigger": null
-                },
-                "ComponentLabel": "Codigo Identificacao Loja"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "ModeloFiscal",
-            "Component": {
-                "ComponentType": "COMBO",
-                "Parameters": {
-                    "Order": "18",
-                    "Size": 16,
-                    "F3": null,
-                    "Required": true,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": null,
-                    "CanChange": true,
-                    "Trigger": null,
-                    "List": [
-                        "",
-                        "Nao Configurado",
-                        "SAT",
-                        "NFCe",
-                        "MFE"
-                    ]
-                },
-                "ComponentLabel": "Modelo Fiscal"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "RegimeTributario",
-            "Component": {
-                "ComponentType": "COMBO",
-                "Parameters": {
-                    "Order": "19",
-                    "Size": 30,
-                    "F3": "",
-                    "Required": true,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": "Alltrim(SuperGetMV('MV_CODREG',.F.))",
-                    "CanChange": true,
-                    "Trigger": null,
-                    "List": [
-                        "",
-                        "1=Simples Nacional",
-                        "2=Simples Naci Exc-Rece-Bru",
-                        "3=Regime Nacional"
-                    ]
-                },
-                "ComponentLabel": "Regime Tributario"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "NumeroLoja",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "20",
-                    "List": null,
-                    "Size": 20,
-                    "F3": "",
-                    "Required": true,
-                    "Picture": null,
-                    "Valid": null,
-                    "IniPad": null,
-                    "CanChange": true,
-                    "Trigger": null
-                },
-                "ComponentLabel": "Numero da Loja"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "Pais",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "21",
-                    "List": null,
-                    "Size": "TamSx3('YA_CODGI')[1]",
-                    "F3": "SYA",
-                    "Required": true,
-                    "Picture": null,
-                    "Valid": "LjAuxMsg(ExistCpo('SYA', xValor), 'Pais', 'M1')",
-                    "IniPad": null,
-                    "CanChange": true,
-                    "Trigger": [
-                        {
-                            "TargetIdField": "PaisDesc",
-                            "SetValue": "Alltrim(SYA->YA_DESCR)"
-                        }
-                    ],
-                    "Messages": [
-                        {
-                            "Id": "M1",
-                            "Message": "Pais no Protheus não cadastrado."
-                        }
-                    ]
-                },
-                "ComponentLabel": "País"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "PaisDesc",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "22",
-                    "List": null,
-                    "Size": "TamSx3('YA_DESCR')[1]",
-                    "F3": null,
-                    "Required": false,
-                    "Picture": "@!",
-                    "Valid": null,
-                    "CanChange": false
-                },
-                "ComponentLabel": "Descrição do País"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "Praca",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "23",
-                    "List": null,
-                    "Size": "TamSx3('MIH_ID')[1]",
-                    "F3": "{|| LjCadAuxF3('MIH', \"AllTrim(MIH->MIH_TIPCAD) == 'PRACA' .And. MIH->MIH_ATIVO == '1'\", '1')}",
-                    "Required": true,
-                    "Picture": null,
-                    "Valid": "ExistCpo('MIH', PadR('PRACA', TamSx3('MIH_TIPCAD')[1]) + xValor, 1)",
-                    "IniPad": null,
-                    "CanChange": true,
-                    "Trigger": [
-                        {
-                            "TargetIdField": "NomePraca",
-                            "SetValue": "Alltrim(MIH->MIH_DESC)"
-                        }
-                    ],
-                    "Messages": [
-                        {
-                            "Id": "M1",
-                            "Message": "PRACA no Protheus não cadastrada."
-                        }
-                    ]
-                },
-                "ComponentLabel": "Praça"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "NomePraca",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "24",
-                    "List": null,
-                    "Size": "TamSx3('MIH_DESC')[1]",
-                    "F3": null,
-                    "Required": false,
-                    "Picture": "@!",
-                    "Valid": null,
-                    "CanChange": false
-                },
-                "ComponentLabel": "Nome da praça"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "Regiao",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "25",
-                    "List": null,
-                    "Size": "TamSx3('YA_CODGI')[1]",
-                    "F3": "A2",
-                    "Required": true,
-                    "Picture": null,
-                    "Valid": "LjAuxMsg(ExistCpo('SX5', 'A2' + xValor), 'Regiao', 'M1')",
-                    "IniPad": null,
-                    "CanChange": true,
-                    "Trigger": [
-                        {
-                            "TargetIdField": "RegiaoDesc",
-                            "SetValue": "Alltrim(SX5->X5_DESCRI)"
-                        }
-                    ],
-                    "Messages": [
-                        {
-                            "Id": "M1",
-                            "Message": "Regiao no Protheus não cadastrado."
-                        }
-                    ]
-                },
-                "ComponentLabel": "Região"
-            },
-            "ComponentContent": ""
-        },
-        {
-            "ContentType": "String",
-            "IdComponent": "RegiaoDesc",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
-                    "Order": "26",
-                    "List": null,
-                    "Size": "TamSx3('YA_DESCR')[1]",
-                    "F3": null,
-                    "Required": false,
-                    "Picture": "@!",
-                    "Valid": null,
-                    "CanChange": false
-                },
-                "ComponentLabel": "Nome da Região"
-            },
-            "ComponentContent": ""
-        }        
-    ],
-    "LayoutVersion": 1.1
+	"Components": [
+		{
+			"ContentType": "String",
+			"IdComponent": "CodigoMaster",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "01",
+					"List": null,
+					"Size": "Len(FwCodEmp())",
+					"F3": null,
+					"Required": true,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": "FwCodEmp()",
+					"CanChange": false,
+					"Trigger": null
+				},
+				"ComponentLabel": "Codigo Master"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "NomeMaster",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "02",
+					"List": null,
+					"Size": "Len(FwGrpName())",
+					"F3": null,
+					"Required": true,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": "FwGrpName()",
+					"CanChange": false,
+					"Trigger": null
+				},
+				"ComponentLabel": "Nome Master"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "IDFilialProtheus",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "03",
+					"List": null,
+					"Size": "FWSizeFilial()",
+					"F3": "SM0",
+					"Required": true,
+					"Picture": null,
+					"Valid": "FWFilExist(,xValor) .And. LjAuxMsg(LjAuxValid('CADASTRO DE LOJA','IDFilialProtheus',xValor),'IDFilialProtheus','M1')",
+					"IniPad": null,
+					"CanChange": true,
+					"Trigger": [
+						{
+							"TargetIdField": "RazaoSocial",
+							"SetValue": "Alltrim(SM0->M0_NOMECOM)"
+						},
+						{
+							"TargetIdField": "NomeFantasia",
+							"SetValue": "oModel := FWModelActive(),oModel:GetModel('MIHMASTER'):LoadValue('MIH_DESC',Alltrim(SM0->M0_NOME)),oView := FWViewActive(),oView:Refresh()"
+						},
+						{
+							"TargetIdField": "NomeFantasia",
+							"SetValue": "Alltrim(SM0->M0_NOME)"
+						},
+						{
+							"TargetIdField": "CNPJ",
+							"SetValue": "Alltrim(SM0->M0_CGC)"
+						},
+						{
+							"TargetIdField": "InscricaoEstadual",
+							"SetValue": "Alltrim(SM0->M0_INSC)"
+						},
+						{
+							"TargetIdField": "InscricaoMunicipal",
+							"SetValue": "Alltrim(SM0->M0_INSCM)"
+						},
+						{
+							"TargetIdField": "Endereco",
+							"SetValue": "Alltrim(SM0->M0_ENDENT)"
+						},
+						{
+							"TargetIdField": "Complemento",
+							"SetValue": "Alltrim(SM0->M0_COMPENT)"
+						},
+						{
+							"TargetIdField": "Bairro",
+							"SetValue": "Alltrim(SM0->M0_BAIRENT)"
+						},
+						{
+							"TargetIdField": "Cidade",
+							"SetValue": "Alltrim(SM0->M0_CIDENT)"
+						},
+						{
+							"TargetIdField": "Estado",
+							"SetValue": "Alltrim(SM0->M0_ESTENT)"
+						},
+						{
+							"TargetIdField": "CodigoMunicipio",
+							"SetValue": "Alltrim(SM0->M0_CODMUN)"
+						},
+						{
+							"TargetIdField": "CEP",
+							"SetValue": "Alltrim(SM0->M0_CEPENT)"
+						},
+						{
+							"TargetIdField": "Telefone",
+							"SetValue": "Alltrim(SM0->M0_TEL)"
+						}
+					],
+					"Messages": [
+						{
+							"Id": "M1",
+							"Message": "Filial Protheus já cadastrada."
+						}
+					]
+				},
+				"ComponentLabel": "Filial"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "RazaoSocial",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "04",
+					"List": null,
+					"Size": 20,
+					"F3": "",
+					"Required": true,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": false,
+					"Trigger": null
+				},
+				"ComponentLabel": "Razao Social"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "NomeFantasia",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "05",
+					"List": null,
+					"Size": 20,
+					"F3": "",
+					"Required": true,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": false,
+					"Trigger": null
+				},
+				"ComponentLabel": "Nome Fantasia"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "CNPJ",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "06",
+					"List": null,
+					"Size": 20,
+					"F3": "",
+					"Required": true,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": false,
+					"Trigger": null
+				},
+				"ComponentLabel": "CNPJ Loja"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "InscricaoEstadual",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "07",
+					"List": null,
+					"Size": 14,
+					"F3": "",
+					"Required": false,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": true,
+					"Trigger": null
+				},
+				"ComponentLabel": "Inscrição Estadual"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "InscricaoMunicipal",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "08",
+					"List": null,
+					"Size": 25,
+					"F3": "",
+					"Required": false,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": true,
+					"Trigger": null
+				},
+				"ComponentLabel": "Inscrição Municipal"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "Endereco",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "09",
+					"List": null,
+					"Size": 60,
+					"F3": "",
+					"Required": false,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": true,
+					"Trigger": null
+				},
+				"ComponentLabel": "Endereço"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "Complemento",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "10",
+					"List": null,
+					"Size": 25,
+					"F3": "",
+					"Required": false,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": true,
+					"Trigger": null
+				},
+				"ComponentLabel": "Complemento"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "Bairro",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "11",
+					"List": null,
+					"Size": 35,
+					"F3": "",
+					"Required": false,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": true,
+					"Trigger": null
+				},
+				"ComponentLabel": "Bairro"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "Cidade",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "12",
+					"List": null,
+					"Size": 35,
+					"F3": "",
+					"Required": false,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": true,
+					"Trigger": null
+				},
+				"ComponentLabel": "Cidade"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "Estado",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "13",
+					"List": null,
+					"Size": 2,
+					"F3": "",
+					"Required": false,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": true,
+					"Trigger": null
+				},
+				"ComponentLabel": "Estado"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "CodigoMunicipio",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "14",
+					"List": null,
+					"Size": 7,
+					"F3": "",
+					"Required": false,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": true,
+					"Trigger": null
+				},
+				"ComponentLabel": "Codigo Municipio"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "CEP",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "15",
+					"List": null,
+					"Size": 8,
+					"F3": "",
+					"Required": false,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": true,
+					"Trigger": null
+				},
+				"ComponentLabel": "CEP"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "Telefone",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "16",
+					"List": null,
+					"Size": 14,
+					"F3": "",
+					"Required": false,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": true,
+					"Trigger": null
+				},
+				"ComponentLabel": "Telefone"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "CodigoIdentificacaoLoja",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "17",
+					"List": null,
+					"Size": 20,
+					"F3": "",
+					"Required": true,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": true,
+					"Trigger": null
+				},
+				"ComponentLabel": "Codigo Identificacao Loja"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "ModeloFiscal",
+			"Component": {
+				"ComponentType": "COMBO",
+				"Parameters": {
+					"Order": "18",
+					"Size": 16,
+					"F3": null,
+					"Required": true,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": true,
+					"Trigger": null,
+					"List": [
+						"",
+						"Nao Configurado",
+						"SAT",
+						"NFCe",
+						"MFE"
+					]
+				},
+				"ComponentLabel": "Modelo Fiscal"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "RegimeTributario",
+			"Component": {
+				"ComponentType": "COMBO",
+				"Parameters": {
+					"Order": "19",
+					"Size": 30,
+					"F3": "",
+					"Required": true,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": "Alltrim(SuperGetMV('MV_CODREG',.F.))",
+					"CanChange": true,
+					"Trigger": null,
+					"List": [
+						"",
+						"1=Simples Nacional",
+						"2=Simples Naci Exc-Rece-Bru",
+						"3=Regime Nacional"
+					]
+				},
+				"ComponentLabel": "Regime Tributario"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "NumeroLoja",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "20",
+					"List": null,
+					"Size": 20,
+					"F3": "",
+					"Required": true,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": true,
+					"Trigger": null
+				},
+				"ComponentLabel": "Numero da Loja"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "Pais",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "21",
+					"List": null,
+					"Size": "TamSx3('YA_CODGI')[1]",
+					"F3": "SYA",
+					"Required": true,
+					"Picture": null,
+					"Valid": "LjAuxMsg(ExistCpo('SYA', xValor), 'Pais', 'M1')",
+					"IniPad": "'105'",
+					"CanChange": true,
+					"Trigger": [
+						{
+							"TargetIdField": "PaisDesc",
+							"SetValue": "Alltrim(SYA->YA_DESCR)"
+						}
+					],
+					"Messages": [
+						{
+							"Id": "M1",
+							"Message": "Pais no Protheus não cadastrado."
+						}
+					]
+				},
+				"ComponentLabel": "País"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "PaisDesc",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "22",
+					"List": null,
+					"Size": "TamSx3('YA_DESCR')[1]",
+					"F3": null,
+					"Required": false,
+					"Picture": "@!",
+					"Valid": null,
+					"IniPad": "'BRASIL'",
+					"CanChange": false
+				},
+				"ComponentLabel": "Descrição do País"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "Praca",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "23",
+					"List": null,
+					"Size": "TamSx3('MIH_ID')[1]",
+					"F3": "{|| LjCadAuxF3('MIH', \"AllTrim(MIH->MIH_TIPCAD) == 'PRACA' .And. MIH->MIH_ATIVO == '1'\", '1')}",
+					"Required": true,
+					"Picture": null,
+					"Valid": "ExistCpo('MIH', PadR('PRACA', TamSx3('MIH_TIPCAD')[1]) + xValor, 1)",
+					"IniPad": "'00001'",
+					"CanChange": true,
+					"Trigger": [
+						{
+							"TargetIdField": "NomePraca",
+							"SetValue": "Alltrim(MIH->MIH_DESC)"
+						}
+					],
+					"Messages": [
+						{
+							"Id": "M1",
+							"Message": "PRACA no Protheus não cadastrada."
+						}
+					]
+				},
+				"ComponentLabel": "Praça"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "NomePraca",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "24",
+					"List": null,
+					"Size": "TamSx3('MIH_DESC')[1]",
+					"F3": null,
+					"Required": false,
+					"Picture": "@!",
+					"Valid": null,
+					"IniPad": "'Praça padrão'",
+					"CanChange": true
+				},
+				"ComponentLabel": "Nome da praça"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "Regiao",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "25",
+					"List": null,
+					"Size": "TamSx3('YA_CODGI')[1]",
+					"F3": "A2",
+					"Required": true,
+					"Picture": null,
+					"Valid": "LjAuxMsg(ExistCpo('SX5', 'A2' + xValor), 'Regiao', 'M1')",
+					"IniPad": "'001'",
+					"CanChange": true,
+					"Trigger": [
+						{
+							"TargetIdField": "RegiaoDesc",
+							"SetValue": "Alltrim(SX5->X5_DESCRI)"
+						}
+					],
+					"Messages": [
+						{
+							"Id": "M1",
+							"Message": "Regiao no Protheus não cadastrado."
+						}
+					]
+				},
+				"ComponentLabel": "Região"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "RegiaoDesc",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "26",
+					"List": null,
+					"Size": "TamSx3('YA_DESCR')[1]",
+					"F3": null,
+					"Required": false,
+					"Picture": "@!",
+					"Valid": null,
+					"IniPad": "'NORTE'",
+					"CanChange": false
+				},
+				"ComponentLabel": "Nome da Região"
+			},
+			"ComponentContent": ""
+		}
+	],
+	"SetProperty": [
+		{
+			"IdField": "MIH_DESC",
+			"Parameter": 8,
+			"SetValue": false
+		}
+	],
+	"LayoutVersion": 1.2
 }
