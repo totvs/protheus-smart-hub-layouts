@@ -64,7 +64,7 @@
 						},
 						{
 							"TargetIdField": "NomeFantasia",
-							"SetValue": "oModel := FWModelActive(),oModel:GetModel('MIHMASTER'):LoadValue('MIH_DESC',Alltrim(SM0->M0_NOME)),oView := FWViewActive(),oView:Refresh()"
+							"SetValue": "oModel := FWModelActive(),oModel:GetModel('MIHMASTER'):LoadValue('MIH_DESC',Alltrim(FwGrpName())+'-'+Alltrim(SM0->M0_CODFIL)),oView := FWViewActive(),oView:Refresh()"
 						},
 						{
 							"TargetIdField": "NomeFantasia",
@@ -113,6 +113,15 @@
 						{
 							"TargetIdField": "Telefone",
 							"SetValue": "Alltrim(SM0->M0_TEL)"
+						},
+						
+						{
+							"TargetIdField": "NumeroLoja",
+							"SetValue": "Alltrim(SM0->M0_CODIGO)+Alltrim(SM0->M0_CODFIL)"
+						},
+						{
+							"TargetIdField": "CodigoIdentificacaoLoja",
+							"SetValue": "Alltrim(SM0->M0_CODIGO)+Alltrim(SM0->M0_CODFIL)"
 						}
 					],
 					"Messages": [
@@ -655,7 +664,7 @@
 		{
 			"IdField": "MIH_DESC",
 			"Parameter": 8,
-			"SetValue": false
+			"SetValue": ".F."
 		}
 	],
 	"LayoutVersion": 1.2
