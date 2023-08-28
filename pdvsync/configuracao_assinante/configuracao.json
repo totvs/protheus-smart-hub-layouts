@@ -9,6 +9,6 @@
 		"password": "",
 		"clientId": "",
 		"clientSecret": ""
-	}
+	},
 	"configPSH": { "Version": "1.0" }
 }
