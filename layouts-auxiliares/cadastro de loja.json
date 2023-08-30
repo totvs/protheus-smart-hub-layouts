@@ -15,7 +15,11 @@
 					"Valid": null,
 					"IniPad": "FwCodEmp()",
 					"CanChange": false,
-					"Trigger": null
+                    "Trigger": null,
+                    "Help"  : [
+                        "Código da Empresa",
+                        "Código da empresa (Referência do dado : campo M0_CODIGO do arquivo de empresas SM0)"
+                    ]
 				},
 				"ComponentLabel": "Codigo Master"
 			},
@@ -36,7 +40,11 @@
 					"Valid": null,
 					"IniPad": "FwGrpName()",
 					"CanChange": false,
-					"Trigger": null
+                    "Trigger": null,
+                    "Help"  : [
+                        "Nome da Empresa",
+                        "Nome da empresa (Referência do retorno da função FwGrpName(), que retorna o nome do grupo de empresas)"
+                    ]
 				},
 				"ComponentLabel": "Nome Master"
 			},
@@ -129,6 +137,10 @@
 							"Id": "M1",
 							"Message": "Filial Protheus já cadastrada."
 						}
+                    ],
+                    "Help"  : [
+                        "Filial do Protheus",
+                        "Código de filial do Protheus (Referência do dado : campo M0_CODFIL do arquivo de empresas SM0)"
 					]
 				},
 				"ComponentLabel": "Filial"
@@ -150,7 +162,11 @@
 					"Valid": null,
 					"IniPad": null,
 					"CanChange": false,
-					"Trigger": null
+                    "Trigger": null,
+                    "Help"  : [
+                        "Razão social",
+                        "Razão social da Loja (Referência do dado : campo M0_NOMECOM do arquivo de empresas SM0)"
+                    ]
 				},
 				"ComponentLabel": "Razao Social"
 			},
@@ -171,7 +187,11 @@
 					"Valid": null,
 					"IniPad": null,
 					"CanChange": false,
-					"Trigger": null
+                    "Trigger": null,
+                    "Help"  : [
+                        "Nome Fantasia",
+                        "Nome Fantasia (Referência do dado : campo M0_NOME do arquivo de empresas SM0)"
+                    ]
 				},
 				"ComponentLabel": "Nome Fantasia"
 			},
@@ -192,7 +212,11 @@
 					"Valid": null,
 					"IniPad": null,
 					"CanChange": false,
-					"Trigger": null
+                    "Trigger": null,
+                    "Help"  : [
+                        "CNPJ",
+                        "CNPJ da Loja (Referência do dado : campo M0_CGC do arquivo de empresas SM0)"
+                    ]
 				},
 				"ComponentLabel": "CNPJ Loja"
 			},
@@ -213,7 +237,11 @@
 					"Valid": null,
 					"IniPad": null,
 					"CanChange": true,
-					"Trigger": null
+                    "Trigger": null,
+                    "Help"  : [
+                        "Inscrição Estadual",
+                        "Inscrição Estadual da loja (Referência do dado : campo M0_INSC do arquivo de empresas SM0)"
+                    ]
 				},
 				"ComponentLabel": "Inscrição Estadual"
 			},
@@ -234,7 +262,11 @@
 					"Valid": null,
 					"IniPad": null,
 					"CanChange": true,
-					"Trigger": null
+                    "Trigger": null,
+                    "Help"  : [
+                        "Inscrição Municipal",
+                        "Inscrição Municipal da Loja (Referência do dado : campo M0_INSCM do arquivo de empresas SM0)"
+                    ]
 				},
 				"ComponentLabel": "Inscrição Municipal"
 			},
@@ -255,7 +287,11 @@
 					"Valid": null,
 					"IniPad": null,
 					"CanChange": true,
-					"Trigger": null
+                    "Trigger": null,
+                    "Help"  : [
+                        "Endereço",
+                        "Endereço da Loja (Referência do dado : campo M0_ENDENT do arquivo de empresas SM0)"
+                    ]
 				},
 				"ComponentLabel": "Endereço"
 			},
@@ -276,7 +312,11 @@
 					"Valid": null,
 					"IniPad": null,
 					"CanChange": true,
-					"Trigger": null
+                    "Trigger": null,
+                    "Help"  : [
+                        "Complemento",
+                        "Complemento do endereço da Loja (Referência do dado : campo M0_COMPENT do arquivo de empresas SM0)"
+                    ]
 				},
 				"ComponentLabel": "Complemento"
 			},
@@ -297,7 +337,11 @@
 					"Valid": null,
 					"IniPad": null,
 					"CanChange": true,
-					"Trigger": null
+                    "Trigger": null,
+                    "Help"  : [
+                        "Bairro",
+                        "Bairro da loja (Referência do dado : campo M0_BAIRENT do arquivo de empresas SM0)"
+                    ]
 				},
 				"ComponentLabel": "Bairro"
 			},
@@ -318,7 +362,11 @@
 					"Valid": null,
 					"IniPad": null,
 					"CanChange": true,
-					"Trigger": null
+                    "Trigger": null,
+                    "Help"  : [
+                        "Cidade",
+                        "Cidade da loja (Referência do dado : campo M0_CIDENT do arquivo de empresas SM0)"
+                    ]
 				},
 				"ComponentLabel": "Cidade"
 			},
@@ -339,7 +387,11 @@
 					"Valid": null,
 					"IniPad": null,
 					"CanChange": true,
-					"Trigger": null
+                    "Trigger": null,
+                    "Help"  : [
+                        "Estado",
+                        "UF (Estado) da Loja (Referência do dado : campo M0_ESTENT do arquivo de empresas SM0)"
+                    ]
 				},
 				"ComponentLabel": "Estado"
 			},
@@ -360,7 +412,11 @@
 					"Valid": null,
 					"IniPad": null,
 					"CanChange": true,
-					"Trigger": null
+                    "Trigger": null,
+                    "Help"  : [
+                        "Código Municipal",
+                        "Código do município (IBGE) da loja (Referência do dado : campo M0_CODMUN do arquivo de empresas SM0)"
+                    ]
 				},
 				"ComponentLabel": "Codigo Municipio"
 			},
@@ -381,7 +437,11 @@
 					"Valid": null,
 					"IniPad": null,
 					"CanChange": true,
-					"Trigger": null
+                    "Trigger": null,
+                    "Help"  : [
+                        "CEP",
+                        "CEP da loja (Referência do dado : campo M0_CEPENT do arquivo de empresas SM0)"
+                    ]
 				},
 				"ComponentLabel": "CEP"
 			},
@@ -402,7 +462,11 @@
 					"Valid": null,
 					"IniPad": null,
 					"CanChange": true,
-					"Trigger": null
+                    "Trigger": null,
+                    "Help"  : [
+                        "Telefone",
+                        "Telefone de contato da loja (Referência do dado : campo M0_TEL do arquivo de empresas SM0)"
+                    ]
 				},
 				"ComponentLabel": "Telefone"
 			},
@@ -423,7 +487,11 @@
 					"Valid": null,
 					"IniPad": null,
 					"CanChange": true,
-					"Trigger": null
+                    "Trigger": null,
+                    "Help"  : [
+                        "Código Identificação Loja",
+                        "Código de identificação da loja para o PDV OMNISHOP. Composto pela junção do código da empresa + Código da loja a ser cadastrada (Ex.: 99+01)"
+                    ]
 				},
 				"ComponentLabel": "Codigo Identificacao Loja"
 			},
@@ -450,6 +518,10 @@
 						"SAT",
 						"NFCe",
 						"MFE"
+                    ],
+                    "Help"  : [
+                        "Modelo Fiscal",
+                        "Modelo fiscal utilizado pelo PDV para efetuar vendas (Exemplo: NFC-E, SAT, ECF, etc.)"
 					]
 				},
 				"ComponentLabel": "Modelo Fiscal"
@@ -476,6 +548,10 @@
 						"1=Simples Nacional",
 						"2=Simples Naci Exc-Rece-Bru",
 						"3=Regime Nacional"
+                    ],
+                    "Help"  : [
+                        "Regime tributário",
+                        "Conjunto de regras fiscais que determinam o modo que é feito a arrecadação de impostos da empresa. Tem como dado de referência o parâmetro MV_CODREG"
 					]
 				},
 				"ComponentLabel": "Regime Tributario"
@@ -497,7 +573,11 @@
 					"Valid": null,
 					"IniPad": null,
 					"CanChange": true,
-					"Trigger": null
+                    "Trigger": null,
+                    "Help"  : [
+                        "Número da Loja",
+                        "Número da loja, utilizado pelo PDV OMNISHOP. Composto pela junção do código da empresa + Código da loja a ser cadastrada (Ex.: 99+01)"
+                    ]
 				},
 				"ComponentLabel": "Numero da Loja"
 			},
@@ -529,6 +609,10 @@
 							"Id": "M1",
 							"Message": "Pais no Protheus não cadastrado."
 						}
+                    ],
+                    "Help"  : [
+                        "País",
+                        "Código do país onde reside a loja. Campo utilizado pela integração de Motor de Promoções. Iniciado pelo código 105 (Brasil)"
 					]
 				},
 				"ComponentLabel": "País"
@@ -549,7 +633,11 @@
 					"Picture": "@!",
 					"Valid": null,
 					"IniPad": "'BRASIL'",
-					"CanChange": false
+					"CanChange": false,
+                                        "Help"  : [
+                        "Descrição do país",
+                        "Nome do país onde reside a loja. Campo utilizado pela integração de Motor de Promoções.Inicializa com a descrição 'BRASIL'"
+                    ]
 				},
 				"ComponentLabel": "Descrição do País"
 			},
@@ -581,6 +669,10 @@
 							"Id": "M1",
 							"Message": "PRACA no Protheus não cadastrada."
 						}
+                    ],
+                    "Help"  : [
+                        "Praça",
+                        "Código da Praça. Campo utilizado pela integração de Motor de Promoções. Inicializado pelo código 00001 (praça padrão)"
 					]
 				},
 				"ComponentLabel": "Praça"
@@ -601,7 +693,11 @@
 					"Picture": "@!",
 					"Valid": null,
 					"IniPad": "'Praça padrão'",
-					"CanChange": true
+					"CanChange": true,
+                    "Help"  : [
+                        "Nome praça",
+                        "Nome da praça. Campo utilizado pela integração de Motor de Promoções. Inicializado pela informação 'praça padrão'"
+                    ]
 				},
 				"ComponentLabel": "Nome da praça"
 			},
@@ -633,6 +729,10 @@
 							"Id": "M1",
 							"Message": "Regiao no Protheus não cadastrado."
 						}
+                    ],
+                    "Help"  : [
+                        "Código Região",
+                        "Código da Região. Refere se a região do município da loja cadastrada. Campo utilizado pela integração de Motor de Promoções. Inicializado pelo código 001 (região padrão)"
 					]
 				},
 				"ComponentLabel": "Região"
@@ -653,7 +753,11 @@
 					"Picture": "@!",
 					"Valid": null,
 					"IniPad": "'NORTE'",
-					"CanChange": false
+					"CanChange": false,
+                    "Help"  : [
+                        "Nome da Região",
+                        "Nome da Região. Refere se a região do município da loja cadastrada. Campo utilizado pela integração de Motor de Promoções. Inicializado pela informação 'NORTE'"
+                    ]
 				},
 				"ComponentLabel": "Nome da Região"
 			},
