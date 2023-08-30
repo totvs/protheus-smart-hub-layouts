@@ -693,7 +693,7 @@
 					"Picture": "@!",
 					"Valid": null,
 					"IniPad": "'Praça padrão'",
-					"CanChange": true,
+					"CanChange": false,
                     "Help"  : [
                         "Nome praça",
                         "Nome da praça. Campo utilizado pela integração de Motor de Promoções. Inicializado pela informação 'praça padrão'"
