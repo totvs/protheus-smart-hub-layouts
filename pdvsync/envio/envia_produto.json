@@ -59,7 +59,6 @@
     ],
     "ncms": [
         {
-            "TableNode": "B1_POSIPI",
             "idRetaguarda": "&self:oPublica['B1_POSIPI']",
             "IdProprietario": "&LjRetComp()"
         }
