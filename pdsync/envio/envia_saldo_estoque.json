@@ -2,7 +2,6 @@
     "idRetaguardaProduto": "&self:oPublica['B2_COD']",
     "codigoProduto": "&self:oPublica['B2_COD']",
     "saldo": "&self:oPublica['B2_QATU']",
-    "id": "",
     "idInquilino": "&self:oConfAssin['inquilino']",
     "idRetaguarda": "&self:oPublica['B2_COD']",
     "dataAtualizacao": "&FwTimeStamp(6)",
