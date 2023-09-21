@@ -1,5 +1,5 @@
 {
-    "url":"https://...produto...app/api/retaguarda/produtos",
+    "url":"https://pdvsync.varejo.totvs.com.br/produto/api/retaguarda/produtos",
     "codigotipo":"12",
     "descricaotipo":"Produto",
     "qtdEnvio": 1,
