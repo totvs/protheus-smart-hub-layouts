@@ -1,5 +1,5 @@
 {
-    "url":"https://...preco...app/api/retaguarda/precos",
+    "url":"https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/precos",
     "codigotipo": "13",
     "descricaotipo": "Preco",
 	"configPSH": { "Version": "1.0" }
