@@ -1,5 +1,5 @@
 {
-    "url": "https://...-dadosbasicos-....app/api/retaguarda/usuarios",
+    "url": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/usuarios",
     "codigotipo": "4",
     "descricaotipo": "Usuario",
 	"configPSH": { "Version": "1.0" }

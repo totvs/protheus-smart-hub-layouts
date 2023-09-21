@@ -1,5 +1,5 @@
 {
-    "url":"https://...formapagto...app/api/retaguarda/formapagtos",
+    "url":"https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/formapagtos",
     "codigotipo": "18",
     "descricaotipo": "FormaPagto",
 	"configPSH": { "Version": "1.0" }
