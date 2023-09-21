@@ -1,7 +1,7 @@
 {
-	"url_lote": "https://...controle.../api/retaguarda/inquilinolotesexternos",
+	"url_lote": "https://pdvsync.varejo.totvs.com.br/controle/api/retaguarda/inquilinolotesexternos",
 	"inquilino": "",
-	"url_consultalote": "https://...controle.../api/retaguarda/loteexternoretornos",
+	"url_consultalote": "",
 	"autenticacao": {
 		"environment": 2,
 		"tenent": "",

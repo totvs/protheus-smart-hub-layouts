@@ -1,5 +1,5 @@
 {
-    "url": "https://...comercial.../api/retaguarda/vendaMensagens/",
+    "url": "https://pdvsync-core-comercial-prd-q6yz66olca-rj.a.run.app/api/retaguarda/vendaMensagens",
     "listasPublicacao": {
         "SL2": "self:oRegistro['VendaItems']",
         "SL4": "self:oRegistro['VendaPagamentos']"
