@@ -1,5 +1,5 @@
 {
-    "url": "https://...-dadosbasicos-....app/api/retaguarda/lojas",
+    "url": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/lojas",
     "codigotipo": "1",
     "descricaotipo": "lojas",
 	"configPSH": { "Version": "1.0" }
