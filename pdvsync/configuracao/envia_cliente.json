@@ -1,5 +1,5 @@
 {
-    "url":"https://pdvsync.varejo.totvs.com.br/cliente/api/retaguarda/clientes",
+   "url":"https://pdvsync.varejo.totvs.com.br/cliente/api/retaguarda/clientes",
    "codigotipo":"0",
    "descricaotipo":"Cliente",
    "configPSH": { "Version": "1.0" }
