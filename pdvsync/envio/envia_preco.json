@@ -1,19 +1,19 @@
 {
-    "dataHoraVigenciaInicial": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), FwTimeStamp(3), FwTimeStamp(3,SToD(Self:oPublica['DA1_DATVIG']),Self:oPublica['DA0'][1]['DA0_HORADE']) )",
-    "dataHoraVigenciaFinal": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), 9999-01-31T23:59, IIF(!Empty(Self:oPublica['DA0'][1]['DA0_DATATE']),FwTimeStamp(3,SToD(Self:oPublica['DA0'][1]['DA0_DATATE']),Self:oPublica['DA0'][1]['DA0_HORATE']),'9999-01-31T23:59') )",
-    "codigoProduto": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), Self:oPublica['B0_COD'], Self:oPublica['DA1_CODPRO'] )",
-    "idRetaguardaProduto": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), Self:oPublica['B0_COD'], Self:oPublica['DA1_CODPRO'] )",
-    "valor": "&StrTran( cValToChar( IIF( Posicione('SB1', 1, xFilial('SB1') + Self:oPublica['DA1_CODPRO'], 'B1_PRV1') > 0, Posicione('SB1', 1, xFilial('SB1') + Self:oPublica['DA1_CODPRO'], 'B1_PRV1'), IIF( !SuperGetMv('MV_LJCNVDA', , .F.), Self:oPublica['B0_PRV1'], Self:oPublica['DA1_PRCVEN'] ) ) ) , '.', ',' )",
-    "precoPromocional": "&StrTran( cValToChar( IIF( !SuperGetMv('MV_LJCNVDA', , .F.), Self:oPublica['B0_PRV1'], Self:oPublica['DA1_PRCVEN'] ) ), '.', ',' )",
-    "situacao": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), IIF(Empty(Self:oPublica['B0_PRV1']) .Or. Self:cEvento <> '1', 0, 1), IIF(Self:cEvento == '1' .AND. Self:oPublica['DA0'][1]['DA0_ATIVO'] == '1' .AND. Self:oPublica['DA1_ATIVO'] == '1', 1, 0) )",
-    "sincronizadoEtiquetaEletronica": 0,
-    "idInquilino": "&self:oConfAssin['inquilino']",
-    "idRetaguarda": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), '1' + Self:oPublica['B0_COD'], Self:oPublica['DA1_CODTAB'] + Self:oPublica['DA1_CODPRO'] + Self:oPublica['DA1_ITEM'] )",
-    "dataAtualizacao": "&FwTimeStamp(3)",
-    "dataCadastro": "&FwTimeStamp(3)",
-    "idProprietario": "&LjRetComp()",
-    "loteOrigem": "&Self:cLote",
-    "configPSH": {
-        "Version": "2.0"
-    }
+	"dataHoraVigenciaInicial": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), FwTimeStamp(3), FwTimeStamp(3,SToD(Self:oPublica['DA1_DATVIG']),Self:oPublica['DA0'][1]['DA0_HORADE']) )",
+	"dataHoraVigenciaFinal": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), 9999-01-31T23:59, IIF(!Empty(Self:oPublica['DA0'][1]['DA0_DATATE']),FwTimeStamp(3,SToD(Self:oPublica['DA0'][1]['DA0_DATATE']),Self:oPublica['DA0'][1]['DA0_HORATE']),'9999-01-31T23:59') )",
+	"codigoProduto": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), Self:oPublica['B0_COD'], Self:oPublica['DA1_CODPRO'] )",
+	"idRetaguardaProduto": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), Self:oPublica['B0_COD'], Self:oPublica['DA1_CODPRO'] )",
+	"valor": "&StrTran( cValToChar( IIF( Posicione('SB1', 1, xFilial('SB1') + Self:oPublica['DA1_CODPRO'], 'B1_PRV1') > 0, Posicione('SB1', 1, xFilial('SB1') + Self:oPublica['DA1_CODPRO'], 'B1_PRV1'), IIF( !SuperGetMv('MV_LJCNVDA', , .F.), Self:oPublica['B0_PRV1'], Self:oPublica['DA1_PRCVEN'] ) ) ) , '.', ',' )",
+	"precoPromocional": "&StrTran( cValToChar( IIF( !SuperGetMv('MV_LJCNVDA', , .F.), Self:oPublica['B0_PRV1'], Self:oPublica['DA1_PRCVEN'] ) ), '.', ',' )",
+	"situacao": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), IIF(Empty(Self:oPublica['B0_PRV1']) .Or. Self:cEvento <> '1', 0, 1), IIF(Self:cEvento == '1' .AND. Self:oPublica['DA0'][1]['DA0_ATIVO'] == '1' .AND. Self:oPublica['DA1_ATIVO'] == '1', 1, 0) )",
+	"sincronizadoEtiquetaEletronica": 0,
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"idRetaguarda": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), '1' + Self:oPublica['B0_COD'], Self:oPublica['DA1_CODTAB'] + Self:oPublica['DA1_CODPRO'] + Self:oPublica['DA1_ITEM'] )",
+	"dataAtualizacao": "&FwTimeStamp(3)",
+	"dataCadastro": "&FwTimeStamp(3)",
+	"idProprietario": "&LjRetComp()",
+	"loteOrigem": "&Self:cLote",
+	"configPSH": {
+		"Version": "3.0"
+	}
 }
