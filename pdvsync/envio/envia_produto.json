@@ -9,7 +9,7 @@
     "situacao": "&IIF( self:oPublica['B1_ATIVO'] == 'S', 1, 0)",
     "imagem": "",
     "tipoProduto": "&IIF( self:oPublica['B1_TIPO'] == 'KT', 'KIT', 'ProdutoAcabado')",
-    "fracionado": false,
+    "fracionado": "&IIF( self:oPublica['B1_UM'] $ 'G|MG|KG' .AND. self:oPublica['B1_BALANCA'] == '2', .T., .F.)",
     "cnpjFornecedor": "",
     "escalaRelevante": true,
     "cstIcms": true,
