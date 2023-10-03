@@ -1,13 +1,15 @@
 {
-    "url": "https://pdvsync-core-comercial-prd-q6yz66olca-rj.a.run.app/api/retaguarda/vendaMensagens",
-    "listasPublicacao": {
-        "SL2": "self:oRegistro['VendaItems']",
-        "SL4": "self:oRegistro['VendaPagamentos']"
-    },
-    "ChaveUni": [
-        "Loja:IdRetaguarda",
-        "Ccf",
-        "SerieNota"
-    ],
-	"configPSH": { "Version": "1.0" }
+	"url": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/vendaMensagens",
+	"listasPublicacao": {
+		"SL2": "self:oRegistro['VendaItems']",
+		"SL4": "self:oRegistro['VendaPagamentos']"
+	},
+	"ChaveUni": [
+		"Loja:IdRetaguarda",
+		"Ccf",
+		"SerieNota"
+	],
+	"configPSH": {
+		"Version": "1.0"
+	}
 }
