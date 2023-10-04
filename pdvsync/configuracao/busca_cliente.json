@@ -1,5 +1,5 @@
 {
-    "url": "https://pdvsync.varejo.totvs.com.br/cliente/api/retaguarda/clienteMensagens",
+    "url": "https://pdvsync.varejo.totvs.com.br/cliente/api/retaguarda/clienteMensagens/",
     "ChaveUni": [
         "CpfCnpj",
         "DataAtualizacao"
