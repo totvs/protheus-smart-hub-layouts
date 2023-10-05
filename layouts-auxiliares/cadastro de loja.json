@@ -8,12 +8,12 @@
 				"Parameters": {
 					"Order": "01",
 					"List": null,
-					"Size": "Len(FwCodEmp())",
+					"Size": "Len(FWGrpCompany())",
 					"F3": null,
 					"Required": true,
 					"Picture": null,
 					"Valid": null,
-					"IniPad": "FwCodEmp()",
+					"IniPad": "FWGrpCompany()",
 					"CanChange": false,
                     "Trigger": null,
                     "Help"  : [
