@@ -1,5 +1,5 @@
 {
-    "url": "https://pdvsync.varejo.totvs.com.br/formapagto/retaguarda/operadoras",
+    "url": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/operadoras",
     "codigotipo": "15",
     "descricaotipo": "Operadora",
 	"configPSH": { "Version": "1.0" }
