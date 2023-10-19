@@ -1,17 +1,14 @@
 {
-    "idRetaguardaProduto": "&self:oPublica['B2_COD']",
-    "codigoProduto": "&self:oPublica['B2_COD']",
-    "saldo": "&self:oPublica['B2_QATU']",
-    "idInquilino": "&self:oConfAssin['inquilino']",
-    "idRetaguarda": "&self:oPublica['B2_COD']",
-    "dataAtualizacao": "&FwTimeStamp(6)",
-    "dataCadastro": "&FwTimeStamp(6)",
-    "IdProprietario": "&LjRetComp( PadR( self:oPublica['B2_FILIAL'], TamSx3('B2_FILIAL')[1] ),'CADASTRO DE LOJA')",
-    "loteOrigem": "&Self:cLote",
-    "lote": 0,
-    "sequencial": 0,
-    "_expandables": [
-        "string"
-    ],
-	"configPSH": { "Version": "1.0" }
+	"idRetaguardaProduto": "&self:oPublica['B2_COD']",
+	"codigoProduto": "&self:oPublica['B2_COD']",
+	"saldo": "&self:oPublica['B2_QATU']",
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"idRetaguarda": "&self:oPublica['B2_COD']",
+	"dataAtualizacao": "&FwTimeStamp(6)",
+	"dataCadastro": "&FwTimeStamp(6)",
+	"idProprietario": "&LjRetComp( PadR( self:oPublica['B2_FILIAL'], TamSx3('B2_FILIAL')[1] ),'CADASTRO DE LOJA')",
+	"loteOrigem": "&Self:cLote",
+	"configPSH": {
+		"Version": "2.0"
+	}
 }
