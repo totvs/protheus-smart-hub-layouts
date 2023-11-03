@@ -5,7 +5,6 @@
     "tamanho": "&self:oPublica['tamanho']",
     "situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 1, 0)",
     "sequencial": 0,
-    "id": "&self:oPublica['MIH_ID']",
     "idInquilino": "&self:oConfAssin['inquilino']",
     "idRetaguarda": "&self:oPublica['MIH_ID']",
     "dataAtualizacao": "&self:oPublica['MIH_DATALT']",
