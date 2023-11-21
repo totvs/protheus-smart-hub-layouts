@@ -256,12 +256,12 @@
 					"Trigger": null,
 					"Required": false,
 					"Picture": "@S20!",
-					"CanChange": "IIf(oModel:GetValue('TIPO') == '10',.T.,.F.)",
+					"CanChange": "IIf(oModel:GetValue('TIPO') == '10' .Or. oModel:GetValue('TIPO') == '0 ',.T.,.F.)",
 					"Valid": "ExistCpo('SAE',AllTrim(xValor))",
 					"IniPad": null,
 					"Help": [
 						"Operadora",
-						"Indica a administadora cadastrada (SAE),campo habilitado quando tipo do pagamento for igual a \"10 - QRCODE\" "
+						"Indica a administadora cadastrada (SAE),campo habilitado quando tipo do pagamento for igual a \"10 - QRCODE\" ou \"0 - OUTROS\" "
 					]
 				},
 				"ComponentLabel": "Operadora"
@@ -409,7 +409,7 @@
 			"ComponentContent": ""
 		}
 	],
-	"LayoutVersion": 4.6,
+	"LayoutVersion": 4.7,
 	"PosValid": {
 		"Condition": "LjAuxMsg(IIf(oModel:GetValue('MIHDETAIL','TIPO') == '10',!Empty(oModel:GetValue('MIHDETAIL','OPERADORA')),.T.), 'OPERADORA', 'M1',2)",
 		"Messages": [
