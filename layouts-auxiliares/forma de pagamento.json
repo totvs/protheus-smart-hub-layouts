@@ -256,7 +256,7 @@
 					"Trigger": null,
 					"Required": false,
 					"Picture": "@S20!",
-					"CanChange": "IIf(oModel:GetValue('TIPO') == '10' .Or. oModel:GetValue('TIPO') == '0 ',.T.,.F.)",
+					"CanChange": "IIf(oModel:GetValue('TIPO') $ '10|0 |2 |3 ',.T.,.F.)",
 					"Valid": "ExistCpo('SAE',AllTrim(xValor))",
 					"IniPad": null,
 					"Help": [
@@ -409,7 +409,7 @@
 			"ComponentContent": ""
 		}
 	],
-	"LayoutVersion": 4.7,
+	"LayoutVersion": 4.8,
 	"PosValid": {
 		"Condition": "LjAuxMsg(IIf(oModel:GetValue('MIHDETAIL','TIPO') == '10',!Empty(oModel:GetValue('MIHDETAIL','OPERADORA')),.T.), 'OPERADORA', 'M1',2)",
 		"Messages": [
