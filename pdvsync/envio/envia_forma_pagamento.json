@@ -18,7 +18,7 @@
 	"formasPagtoCondicoes": [
 		{
 			"TableNode": "condicaoPagamento",
-			"idRetaguarda": "&AllTrim( xFilial('SAE') + StrTokArr(Self:oPublica['condicaoPagamento'], ';')[nItem] )",
+			"idRetaguarda": "&self:oPublica['MIH_ID']+AllTrim( xFilial('SAE') + StrTokArr(Self:oPublica['condicaoPagamento'], ';')[nItem] )",
 			"idRetaguardaFormaPagto": "&self:oPublica['MIH_ID']",
 			"idRetaguardaCondicaoPagto": "&AllTrim( xFilial('SAE') + StrTokArr(Self:oPublica['condicaoPagamento'], ';')[nItem] )",
 			"situacao": "&IIF(self:cEvento == '1', 1, 0)"
@@ -27,7 +27,7 @@
 	"formasPagtoDadosComplementares": [
 		{
 			"TableNode": "camposComplementares",
-			"idRetaguarda": "&StrTokArr(Self:oPublica['camposComplementares'], ';')[nItem]",
+			"idRetaguarda": "&self:oPublica['MIH_ID']+StrTokArr(Self:oPublica['camposComplementares'], ';')[nItem]",
 			"idRetaguardaFormaPagto": "&self:oPublica['MIH_ID']",
 			"idRetaguardaDadoComplementarPagto": "&StrTokArr(Self:oPublica['camposComplementares'], ';')[nItem]",
 			"situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 1, 0)",
@@ -36,7 +36,7 @@
 	],
 	"formaPagtoModeloFiscal": [
 		{
-			"idRetaguarda": "&self:oPublica['idModelo']",
+			"idRetaguarda": "&self:oPublica['MIH_ID']+self:oPublica['idModelo']",
 			"idRetaguardaFormaPagto": "&self:oPublica['MIH_ID']",
 			"modeloFiscal": "&self:oPublica['modeloFiscal']",
 			"codigoFiscal": "&self:oPublica['codigoFiscal']",
@@ -46,13 +46,13 @@
 	],
 	"formasPagtoOperadoras": [
 		{
-			"idRetaguarda": "&AllTrim( xFilial('SAE') + Self:oPublica['operadora'])",
+			"idRetaguarda": "&self:oPublica['MIH_ID']+AllTrim( xFilial('SAE') + Self:oPublica['operadora'])",
 			"idRetaguardaFormaPagto": "&self:oPublica['MIH_ID']",
 			"idRetaguardaOperadoraPagto": "&AllTrim( xFilial('SAE') + Self:oPublica['operadora'])",
 			"situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 1, 0)"
 		}
 	],
 	"configPSH": {
-		"Version": "2.1"
+		"Version": "2.2"
 	}
 }
