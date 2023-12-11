@@ -245,7 +245,7 @@
 					"Valid": null,
 					"CanChange": true,
 					"Trigger": null,
-					"Visible": false,
+					"visible": false,
 					"IniPad": ".F."
 				},
 				"ComponentLabel": "Esta criptografada"
