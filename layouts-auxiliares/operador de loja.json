@@ -60,7 +60,7 @@
 		{
 			"ContentType": "String",
 			"IdComponent": "senha",
-            "IdFieldModel": "SENHA",
+			"IdFieldModel": "SENHA",
 			"Component": {
 				"ComponentType": "Text",
 				"Parameters": {
@@ -229,10 +229,32 @@
 				"ComponentLabel": "Filial"
 			},
 			"ComponentContent": ""
+		},
+		{
+			"ContentType": "Logical",
+			"IdComponent": "isCripto",
+			"Component": {
+				"ComponentType": "CheckBox",
+				"Parameters": {
+					"Order": "04",
+					"List": null,
+					"Size": 1,
+					"F3": null,
+					"Required": null,
+					"Picture": null,
+					"Valid": null,
+					"CanChange": true,
+					"Trigger": null,
+					"Visible": false,
+					"IniPad": ".F."
+				},
+				"ComponentLabel": "Esta criptografada"
+			},
+			"ComponentContent": false
 		}
 	],
-	"LayoutVersion": 2.6,
-    "PosValid": {
-		"Condition": "IIF(oModel:GetModel('MIHDETAIL'):IsFieldUpdated('SENHA'),oModel:LoadValue('MIHDETAIL','SENHA',SHA256( Alltrim(oModel:GetValue('MIHDETAIL','SENHA')))),.T.)"
+	"LayoutVersion": 3.0,
+	"PosValid": {
+		"Condition": "IIF(!oModel:GetValue('MIHDETAIL','isCripto') .OR. oModel:GetModel('MIHDETAIL'):IsFieldUpdated('SENHA'),oModel:LoadValue('MIHDETAIL','SENHA',ChavePBKDF2( Alltrim(oModel:GetValue('MIHDETAIL','SENHA')),Alltrim(oModel:GetValue('MIHDETAIL','cpf')) )),.T.),IIF(GetSrvVersion() >= '20.3.2.3',oModel:LoadValue('MIHDETAIL','isCripto',.T.),.T.)"
 	}
 }
