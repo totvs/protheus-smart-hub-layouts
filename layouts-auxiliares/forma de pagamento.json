@@ -15,9 +15,9 @@
 					"Picture": null,
 					"Valid": "ExistCpo('SX5', '24' + xValor)",
 					"CanChange": true,
-					"Help": 
-					[
-						"Codigo da forma de pagamento","Seleção da SX5 tabela 24."
+					"Help": [
+						"Codigo da forma de pagamento",
+						"Seleção da SX5 tabela 24."
 					],
 					"Trigger": [
 						{
@@ -56,9 +56,9 @@
 					],
 					"CanChange": true,
 					"Trigger": null,
-					"Help":
-					[
-						"Descrição da forma de pagamento","Texto livre."
+					"Help": [
+						"Descrição da forma de pagamento",
+						"Texto livre."
 					]
 				},
 				"ComponentLabel": "Descrição"
@@ -81,10 +81,10 @@
 					"Valid": null,
 					"CanChange": true,
 					"Trigger": null,
-					"Help":
-					[
-						"Descrição da forma de pagamento","Texto livre."
-					]					
+					"Help": [
+						"Descrição da forma de pagamento",
+						"Texto livre."
+					]
 				},
 				"ComponentLabel": "Descrição Fiscal"
 			},
@@ -106,10 +106,9 @@
 					"Valid": null,
 					"CanChange": true,
 					"Trigger": null,
-					"Help":
-					[
+					"Help": [
 						"Caixa de seleção para verificar se a forma de pagamento permitirá a saída de troco."
-					]					
+					]
 				},
 				"ComponentLabel": "Permite Troco"
 			},
@@ -131,10 +130,10 @@
 					"Valid": "Vazio() .Or. ExistCpo('MIH', PadR('FORMA DE PAGAMENTO', TamSx3('MIH_TIPCAD')[1]) + xValor, 1)",
 					"CanChange": true,
 					"Trigger": null,
-					"Help":
-					[
-						"Informar a forma de pagamento para troco.", "Seleção da forma de pagamento do próprio cadastro auxiliar."
-					]					
+					"Help": [
+						"Informar a forma de pagamento para troco.",
+						"Seleção da forma de pagamento do próprio cadastro auxiliar."
+					]
 				},
 				"ComponentLabel": "Forma Pagamento Troco"
 			},
@@ -156,10 +155,10 @@
 					"Valid": null,
 					"CanChange": true,
 					"Trigger": null,
-					"Help":
-					[
-						"Entrada do valor mínimo aceito para utilização da forma de pagamento.", "Só será permitida a utilização da forma de pagamento acima do valor citado neste campo."
-					]					
+					"Help": [
+						"Entrada do valor mínimo aceito para utilização da forma de pagamento.",
+						"Só será permitida a utilização da forma de pagamento acima do valor citado neste campo."
+					]
 				},
 				"ComponentLabel": "Valor Minimo Aceito"
 			},
@@ -201,10 +200,10 @@
 						"8=GIFT",
 						"10=QRCODE"
 					],
-					"Help":
-					[
-						"Tipo da forma de pagamento.", "Lista das formas de pagamento agrupadoras que estão contidas na tela de finalização da venda do TOTVS PDV Omnishop."
-					]					
+					"Help": [
+						"Tipo da forma de pagamento.",
+						"Lista das formas de pagamento agrupadoras que estão contidas na tela de finalização da venda do TOTVS PDV Omnishop."
+					]
 				},
 				"ComponentLabel": "Tipo Forma Pagamento"
 			},
@@ -233,12 +232,38 @@
 						}
 					],
 					"IniPad": null,
-					"Help":
-					[
-						"Campo Usado para formas do tipo cartão de crédito.", "Lista uma ou mais condições de pagamento atreladas a forma a ser cadastrada."
-					]					
+					"Help": [
+						"Campo Usado para formas do tipo cartão de crédito.",
+						"Lista uma ou mais condições de pagamento atreladas a forma a ser cadastrada."
+					]
 				},
 				"ComponentLabel": "Condições de Pagamento"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "todasCondicaoPgt",
+			"IdFieldModel": "TDCNDPGTO",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "09",
+					"List": null,
+					"Size": 99,
+					"F3": null,
+					"Trigger": null,
+					"Required": false,
+					"Picture": "@!",
+					"CanChange": true,
+					"Valid": null,
+					"visible": false,
+					"IniPad": null,
+					"Help": [
+						"Histórico das Condições"
+					]
+				},
+				"ComponentLabel": "Histórico das Condições"
 			},
 			"ComponentContent": ""
 		},
@@ -249,7 +274,7 @@
 			"Component": {
 				"ComponentType": "GET",
 				"Parameters": {
-					"Order": "09",
+					"Order": "10",
 					"List": null,
 					"Size": "TamSx3('AE_COD')[1]",
 					"F3": "{|| LjCadAuxF3('SAE','', '1',{'AE_COD', 'AE_DESC', 'operadora'})}",
@@ -275,7 +300,7 @@
 			"Component": {
 				"ComponentType": "GET",
 				"Parameters": {
-					"Order": "10",
+					"Order": "11",
 					"List": null,
 					"Size": 70,
 					"F3": "{|| LjCadAuxF3('LJF3MU', \"MIH_TIPCAD = 'COMPLEM PAGAMENTO'\", '1', {'MIH_ID', 'MIH_DESC', 'Campos Complementares'})}",
@@ -291,10 +316,10 @@
 						}
 					],
 					"IniPad": null,
-					"Help":
-					[
-						"Lista campos complementares que foram cadastrados previamente na tabela auxiliar de (COMPLEM PAGAMENTO).", "Para adicioná-los na finalização da venda para entrada de dados complementares em tela (Exemplo: Forma de pagamento crédito POS, é utilizado o campo NSU para ser informado manualmente)."
-					]						
+					"Help": [
+						"Lista campos complementares que foram cadastrados previamente na tabela auxiliar de (COMPLEM PAGAMENTO).",
+						"Para adicioná-los na finalização da venda para entrada de dados complementares em tela (Exemplo: Forma de pagamento crédito POS, é utilizado o campo NSU para ser informado manualmente)."
+					]
 				},
 				"ComponentLabel": "Campos Complementares"
 			},
@@ -307,7 +332,7 @@
 			"Component": {
 				"ComponentType": "COMBO",
 				"Parameters": {
-					"Order": "11",
+					"Order": "12",
 					"Size": 16,
 					"F3": null,
 					"Required": true,
@@ -323,10 +348,9 @@
 						"NFCe",
 						"MFE"
 					],
-					"Help":
-					[
+					"Help": [
 						"Lista dos modelos fiscais que serão utilizadas no PDV que será enviada a forma de pagamento em questão (NFC-e,SAT,etc...)."
-					]					
+					]
 				},
 				"ComponentLabel": "Modelo Fiscal"
 			},
@@ -339,7 +363,7 @@
 			"Component": {
 				"ComponentType": "GET",
 				"Parameters": {
-					"Order": "12",
+					"Order": "13",
 					"Size": 16,
 					"F3": null,
 					"Required": false,
@@ -361,7 +385,7 @@
 			"Component": {
 				"ComponentType": "GET",
 				"Parameters": {
-					"Order": "13",
+					"Order": "14",
 					"Size": 16,
 					"F3": null,
 					"Required": false,
@@ -384,7 +408,7 @@
 			"Component": {
 				"ComponentType": "COMBO",
 				"Parameters": {
-					"Order": "14",
+					"Order": "15",
 					"Size": 1,
 					"F3": null,
 					"Required": true,
@@ -399,19 +423,19 @@
 						"0=Não",
 						"1=Sim"
 					],
-					"Help":
-					[
-						"Indica se será feita a consulta dos créditos de cliente (NCC,RA) na retaguarda via fluxo online, especificamente dedicado a forma de pagamento que consumirá créditos de cliente.","Para outras formas, o padrão do campo é NÃO."
-					]					
+					"Help": [
+						"Indica se será feita a consulta dos créditos de cliente (NCC,RA) na retaguarda via fluxo online, especificamente dedicado a forma de pagamento que consumirá créditos de cliente.",
+						"Para outras formas, o padrão do campo é NÃO."
+					]
 				},
 				"ComponentLabel": "Consulta Crédito"
 			},
 			"ComponentContent": ""
 		}
 	],
-	"LayoutVersion": 4.8,
+	"LayoutVersion": 5.0,
 	"PosValid": {
-		"Condition": "LjAuxMsg(IIf(oModel:GetValue('MIHDETAIL','TIPO') == '10',!Empty(oModel:GetValue('MIHDETAIL','OPERADORA')),.T.), 'OPERADORA', 'M1',2)",
+		"Condition": "IIf(oModel:GetOperation() == 3 .Or. oModel:GetOperation() == 4,Aeval(StrTokArr(AllTrim(oModel:GetValue('MIHDETAIL','CONDPGTO')), ';'),{|x| IIf(! x $ AllTrim(oModel:GetValue('MIHDETAIL','TDCNDPGTO')),oModel:LoadValue('MIHDETAIL','TDCNDPGTO',AllTrim(oModel:GetValue('MIHDETAIL','TDCNDPGTO'))+Alltrim(x)),.T.) }),.T.),LjAuxMsg(IIf(oModel:GetValue('MIHDETAIL','TIPO') == '10',!Empty(oModel:GetValue('MIHDETAIL','OPERADORA')),.T.), 'OPERADORA', 'M1',2)",
 		"Messages": [
 			{
 				"Id": "M1",
