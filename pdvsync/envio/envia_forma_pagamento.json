@@ -17,11 +17,11 @@
 	"loteOrigem": "&Self:cLote",
 	"formasPagtoCondicoes": [
 		{
-			"TableNode": "condicaoPagamento",
-			"idRetaguarda": "&self:oPublica['MIH_ID']+AllTrim( xFilial('SAE') + StrTokArr(Self:oPublica['condicaoPagamento'], ';')[nItem] )",
+			"TableNode": "todasCondicaoPgt",
+			"idRetaguarda": "&self:oPublica['MIH_ID']+AllTrim( xFilial('SAE') + StrTokArr(Self:oPublica['todasCondicaoPgt'], ';')[nItem] )",
 			"idRetaguardaFormaPagto": "&self:oPublica['MIH_ID']",
-			"idRetaguardaCondicaoPagto": "&AllTrim( xFilial('SAE') + StrTokArr(Self:oPublica['condicaoPagamento'], ';')[nItem] )",
-			"situacao": "&IIF(self:cEvento == '1', 1, 0)"
+			"idRetaguardaCondicaoPagto": "&AllTrim( xFilial('SAE') + StrTokArr(Self:oPublica['todasCondicaoPgt'], ';')[nItem] )",
+			"situacao": "&IIF(AllTrim(StrTokArr(Self:oPublica['todasCondicaoPgt'], ';')[nItem] ) $ Self:oPublica['condicaoPagamento'], 1, 0)"
 		}
 	],
 	"formasPagtoDadosComplementares": [
@@ -53,6 +53,6 @@
 		}
 	],
 	"configPSH": {
-		"Version": "2.2"
+		"Version": "2.3"
 	}
 }
