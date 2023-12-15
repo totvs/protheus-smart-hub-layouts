@@ -255,6 +255,6 @@
 	],
 	"LayoutVersion": 3.0,
 	"PosValid": {
-		"Condition": "IIF(!oModel:GetValue('MIHDETAIL','isCripto') .OR. oModel:GetModel('MIHDETAIL'):IsFieldUpdated('SENHA'),oModel:LoadValue('MIHDETAIL','SENHA',ChavePBKDF2( Alltrim(oModel:GetValue('MIHDETAIL','SENHA')),Alltrim(oModel:GetValue('MIHDETAIL','cpf')) )),.T.),IIF(GetSrvVersion() >= '20.3.2.3'  .AND. oModel:GetOperation() == 3 .Or. oModel:GetOperation() == 4,oModel:LoadValue('MIHDETAIL','isCripto',.T.),.T.)"
+		"Condition": "IIF(!oModel:GetValue('MIHDETAIL','isCripto') .OR. oModel:GetModel('MIHDETAIL'):IsFieldUpdated('SENHA'),oModel:LoadValue('MIHDETAIL','SENHA',ChavePBKDF2( Alltrim(oModel:GetValue('MIHDETAIL','SENHA')),Alltrim(oModel:GetValue('MIHDETAIL','cpf')) )),.T.),IIF(GetSrvVersion() >= '20.3.2.3'  .AND. (oModel:GetOperation() == 3 .Or. oModel:GetOperation() == 4),oModel:LoadValue('MIHDETAIL','isCripto',.T.),.T.)"
 	}
 }
