@@ -32,7 +32,7 @@
 					"Required": true,
 					"Picture": "@R 999.999.999-99",
 					"Valid": "Cgc(xValor)",
-					"CanChange": "IIF(oModel:GetOperation() == 4,.F.,.T.)
+					"CanChange": "IIF(oModel:GetOperation() == 4,.F.,.T.)"
 				},
 				"ComponentLabel": "CPF"
 			},
