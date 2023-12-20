@@ -433,7 +433,10 @@
 			"ComponentContent": ""
 		}
 	],
-	"LayoutVersion": 5.0,
+	"LayoutVersion": 5.4,
+	"PreValid": {
+		"Condition": "IIF(oModel:GetOperation() == 4 .and. Empty(AllTrim(oModel:GetValue('MIHDETAIL','TDCNDPGTO'))),oModel:LoadValue('MIHDETAIL','TDCNDPGTO',AllTrim(oModel:GetValue('MIHDETAIL','CONDPGTO'))),.T.),.T."
+	},
 	"PosValid": {
 		"Condition": "IIf(oModel:GetOperation() == 3 .Or. oModel:GetOperation() == 4,Aeval(StrTokArr(AllTrim(oModel:GetValue('MIHDETAIL','CONDPGTO')), ';'),{|x| IIf(! x $ AllTrim(oModel:GetValue('MIHDETAIL','TDCNDPGTO')),oModel:LoadValue('MIHDETAIL','TDCNDPGTO',AllTrim(oModel:GetValue('MIHDETAIL','TDCNDPGTO'))+Alltrim(x)+';'),.T.) }),.T.),LjAuxMsg(IIf(oModel:GetValue('MIHDETAIL','TIPO') == '10',!Empty(oModel:GetValue('MIHDETAIL','OPERADORA')),.T.), 'OPERADORA', 'M1',2)",
 		"Messages": [
