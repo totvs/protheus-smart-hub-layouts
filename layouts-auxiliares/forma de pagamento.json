@@ -433,7 +433,7 @@
 			"ComponentContent": ""
 		}
 	],
-	"LayoutVersion": 5.4,
+	"LayoutVersion": 5.5,
 	"PreValid": {
 		"Condition": "IIF(oModel:GetOperation() == 4 .and. Empty(AllTrim(oModel:GetValue('MIHDETAIL','TDCNDPGTO'))),oModel:LoadValue('MIHDETAIL','TDCNDPGTO',AllTrim(oModel:GetValue('MIHDETAIL','CONDPGTO'))),.T.),.T."
 	},
