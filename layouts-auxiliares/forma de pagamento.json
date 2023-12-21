@@ -218,7 +218,7 @@
 				"Parameters": {
 					"Order": "08",
 					"List": null,
-					"Size": 40,
+					"Size": 99,
 					"F3": "{|| LjCadAuxF3('LJF3MU', '', '1', {'AE_COD', 'AE_DESC', 'Condições de Pagamento'})}",
 					"Trigger": null,
 					"Required": false,
