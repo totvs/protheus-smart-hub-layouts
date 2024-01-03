@@ -2,6 +2,7 @@
 	"url_lote": "https://pdvsync.varejo.totvs.com.br/controle/api/retaguarda/inquilinolotesexternos",
 	"inquilino": "",
 	"url_consultalote": "",
+	"urlPostStatus": "https://pdvsync.varejo.totvs.com.br/controle/api/retaguarda/v2/statusservico",
 	"autenticacao": {
 		"environment": 2,
 		"tenent": "",
