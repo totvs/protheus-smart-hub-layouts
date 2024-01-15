@@ -14,5 +14,5 @@
     "dataCadastro": "&FwTimeStamp(6)",
     "idProprietario": "&LjRetComp()",
     "loteOrigem": "&Self:cLote",
-    "configPSH": { "Version": "1.0" }
+    "configPSH": { "Version": "2.0" }
 }
