@@ -1,9 +1,11 @@
 {
-    "CodigoLoja": "&self:aArrayFil[self:nFil][1]",
-    "notasinutilizadas": 1,
-    "DataMovimentoInicial": "&Str( Year(dDatabase), 4) +'-'+  StrZero( Month(dDatabase), 2) +'-'+ StrZero( Day(dDatabase), 2)",
-    "DataMovimentoFinal": "&Str( Year(dDatabase), 4) +'-'+  StrZero( Month(dDatabase), 2) +'-'+ StrZero( Day(dDatabase), 2)",
-    "DataReprocessamento": "20230515",
-    "UltimodiaReprocessado": "20230515",   
-    "DiasRetroceder": 10
+    "url": "{URL SERVIDOR}/api/capavenda/listpordatamovimentos",
+    "SL2": "self:oRegistro['Itens']",
+    "SL4": "self:oRegistro['Pagamentos']",
+    "chave": null,
+    "ultimaExecucao": "15:37:39",
+    "regraChef": true,
+    "horaReproceInicio": "00:00",
+    "horaReproceFinal": "05:55",
+    "tempBuscaVenda": "00:30:00"
 }
