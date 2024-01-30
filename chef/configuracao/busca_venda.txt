@@ -2,7 +2,6 @@
     "url": "{URL SERVIDOR}/api/capavenda/listpordatamovimentos",
     "SL2": "self:oRegistro['Itens']",
     "SL4": "self:oRegistro['Pagamentos']",
-    "chave": null,
     "ultimaExecucao": "15:37:39",
     "regraChef": true,
     "horaReproceInicio": "00:00",
