@@ -1,0 +1,6 @@
+{
+    "tipo":"&IIF(Empty(self:oPublica['ACU_CODPAI']), 'GRUPO', 'SUBGRUPO')",
+    "descricao":"%ACU_DESC%",
+    "token":"&self:oBody['token']",
+    "status":"&self:cEvento == '1'"
+}

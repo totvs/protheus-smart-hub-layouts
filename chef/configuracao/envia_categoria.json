@@ -1,0 +1,5 @@
+{
+    "url":"http://{url_do_servidor}/api/produto/salvarGrupoSubGrupo",
+    "tagretorno":"sucesso",
+    "tagcodigo":"codigo"
+}

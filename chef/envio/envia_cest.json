@@ -1,0 +1,5 @@
+{
+    "codigoCEST":"&self:oPublica['F0G_CEST']",
+    "descricao":"&self:oPublica['F0G_DESCRI']",
+    "status":"&self:cEvento == '1'"  
+}

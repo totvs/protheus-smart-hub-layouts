@@ -1,0 +1,7 @@
+{
+    "url": "{url_do_servidor}/chefwebapi/api/CadastroCliente/SalvarCadastro",
+    "tagretorno": "Sucesso",
+    "tagcodigo": "CodigoCliente",
+    "tagprincipal": "Cliente",
+    "chave": "CentralNumber"
+}

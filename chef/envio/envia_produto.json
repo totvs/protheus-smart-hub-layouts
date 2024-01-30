@@ -1,0 +1,16 @@
+{
+    "serialLoja": "&self:DePara('SM0',self:oPublica['B1_FILIAL'] + '|SERIAL',1,0,.T.)",
+    "Loja": "&self:DePara('SM0',self:oPublica['B1_FILIAL'],1,0,.T.)",
+    "token": "&self:oBody['token']",
+    "codigoProduto": "%B1_COD%",
+    "gerarCodigoProduto": false,
+    "nomeProduto": "%B1_DESC%",
+    "precoVenda": "%B1_PRV1%",
+    "descricaoProduto": "%B1_DESC%",
+    "CEST": "%B1_CEST%",
+    "NCM": "%B1_POSIPI%",
+    "idUnidade": "&self:DePara('SAH',PADR(SUBSTR(self:oPublica['B1_FILIAL'],1,4),TamSx3('AH_FILIAL')[1]) + '|' + self:oPublica['B1_UM'],1,0,.T.)",
+    "idUnidadeCompra": "&self:DePara('SAH',PADR(SUBSTR(self:oPublica['B1_FILIAL'],1,4),TamSx3('AH_FILIAL')[1]) + '|' + self:oPublica['B1_UM'],1,0,.T.)",
+    "Grupo": "&AllTrim( Upper( Posicione('ACU', 1, xFilial('ACU') + PadR(cValToChar(RmixGetCat(self:oPublica['B1_COD'], self:oPublica['B1_GRUPO'],'PROTHEUS')[1]), TamSx3('ACU_COD')[1]), 'ACU_DESC') ) )",
+    "SubGrupo": "&AllTrim( Upper( Posicione('ACU', 1, xFilial('ACU') + PadR(cValToChar(RmixGetCat(self:oPublica['B1_COD'], self:oPublica['B1_GRUPO'],'PROTHEUS')[2]), TamSx3('ACU_COD')[1]), 'ACU_DESC') ) )"
+}

@@ -1,0 +1,9 @@
+{
+    "CodigoLoja": "&self:aArrayFil[self:nFil][1]",
+    "notasinutilizadas": 1,
+    "DataMovimentoInicial": "&Str( Year(dDatabase), 4) +'-'+  StrZero( Month(dDatabase), 2) +'-'+ StrZero( Day(dDatabase), 2)",
+    "DataMovimentoFinal": "&Str( Year(dDatabase), 4) +'-'+  StrZero( Month(dDatabase), 2) +'-'+ StrZero( Day(dDatabase), 2)",
+    "DataReprocessamento": "20230515",
+    "UltimodiaReprocessado": "20230515",   
+    "DiasRetroceder": 10
+}

@@ -1,0 +1,9 @@
+{
+    "usuario":"usuário para acesso ao ChefWeb",
+    "senha":"senha para acesso ao ChefWeb",
+    "numeroserialloja":"SerialLoja onde sera integrado os processos com o Protheus",
+    "chave":"SerialNumber",
+    "url_token":"{url_do_servidor}/api/Token/GerarToken",
+    "tagretorno":"Sucesso",
+    "tagtoken":"Token"
+}

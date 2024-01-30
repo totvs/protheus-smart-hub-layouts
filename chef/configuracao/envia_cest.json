@@ -1,0 +1,5 @@
+{
+    "url":"http://{url_do_servidor}/api/produto/salvarCest",
+    "tagretorno":"sucesso",
+    "tagcodigo":"codigo"
+}

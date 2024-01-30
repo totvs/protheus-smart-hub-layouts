@@ -1,0 +1,5 @@
+{
+    "url":"http://{url_do_servidor}/api/produto/salvarProduto",
+    "tagretorno":"sucesso",
+    "tagcodigo":"codigo"
+}

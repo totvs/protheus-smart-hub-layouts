@@ -1,0 +1,5 @@
+{
+    "codigoNCM":"&self:oPublica['YD_TEC']",
+    "descricao":"&self:oPublica['YD_DESC_P']",
+    "status":"&self:cEvento == '1'"
+}

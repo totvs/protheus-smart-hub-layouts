@@ -1,0 +1,5 @@
+{
+    "descricao":"%AH_DESCPO%",
+    "unidade":"%AH_UNIMED%",
+    "status": "&self:cEvento == '1'"
+}
