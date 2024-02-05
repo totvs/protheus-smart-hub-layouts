@@ -5,7 +5,7 @@
     "aliquotaImportada": "&AllTrim(Transform(Self:oPublica['CLK_ALQIMP'], PesqPict('CLK', 'CLK_ALQIMP')))",
     "aliquotaEstadual": "&AllTrim(Transform(Self:oPublica['CLK_ALQEST'], PesqPict('CLK', 'CLK_ALQEST')))",
     "aliquotaMunicipal": "&AllTrim(Transform(Self:oPublica['CLK_ALQMUN'], PesqPict('CLK', 'CLK_ALQMUN')))",  
-    "chave": "F9A436",
+    "chave": "",
     "fonte": "&Self:oPublica['CLK_FONTE']",
     "situacao": 1,
     "idInquilino": "&self:oConfAssin['inquilino']",
@@ -14,5 +14,5 @@
     "dataCadastro": "&FwTimeStamp(6)",
     "idProprietario": "&LjRetComp()",
     "loteOrigem": "&Self:cLote",
-    "configPSH": { "Version": "2.0" }
+    "configPSH": { "Version": "2.1" }
 }
