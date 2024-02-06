@@ -2,7 +2,7 @@
     "token": "&Self:cToken",
     "name": "&self:oPublica['B1_DESC']",
     "description": "&self:oPublica['SB5'][1]['B5_ECDESCR']",
-    "technicalspecification": "&self:oPublica['SB5'][1]['B5_ECDESCR']",
+    "technicalSpecification": "&self:oPublica['SB5'][1]['B5_ECDESCR']",
     "order": 1,
     "code": "&self:oPublica['B1_COD']",
     "classification_code": "&self:oPublica['ACV'][1]['ACV_CATEGO']",
