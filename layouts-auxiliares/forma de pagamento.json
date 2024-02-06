@@ -366,11 +366,11 @@
 					"Order": "13",
 					"Size": 16,
 					"F3": null,
-					"Required": false,
+					"Required": true,
 					"Picture": null,
 					"Valid": null,
 					"IniPad": null,
-					"CanChange": false,
+					"CanChange": true,
 					"Trigger": null,
 					"List": null
 				},
@@ -433,7 +433,7 @@
 			"ComponentContent": ""
 		}
 	],
-	"LayoutVersion": 5.5,
+	"LayoutVersion": 5.6,
 	"PreValid": {
 		"Condition": "IIF(oModel:GetOperation() == 4 .and. Empty(AllTrim(oModel:GetValue('MIHDETAIL','TDCNDPGTO'))),oModel:LoadValue('MIHDETAIL','TDCNDPGTO',AllTrim(oModel:GetValue('MIHDETAIL','CONDPGTO'))),.T.),.T."
 	},
