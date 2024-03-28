@@ -18,9 +18,9 @@
 	"formasPagtoCondicoes": [
 		{
 			"TableNode": "todasCondicaoPgt",
-			"idRetaguarda": "&self:oPublica['MIH_ID']+AllTrim( xFilial('SAE') + StrTokArr(Self:oPublica['todasCondicaoPgt'], ';')[nItem] )",
+			"idRetaguarda": "&self:oPublica['MIH_ID']+AllTrim( AllTrim(xFilial('SAE')) + StrTokArr(Self:oPublica['todasCondicaoPgt'], ';')[nItem] )",
 			"idRetaguardaFormaPagto": "&self:oPublica['MIH_ID']",
-			"idRetaguardaCondicaoPagto": "&AllTrim( xFilial('SAE') + StrTokArr(Self:oPublica['todasCondicaoPgt'], ';')[nItem] )",
+			"idRetaguardaCondicaoPagto": "&AllTrim( AllTrim(xFilial('SAE')) + StrTokArr(Self:oPublica['todasCondicaoPgt'], ';')[nItem] )",
 			"situacao": "&IIF(AllTrim(StrTokArr(Self:oPublica['todasCondicaoPgt'], ';')[nItem] ) $ Self:oPublica['condicaoPagamento'], 1, 0)"
 		}
 	],
@@ -46,9 +46,9 @@
 	],
 	"formasPagtoOperadoras": [
 		{
-			"idRetaguarda": "&self:oPublica['MIH_ID']+AllTrim( xFilial('SAE') + Self:oPublica['operadora'])",
+			"idRetaguarda": "&self:oPublica['MIH_ID']+AllTrim( AllTrim(xFilial('SAE')) + Self:oPublica['operadora'])",
 			"idRetaguardaFormaPagto": "&self:oPublica['MIH_ID']",
-			"idRetaguardaOperadoraPagto": "&AllTrim( xFilial('SAE') + Self:oPublica['operadora'])",
+			"idRetaguardaOperadoraPagto": "&AllTrim( AllTrim(xFilial('SAE')) + Self:oPublica['operadora'])",
 			"situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 1, 0)"
 		}
 	],
