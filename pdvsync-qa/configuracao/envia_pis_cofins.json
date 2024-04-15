@@ -1,5 +1,5 @@
 {
-    "url":"https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/piscofins",
+    "url":"https://pdvsync-core-imposto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/piscofins",
     "codigotipo": "9",
     "descricaotipo": "PisCofins",
 	"configPSH": { "Version": "1.0" }
