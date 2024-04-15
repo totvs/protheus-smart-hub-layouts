@@ -4,10 +4,12 @@
     "Cliente": {
         "Loja": "&self:aArrayFil[1][1]",
         "Nome": "%A1_NOME%",
-        "Cpf": "%A1_CGC%",
+        "Cpf": "&IIF(self:oPublica['A1_PESSOA'] == 'F',self:oPublica['A1_CGC'],'')",
         "Limite": "0.00",
         "CodigoExterno": "%A1_COD%",
         "NaoAceitaPendura": "false",
-        "NumeroCracha": ""
+        "NumeroCracha": "",
+		"Cnpj": "&IIF(self:oPublica['A1_PESSOA'] == 'J',self:oPublica['A1_CGC'],'')",
+		"TipoPessoa": "&IIF(self:oPublica['A1_PESSOA'] == 'J','1','0')"
     }
 }
