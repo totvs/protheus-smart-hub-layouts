@@ -1,5 +1,5 @@
 {
-    "url": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/condicaopagtos",
+    "url": "https://pdvsync-core-formapagto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/condicaopagtos",
     "codigotipo": "17",
     "descricaotipo": "CondicaoPagto",
 	"configPSH": { "Version": "1.0" }
