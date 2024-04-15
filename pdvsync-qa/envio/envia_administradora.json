@@ -1,0 +1,17 @@
+{
+	"descricao": "&self:oPublica['AE_DESC']",
+	"situacao": "&IIF(self:cEvento == '1', 1, 0)",
+	"codigoTef": "&IIF( Empty(self:oPublica['AE_ADMCART']), 'SEM TEF', Alltrim(Posicione('MDE', 1, xFilial('MDE') + PadR(self:oPublica['AE_ADMCART'], TamSx3('MDE_CODIGO')[1]), 'MDE_CODSIT')) )",
+	"administradora": "&self:oPublica['AE_FILIAL'] + self:oPublica['AE_COD']",
+	"tipoTransacao": "&IIF( self:oPublica['AE_TIPO'] == 'CC', 0, IIF(self:oPublica['AE_TIPO'] == 'CD', 1, 2) )",
+	"sequencial": 0,
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"idRetaguarda": "&self:oPublica['AE_FILIAL'] + self:oPublica['AE_COD']",
+	"dataAtualizacao": "&FwTimeStamp(6)",
+	"dataCadastro": "&FwTimeStamp(6)",
+	"idProprietario": "&LjRetComp()",
+	"loteOrigem": "&self:cLote",
+	"configPSH": {
+		"Version": "1.1"
+	}
+}

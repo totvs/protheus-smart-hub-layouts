@@ -1,0 +1,16 @@
+{
+	"url_lote": "https://pdvsync.varejo.totvs.com.br/controle/api/retaguarda/inquilinolotesexternos",
+	"inquilino": "",
+	"url_consultalote": "https://pdvsync.varejo.totvs.com.br/controle/api/retaguarda/v2/lojalotes",
+	"url_lojaloteretornos": "https://pdvsync.varejo.totvs.com.br/controle/api/retaguarda/v2/LojaLoteRetornos",
+	"urlPostStatus": "https://pdvsync.varejo.totvs.com.br/controle/api/retaguarda/v2/statusservico",
+	"autenticacao": {
+		"environment": 2,
+		"tenent": "",
+		"user": "",
+		"password": "",
+		"clientId": "",
+		"clientSecret": ""
+	},
+	"configPSH": { "Version": "1.0" }
+}

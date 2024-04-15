@@ -1,0 +1,7 @@
+{
+    "url":"https://pdvsync.varejo.totvs.com.br/produto/api/retaguarda/produtos",
+    "codigotipo":"12",
+    "descricaotipo":"Produto",
+    "qtdEnvio": 1,
+    "configPSH": { "Version": "1.1" }
+}

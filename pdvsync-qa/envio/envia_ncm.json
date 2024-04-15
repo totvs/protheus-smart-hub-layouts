@@ -1,0 +1,18 @@
+{
+    "codigoNcm": "&Self:oPublica['CLK_CODNCM']",
+    "codigoExcecao": "&Self:oPublica['CLK_EX']",
+    "aliquotaNacional": "&AllTrim(Transform(Self:oPublica['CLK_ALQNAC'], PesqPict('CLK', 'CLK_ALQNAC')))",
+    "aliquotaImportada": "&AllTrim(Transform(Self:oPublica['CLK_ALQIMP'], PesqPict('CLK', 'CLK_ALQIMP')))",
+    "aliquotaEstadual": "&AllTrim(Transform(Self:oPublica['CLK_ALQEST'], PesqPict('CLK', 'CLK_ALQEST')))",
+    "aliquotaMunicipal": "&AllTrim(Transform(Self:oPublica['CLK_ALQMUN'], PesqPict('CLK', 'CLK_ALQMUN')))",  
+    "chave": "",
+    "fonte": "&Self:oPublica['CLK_FONTE']",
+    "situacao": 1,
+    "idInquilino": "&self:oConfAssin['inquilino']",
+    "idRetaguarda": "&Self:oPublica['CLK_CODNCM']",
+    "dataAtualizacao": "&FwTimeStamp(6)",
+    "dataCadastro": "&FwTimeStamp(6)",
+    "idProprietario": "&LjRetComp()",
+    "loteOrigem": "&Self:cLote",
+    "configPSH": { "Version": "2.1" }
+}

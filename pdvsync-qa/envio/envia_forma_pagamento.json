@@ -1,0 +1,58 @@
+{
+	"descricao": "&self:oPublica['descricao']",
+	"descricaoFiscal": "&self:oPublica['descricaofiscal']",
+	"permiteTroco": "&IIF(self:oPublica['permitetroco'] == .T., 1,0)",
+	"idRetaguardaFormaPagTroco": "&self:oPublica['idFormaPagamentoTroco']",
+	"valorMinimoAceito": "&cValtoChar(self:oPublica['valorminimoaceito'])",
+	"codigoSistemaExterno": "&self:oPublica['MIH_ID']",
+	"situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 1, 0)",
+	"tipo": "&cValtoChar(self:oPublica['tipo'])",
+	"tipoCliente": "&IIF( self:oPublica:hasProperty('consultaCredito'), Val( self:oPublica['consultaCredito'] ), 0 )",
+	"sequencial": 0,
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"idRetaguarda": "&self:oPublica['MIH_ID']",
+	"dataAtualizacao": "&self:oPublica['MIH_DATALT']",
+	"dataCadastro": "&self:oPublica['MIH_DATINC']",
+	"idProprietario": "&LjRetComp()",
+	"loteOrigem": "&Self:cLote",
+	"formasPagtoCondicoes": [
+		{
+			"TableNode": "todasCondicaoPgt",
+			"idRetaguarda": "&self:oPublica['MIH_ID']+AllTrim( AllTrim(xFilial('SAE')) + StrTokArr(Self:oPublica['todasCondicaoPgt'], ';')[nItem] )",
+			"idRetaguardaFormaPagto": "&self:oPublica['MIH_ID']",
+			"idRetaguardaCondicaoPagto": "&AllTrim( AllTrim(xFilial('SAE')) + StrTokArr(Self:oPublica['todasCondicaoPgt'], ';')[nItem] )",
+			"situacao": "&IIF(AllTrim(StrTokArr(Self:oPublica['todasCondicaoPgt'], ';')[nItem] ) $ Self:oPublica['condicaoPagamento'], 1, 0)"
+		}
+	],
+	"formasPagtoDadosComplementares": [
+		{
+			"TableNode": "camposComplementares",
+			"idRetaguarda": "&self:oPublica['MIH_ID']+StrTokArr(Self:oPublica['camposComplementares'], ';')[nItem]",
+			"idRetaguardaFormaPagto": "&self:oPublica['MIH_ID']",
+			"idRetaguardaDadoComplementarPagto": "&StrTokArr(Self:oPublica['camposComplementares'], ';')[nItem]",
+			"situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 1, 0)",
+			"ordem": "&nItem"
+		}
+	],
+	"formaPagtoModeloFiscal": [
+		{
+			"idRetaguarda": "&self:oPublica['MIH_ID']+self:oPublica['idModelo']",
+			"idRetaguardaFormaPagto": "&self:oPublica['MIH_ID']",
+			"modeloFiscal": "&self:oPublica['modeloFiscal']",
+			"codigoFiscal": "&self:oPublica['codigoFiscal']",
+			"descricaoFiscal": "&self:oPublica['descricaoFiscal']",
+			"situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 1, 0)"
+		}
+	],
+	"formasPagtoOperadoras": [
+		{
+			"idRetaguarda": "&self:oPublica['MIH_ID']+AllTrim( AllTrim(xFilial('SAE')) + Self:oPublica['operadora'])",
+			"idRetaguardaFormaPagto": "&self:oPublica['MIH_ID']",
+			"idRetaguardaOperadoraPagto": "&AllTrim( AllTrim(xFilial('SAE')) + Self:oPublica['operadora'])",
+			"situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 1, 0)"
+		}
+	],
+	"configPSH": {
+		"Version": "2.4"
+	}
+}

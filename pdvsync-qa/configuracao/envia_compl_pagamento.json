@@ -1,0 +1,6 @@
+{
+    "url":"https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/dadocomplementarpagtos",
+    "codigotipo": "16",
+    "descricaotipo": "DadoComplementarPagto",
+	"configPSH": { "Version": "1.0" }
+}

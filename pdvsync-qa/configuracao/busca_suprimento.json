@@ -1,0 +1,10 @@
+{
+    "url": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/caixaMensagens",
+    "ChaveUni": [
+        "Loja:IdRetaguarda",
+        "Id",
+        "NumeroCaixa",
+        "TipoMovimento"
+    ],
+	"configPSH": { "Version": "1.0" }
+}
