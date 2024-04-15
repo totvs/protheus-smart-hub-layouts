@@ -1,5 +1,5 @@
 {
-    "url": "https://pdvsync-core-cliente-qa-ywc7q7nxya-uc.a.run.app/retaguarda/clienteMensagens/",
+    "url": "https://pdvsync-core-cliente-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/clienteMensagens/",
     "ChaveUni": [
         "CpfCnpj",
         "DataAtualizacao"
