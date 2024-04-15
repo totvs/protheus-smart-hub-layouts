@@ -1,5 +1,5 @@
 {
-    "url":"https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/ncms",
+    "url":"https://pdvsync-core-imposto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/ncms",
     "codigotipo": "8",
     "descricaotipo": "Ncm",
 	"configPSH": { "Version": "1.0" }
