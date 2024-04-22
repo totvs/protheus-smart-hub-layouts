@@ -68,7 +68,7 @@
 					"Trigger": [
 						{
 							"TargetIdField": "RazaoSocial",
-							"SetValue": "Alltrim(SM0->M0_NOMECOM)"
+							"SetValue": "Substr( Alltrim(SM0->M0_NOMECOM), 1, 50)"
 						},
 						{
 							"TargetIdField": "NomeFantasia",
@@ -122,7 +122,6 @@
 							"TargetIdField": "Telefone",
 							"SetValue": "Alltrim(SM0->M0_TEL)"
 						},
-
 						{
 							"TargetIdField": "NumeroLoja",
 							"SetValue": "Alltrim(SM0->M0_CODIGO)+Alltrim(SM0->M0_CODFIL)"
@@ -155,7 +154,7 @@
 				"Parameters": {
 					"Order": "04",
 					"List": null,
-					"Size": 20,
+					"Size": 50,
 					"F3": "",
 					"Required": true,
 					"Picture": null,
@@ -165,7 +164,7 @@
 					"Trigger": null,
 					"Help": [
 						"Razão social",
-						"Razão social da Loja (Referência do dado : campo M0_NOMECOM do arquivo de empresas SM0)"
+						"Razão social da Loja deve ter no máximo 50 caracteres (Referência do dado : campo M0_NOMECOM do arquivo de empresas SM0)"
 					]
 				},
 				"ComponentLabel": "Razao Social"
@@ -180,7 +179,7 @@
 				"Parameters": {
 					"Order": "05",
 					"List": null,
-					"Size": 20,
+					"Size": 50,
 					"F3": "",
 					"Required": true,
 					"Picture": null,
@@ -190,7 +189,7 @@
 					"Trigger": null,
 					"Help": [
 						"Nome Fantasia",
-						"Nome Fantasia (Referência do dado : campo M0_NOME do arquivo de empresas SM0)"
+						"Nome Fantasia deve ter no máximo 50 caracteres(Referência do dado : campo M0_NOME do arquivo de empresas SM0)"
 					]
 				},
 				"ComponentLabel": "Nome Fantasia"
@@ -771,5 +770,5 @@
 			"SetValue": ".F."
 		}
 	],
-	"LayoutVersion": 2.1
+	"LayoutVersion": 2.2
 }
