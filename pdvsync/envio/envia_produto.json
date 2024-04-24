@@ -6,7 +6,7 @@
     "codigoProduto": "&self:oPublica['B1_COD']",
     "codigoAlternativo": "&self:oPublica['B1_CODBAR']",
     "origemProduto": "&IIF(self:oPublica['B1_ORIGEM'] <> '0', 1, 0 )",
-    "situacao": "&IIF( self:oPublica['B1_ATIVO'] == 'S', 1, 0)",
+    "situacao": "&IIF(self:oPublica['B1_MSBLQL'] == '1' .OR. self:cEvento == '2', 0, 1)",
     "imagem": "",
     "tipoProduto": "&IIF( self:oPublica['B1_TIPO'] == 'KT', 'KIT', 'ProdutoAcabado')",
     "fracionado": "&IIF( self:oPublica['B1_UM'] $ 'G|MG|KG' .AND. self:oPublica['B1_BALANCA'] == '2', .T., .F.)",
@@ -25,7 +25,7 @@
             "descricao": "&POSICIONE('SB1',1,xFilial('SB1') + self:oPublica['MEV'][nItem]['MEV_PRODUT'],'B1_DESC')",
             "quantidadeVendaKit": "&self:oPublica['MEV'][nItem]['MEV_QTD']",
             "tipoValorKit": 0,
-            "situacao": "&IIF( self:oPublica['B1_ATIVO'] == 'S', 1, 0)",
+            "situacao": "&IIF(self:oPublica['B1_MSBLQL'] == '1' .OR. self:cEvento == '2', 0, 1)",
             "valorDesconto": "&self:oPublica['MEV'][nItem]['MEV_DESCNT']",
             "novoValorUnitario": 0
         }
