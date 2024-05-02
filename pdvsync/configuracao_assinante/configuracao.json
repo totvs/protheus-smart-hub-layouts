@@ -1,9 +1,9 @@
 {
-	"url_lote": "https://pdvsync.varejo.totvs.com.br/controle/api/retaguarda/inquilinolotesexternos",
+	"url_lote": "https://pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/inquilinolotesexternos",
 	"inquilino": "",
-	"url_consultalote": "https://pdvsync.varejo.totvs.com.br/controle/api/retaguarda/v2/lojalotes",
-	"url_lojaloteretornos": "https://pdvsync.varejo.totvs.com.br/controle/api/retaguarda/v2/LojaLoteRetornos",
-	"urlPostStatus": "https://pdvsync.varejo.totvs.com.br/controle/api/retaguarda/v2/statusservico",
+	"url_consultalote": "https://pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v2/lojalotes",
+	"url_lojaloteretornos": "https://pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v2/LojaLoteRetornos",
+	"urlPostStatus": "https://pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v2/statusservico",
 	"autenticacao": {
 		"environment": 2,
 		"tenent": "",
@@ -12,5 +12,12 @@
 		"clientId": "",
 		"clientSecret": ""
 	},
-	"configPSH": { "Version": "1.0" }
+	"email": {
+		"destinatarios": "",
+		"horaParaExecucao": "07:00",
+		"dataDados": "&dDataBase - 1"
+	},
+	"configPSH": {
+		"Version": "2.0"
+	}
 }
