@@ -1,5 +1,5 @@
 {
-    "url":"http://{url_do_servidor}/api/produto/salvarProduto",
+    "url":"http://chefwebcloud.chef.totvs.com.br/api/produto/salvarProduto",
     "tagretorno":"sucesso",
     "tagcodigo":"codigo"
 }
