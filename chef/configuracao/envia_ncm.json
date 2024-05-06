@@ -1,4 +1,4 @@
 {
-    "url":"http://{url_do_servidor}/api/produto/salvarNCM",
+    "url":"http://chefwebcloud.chef.totvs.com.br/api/produto/salvarNCM",
     "tagcodigo":"codigo"
 }
