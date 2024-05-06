@@ -1,5 +1,5 @@
 {
-    "url": "{URL SERVIDOR}/api/capavenda/listpordatamovimentos",
+    "url": "http://chefwebcloud.chef.totvs.com.br/api/capavenda/listpordatamovimentos",
     "SL2": "self:oRegistro['Itens']",
     "SL4": "self:oRegistro['Pagamentos']",
     "ultimaExecucao": "15:37:39",
