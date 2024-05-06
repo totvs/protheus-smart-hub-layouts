@@ -1,5 +1,5 @@
 {
-    "url":"http://{url_do_servidor}/api/produto/salvarGrupoSubGrupo",
+    "url":"http://chefwebcloud.chef.totvs.com.br/api/produto/salvarGrupoSubGrupo",
     "tagretorno":"sucesso",
     "tagcodigo":"codigo"
 }
