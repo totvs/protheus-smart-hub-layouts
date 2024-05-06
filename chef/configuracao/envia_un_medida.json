@@ -1,5 +1,5 @@
 {
-    "url":"http://{url_do_servidor}/api/produto/salvarUnidadeDeMedida",
+    "url":"http://chefwebcloud.chef.totvs.com.br/api/produto/salvarUnidadeDeMedida",
     "tagretorno":"sucesso",
     "tagcodigo":"codigo"
 }
