@@ -1,5 +1,5 @@
 {
-    "url": "{url_do_servidor}/chefwebapi/api/CadastroCliente/SalvarCadastro",
+    "url": "http://chefwebcloud.chef.totvs.com.br/chefwebapi/api/CadastroCliente/SalvarCadastro",
     "tagretorno": "Sucesso",
     "tagcodigo": "CodigoCliente",
     "tagprincipal": "Cliente",
