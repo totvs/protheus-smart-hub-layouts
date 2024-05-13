@@ -342,8 +342,7 @@
 					"CanChange": true,
 					"Trigger": null,
 					"List": [
-						"",
-						"Nao Configurado",
+						"NaoConfigurado",
 						"SAT",
 						"NFCe",
 						"MFE"
