@@ -1,16 +1,19 @@
 {
 	"url_lote": "https://qua-pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/inquilinolotesexternos",
-	"inquilino": "",
+	"inquilino": "QAPSH",
 	"url_consultalote": "https://qua-pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v2/lojalotes",
-	"url_lojaloteretornos": "https://pdvsync.varejo.totvs.com.br/controle/api/retaguarda/v2/LojaLoteRetornos",
-	"urlPostStatus": "https://qua-pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v2/LojaLoteRetornos",
+	"url_lojaloteretornos": "https://qua-pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v2/LojaLoteRetornos",
 	"autenticacao": {
 		"environment": 3,
-		"tenent": "",
-		"user": "",
-		"password": "",
-		"clientId": "",
-		"clientSecret": ""
+		"tenent": "pdvsyncintegracao",
+		"user": "alberto.marques",
+		"password": "qapsh123",
+		"clientId": "pdvsync_ro",
+		"clientSecret": "799fedbd-d2ab-46e2-8069-84da734f9fd8"
 	},
-	"configPSH": { "Version": "1.0" }
+	"email": {
+		"horaParaExecucao": "08:40",
+		"dataDados": "26/10/23",
+		"ultimaExecucao": "15/04/24"
+	}
 }
