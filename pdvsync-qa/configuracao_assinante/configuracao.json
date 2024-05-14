@@ -5,11 +5,11 @@
 	"url_lojaloteretornos": "https://qua-pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v2/LojaLoteRetornos",
 	"autenticacao": {
 		"environment": 3,
-		"tenent": "pdvsyncintegracao",
-		"user": "alberto.marques",
-		"password": "qapsh123",
-		"clientId": "pdvsync_ro",
-		"clientSecret": "799fedbd-d2ab-46e2-8069-84da734f9fd8"
+		"tenent": "",
+		"user": "",
+		"password": "",
+		"clientId": "",
+		"clientSecret": ""
 	},
 	"email": {
 		"horaParaExecucao": "08:40",
