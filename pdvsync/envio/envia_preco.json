@@ -1,5 +1,5 @@
 {
-	"dataHoraVigenciaInicial": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), FwTimeStamp(3), FwTimeStamp(3,SToD(Self:oPublica['DA1_DATVIG']),Self:oPublica['DA0'][1]['DA0_HORADE']) )",
+	"dataHoraVigenciaInicial": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), FwTimeStamp(3), FwTimeStamp(3,IIF(Empty(SToD(Self:oPublica['DA1_DATVIG'])),SToD(Self:oPublica['DA0'][1]['DA0_DATDE']),SToD(Self:oPublica['DA1_DATVIG'])),Self:oPublica['DA0'][1]['DA0_HORADE']) )",
 	"dataHoraVigenciaFinal": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), '9999-01-31T23:59', IIF(!Empty(Self:oPublica['DA0'][1]['DA0_DATATE']),FwTimeStamp(3,SToD(Self:oPublica['DA0'][1]['DA0_DATATE']),Self:oPublica['DA0'][1]['DA0_HORATE']),'9999-01-31T23:59') )",
 	"codigoProduto": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), Self:oPublica['B0_COD'], Self:oPublica['DA1_CODPRO'] )",
 	"idRetaguardaProduto": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), Self:oPublica['B0_COD'], Self:oPublica['DA1_CODPRO'] )",
@@ -14,6 +14,6 @@
 	"idProprietario": "&LjRetComp()",
 	"loteOrigem": "&Self:cLote",
 	"configPSH": {
-		"Version": "3.2"
+		"Version": "3.3"
 	}
 }
