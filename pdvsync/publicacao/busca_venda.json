@@ -24,7 +24,7 @@
 	"L1_FRETE": "&self:oXmlSefaz:getTotal({'ICMSTot', 'vFrete'}, 0)",
 	"L1_SEGURO": "&self:oXmlSefaz:getTotal({'ICMSTot', 'vSeg'}, 0)",
 	"L1_ORIGEM": "N",
-	"L1_CGCCLI": "&IIF( Empty(self:oRegistro['CpfCnpjConsumidor']), '', self:oRegistro['CpfCnpjConsumidor'] )",
+	"L1_CGCCLI": "&IIF( Empty(self:oRegistro['CpfCnpjConsumidor']), '', strTran( strTran( strTran( self:oRegistro['CpfCnpjConsumidor'], '-', ''), '/', ''), '.', '') )",
 	"L1_CONDPG": "&SuperGetMv('MV_CONDPAD', .F., 'CN')",
 	"L1_SITUA": "IP",
 	"L1_TIPO": "V",
