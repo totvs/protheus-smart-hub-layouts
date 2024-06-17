@@ -1,6 +1,13 @@
 {
-    "url":"https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/precos",
-    "codigotipo": "13",
-    "descricaotipo": "Preco",
-	"configPSH": { "Version": "1.0" }
+	"url": "https://pdvsync.varejo.totvs.com.br/preco/api/retaguarda/precos",
+	"codigotipo": "13",
+	"descricaotipo": "Preco",
+	"qtdereenvio": [
+		1,
+		3,
+		9
+	],
+	"configPSH": {
+		"Version": "1.1"
+	}
 }
