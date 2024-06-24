@@ -457,7 +457,7 @@
 					"Size": 14,
 					"F3": "",
 					"Required": false,
-					"Picture": null,
+					"Picture": "@R (99) 999999999",
 					"Valid": null,
 					"IniPad": null,
 					"CanChange": true,
@@ -769,5 +769,5 @@
 			"SetValue": ".F."
 		}
 	],
-	"LayoutVersion": 2.3
+	"LayoutVersion": 2.4
 }
