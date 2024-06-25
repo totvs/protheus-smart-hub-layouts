@@ -221,7 +221,7 @@
 					"Size": 99,
 					"F3": "{|| LjCadAuxF3('LJF3MU', '', '1', {'AE_COD', 'AE_DESC', 'Condições de Pagamento'})}",
 					"Trigger": null,
-					"Required": true,
+					"Required": false,
 					"Picture": "@S20!",
 					"CanChange": "IIf(oModel:GetValue('TIPO') <> '10',.T.,.F.)",
 					"Valid": "Vazio() .Or. LjAuxMsg( At(';', xValor) > 0, 'condicaoPagamento', 'M1')",
