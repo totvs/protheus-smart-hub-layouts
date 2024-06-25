@@ -174,7 +174,7 @@
 					"Order": "07",
 					"Size": 2,
 					"F3": null,
-					"Required": true,
+					"Required": false,
 					"Picture": null,
 					"Valid": null,
 					"CanChange": true,
@@ -432,7 +432,7 @@
 			"ComponentContent": ""
 		}
 	],
-	"LayoutVersion": 5.8,
+	"LayoutVersion": 5.9,
 	"PreValid": {
 		"Condition": "IIF(oModel:GetOperation() == 4 .and. Empty(AllTrim(oModel:GetValue('MIHDETAIL','TDCNDPGTO'))),oModel:LoadValue('MIHDETAIL','TDCNDPGTO',AllTrim(oModel:GetValue('MIHDETAIL','CONDPGTO'))),.T.),.T."
 	},
