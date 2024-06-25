@@ -221,7 +221,7 @@
 					"Size": 99,
 					"F3": "{|| LjCadAuxF3('LJF3MU', '', '1', {'AE_COD', 'AE_DESC', 'Condições de Pagamento'})}",
 					"Trigger": null,
-					"Required": false,
+					"Required": true,
 					"Picture": "@S20!",
 					"CanChange": "IIf(oModel:GetValue('TIPO') <> '10',.T.,.F.)",
 					"Valid": "Vazio() .Or. LjAuxMsg( At(';', xValor) > 0, 'condicaoPagamento', 'M1')",
@@ -432,7 +432,7 @@
 			"ComponentContent": ""
 		}
 	],
-	"LayoutVersion": 5.7,
+	"LayoutVersion": 5.8,
 	"PreValid": {
 		"Condition": "IIF(oModel:GetOperation() == 4 .and. Empty(AllTrim(oModel:GetValue('MIHDETAIL','TDCNDPGTO'))),oModel:LoadValue('MIHDETAIL','TDCNDPGTO',AllTrim(oModel:GetValue('MIHDETAIL','CONDPGTO'))),.T.),.T."
 	},
