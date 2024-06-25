@@ -432,16 +432,20 @@
 			"ComponentContent": ""
 		}
 	],
-	"LayoutVersion": 5.9,
+	"LayoutVersion": 6.0,
 	"PreValid": {
 		"Condition": "IIF(oModel:GetOperation() == 4 .and. Empty(AllTrim(oModel:GetValue('MIHDETAIL','TDCNDPGTO'))),oModel:LoadValue('MIHDETAIL','TDCNDPGTO',AllTrim(oModel:GetValue('MIHDETAIL','CONDPGTO'))),.T.),.T."
 	},
 	"PosValid": {
-		"Condition": "IIf(oModel:GetOperation() == 3 .Or. oModel:GetOperation() == 4,Aeval(StrTokArr(AllTrim(oModel:GetValue('MIHDETAIL','CONDPGTO')), ';'),{|x| IIf(! x $ AllTrim(oModel:GetValue('MIHDETAIL','TDCNDPGTO')),oModel:LoadValue('MIHDETAIL','TDCNDPGTO',AllTrim(oModel:GetValue('MIHDETAIL','TDCNDPGTO'))+Alltrim(x)+';'),.T.) }),.T.),LjAuxMsg(IIf(oModel:GetValue('MIHDETAIL','TIPO') == '10',!Empty(oModel:GetValue('MIHDETAIL','OPERADORA')),.T.), 'OPERADORA', 'M1',2)",
+		"Condition": "IIf(oModel:GetOperation() == 3 .Or. oModel:GetOperation() == 4,Aeval(StrTokArr(AllTrim(oModel:GetValue('MIHDETAIL','CONDPGTO')), ';'),{|x| IIf(! x $ AllTrim(oModel:GetValue('MIHDETAIL','TDCNDPGTO')),oModel:LoadValue('MIHDETAIL','TDCNDPGTO',AllTrim(oModel:GetValue('MIHDETAIL','TDCNDPGTO'))+Alltrim(x)+';'),.T.) }),.T.),LjAuxMsg(IIf(oModel:GetValue('MIHDETAIL','TIPO') == '10',!Empty(oModel:GetValue('MIHDETAIL','OPERADORA')),.T.), 'OPERADORA', 'M1',2),LjAuxMsg(IIf(Alltrim(oModel:GetValue('MIHDETAIL','TIPO')) == '5',!Empty(oModel:GetValue('MIHDETAIL','CONDPGTO')),.T.), 'condicaoPagamento', 'M2',2)",
 		"Messages": [
 			{
 				"Id": "M1",
 				"Message": "Ops! Não será possivel prosseguir! Quando o campo \"Tipo de Forma de Pagamento\" for igual a \"10 - QRCODE\", é obrigatorio o preenchimento do campo \"Operadora\"."
+			},
+			{
+				"Id": "M2",
+				"Message": "Ops! Não será possivel prosseguir! Quando o campo \"Tipo de Forma de Pagamento\" for igual a \"5 - POS\", é obrigatorio o preenchimento do campo \"Condições de Pagamento\"."
 			}
 		]
 	}
