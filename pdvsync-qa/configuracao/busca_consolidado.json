@@ -1,0 +1,12 @@
+{
+	"url": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v2/dadoConsolidados/",
+	"tagretorno": "success",
+	"ChaveUni": [
+		"idRetaguardaLoja",
+		"tipoDado",
+		"id"
+	],
+	"configPSH": {
+		"Version": "1.0"
+	}
+}
