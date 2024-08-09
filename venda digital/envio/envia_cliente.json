@@ -1,0 +1,33 @@
+{
+	"token": "&Self:cToken",
+	"data": [
+		{
+			"name": "&self:oPublica['A1_NOME']",
+			"email": "&self:oPublica['A1_EMAIL']",
+			"doc": "&self:oPublica['A1_RG']",
+			"addresses": [
+				{
+					"zipCode": "&self:oPublica['A1_CEP']",
+					"street": "&self:oPublica['A1_END']",
+					"number": 0,
+					"extra": "&self:oPublica['A1_COMPLEM']",
+					"district": "&self:oPublica['A1_BAIRRO']",
+					"city": "&self:oPublica['A1_MUN']",
+					"state": "&self:oPublica['A1_EST']",
+					"reference": "",
+					"typeAddress": "main"
+				}
+			],
+			"phones": [
+				{
+					"typePhone": "cell",
+					"numberPhone": "&self:oPublica['A1_DDD'] + self:oPublica['A1_TEL']"
+				}
+			],
+			"cpf": "&self:oPublica['A1_CGC']",
+			"optinWhatsapp": false,
+			"birthDate": "&SubStr( FwTimeStamp(6, SToD(self:oPublica['A1_DTNASC'])), 1, 10 )",
+			"gender": ""
+		}
+	]
+}
