@@ -49,7 +49,7 @@
 			"L2_UM": "&self:oXmlSefaz:getDet({'prod', 'uCom'}, self:oRegistro['VendaItems'][nItem]['Sequencia'],'')",
 			"L2_VALDESC": "&self:oXmlSefaz:getDet({'prod', 'vDesc'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0)",
 			"L2_DESCPRO": "&self:oXmlSefaz:getDet({'prod', 'vRatDesc'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0)",
-			"L2_DESC": "&(self:oXmlSefaz:getDet({'prod', 'vDesc'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0) * 100)/self:oXmlSefaz:getDet({'prod', 'vProd'}, self:oRegistro['VendaItems'][nItem]['Sequencia'],0)",
+			"L2_DESC": "&NoRound((self:oXmlSefaz:getDet({'prod', 'vDesc'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0) * 100)/self:oXmlSefaz:getDet({'prod', 'vProd'}, self:oRegistro['VendaItems'][nItem]['Sequencia'],0),TamSX3('D2_DESC')[2])",
 			"L2_DESPESA": "&self:oXmlSefaz:getDet({'prod', 'vOutro'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0) + self:oXmlSefaz:getDet({'prod', 'vRatAcr'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0)",
 			"L2_TES": "&RmiTesProd(self:oXmlSefaz:getDet({'prod', 'cProd'}, self:oRegistro['VendaItems'][nItem]['Sequencia'],0))",
 			"L2_DOC": "&IIF( self:oRegistro['ModeloFiscal'] == 1, self:oXmlSefaz:get( , {'ide', 'nCFe'}, ''), IIF(self:oRegistro['ModeloFiscal'] == 2, self:oXmlSefaz:get( , {'ide', 'nNF'}, ''), self:oRegistro['Ccf']) )",
@@ -88,5 +88,7 @@
 			"L2_PREDIC": "&IiF(self:oXmlSefaz:getDetIcms('pRedBC', self:oRegistro['VendaItems'][nItem]['Sequencia'], 0) > 0,100-(self:oXmlSefaz:getDetIcms('pRedBC', self:oRegistro['VendaItems'][nItem]['Sequencia'],0)),0)"
 		}
 	],
-	"configPSH": {"Version": "1.1"}
+	"configPSH": {
+		"Version": "1.2"
+	}
 }
