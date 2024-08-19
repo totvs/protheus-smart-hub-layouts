@@ -13,9 +13,9 @@
 	"A1_END": "&UPPER( AllTrim(self:oRegistro['Endereco']) + ', ' + AllTrim(self:oRegistro['Numero']) )",
 	"A1_DDD": "&SubStr( cValToChar( Val(self:oRegistro['Telefone']) ), 1, 2)",
 	"A1_TEL": "&SubStr( cValToChar( Val(self:oRegistro['Telefone']) ), 3)",
-	"A1_COD_MUN": "&Posicione('CC2',4,xFilial('CC2')+self:oRegistro['Estado']+UPPER(PADR(self:oRegistro['Cidade'],TamSX3('CC2_MUN')[1])),'CC2_CODMUN')",
+	"A1_COD_MUN": "&Posicione('CC2',4,xFilial('CC2')+self:oRegistro['Estado']+UPPER(PADR(Replace(self:oRegistro['Cidade'],"-"," "),TamSX3('CC2_MUN')[1])),'CC2_CODMUN')",
 	"A1_MSBLQL": "2",
 	"A1_EMAIL": "&self:oRegistro['Email']",
 	"A1_DTNASC": "&self:oRegistro['DataNascimento']",
-	"configPSH": {"Version": "1.1"}
+	"configPSH": {"Version": "1.2"}
 }
