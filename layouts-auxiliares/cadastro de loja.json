@@ -760,6 +760,56 @@
 				"ComponentLabel": "Nome da Região"
 			},
 			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "PedenteCarga",
+			"Component": {
+				"ComponentType": "COMBO",
+				"Parameters": {
+					"Order": "27",
+					"Size": 30,
+					"F3": "",
+					"Required": false,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": "",
+					"CanChange": true,
+					"Trigger": null,
+					"List": [
+						"",
+						"1=Pendente",
+						"2=Nao Pendente"
+					],
+					"Help": []
+				},
+				"ComponentLabel": "Solicitacao Carga"
+			},
+			"ComponentContent": "1                             ",
+			"IdFieldModel": null
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "DataSolCarga",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "28",
+					"Size": 30,
+					"F3": "",
+					"Required": false,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": "",
+					"CanChange": true,
+					"Trigger": null,
+					"List": null,
+					"Help": []
+				},
+				"ComponentLabel": "Data Solicitacao Carga"
+			},
+			"ComponentContent": "                              ",
+			"IdFieldModel": null
 		}
 	],
 	"SetProperty": [
@@ -769,5 +819,5 @@
 			"SetValue": ".F."
 		}
 	],
-	"LayoutVersion": 2.4
+	"LayoutVersion": 2.5
 }
