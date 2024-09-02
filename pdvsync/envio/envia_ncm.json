@@ -15,6 +15,6 @@
 	"idProprietario": "&LjRetComp()",
 	"loteOrigem": "&Self:cLote",
 	"configPSH": {
-		"Version": "2.2"
+		"Version": "2.3"
 	}
 }
