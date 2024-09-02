@@ -57,7 +57,7 @@
 	],
 	"ncms": [
 		{
-			"idRetaguarda": "&self:oPublica['B1_FILIAL'] + self:oPublica['B1_POSIPI'] + self:oPublica['B1_EX_NCM']",
+			"idRetaguarda": "&self:oPublica['B1_POSIPI'] + self:oPublica['B1_EX_NCM']",
 			"IdProprietario": "&LjRetComp()"
 		}
 	],
@@ -74,6 +74,6 @@
 		"string"
 	],
 	"configPSH": {
-		"Version": "1.2"
+		"Version": "1.3"
 	}
 }
