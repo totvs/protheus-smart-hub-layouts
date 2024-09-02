@@ -47,7 +47,7 @@
             "L4_DATA": "&Self:oRegistro['Pagamento'][nItem]['DataPgto']",
             "L4_VALOR": "&Self:oRegistro['Pagamento'][nItem]['ValorPgto']",
             "L4_FORMA": "&Self:oRegistro['Pagamento'][nItem]['FormaPgto']",
-            "L4_ADMINIS": "&self:DePara('SAE',UPPER(Self:oRegistro['Pagamento'][nItem]['Operadora']),,,,'VENDA DIGITAL')",
+            "L4_ADMINIS": "&self:DePara('SAE',UPPER(Self:oRegistro['Pagamento'][nItem]['Operadora']),,,,self:cAssinante)",
             "L4_AUTORIZ": "",
             "L4_NSUTEF": "&Self:oRegistro['Pagamento'][nItem]['Nsu']",
             "L4_PARCTEF": "&Self:oRegistro['Pagamento'][nItem]['ParcTef']",
