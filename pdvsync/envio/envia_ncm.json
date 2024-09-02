@@ -9,7 +9,7 @@
 	"fonte": "&Self:oPublica['CLK_FONTE']",
 	"situacao": 1,
 	"idInquilino": "&self:oConfAssin['inquilino']",
-	"idRetaguarda": "&Self:oPublica['CLK_FILIAL'] + Self:oPublica['CLK_CODNCM'] + Self:oPublica['CLK_EX']",
+	"idRetaguarda": "&Self:oPublica['CLK_CODNCM'] + Self:oPublica['CLK_EX']",
 	"dataAtualizacao": "&FwTimeStamp(6)",
 	"dataCadastro": "&FwTimeStamp(6)",
 	"idProprietario": "&LjRetComp()",
