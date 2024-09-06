@@ -38,7 +38,7 @@
             "L2_PRCTAB": "&Self:oRegistro['Itens'][nItem]['PrecoUnitario']",
             "L2_DESCPRO": "",
             "L2_LOCAL": "&IIF( Empty(Self:oRegistro['Itens'][nItem]['Armazem']), SuperGetMv('MV_LOCPAD', .F., '01'), Self:oRegistro['Itens'][nItem]['Armazem'] )",
-            "L2_ENTREGA": "&Self:oRegistro['Itens'][nItem]['ItemTipoEntrega']",
+            "L2_ENTREGA": "&IIF(Self:oRegistro['ConfimacaoPagamento'],Self:oRegistro['Itens'][nItem]['ItemTipoEntrega'],'2')",
             "L2_FILRES": "&Self:oRegistro['Itens'][nItem]['FilialEstoque']",
             "L2_TES": "&SuperGetMv('MV_LJTESPE', .F., '')",
             "L2_CF": ""
