@@ -1,8 +1,8 @@
 {
-	"url_lote": "https://qua-pdvsync.varejo.totvs.com.br/api/retaguarda/inquilinolotesexternos",
+	"url_lote": "https://qua-pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/inquilinolotesexternos",
 	"inquilino": "",
-	"url_consultalote": "https://qua-pdvsync.varejo.totvs.com.br/api/retaguarda/v2/lojalotes",
-	"url_lojaloteretornos": "https://qua-pdvsync.varejo.totvs.com.br/api/retaguarda/v2/LojaLoteRetornos",
+	"url_consultalote": "https://qua-pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v2/lojalotes",
+	"url_lojaloteretornos": "https://qua-pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v2/LojaLoteRetornos",
 	"autenticacao": {
 		"environment": 3,
 		"tenent": "",
