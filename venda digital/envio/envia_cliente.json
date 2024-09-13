@@ -27,7 +27,8 @@
 			"cpf": "&self:oPublica['A1_CGC']",
 			"optinWhatsapp": false,
 			"birthDate": "&SubStr( FwTimeStamp(6, SToD(self:oPublica['A1_DTNASC'])), 1, 10 )",
-			"gender": ""
+			"gender": "",
+			"status": "&IIF(self:oPublica['A1_MSBLQL'] == '2' .and. self:cEvento == '1', '' , 'blocked')"
 		}
 	]
 }
