@@ -1,4 +1,4 @@
 {
-	"url": "https://nis.ninegrid.com.br/api/protheus/customer/multiple",
-	"tagretorno": "success"
+	"url": "https://nis-staging.ninegrid.com.br/api/protheus/customer/multiple",
+	"tagretorno": "&Self:oRetorno['data'][1]['success']"
 }
