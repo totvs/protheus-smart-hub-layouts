@@ -8,8 +8,8 @@
 	"L1_EMISNF": "&self:oRegistro['VendaData']",
 	"L1_DTLIM": "&self:oRegistro['VendaData']",
 	"L1_NUMMOV": "&SubStr(cValToChar(self:oRegistro['IdCaixa']),1,2)",
-	"L1_NUMCFIS": "&IIF( self:oRegistro['ModeloFiscal'] == 1, self:oXmlSefaz:get( , {'ide', 'nCFe'}, ''), IIF(self:oRegistro['ModeloFiscal'] == 2, self:oXmlSefaz:get( , {'ide', 'nNF'}, ''), self:oRegistro['Ccf']) )",
-	"L1_DOC": "&IIF( self:oRegistro['ModeloFiscal'] == 1, self:oXmlSefaz:get( , {'ide', 'nCFe'}, ''), IIF(self:oRegistro['ModeloFiscal'] == 2, self:oXmlSefaz:get( , {'ide', 'nNF'}, self:oRegistro['Ccf']), self:oRegistro['Ccf']) )",
+	"L1_NUMCFIS": "&IIF( self:oRegistro['ModeloFiscal'] == 1, self:oXmlSefaz:get( , {'ide', 'nCFe'}, ''), self:oXmlSefaz:get( , {'ide', 'nNF'}, self:oRegistro['Ccf']) )",
+	"L1_DOC": "&IIF( self:oRegistro['ModeloFiscal'] == 1, self:oXmlSefaz:get( , {'ide', 'nCFe'}, ''), self:oXmlSefaz:get( , {'ide', 'nNF'}, self:oRegistro['Ccf']) )",
 	"L1_SERIE": "&self:LayEstAuto('LG_SERIE')",
 	"L1_SERPDV": "&cValToChar(self:oRegistro['SerieNota'])",
 	"L1_SERSAT": "&IIF(self:oRegistro['ModeloFiscal'] == 1,self:oXmlSefaz:get( , {'ide', 'nserieSAT'}, ''), '')",
@@ -19,8 +19,8 @@
 	"L1_VALBRUT": "&(self:oXmlSefaz:getTotal({'ICMSTot', 'vProd'},0) +self:oXmlSefaz:getTotal({'ICMSTot', 'vOutro'}, 0) + self:oXmlSefaz:getTotal({'DescAcrEntr', 'vAcresSubtot'}, 0)) - self:oXmlSefaz:getTotal({'ICMSTot', 'vDesc'}, 0) - self:oXmlSefaz:getTotal({'DescAcrEntr', 'vDescSubtot'}, 0)",
 	"L1_VLRLIQ": "&(self:oXmlSefaz:getTotal({'ICMSTot', 'vProd'},0) +self:oXmlSefaz:getTotal({'ICMSTot', 'vOutro'}, 0) + self:oXmlSefaz:getTotal({'DescAcrEntr', 'vAcresSubtot'}, 0)) - self:oXmlSefaz:getTotal({'ICMSTot', 'vDesc'}, 0) - self:oXmlSefaz:getTotal({'DescAcrEntr', 'vDescSubtot'}, 0)",
 	"L1_VALMERC": "&self:oXmlSefaz:getTotal({'ICMSTot', 'vProd'},0)",
-	"L1_DESCONT": "&IIF( self:oRegistro['ModeloFiscal'] == 2, 0, self:oXmlSefaz:getTotal({'DescAcrEntr', 'vDescSubtot'}, 0) )",
-	"L1_DESPESA": "&IIF( self:oRegistro['ModeloFiscal'] == 1,self:oXmlSefaz:getTotal({'DescAcrEntr', 'vAcresSubtot'}, 0),self:oXmlSefaz:getTotal({'ICMSTot', 'vOutro'}, 0))",
+	"L1_DESCONT": "&IIF( self:oRegistro['ModeloFiscal'] == 1, self:oXmlSefaz:getTotal({'DescAcrEntr', 'vDescSubtot'}, 0), 0 )",
+	"L1_DESPESA": "&IIF( self:oRegistro['ModeloFiscal'] == 1, self:oXmlSefaz:getTotal({'DescAcrEntr', 'vAcresSubtot'}, 0), self:oXmlSefaz:getTotal({'ICMSTot', 'vOutro'}, 0) )",
 	"L1_FRETE": "&self:oXmlSefaz:getTotal({'ICMSTot', 'vFrete'}, 0)",
 	"L1_SEGURO": "&self:oXmlSefaz:getTotal({'ICMSTot', 'vSeg'}, 0)",
 	"L1_ORIGEM": "N",
@@ -29,11 +29,13 @@
 	"L1_SITUA": "IP",
 	"L1_TIPO": "V",
 	"L1_TIPOCLI": "F",
-	"L1_ESPECIE": "&IIF( self:oRegistro['ModeloFiscal'] == 1, 'SATCE', IIF(self:oRegistro['ModeloFiscal'] == 2, 'NFCE', 'ECF') )",
+	"L1_ESPECIE": "&IIF( self:oRegistro['ModeloFiscal'] == 1, 'SATCE', self:oXmlSefaz:cTipo )",
 	"L1_PDV": "&self:LayEstAuto('LG_PDV')",
 	"L1_ESTACAO": "&self:LayEstAuto('LG_CODIGO')",
 	"L1_INDPRES": "&self:oXmlSefaz:get( , {'ide', 'indPres'}, '')",
 	"L1_TROCO1": "&IIF( self:oRegistro['ModeloFiscal'] == 1, self:oXmlSefaz:get( , {'pgto', 'vTroco'}, 0), self:oXmlSefaz:get( , {'pag', 'vTroco'}, 0) )",
+	"L1_PRONFCE": "&self:oRegistro['VendaCustodiaXml'][self:nCustodia]['NumeroAutorizacao']",
+	"L1_RETSFZ": "&self:oRegistro['VendaCustodiaXml'][self:nCustodia]['NumeroAutorizacao'] + '|' + self:oRegistro['VendaCustodiaXml'][self:nCustodia]['CodigoRetorno'] + '|' + self:oRegistro['VendaCustodiaXml'][self:nCustodia]['DescricaoRetorno']",
 	"SL2": [
 		{
 			"L2_FILIAL": "&self:oRegistro['Loja']['IdRetaguarda']",
@@ -52,15 +54,15 @@
 			"L2_DESC": "&NoRound((self:oXmlSefaz:getDet({'prod', 'vDesc'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0) * 100)/self:oXmlSefaz:getDet({'prod', 'vProd'}, self:oRegistro['VendaItems'][nItem]['Sequencia'],0),TamSX3('D2_DESC')[2])",
 			"L2_DESPESA": "&self:oXmlSefaz:getDet({'prod', 'vOutro'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0) + self:oXmlSefaz:getDet({'prod', 'vRatAcr'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0)",
 			"L2_TES": "&RmiTesProd(self:oXmlSefaz:getDet({'prod', 'cProd'}, self:oRegistro['VendaItems'][nItem]['Sequencia'],0))",
-			"L2_DOC": "&IIF( self:oRegistro['ModeloFiscal'] == 1, self:oXmlSefaz:get( , {'ide', 'nCFe'}, ''), IIF(self:oRegistro['ModeloFiscal'] == 2, self:oXmlSefaz:get( , {'ide', 'nNF'}, ''), self:oRegistro['Ccf']) )",
+			"L2_DOC": "&IIF( self:oRegistro['ModeloFiscal'] == 1, self:oXmlSefaz:get( , {'ide', 'nCFe'}, ''), self:oXmlSefaz:get( , {'ide', 'nNF'}, self:oRegistro['Ccf']) )",
 			"L2_SERIE": "&self:LayEstAuto('LG_SERIE')",
-			"L2_ESPECIE": "&IIF( self:oRegistro['ModeloFiscal'] == 1, 'SATCE', IIF(self:oRegistro['ModeloFiscal'] == 2, 'NFCE', 'ECF') )",
+			"L2_ESPECIE": "&IIF( self:oRegistro['ModeloFiscal'] == 1, 'SATCE', self:oXmlSefaz:cTipo )",
 			"L2_EMISSAO": "&self:oRegistro['VendaData']",
 			"L2_VEND": "&IIF(Empty(LjAuxPosic('OPERADOR DE LOJA',,self:oRegistro['VendaItems'][nItem]['Vendedor']['IdRetaguarda'],'VENDEDOR')),SuperGetMv('MV_VENDPAD', .F., '000001'),LjAuxPosic('OPERADOR DE LOJA',,self:oRegistro['VendaItems'][nItem]['Vendedor']['IdRetaguarda'],'VENDEDOR'))",
 			"L2_CF": "&self:oXmlSefaz:getDet({'prod', 'CFOP'}, self:oRegistro['VendaItems'][nItem]['Sequencia'],0)",
 			"L2_PICM": "&self:oXmlSefaz:getDetIcms('pICMS', self:oRegistro['VendaItems'][nItem]['Sequencia'], 0)",
 			"L2_VALICM": "&self:oXmlSefaz:getDetIcms('vICMS', self:oRegistro['VendaItems'][nItem]['Sequencia'], 0)",
-			"L2_BASEICM": "&IIF( self:oRegistro['ModeloFiscal'] == 1,   self:oXmlSefaz:getDet({'prod', 'vItem'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0),self:oXmlSefaz:getDetIcms('vBC', self:oRegistro['VendaItems'][nItem]['Sequencia'], 0) )",
+			"L2_BASEICM": "&IIF( self:oRegistro['ModeloFiscal'] == 1, self:oXmlSefaz:getDet({'prod', 'vItem'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0),self:oXmlSefaz:getDetIcms('vBC', self:oRegistro['VendaItems'][nItem]['Sequencia'], 0) )",
 			"L2_MODBC": "&self:oXmlSefaz:getDetIcms('modBC', self:oRegistro['VendaItems'][nItem]['Sequencia'], '0')",
 			"L2_ORIGEM": "&self:oXmlSefaz:getDetIcms('Orig', self:oRegistro['VendaItems'][nItem]['Sequencia'], '0')",
 			"L2_CLASFIS": "&self:oXmlSefaz:getDetIcms('Orig', self:oRegistro['VendaItems'][nItem]['Sequencia'], ' ') + self:oXmlSefaz:getDetIcms('CST', self:oRegistro['VendaItems'][nItem]['Sequencia'], '  ')",
@@ -89,6 +91,6 @@
 		}
 	],
 	"configPSH": {
-		"Version": "1.2"
+		"Version": "2.0"
 	}
 }
