@@ -132,7 +132,7 @@
 		},
 		{
 			"ContentType": "String",
-			"IdComponent": "IT_CLASFIS",
+			"IdComponent": "CSTCSOSN",
 			"Component": {
 				"ComponentType": "GET",
 				"Parameters": {
@@ -147,49 +147,7 @@
 					"CanChange": false,
 					"Trigger": null
 				},
-				"ComponentLabel": "CST"
-			},
-			"ComponentContent": ""
-		},
-		{
-			"ContentType": "String",
-			"IdComponent": "IT_CSOSN",
-			"Component": {
-				"ComponentType": "GET",
-				"Parameters": {
-					"Order": "08",
-					"List": null,
-					"Size": 3,
-					"F3": null,
-					"Required": false,
-					"Picture": "@!",
-					"Valid": null,
-					"IniPad": null,
-					"CanChange": false,
-					"Trigger": null
-				},
-				"ComponentLabel": "CSOSN"
-			},
-			"ComponentContent": ""
-		},
-		{
-			"ContentType": "String",
-			"IdComponent": "IT_TES",
-			"Component": {
-				"ComponentType": "GET",
-				"Parameters": {
-					"Order": "09",
-					"List": null,
-					"Size": 3,
-					"F3": null,
-					"Required": false,
-					"Picture": "@!",
-					"Valid": null,
-					"IniPad": null,
-					"CanChange": false,
-					"Trigger": null
-				},
-				"ComponentLabel": "Tes"
+				"ComponentLabel": "CST ou CSOSN"
 			},
 			"ComponentContent": ""
 		}
