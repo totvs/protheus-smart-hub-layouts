@@ -1,20 +1,20 @@
 {
-    "aliquotaTributo": "&AllTrim(Transform(self:oPublica['IT_ALIQICM'], PesqPict('SL2', 'L2_PICM')))",
-    "tipo": "&self:oPublica['Tipo']",
-    "modalidade": "&self:oPublica['Modalidade']",
-    "indiceTributoImpressora": "",
-    "reducaoBaseCalculo": "&AllTrim(Transform(IiF(self:oPublica['IT_PREDIC'] > 0,100-(self:oPublica['IT_PREDIC']),0), PesqPict('SL2', 'L2_PREDIC')))",
-    "situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 0, 1)",
-    "simbolo": "&SubStr(self:oPublica['Simbolo'],1,2)",
-    "idInquilino": "&self:oConfAssin['inquilino']",
-    "idRetaguarda": "&self:oPublica['MIH_ID']",
-    "dataAtualizacao": "&self:oPublica['MIH_DATALT']",
-    "dataCadastro": "&self:oPublica['MIH_DATINC']",
-    "idProprietario": "&LjRetComp()",
-    "loteOrigem": "&Self:cLote",
-    "sequencial": 0,
-    "_expandables": [
-      "string"
-    ],
-	"configPSH": { "Version": "1.0" }
+	"aliquotaTributo": "&AllTrim(Transform(self:oPublica['IT_ALIQICM'], PesqPict('SL2', 'L2_PICM')))",
+	"tipo": "&self:oPublica['Tipo']",
+	"modalidade": "&self:oPublica['Modalidade']",
+	"indiceTributoImpressora": "",
+	"reducaoBaseCalculo": "&AllTrim(Transform(IiF(self:oPublica['IT_PREDIC'] > 0,100-(self:oPublica['IT_PREDIC']),0), PesqPict('SL2', 'L2_PREDIC')))",
+	"situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 0, 1)",
+	"simbolo": "&SubStr(self:oPublica['Simbolo'],1,2)",
+	"cfop": "&self:oPublica['IT_CF']",
+	"cstCsosn": "&self:oPublica['CSTCSOSN']",
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"idRetaguarda": "&self:oPublica['MIH_ID']",
+	"dataAtualizacao": "&self:oPublica['MIH_DATALT']",
+	"dataCadastro": "&self:oPublica['MIH_DATINC']",
+	"idProprietario": "&LjRetComp()",
+	"loteOrigem": "&Self:cLote",
+	"configPSH": {
+		"Version": "2.0"
+	}
 }
