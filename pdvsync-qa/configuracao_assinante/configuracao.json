@@ -3,6 +3,7 @@
 	"inquilino": "",
 	"url_consultalote": "https://qua-pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v2/lojalotes",
 	"url_lojaloteretornos": "https://qua-pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v2/LojaLoteRetornos",
+	"url_status": "https://qua-pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v2/statusservico",
 	"autenticacao": {
 		"environment": 3,
 		"tenent": "",
