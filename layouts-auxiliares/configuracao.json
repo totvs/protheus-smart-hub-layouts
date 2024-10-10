@@ -32,7 +32,7 @@
 				},
 				"ComponentLabel": "Serviço"
 			},
-			"ComponentContent": ""
+			"ComponentContent": "EVERSON"
 		},
 		{
 			"ContentType": "String",
@@ -54,7 +54,7 @@
 				},
 				"ComponentLabel": "Endereço IP"
 			},
-			"ComponentContent": ""
+			"ComponentContent": "172.19.16.1"
 		},
 		{
 			"ContentType": "String",
@@ -76,7 +76,7 @@
 				},
 				"ComponentLabel": "Porta TCP"
 			},
-			"ComponentContent": ""
+			"ComponentContent": "9723"
 		},
 		{
 			"ContentType": "String",
@@ -98,7 +98,29 @@
 				},
 				"ComponentLabel": "Ambiente Protheus"
 			},
-			"ComponentContent": ""
+			"ComponentContent": "PSH-2310"
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "horaStatus",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "05",
+					"List": null,
+					"Size": 8,
+					"F3": "",
+					"Trigger": null,
+					"Required": false,
+					"Picture": "",
+					"CanChange": true,
+					"Valid": "Vazio()",
+					"Messages": null,
+					"IniPad": ""
+				},
+				"ComponentLabel": "Hora Envio Status"
+			},
+			"ComponentContent": "00:00:00"
 		}
 	],
 	"Index": [
@@ -115,5 +137,5 @@
 			"ambiente"
 		]
 	],
-	"LayoutVersion": 1.5
+	"LayoutVersion": 1.6
 }
