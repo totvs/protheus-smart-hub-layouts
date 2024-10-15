@@ -1,6 +1,9 @@
 {
-    "url": "https://pdvsync-core-dadosbasicos-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/usuarios",
-    "codigotipo": "4",
-    "descricaotipo": "Usuario",
-	"configPSH": { "Version": "1.0" }
+	"url": "https://pdvsync-core-dadosbasicos-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/usuarios",
+	"codigotipo": "4",
+	"descricaotipo": "Usuario",
+	"cargaInicial": true,
+	"configPSH": {
+		"Version": "2.0"
+	}
 }
