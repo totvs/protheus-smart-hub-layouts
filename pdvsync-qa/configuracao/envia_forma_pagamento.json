@@ -1,6 +1,9 @@
 {
-    "url":"https://pdvsync-core-formapagto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/formapagtos",
-    "codigotipo": "18",
-    "descricaotipo": "FormaPagto",
-	"configPSH": { "Version": "1.0" }
+	"url": "https://pdvsync-core-formapagto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/formapagtos",
+	"codigotipo": "18",
+	"descricaotipo": "FormaPagto",
+	"cargaInicial": true,
+	"configPSH": {
+		"Version": "2.0"
+	}
 }
