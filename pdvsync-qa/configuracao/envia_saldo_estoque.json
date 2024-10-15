@@ -1,6 +1,9 @@
 {
-    "url": "https://pdvsync-core-estoque-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/estoques",
-    "codigotipo": "14",
-    "descricaotipo": "Estoque",
-	"configPSH": { "Version": "1.0" }
+	"url": "https://pdvsync-core-estoque-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/estoques",
+	"codigotipo": "14",
+	"descricaotipo": "Estoque",
+	"cargaInicial": true,
+	"configPSH": {
+		"Version": "2.0"
+	}
 }
