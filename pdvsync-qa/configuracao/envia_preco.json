@@ -1,6 +1,14 @@
 {
-    "url":"https://pdvsync-core-preco-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/precos",
-    "codigotipo": "13",
-    "descricaotipo": "Preco",
-	"configPSH": { "Version": "1.0" }
+	"url": "https://pdvsync-core-preco-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/precos",
+	"codigotipo": "13",
+	"descricaotipo": "Preco",
+	"qtdereenvio": [
+		1,
+		3,
+		9
+	],
+	"cargaInicial": true,
+	"configPSH": {
+		"Version": "2.0"
+	}
 }
