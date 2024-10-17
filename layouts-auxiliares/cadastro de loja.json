@@ -120,7 +120,7 @@
 						},
 						{
 							"TargetIdField": "Telefone",
-							"SetValue": "Alltrim(SM0->M0_TEL)"
+							"SetValue": "strTran( Alltrim(SM0->M0_TEL), ' ', '')"
 						},
 						{
 							"TargetIdField": "NumeroLoja",
@@ -819,5 +819,5 @@
 			"SetValue": ".F."
 		}
 	],
-	"LayoutVersion": 2.5
+	"LayoutVersion": 2.6
 }
