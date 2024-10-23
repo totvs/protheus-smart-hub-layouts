@@ -68,12 +68,9 @@
 	"dataCadastro": "&FwTimeStamp(6)",
 	"idProprietario": "&LjRetComp()",
 	"loteOrigem": "&Self:cLote",
-	"lote": 0,
 	"sequencial": 0,
-	"_expandables": [
-		"string"
-	],
 	"configPSH": {
-		"Version": "1.3"
+		"Version": "2.0",
+		"cargaInicial": false
 	}
 }
