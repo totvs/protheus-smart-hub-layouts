@@ -14,6 +14,7 @@
 	"idProprietario": "&LjRetComp()",
 	"loteOrigem": "&Self:cLote",
 	"configPSH": {
-		"Version": "3.3"
+		"Version": "4.0",
+		"cargaInicial": false
 	}
 }
