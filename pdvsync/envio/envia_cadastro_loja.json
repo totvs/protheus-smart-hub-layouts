@@ -30,11 +30,8 @@
 	"dataCadastro": "&self:oPublica['MIH_DATINC']",
 	"idProprietario": "&LjRetComp()",
 	"loteOrigem": "&Self:cLote",
-	"lote": 0,
-	"_expandables": [
-		"string"
-	],
 	"configPSH": {
-		"Version": "1.1"
+		"Version": "2.0",
+		"cargaInicial": false
 	}
 }
