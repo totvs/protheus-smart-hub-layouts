@@ -1,19 +1,19 @@
 {
-    "cstPis": "&self:oPublica['LF_CSTPIS']",
-    "aliquotaPis": "&AllTrim(Transform(self:oPublica['IT_ALIQPIS'], PesqPict('SL2', 'L2_ALIQPS2')))",  
-    "cstCofins": "&self:oPublica['LF_CSTCOF']",
-    "aliquotaCofins": "&AllTrim(Transform(self:oPublica['IT_ALIQCOF'], PesqPict('SL2', 'L2_ALIQCF2')))",       
-    "situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 0, 1)", 
-    "id": "&self:oPublica['MIH_ID']",
-    "idInquilino": "&self:oConfAssin['inquilino']",
-    "idRetaguarda": "&self:oPublica['MIH_ID']",
-    "dataAtualizacao": "&self:oPublica['MIH_DATALT']",
-    "dataCadastro": "&self:oPublica['MIH_DATINC']",    
-    "idProprietario": "&LjRetComp()",
-    "loteOrigem": "&Self:cLote",
-    "sequencial":0,
-    "_expandables":[
-      "string"
-    ],
-	"configPSH": { "Version": "1.0" }
+	"cstPis": "&self:oPublica['LF_CSTPIS']",
+	"aliquotaPis": "&AllTrim(Transform(self:oPublica['IT_ALIQPIS'], PesqPict('SL2', 'L2_ALIQPS2')))",
+	"cstCofins": "&self:oPublica['LF_CSTCOF']",
+	"aliquotaCofins": "&AllTrim(Transform(self:oPublica['IT_ALIQCOF'], PesqPict('SL2', 'L2_ALIQCF2')))",
+	"situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 0, 1)",
+	"id": "&self:oPublica['MIH_ID']",
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"idRetaguarda": "&self:oPublica['MIH_ID']",
+	"dataAtualizacao": "&self:oPublica['MIH_DATALT']",
+	"dataCadastro": "&self:oPublica['MIH_DATINC']",
+	"idProprietario": "&LjRetComp()",
+	"loteOrigem": "&Self:cLote",
+	"sequencial": 0,
+	"configPSH": {
+		"Version": "2.0",
+		"cargaInicial": false
+	}
 }

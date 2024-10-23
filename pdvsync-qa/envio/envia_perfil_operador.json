@@ -1,18 +1,16 @@
 {
-    "nome": "&self:oPublica['MIH_DESC']",
-    "situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 0, 1)",
-    "tipoPerfil": "Administrador",
-    "sequencial": 0,
-    "id": "&self:oPublica['MIH_ID']",
-    "idInquilino": "&self:oConfAssin['inquilino']",
-    "idRetaguarda": "&self:oPublica['MIH_ID']",
-    "dataAtualizacao": "&self:oPublica['MIH_DATALT']",
-    "dataCadastro": "&self:oPublica['MIH_DATINC']",
-    "idProprietario": "&LjRetComp()",
-    "loteOrigem": "&Self:cLote",
-    "lote": 0,
-    "_expandables": [
-        "string"
-    ],
-	"configPSH": { "Version": "1.0" }
+	"nome": "&self:oPublica['MIH_DESC']",
+	"situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 1, 0)",
+	"tipoPerfil": "Administrador",
+	"id": "&self:oPublica['MIH_ID']",
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"idRetaguarda": "&self:oPublica['MIH_ID']",
+	"dataAtualizacao": "&self:oPublica['MIH_DATALT']",
+	"dataCadastro": "&self:oPublica['MIH_DATINC']",
+	"idProprietario": "&LjRetComp()",
+	"loteOrigem": "&Self:cLote",
+	"configPSH": {
+		"Version": "3.0",
+		"cargaInicial": false
+	}
 }

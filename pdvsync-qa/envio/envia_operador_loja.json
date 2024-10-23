@@ -15,8 +15,8 @@
 	"dataCadastro": "&self:oPublica['MIH_DATINC']",
 	"idProprietario": "&LjRetComp( PadR( self:oPublica['IDFilialProtheus'], TamSx3('A3_FILIAL')[1] ),'CADASTRO DE LOJA')",
 	"loteOrigem": "&Self:cLote",
-	"lote": "string",
 	"configPSH": {
-		"Version": "2.0"
+		"Version": "3.0",
+		"cargaInicial": false
 	}
 }
