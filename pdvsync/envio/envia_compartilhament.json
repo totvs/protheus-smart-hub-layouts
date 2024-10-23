@@ -1,17 +1,17 @@
 {
-    "idRetaguarda": "&self:oPublica['MIH_ID']",
-    "idProprietario": "&self:oPublica['IdProprietario']",
-    "nomeCompartilhamento": "&self:oPublica['NomeCompartilha']",
-    "nivel": "&self:oPublica['nivel']",
-    "idRetaguardaPai": "&self:oPublica['IdRetaguardaPai']",
-    "loteOrigem": "&Self:cLote",
-    "idRetaguardaLoja": "&allTrim( LjAuxPosic('CADASTRO DE LOJA ', 'MIH_ID', self:oPublica['CodigoLoja'] ,'IDFilialProtheus') )",
-    "id": "&self:oPublica['MIH_ID']",
-    "idInquilino": "&self:oConfAssin['inquilino']",
-    "dataAtualizacao": "&self:oPublica['MIH_DATALT']",
-    "dataCadastro": "&self:oPublica['MIH_DATINC']",
-    "_expandables": [
-        "string"
-    ],
-	"configPSH": { "Version": "1.1" }
+	"idRetaguarda": "&self:oPublica['MIH_ID']",
+	"idProprietario": "&self:oPublica['IdProprietario']",
+	"nomeCompartilhamento": "&self:oPublica['NomeCompartilha']",
+	"nivel": "&self:oPublica['nivel']",
+	"idRetaguardaPai": "&self:oPublica['IdRetaguardaPai']",
+	"loteOrigem": "&Self:cLote",
+	"idRetaguardaLoja": "&allTrim( LjAuxPosic('CADASTRO DE LOJA ', 'MIH_ID', self:oPublica['CodigoLoja'] ,'IDFilialProtheus') )",
+	"id": "&self:oPublica['MIH_ID']",
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"dataAtualizacao": "&self:oPublica['MIH_DATALT']",
+	"dataCadastro": "&self:oPublica['MIH_DATINC']",
+	"configPSH": {
+		"Version": "2.0",
+		"cargaInicial": false
+	}
 }
