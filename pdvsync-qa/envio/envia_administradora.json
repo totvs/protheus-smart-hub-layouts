@@ -12,6 +12,7 @@
 	"idProprietario": "&LjRetComp()",
 	"loteOrigem": "&self:cLote",
 	"configPSH": {
-		"Version": "1.1"
+		"Version": "2.0",
+		"cargaInicial": false
 	}
 }
