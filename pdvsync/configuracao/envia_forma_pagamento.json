@@ -2,7 +2,6 @@
 	"url": "https://pdvsync.varejo.totvs.com.br/formapagto/api/retaguarda/formapagtos",
 	"codigotipo": "18",
 	"descricaotipo": "FormaPagto",
-	"cargaInicial": true,
 	"configPSH": {
 		"Version": "2.0"
 	}
