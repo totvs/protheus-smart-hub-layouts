@@ -2,7 +2,6 @@
 	"url": "https://pdvsync.varejo.totvs.com.br/dadosbasicos/api/retaguarda/usuarios",
 	"codigotipo": "4",
 	"descricaotipo": "Usuario",
-	"cargaInicial": true,
 	"configPSH": {
 		"Version": "2.0"
 	}
