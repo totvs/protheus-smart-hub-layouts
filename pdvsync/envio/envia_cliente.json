@@ -21,13 +21,10 @@
 	"dataCadastro": "&FwTimeStamp( 6, StoD(self:oPublica['A1_DTCAD']) )",
 	"idProprietario": "&LjRetComp()",
 	"loteOrigem": "&self:cLote",
-	"lote": 0,
 	"sequencial": 0,
-	"_expandables": [
-		"string"
-	],
 	"enviarpnet": 0,
 	"configPSH": {
-		"Version": "1.0"
+		"Version": "2.0",
+		"cargaInicial": false
 	}
 }
