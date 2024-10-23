@@ -1,28 +1,31 @@
 {
-    "descricao": "&'Condição ' + AllTrim(self:oPublica['AE_DESC'])",
-    "diasEntreParcelas": 30,
-    "numeroMaximoParcelas": "&IIF( self:oPublica['AE_PARCATE'] == 0, 1, self:oPublica['AE_PARCATE'] )",
-    "percentualMinimoEntrada": 0,
-    "prazoMaximoPrimeiraParcela": 0,
-    "solicitaDataDemaisParcelas": 0,
-    "solicitaDataPrimeiraParcela": 0,
-    "situacao": "&IIF(self:cEvento == '1', 1, 0)",
-    "tipoDadoComplementar": 0,
-    "dadoComplementarDescricao": "",
-    "condicoesPagtoOperadoras": [
-        {
-            "idRetaguarda": "&self:oPublica['AE_FILIAL'] + self:oPublica['AE_COD']",
-            "idRetaguardaCondicaoPagto": "&self:oPublica['AE_FILIAL'] + self:oPublica['AE_COD']",
-            "idRetaguardaOperadora": "&self:oPublica['AE_FILIAL'] + self:oPublica['AE_COD']",
-            "situacao": "&IIF(self:cEvento == '1', 1, 0)"
-        }
-    ],
-    "sequencial": 0,
-    "idInquilino": "&self:oConfAssin['inquilino']",
-    "idRetaguarda": "&self:oPublica['AE_FILIAL'] + self:oPublica['AE_COD']",
-    "dataAtualizacao": "&FwTimeStamp(6)",
-    "dataCadastro": "&FwTimeStamp(6)",
-    "idProprietario": "&LjRetComp()",
-    "loteOrigem": "&self:cLote",
-	"configPSH": { "Version": "1.0" }
+	"descricao": "&'Condição ' + AllTrim(self:oPublica['AE_DESC'])",
+	"diasEntreParcelas": 30,
+	"numeroMaximoParcelas": "&IIF( self:oPublica['AE_PARCATE'] == 0, 1, self:oPublica['AE_PARCATE'] )",
+	"percentualMinimoEntrada": 0,
+	"prazoMaximoPrimeiraParcela": 0,
+	"solicitaDataDemaisParcelas": 0,
+	"solicitaDataPrimeiraParcela": 0,
+	"situacao": "&IIF(self:cEvento == '1', 1, 0)",
+	"tipoDadoComplementar": 0,
+	"dadoComplementarDescricao": "",
+	"condicoesPagtoOperadoras": [
+		{
+			"idRetaguarda": "&self:oPublica['AE_FILIAL'] + self:oPublica['AE_COD']",
+			"idRetaguardaCondicaoPagto": "&self:oPublica['AE_FILIAL'] + self:oPublica['AE_COD']",
+			"idRetaguardaOperadora": "&self:oPublica['AE_FILIAL'] + self:oPublica['AE_COD']",
+			"situacao": "&IIF(self:cEvento == '1', 1, 0)"
+		}
+	],
+	"sequencial": 0,
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"idRetaguarda": "&self:oPublica['AE_FILIAL'] + self:oPublica['AE_COD']",
+	"dataAtualizacao": "&FwTimeStamp(6)",
+	"dataCadastro": "&FwTimeStamp(6)",
+	"idProprietario": "&LjRetComp()",
+	"loteOrigem": "&self:cLote",
+	"configPSH": {
+		"Version": "2.0",
+		"cargaInicial": false
+	}
 }
