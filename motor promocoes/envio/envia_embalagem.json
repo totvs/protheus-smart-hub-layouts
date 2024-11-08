@@ -1,12 +1,14 @@
 {
-    "elementosIntegracao" :   [
-		{
-            "ativo":"&IIF(self:cEvento == '1', .T., .F.)" ,
-            "codigo":"&self:oPublica['LK_CODBAR']" ,
-            "descricao":"EMBALAGEM" ,
-            "sku":"&self:oPublica['LK_CODIGO']"
+    "elementosIntegracao": [
+        {
+            "ativo": "&IIF(self:cEvento == '1', .T., .F.)",
+            "codigo": "1",
+            "descricao": "EMBALAGEM",
+            "sku": "&self:oPublica['B1_COD']"
         }
     ],
-    "tipoIntegracao" :   "1",
-    "configPSH": { "Version": "1.0" }
+    "tipoIntegracao": "1",
+    "configPSH": {
+        "Version": "2.0"
+    }
 }
