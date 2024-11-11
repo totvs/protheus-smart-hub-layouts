@@ -4,7 +4,7 @@
 	"descontoMaximo": "99",
 	"arredondaTrunca": 1,
 	"codigoProduto": "&self:oPublica['B1_COD']",
-	"codigoAlternativo": "&self:oPublica['B1_CODBAR']",
+	"codigoAlternativo":  "&IIF(Empty(Alltrim(self:oPublica['B1_CODBAR'])), 'SEM GTIN', self:oPublica['B1_CODBAR'])",
 	"origemProduto": "&IIF(self:oPublica['B1_ORIGEM'] <> '0', 1, 0 )",
 	"situacao": "&IIF(self:oPublica['B1_MSBLQL'] == '1' .OR. self:cEvento == '2', 0, 1)",
 	"imagem": "",
@@ -70,7 +70,7 @@
 	"loteOrigem": "&Self:cLote",
 	"sequencial": 0,
 	"configPSH": {
-		"Version": "2.0",
+		"Version": "2.1",
 		"cargaInicial": false
 	}
 }
