@@ -72,7 +72,7 @@
 						},
 						{
 							"TargetIdField": "NomeFantasia",
-							"SetValue": "oModel := FWModelActive(),oModel:GetModel('MIHMASTER'):LoadValue('MIH_DESC',Alltrim(FwGrpName())+'-'+Alltrim(SM0->M0_CODFIL)),IIF(!IsInCallStack('GERALOJA'),oView := FWViewActive(),''),IIF(!IsInCallStack('GERALOJA'),oView:Refresh(),'')"
+							"SetValue": "oModel := FWModelActive(),oModel:GetModel('MIHMASTER'):LoadValue('MIH_DESC',Alltrim(IIf(!Empty(FwGrpName()),FwGrpName(),FwCompanyName()))+'-'+Alltrim(SM0->M0_CODFIL)),IIF(!IsInCallStack('GERALOJA'),oView := FWViewActive(),''),IIF(!IsInCallStack('GERALOJA'),oView:Refresh(),'')"
 						},
 						{
 							"TargetIdField": "NomeFantasia",
@@ -819,5 +819,5 @@
 			"SetValue": ".F."
 		}
 	],
-	"LayoutVersion": 2.6
+	"LayoutVersion": 2.7
 }
