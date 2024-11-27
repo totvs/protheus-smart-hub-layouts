@@ -137,7 +137,7 @@
 				},
 				"ComponentLabel": "Forma Pagamento Troco"
 			},
-			"ComponentContent": ""
+			"ComponentContent": "                              "
 		},
 		{
 			"ContentType": "Number",
@@ -239,7 +239,7 @@
 				},
 				"ComponentLabel": "Condições de Pagamento"
 			},
-			"ComponentContent": ""
+			"ComponentContent": "                                                                                                   "
 		},
 		{
 			"ContentType": "String",
@@ -265,7 +265,7 @@
 				},
 				"ComponentLabel": "Histórico das Condições"
 			},
-			"ComponentContent": ""
+			"ComponentContent": "                                                                                                   "
 		},
 		{
 			"ContentType": "String",
@@ -291,7 +291,7 @@
 				},
 				"ComponentLabel": "Operadora"
 			},
-			"ComponentContent": ""
+			"ComponentContent": "   "
 		},
 		{
 			"ContentType": "String",
@@ -323,7 +323,7 @@
 				},
 				"ComponentLabel": "Campos Complementares"
 			},
-			"ComponentContent": ""
+			"ComponentContent": "                                                                      "
 		},
 		{
 			"ContentType": "String",
@@ -352,6 +352,32 @@
 					]
 				},
 				"ComponentLabel": "Modelo Fiscal"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "listModeloFiscal",
+			"IdFieldModel": "LSTMODFIS",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "09",
+					"List": null,
+					"Size": 30,
+					"F3": null,
+					"Trigger": null,
+					"Required": false,
+					"Picture": "@!",
+					"CanChange": false,
+					"Valid": null,
+					"visible": false,
+					"IniPad": "'SAT;NFCe'",
+					"Help": [
+						"Lista dos Modelos Fiscais"
+					]
+				},
+				"ComponentLabel": "Lista Modelos Fiscais"
 			},
 			"ComponentContent": ""
 		},
@@ -432,12 +458,12 @@
 			"ComponentContent": ""
 		}
 	],
-	"LayoutVersion": 6.0,
+	"LayoutVersion": 6.1,
 	"PreValid": {
 		"Condition": "IIF(oModel:GetOperation() == 4 .and. Empty(AllTrim(oModel:GetValue('MIHDETAIL','TDCNDPGTO'))),oModel:LoadValue('MIHDETAIL','TDCNDPGTO',AllTrim(oModel:GetValue('MIHDETAIL','CONDPGTO'))),.T.),.T."
 	},
 	"PosValid": {
-		"Condition": "IIf(oModel:GetOperation() == 3 .Or. oModel:GetOperation() == 4,Aeval(StrTokArr(AllTrim(oModel:GetValue('MIHDETAIL','CONDPGTO')), ';'),{|x| IIf(! x $ AllTrim(oModel:GetValue('MIHDETAIL','TDCNDPGTO')),oModel:LoadValue('MIHDETAIL','TDCNDPGTO',AllTrim(oModel:GetValue('MIHDETAIL','TDCNDPGTO'))+Alltrim(x)+';'),.T.) }),.T.),LjAuxMsg(IIf(oModel:GetValue('MIHDETAIL','TIPO') == '10',!Empty(oModel:GetValue('MIHDETAIL','OPERADORA')),.T.), 'OPERADORA', 'M1',2),LjAuxMsg(IIf(Alltrim(oModel:GetValue('MIHDETAIL','TIPO')) == '5',!Empty(oModel:GetValue('MIHDETAIL','CONDPGTO')),.T.), 'condicaoPagamento', 'M2',2)",
+		"Condition": "IIf(oModel:GetOperation() == 3 .Or. oModel:GetOperation() == 4,Aeval(StrTokArr(AllTrim(oModel:GetValue('MIHDETAIL','CONDPGTO')), ';'),{|x| IIf(! x $ AllTrim(oModel:GetValue('MIHDETAIL','TDCNDPGTO')),oModel:LoadValue('MIHDETAIL','TDCNDPGTO',AllTrim(oModel:GetValue('MIHDETAIL','TDCNDPGTO'))+Alltrim(x)+';'),.T.) }),.T.),LjAuxMsg(IIf(oModel:GetValue('MIHDETAIL','TIPO') == '10',!Empty(oModel:GetValue('MIHDETAIL','OPERADORA')),.T.), 'OPERADORA', 'M1',2),LjAuxMsg(IIf(Alltrim(oModel:GetValue('MIHDETAIL','TIPO')) == '5',!Empty(oModel:GetValue('MIHDETAIL','CONDPGTO')),.T.), 'condicaoPagamento', 'M2',2),oModel:LoadValue('MIHDETAIL','LSTMODFIS','SAT;NFCe')",
 		"Messages": [
 			{
 				"Id": "M1",

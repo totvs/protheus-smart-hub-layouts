@@ -36,9 +36,10 @@
 	],
 	"formaPagtoModeloFiscal": [
 		{
-			"idRetaguarda": "&self:oPublica['MIH_ID']+self:oPublica['idModelo']",
+			"TableNode": "listModeloFiscal",
+			"idRetaguarda": "&self:oPublica['MIH_ID']+self:oPublica['idModelo']+StrTokArr(Self:oPublica['listModeloFiscal'], ';')[nItem]",
 			"idRetaguardaFormaPagto": "&self:oPublica['MIH_ID']",
-			"modeloFiscal": "&self:oPublica['modeloFiscal']",
+			"modeloFiscal": "&StrTokArr(Self:oPublica['listModeloFiscal'], ';')[nItem]",
 			"codigoFiscal": "&self:oPublica['codigoFiscal']",
 			"descricaoFiscal": "&self:oPublica['descricaoFiscal']",
 			"situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 1, 0)"
@@ -53,7 +54,7 @@
 		}
 	],
 	"configPSH": {
-		"Version": "3.0",
+		"Version": "3.1",
 		"cargaInicial": false
 	}
 }
