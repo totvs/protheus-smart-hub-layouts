@@ -8,10 +8,10 @@
 				"Parameters": {
 					"Order": "01",
 					"List": null,
-					"Size": 10,
+					"Size": 8,
 					"F3": null,
 					"Required": false,
-					"Picture": "@!",
+					"Picture": "@D",
 					"Valid": null,
 					"IniPad": null,
 					"CanChange": false,
