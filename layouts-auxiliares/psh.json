@@ -1,0 +1,54 @@
+{
+	"Components": [
+		{
+			"ContentType": "Date",
+			"IdComponent": "ultimoExpurgoRealizado",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "01",
+					"List": null,
+					"Size": 10,
+					"F3": null,
+					"Required": false,
+					"Picture": "@!",
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": false,
+					"Trigger": null,
+					"Help": [
+						"Data que a rotina expurgo foi executada pela última vez."
+					]
+				},
+				"ComponentLabel": "Data do último expurgo realizado"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "Number",
+			"IdComponent": "diasHistoricoExpurgo",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "02",
+					"List": null,
+					"Size": 3,
+					"F3": null,
+					"Required": false,
+					"Picture": "999",
+					"Valid": null,
+					"IniPad": "99",
+					"CanChange": true,
+					"Trigger": null,
+					"Help": [
+						"Quantidade de dias que serão mantidos na base após a execução do expurgo.",
+						"Os registros fora desse período serão removidos, garantindo a otimização do armazenamento e a manutenção do desempenho do sistema."
+					]					
+				},
+				"ComponentLabel": "Dias de histórico após expurgo"
+			},
+			"ComponentContent": 90
+		}
+	],
+	"LayoutVersion": 1
+}
