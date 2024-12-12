@@ -1,0 +1,10 @@
+{
+	"orderidExt": "&self:oPublica['L1_ECPEDEC']",
+	"typesInvoices": "NFC",
+	"invoiceKey": "&self:oPublica['L1_KEYNFCE']",
+	"invoiceDoc": "&self:oPublica['L1_DOC']",
+	"serial": "&self:oPublica['L1_SERIE']",
+	"approvalDate": "&FWTimeStamp(3)",
+	"approvalNumber": "&SubStr(self:oPublica['L1_RETSFZ'],1,at('|',self:oPublica['L1_RETSFZ'])-1)",
+	"token": "&self:cToken"
+}
