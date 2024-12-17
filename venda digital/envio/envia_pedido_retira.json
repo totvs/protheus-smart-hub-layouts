@@ -1,5 +1,5 @@
 {
-	"orderidExt": "&self:oPublica['L1_ECPEDEC']",
+	"orderId": "&self:oPublica['L1_ECPEDEC']",
 	"typesInvoices": "NFC",
 	"invoiceKey": "&self:oPublica['L1_KEYNFCE']",
 	"invoiceDoc": "&self:oPublica['L1_DOC']",
