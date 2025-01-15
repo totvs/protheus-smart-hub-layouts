@@ -1,5 +1,5 @@
 {
-	"FILIAL": "&IIF(self:oRegistro:HasProperty('Loja'),self:oRegistro['Loja']['IdRetaguarda'],Nil)"
+	"FILIAL": "&IIF(self:oRegistro:HasProperty('Loja'),self:oRegistro['Loja']['IdRetaguarda'],Nil)",
 	"A1_FILIAL": "&xFilial('SA1',IIF(self:oRegistro:HasProperty('Loja'),self:oRegistro['Loja']['IdRetaguarda'],Nil))",
 	"A1_NOME": "&UPPER( Alltrim( NoAcento(self:oRegistro['Nome']) ) )",
 	"A1_TIPO": "F",
