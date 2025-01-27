@@ -9,8 +9,18 @@
 	"dataCadastro": "&FwTimeStamp(6)",
 	"idProprietario": "&LjRetComp( PadR( self:oPublica['B2_FILIAL'], TamSx3('B2_FILIAL')[1] ),'CADASTRO DE LOJA')",
 	"loteOrigem": "&Self:cLote",
+	"produtoLote": [
+		{
+			"TableNode": "SB8",
+			"idRetaguarda": "&self:oPublica['SB8'][nItem]['B8_LOTECTL']",
+			"situacao": 1,
+			"quantidade": "&self:oPublica['SB8'][nItem]['B8_SALDO']",
+			"identificacaoLote": "&self:oPublica['SB8'][nItem]['B8_LOTECTL']",
+			"dataValidade": "&fwDateTo8601( sToD(self:oPublica['SB8'][nItem]['B8_DTVALID']) )"
+		}
+	],
 	"configPSH": {
-		"Version": "3.0",
+		"Version": "4.0",
 		"cargaInicial": false
 	}
 }
