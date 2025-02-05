@@ -1,5 +1,5 @@
 {
-    "url":"https://pdvsync-core-imposto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/piscofins",
+    "url":"https://pdvsync-core-imposto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/piscofins",
     "codigotipo": "9",
     "descricaotipo": "PisCofins",
 	"configPSH": { "Version": "1.0" }
