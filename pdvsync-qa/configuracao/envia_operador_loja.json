@@ -1,5 +1,5 @@
 {
-	"url": "https://pdvsync-core-dadosbasicos-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/usuarios",
+	"url": "https://pdvsync-core-dadosbasicos-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/usuarios",
 	"codigotipo": "4",
 	"descricaotipo": "Usuario",
 	"configPSH": {
