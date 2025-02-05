@@ -1,5 +1,5 @@
 {
-    "url": "https://pdvsync-core-formapagto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/operadoras",
+    "url": "https://pdvsync-core-formapagto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/operadoras",
     "codigotipo": "15",
     "descricaotipo": "Operadora",
 	"configPSH": { "Version": "1.0" }
