@@ -16,7 +16,8 @@
 			"situacao": 1,
 			"quantidade": "&self:oPublica['SB8'][nItem]['B8_SALDO']",
 			"identificacaoLote": "&self:oPublica['SB8'][nItem]['B8_LOTECTL']",
-			"dataValidade": "&fwDateTo8601( sToD(self:oPublica['SB8'][nItem]['B8_DTVALID']) )"
+			"dataValidade": "&FWTimeStamp(6,sToD(self:oPublica['SB8'][nItem]['B8_DTVALID']),'00:00:00')",
+			"estoqueIdRetaguarda": "&self:oPublica['B2_COD']"
 		}
 	],
 	"configPSH": {
