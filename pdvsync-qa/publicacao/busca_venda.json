@@ -49,7 +49,7 @@
 			"L2_PRCTAB": "&self:oXmlSefaz:getDet({'prod', 'vUnCom'}, self:oRegistro['VendaItems'][nItem]['Sequencia'],0)",
 			"L2_VLRITEM": "&self:oXmlSefaz:getDet({'prod', 'vProd'}, self:oRegistro['VendaItems'][nItem]['Sequencia'],0) - ( self:oXmlSefaz:getDet({'prod', 'vDesc'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0) + self:oXmlSefaz:getDet({'prod', 'vRatDesc'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0) )",
 			"L2_LOCAL": "&SuperGetMv('MV_LOCPAD', .F., '01')",
-			"L2_LOTECTL": "&IIF(self:oRegistro['VendaItems'][nItem]['Produto']:hasProperty('ProdutoLote'), self:oRegistro['VendaItems'][nItem]['Produto']['ProdutoLote']['IdRetaguarda'], '')",
+			"L2_LOTECTL": "&IIF(self:oRegistro['VendaItems'][nItem]['Produto']:hasProperty('ProdutoLote') .AND. !Empty(self:oRegistro['VendaItems'][nItem]['Produto']['ProdutoLote']), self:oRegistro['VendaItems'][nItem]['Produto']['ProdutoLote']['IdRetaguarda'], '')",
 			"L2_UM": "&self:oXmlSefaz:getDet({'prod', 'uCom'}, self:oRegistro['VendaItems'][nItem]['Sequencia'],'')",
 			"L2_VALDESC": "&self:oXmlSefaz:getDet({'prod', 'vDesc'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0)",
 			"L2_DESCPRO": "&self:oXmlSefaz:getDet({'prod', 'vRatDesc'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0)",
