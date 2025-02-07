@@ -53,14 +53,14 @@
 	"impostos": [
 		{
 			"TableNode": "SB1",
-			"idRetaguarda": "&Alltrim(self:oPublica['LK_CODBAR']+POSICIONE('MIL',1,xFilial('MIL')+PadR('ICMS',TAMSX3('MIL_TIPREL')[1])+PadR(cFilAnt,TAMSX3('MIL_FILENT')[1])+PadR(self:oPublica['LK_CODIGO'],TAMSX3('MIL_ENTRAD')[1]),'MIL_SAIDA'))",
+			"idRetaguarda": "&Alltrim(POSICIONE('MIL',1,xFilial('MIL')+PadR('ICMS',TAMSX3('MIL_TIPREL')[1])+PadR(cFilAnt,TAMSX3('MIL_FILENT')[1])+PadR(self:oPublica['LK_CODIGO'],TAMSX3('MIL_ENTRAD')[1]),'MIL_SAIDA'))",
 			"idProprietario": "&LjRetComp(cFilAnt,'CADASTRO DE LOJA')"
 		}
 	],
 	"pisCofins": [
 		{
 			"TableNode": "SB1",
-			"IdRetaguarda": "&Alltrim(self:oPublica['LK_CODBAR']+POSICIONE('MIL',1,xFilial('MIL')+PadR('PIS/COFINS',TAMSX3('MIL_TIPREL')[1])+PadR(cFilAnt,TAMSX3('MIL_FILENT')[1])+PadR(self:oPublica['LK_CODIGO'],TAMSX3('MIL_ENTRAD')[1]),'MIL_SAIDA'))",
+			"IdRetaguarda": "&Alltrim(POSICIONE('MIL',1,xFilial('MIL')+PadR('PIS/COFINS',TAMSX3('MIL_TIPREL')[1])+PadR(cFilAnt,TAMSX3('MIL_FILENT')[1])+PadR(self:oPublica['LK_CODIGO'],TAMSX3('MIL_ENTRAD')[1]),'MIL_SAIDA'))",
 			"IdProprietario": "&LjRetComp(cFilAnt,'CADASTRO DE LOJA')"
 		}
 	],
