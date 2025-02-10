@@ -1,11 +1,12 @@
 {
-	"url_lote": "https://qua-pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v3/inquilinolotesexternos",
+	"url_lote": "https://pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/inquilinolotesexternos",
 	"inquilino": "",
-	"url_consultalote": "https://qua-pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v3/lojalotes",
-	"url_lojaloteretornos": "https://qua-pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v3/LojaLoteRetornos",
-	"url_status": "https://qua-pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v3/statusservico",
+	"url_consultalote": "https://pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v2/lojalotes",
+	"url_lojaloteretornos": "https://pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v2/LojaLoteRetornos",
+	"urlPostStatus": "https://pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v2/statusservico",
+	"url_status": "https://pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v2/statusservico",
 	"autenticacao": {
-		"environment": 3,
+		"environment": 2,
 		"tenent": "",
 		"user": "",
 		"password": "",
@@ -13,8 +14,11 @@
 		"clientSecret": ""
 	},
 	"email": {
-		"horaParaExecucao": "08:40",
-		"dataDados": "26/10/23",
-		"ultimaExecucao": "15/04/24"
+		"destinatarios": "",
+		"horaParaExecucao": "07:00",
+		"dataDados": "&dDataBase - 1"
+	},
+	"configPSH": {
+		"Version": "2.0"
 	}
 }
