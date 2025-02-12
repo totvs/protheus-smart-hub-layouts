@@ -1,0 +1,13 @@
+{
+	"url": "https://pdvsync-core-produto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/produtos",
+	"codigotipo": "12",
+	"descricaotipo": "Produto",
+	"qtdereenvio": [
+		1,
+		3,
+		9
+	],
+	"configPSH": {
+		"Version": "3.0"
+	}
+}
