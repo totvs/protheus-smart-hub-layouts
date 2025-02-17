@@ -20,7 +20,6 @@
     "L1_TIPO": "V",
     "L1_TIPOCLI": "F",
     "L1_DOCPED": "&Self:oRegistro['IdOrigem']",
-    "L1_ECFLAG": "P",
     "L1_PDV": "",
     "L1_ORIGEM": "N",
     "L1_ECPEDEC": "&Self:oRegistro['IdOrigem']",
