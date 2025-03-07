@@ -69,7 +69,7 @@
 	"dataCadastro": "&FwTimeStamp(6)",
 	"idProprietario": "&LjRetComp()",
 	"loteOrigem": "&Self:cLote",
-	"controlaLote": "&rastro(self:oPublica['B1_COD'], 'L')",
+	"controlaLote": "&Eval({|| cFilAnt := FwXFilial('SB1',self:oPublica['B1_FILIAL'],'E','E','E'),rastro(self:oPublica['B1_COD'], 'L')})",
 	"configPSH": {
 		"Version": "3.1",
 		"cargaInicial": false
