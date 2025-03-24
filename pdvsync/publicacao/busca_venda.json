@@ -45,10 +45,11 @@
 			"L2_ITEM": "&StrZero(self:oRegistro['VendaItems'][nItem]['Sequencia'], TamSx3('L2_ITEM')[1])",
 			"L2_DESCRI": "&Substr(self:oXmlSefaz:getDet({'prod', 'xProd'}, self:oRegistro['VendaItems'][nItem]['Sequencia']),1,TamSx3('L2_DESCRI')[1])",
 			"L2_QUANT": "&self:oXmlSefaz:getDet({'prod', 'qCom'}, self:oRegistro['VendaItems'][nItem]['Sequencia'],'')",
-			"L2_VRUNIT": "&self:oXmlSefaz:getDet({'prod', 'vUnCom'}, self:oRegistro['VendaItems'][nItem]['Sequencia'],0) - ( ( self:oXmlSefaz:getDet({'prod', 'vDesc'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0) + self:oXmlSefaz:getDet({'prod', 'vRatDesc'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0) ) / self:oXmlSefaz:getDet({'prod', 'qCom'}, self:oRegistro['VendaItems'][nItem]['Sequencia'],0) )",
+			"L2_VRUNIT": "&A410ARRED(self:oXmlSefaz:getDet({'prod', 'vUnCom'}, self:oRegistro['VendaItems'][nItem]['Sequencia'],0) - ( ( self:oXmlSefaz:getDet({'prod', 'vDesc'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0) + self:oXmlSefaz:getDet({'prod', 'vRatDesc'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0) ) / self:oXmlSefaz:getDet({'prod', 'qCom'}, self:oRegistro['VendaItems'][nItem]['Sequencia'],0) ))",
 			"L2_PRCTAB": "&self:oXmlSefaz:getDet({'prod', 'vUnCom'}, self:oRegistro['VendaItems'][nItem]['Sequencia'],0)",
 			"L2_VLRITEM": "&self:oXmlSefaz:getDet({'prod', 'vProd'}, self:oRegistro['VendaItems'][nItem]['Sequencia'],0) - ( self:oXmlSefaz:getDet({'prod', 'vDesc'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0) + self:oXmlSefaz:getDet({'prod', 'vRatDesc'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0) )",
 			"L2_LOCAL": "&SuperGetMv('MV_LOCPAD', .F., '01')",
+			"L2_LOTECTL": "&IIF(self:oRegistro['VendaItems'][nItem]['Produto']:hasProperty('ProdutoLote') .AND. ValType(self:oRegistro['VendaItems'][nItem]['Produto']['ProdutoLote']) == 'J', self:oRegistro['VendaItems'][nItem]['Produto']['ProdutoLote']['IdRetaguarda'], '')",
 			"L2_UM": "&self:oXmlSefaz:getDet({'prod', 'uCom'}, self:oRegistro['VendaItems'][nItem]['Sequencia'],'')",
 			"L2_VALDESC": "&self:oXmlSefaz:getDet({'prod', 'vDesc'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0)",
 			"L2_DESCPRO": "&self:oXmlSefaz:getDet({'prod', 'vRatDesc'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0)",
@@ -92,6 +93,6 @@
 		}
 	],
 	"configPSH": {
-		"Version": "2.3"
+		"Version": "3.1"
 	}
 }
