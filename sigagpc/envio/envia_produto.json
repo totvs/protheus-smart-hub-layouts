@@ -1,0 +1,21 @@
+{
+	"anpCode": "820101012",
+	"anpDescription": "OLEO DIESEL B S500 - COMUM",
+	"barcode": "&self:oPublica['B1_CODBAR']",
+	"cest": "&self:oPublica['B1_CEST']",
+	"codeERP": "&self:oPublica['B1_COD']",
+	"description": "&self:oPublica['B1_DESC']",
+	"groupCode": "&self:oPublica['B1_GRUPO']",
+	"groupDescription": "COMBUSTIVEIS",
+	"icmsAliquot": 0.9456,
+	"icmsOrigin": "&self:oPublica['B1_ORIGEM']",
+	"interstateProductTaxParametersCodeERP": "701",
+	"isActive": true,
+	"ncm": "&self:oPublica['B1_POSIPI']",
+	"promoflexCode": "&self:DePara('SB1',self:oPublica['B1_COD'],1,0,,,self:oPublica['B1_FILIAL'])",
+	"showsInSearch": false,
+	"standardPrice": 6.05,
+	"stateProductTaxParametersCodeERP": "700",
+	"taxBenefitCode": "GO890004",
+	"um": "&self:oPublica['B1_UM']"
+}

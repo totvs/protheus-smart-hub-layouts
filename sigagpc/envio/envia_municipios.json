@@ -1,0 +1,6 @@
+{
+    "cityName": "&self:oPublica['CC2_MUN']",
+    "code": "&self:oPublica['CC2_CODMUN']",
+    "delete": "&IIF(self:cEvento == '2', .T., .F.)" ,
+    "state": "&self:oPublica['CC2_EST']"
+}
