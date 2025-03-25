@@ -1,0 +1,85 @@
+{
+    "Components": [
+        {
+            "Component": {
+                "ComponentLabel": "Código do parâmetro (SX6)",
+                "ComponentType": "GET",
+                "Parameters": {
+                    "CanChange": false,
+                    "F3": null,
+                    "List": null,
+                    "Order": "01",
+                    "Picture": null,
+                    "Required": true,
+                    "Size": 25,
+                    "Trigger": null,
+                    "Valid": null
+                }
+            },
+            "ComponentContent": "",
+            "ContentType": "String",
+            "IdComponent": "parametro"
+        },
+        {
+            "Component": {
+                "ComponentLabel": "Nome Param. destino",
+                "ComponentType": "GET",
+                "Parameters": {
+                    "CanChange": false,
+                    "F3": null,
+                    "List": null,
+                    "Order": "02",
+                    "Picture": null,
+                    "Required": null,
+                    "Size": 50,
+                    "Trigger": null,
+                    "Valid": null
+                }
+            },
+            "ComponentContent": false,
+            "ContentType": "String",
+            "IdComponent": "nome"
+        },
+        {
+            "Component": {
+                "ComponentLabel": "Tipo Dado",
+                "ComponentType": "GET",
+                "Parameters": {
+                    "CanChange": false,
+                    "F3": null,
+                    "List": null,
+                    "Order": "03",
+                    "Picture": null,
+                    "Required": null,
+                    "Size": 10,
+                    "Trigger": null,
+                    "Valid": null
+                }
+            },
+            "ComponentContent": false,
+            "ContentType": "String",
+            "IdComponent": "tipo"
+        },
+        {
+            "Component": {
+                "ComponentLabel": "Valor",
+                "ComponentType": "GET",
+                "Parameters": {
+                    "CanChange": false,
+                    "F3": null,
+                    "List": null,
+                    "Order": "04",
+                    "Picture": null,
+                    "Required": null,
+                    "Size": 100,
+                    "Trigger": null,
+                    "Valid": null
+                }
+            },
+            "ComponentContent": false,
+            "ContentType": "String",
+            "IdComponent": "valor"
+        }
+    ],
+    "LayoutVersion": 1.0
+}
