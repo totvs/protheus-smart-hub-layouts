@@ -1,0 +1,5 @@
+{
+	"name": "&self:oPublica['nome']",
+	"type": "&self:oPublica['tipo']",
+	"value": "&self:oPublica['valor']"
+}
