@@ -1,0 +1,10 @@
+{
+    "codeERP": "&Alltrim(self:oPublica['U53_FILIAL']+PadR(self:oPublica['U53_CODCLI'],TamSX3('U53_CODCLI')[1])+PadR(self:oPublica['U53_LOJA'],TamSX3('U53_LOJA')[1])+PadR(self:oPublica['U53_GRPVEN'],TamSX3('U53_GRPVEN')[1])+self:oPublica['U53_ITEM'])",
+    "customerCodeERP": "&iif(empty(self:oPublica['U53_CODCLI']),'',PadR(self:oPublica['U53_CODCLI'],TamSX3('U53_CODCLI')[1])+PadR(self:oPublica['U53_LOJA'],TamSX3('U53_LOJA')[1]))",
+    "customerGroupERPCode": "&self:oPublica['U53_GRPVEN']",
+    "delete": "&IIF(self:cEvento == '2', .T., .F.)",
+    "paymentMethodCodeERP": "&PadR(self:oPublica['U53_FORMPG'],TamSX3('U53_FORMPG')[1])+PadR(self:oPublica['U53_CONDPG'],TamSX3('U53_CONDPG')[1])",
+    "productERPCode": "&self:oPublica['U53_CODPRO']",
+    "productGropuERPCode": "&self:oPublica['U53_GRUPO']",
+    "ruleType": "&iif(self:oPublica['U53_TPRGNG']=='E','exception','rule')"
+}

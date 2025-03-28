@@ -1,0 +1,15 @@
+{
+    "cardFlag": "&iif(empty(self:oPublica['U25_ADMFIN']),'',Alltrim(Posicione('SAE',1,xFilial('SAE')+self:oPublica['U25_ADMFIN'],'AE_DESC')))",
+    "codeERP": "&self:oPublica['U25_REPLIC']",
+    "customerERPCode": "&iif(empty(self:oPublica['U25_CLIENT']),'',PadR(self:oPublica['U25_CLIENT'],TamSX3('U25_CLIENT')[1])+PadR(self:oPublica['U25_LOJA'],TamSX3('U25_LOJA')[1]))",
+    "customerGroupERPCode": "&self:oPublica['U25_GRPCLI']",
+    "delete": false,
+    "discountPercentage": 0,
+    "discountValue": "&iif(SuperGetMV('MV_XNGDESC',,.T.),self:oPublica['U25_DESPBA'],0)",
+    "endDate": "&iif(empty(self:oPublica['U25_DTFIM']),'',FWTimeStamp(5, STOD(self:oPublica['U25_DTFIM']), iif(empty(self:oPublica['U25_HRFIM']),'23:59:59',self:oPublica['U25_HRFIM']+':00')))",
+    "isActive": "&IIF(self:cEvento == '2', .F., .T.)",
+    "paymentMethodERPId": "&iif(empty(self:oPublica['U25_FORPAG']),'',PadR(self:oPublica['U25_FORPAG'],TamSX3('U25_FORPAG')[1])+PadR(self:oPublica['U25_CONDPG'],TamSX3('U25_CONDPG')[1]))",
+    "price": "&iif(SuperGetMV('MV_XNGDESC',,.T.),0,self:oPublica['U25_PRCVEN'])",
+    "productCodeERP": "&self:oPublica['U25_PRODUT']",
+    "startDate": "&iif(empty(self:oPublica['U25_DTINIC']).OR.empty(self:oPublica['U25_HRINIC']),FWTimeStamp(5,STOD(self:oPublica['U25_DATA']),cAliasself:oPublica['U25_HORA']),FWTimeStamp(5,STOD(self:oPublica['U25_DTINIC']),self:oPublica['U25_HRINIC']+':00'))"
+}

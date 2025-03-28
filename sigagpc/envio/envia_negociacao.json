@@ -1,0 +1,22 @@
+{
+	"allowsChangeByCheck": "&self:oPublica['U44_PERCHT']=='S'",
+	"allowsChangeByCredit": "&self:oPublica['U44_PERVHA']=='S'",
+	"changeLimitation": "&self:oPublica['U44_PERMTR']=='S'",
+	"checkout": "&alltrim(self:oPublica['U44_FORMPG']) $ SuperGetMv('KP_FPGCHK',,'')",
+	"codeERP": "&PadR(self:oPublica['U44_FORMPG'],TamSX3('U44_FORMPG')[1])+PadR(self:oPublica['U44_CONDPG'],TamSX3('U44_CONDPG')[1])",
+	"daysToDue": "&DateDiffDay(dDatabase, self:GetInfoCondicao(2, self:oPublica['U44_CONDPG']) )",
+	"delete": false,
+	"description": "&Alltrim(self:oPublica['U44_DESCRI'])",
+	"express": "&!empty(SuperGetMv('TP_NPENEGP',,'')) .AND. PadR(self:oPublica['U44_FORMPG'],TamSX3('U44_FORMPG')[1])+self:oPublica['U44_CONDPG'] $ SuperGetMv('TP_NPENEGP',,'')",
+	"isActive": "&IIF(self:cEvento == '2', .F., .T.)",
+	"maxChangePercentege": "&self:oPublica['U44_PERMAX']",
+	"maxChangeValue": "&self:oPublica['U44_VLRMAX']",
+	"maxNumberOfInstallments": "&self:GetInfoCondicao(1, self:oPublica['U44_CONDPG'])",
+	"paymentConditionERPCode": "&PadR(self:oPublica['U44_CONDPG'],TamSX3('U44_CONDPG')[1])",
+	"paymentMethodAcronym": "&self:GetAcronym(self:oPublica['U44_FORMPG'])",
+	"paymentMethodAcronymERP": "&self:oPublica['U44_FORMPG']",
+	"showToAllCustomers": "&self:oPublica['U44_PADRAO']=='S'",
+	"smartPDV": "&alltrim(self:oPublica['U44_FORMPG']) $ SuperGetMv('KP_FPGPOS',,'R$/CC/CD/VC/PX')",
+	"taxPaymentMethodCode": "&(_cRet_:=Posicione('MHW',2,xFilial('MHW')+iif(self:oPublica['U44_FORMPG']=='NB','CR',self:oPublica['U44_FORMPG']),'MHW_CDNFCE'),iif(empty(_cRet_),'99',_cRet_))",
+	"taxPaymentMethodDescription": "&Alltrim(Posicione('SX5',1,xFilial('SX5')+'24'+self:oPublica['U44_FORMPG'],'X5_DESCRI'))"
+}
