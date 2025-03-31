@@ -30,7 +30,7 @@
             "L2_FILIAL": "&Self:oRegistro['Filial']",
             "L2_PRODUTO": "&Self:oRegistro['Itens'][nItem]['CodItem']",
             "L2_QUANT": "&Self:oRegistro['Itens'][nItem]['Quantidade']",
-            "L2_UM": "&Posicione('SB1',1,xFilial('SB1')+PADR('Self:oRegistro['Itens'][nItem]['CodItem'],TAMSX3('B1_COD')[1]),'B1_UM')",
+            "L2_UM": "&Posicione('SB1',1,xFilial('SB1')+PADR(Self:oRegistro['Itens'][nItem]['CodItem'],TAMSX3('B1_COD')[1]),'B1_UM')",
             "L2_VALFRE": "&Self:oRegistro['Itens'][nItem]['FreteRateio']",
             "L2_VRUNIT": "&Self:oRegistro['Itens'][nItem]['PrecoUnitario']",
             "L2_VLRITEM": "&Self:oRegistro['Itens'][nItem]['Quantidade'] * Self:oRegistro['Itens'][nItem]['PrecoUnitario']",
