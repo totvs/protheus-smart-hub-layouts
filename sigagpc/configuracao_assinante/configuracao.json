@@ -361,6 +361,13 @@
 			"product_to_parking_ticket",
 			"",
 			""
+		],
+		[
+			"KP_DKALLAB",
+			true,
+			"pdv_list_all_supplies",
+			"",
+			""
 		]
 	],
 	"url": "http://167.234.238.4:10060/api/queue/4c7f5150-8a91-4910-9be4-fc7c4bd88be1_in"
