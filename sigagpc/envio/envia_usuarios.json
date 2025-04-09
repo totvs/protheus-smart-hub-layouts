@@ -1,0 +1,19 @@
+{
+    "canAccessConfiguration": false,
+    "canCancel": "&empty(self:oPublica['A3_SUPER'])",
+    "codeERP": "&self:oPublica['A3_COD']",
+    "delete": "&IIF(self:cEvento == '2', .T., .F.)",
+    "email": "&self:oPublica['A3_EMAIL']",
+    "fullName": "&self:oPublica['A3_NOME']",
+    "groupCode": "&iif(empty(self:oPublica['A3_CODUSR']),'',IIF(len(FWSFUsrGrps(self:oPublica['A3_CODUSR']))>0,FWSFUsrGrps(self:oPublica['A3_CODUSR'])[1],''))",
+    "groupDescription": "&IIF(len(FWSFUsrGrps(self:oPublica['A3_CODUSR']))>0,alltrim(GRPRETNAME(FWSFUsrGrps(self:oPublica['A3_CODUSR'])[1])),'')",
+    "isActive": "&IIF(self:oPublica['A3_MSBLQL']=='1', .T., .F.)",
+    "RFIDS": [
+        {
+            "rfid": "&self:oPublica['U68'][nItem]['U68_NUM']",
+            "TableNode": "U68"
+        }
+    ],
+    "roles": "attendant",
+    "username": "&self:oPublica['A3_COD']"
+}
