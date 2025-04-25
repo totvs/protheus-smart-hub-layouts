@@ -129,7 +129,46 @@
                 "ComponentLabel": "Codigo da Loja"
             },
             "ComponentContent": ""
+        },
+  {
+            "ContentType": "String",
+            "IdComponent": "CompanyID",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "List": null,
+                    "Size": 36,
+                    "F3": null,
+                    "Required": false,
+                    "Picture": null,
+                    "Valid": null,
+                    "CanChange": true,
+                    "Trigger": null
+                },
+                "ComponentLabel": "Company ID"
+            },
+            "ComponentContent": ""
+        },
+		{
+            "ContentType": "String",
+            "IdComponent": "SenhaInt",
+            "Component": {
+                "ComponentType": "GET",
+                "Parameters": {
+                    "List": null,
+                    "Size": 20,
+                    "F3": null,
+                    "Required": false,
+                    "Picture": null,
+                    "Valid": null,
+                    "CanChange": true,
+                    "Trigger": null
+                },
+                "ComponentLabel": "Senha Int."
+            },
+            "ComponentContent": ""
         }
     ],
-    "LayoutVersion": 1.0
+    "LayoutVersion": 1.1
 }
+
