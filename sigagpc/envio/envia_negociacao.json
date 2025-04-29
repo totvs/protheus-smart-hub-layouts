@@ -13,7 +13,7 @@
 	"maxChangeValue": "&self:oPublica['U44_VLRMAX']",
 	"maxNumberOfInstallments": "&self:GetInfoCondicao(1, self:oPublica['U44_CONDPG'])",
 	"paymentConditionERPCode": "&PadR(self:oPublica['U44_CONDPG'],TamSX3('U44_CONDPG')[1])",
-	"paymentMethodAcronym": "&IIF(Empty(self:cFormasDesk := self:DePara('U44',self:oPublica['U44_FORMPG'],1,0,,,)) ,self:oPublica['U44_FORMPG'],self:cFormasDesk)",
+	"paymentMethodAcronym": "&IIF(Empty(self:cFormasDesk := self:DePara('U44',self:oPublica['U44_FORMPG'],1,0,,,)),(self:lSucesso:=.T.,self:oPublica['U44_FORMPG']),self:cFormasDesk)",
 	"paymentMethodAcronymERP": "&self:oPublica['U44_FORMPG']",
 	"showToAllCustomers": "&self:oPublica['U44_PADRAO']=='S'",
 	"smartPDV": "&alltrim(self:oPublica['U44_FORMPG']) $ SuperGetMv('KP_FPGPOS',,'R$/CC/CD/VC/PX')",
