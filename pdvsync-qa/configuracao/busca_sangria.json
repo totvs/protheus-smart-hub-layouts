@@ -1,10 +1,12 @@
 {
-    "url": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/caixaMensagens",
-    "ChaveUni": [
-        "Loja:IdRetaguarda",
-        "Id",
-        "NumeroCaixa",
-        "TipoMovimento"
-    ],
-	"configPSH": { "Version": "1.0" }
+	"url": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/caixaMensagens",
+	"ChaveUni": [
+		"Loja:IdRetaguarda",
+		"Id",
+		"NumeroCaixa",
+		"TipoMovimento"
+	],
+	"configPSH": {
+		"Version": "1.0"
+	}
 }
