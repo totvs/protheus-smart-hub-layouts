@@ -1,3 +1,6 @@
 {
-	"data": "&self:oRegistro:ToJson()"
+	"data": "&self:oRegistro:toJson()",
+	"configPSH": {
+		"Version": "1.0"
+	}
 }
