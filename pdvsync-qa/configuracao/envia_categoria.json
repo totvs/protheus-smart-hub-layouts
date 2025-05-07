@@ -1,5 +1,5 @@
 {
-	"url": "https://pdvsync.varejo.totvs.com.br/produto/api/retaguarda/v3/classificacoesproduto",
+	"url": "https://pdvsync-core-produto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/classificacoesproduto",
 	"codigotipo": "11",
 	"descricaotipo": "ClassificacaoProduto",
 	"configPSH": {
