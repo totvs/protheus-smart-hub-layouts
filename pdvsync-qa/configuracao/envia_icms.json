@@ -1,6 +1,8 @@
 {
-    "url":"https://pdvsync-core-imposto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/impostos",
-    "codigotipo":"7",
-    "descricaotipo":"Imposto",
-	"configPSH": { "Version": "1.0" }
+	"url": "https://pdvsync-core-imposto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/impostos",
+	"codigotipo": "7",
+	"descricaotipo": "Imposto",
+	"configPSH": {
+		"Version": "1.1"
+	}
 }
