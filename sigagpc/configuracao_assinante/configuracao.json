@@ -370,5 +370,5 @@
             ""
         ]
     ],
-    "url": "&(SuperGetMv('KP_HRMQRES',,'')+'/queue/'+LjAuxPosic('COMPARTILHAMENTOS','nivel','0','CompanyID')+'_in')"
+    "url": "&(SuperGetMv('KP_HRMQRES',,'')"
 }
