@@ -370,5 +370,5 @@
             ""
         ]
     ],
-    "url": "&(SuperGetMv('KP_HRMQRES',,'')"
+    "url": "&SuperGetMv('KP_HRMQRES',,'')"
 }
