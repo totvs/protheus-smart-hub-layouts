@@ -1,0 +1,14 @@
+{
+	"listasPublicacao": {
+		"SL2": "self:oRegistro['items']",
+		"SL4": "self:oRegistro['paymentMethods']"
+	},
+	"ChaveUni": [
+		"filial",
+		"taxDocumentNumber",
+		"taxDocumentSeries"
+	],
+	"configPSH": {
+		"Version": "1.0"
+	}
+}
