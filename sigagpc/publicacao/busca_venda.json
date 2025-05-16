@@ -1,7 +1,7 @@
 {
 	"L1_FILIAL": "&self:oRegistro['filial']",
-	"L1_CLIENTE": "&IIF( Empty(self:oRegistro['customerCodeErp']), SuperGetMv('MV_CLIPAD', .F., '000001'), Substr(self:oRegistro['customerCodeErp'],1,TamSx3('L1_CLIENTE')[1]) )",
-	"L1_LOJA": "&IIF( Empty(self:oRegistro['customerCodeErp']), SuperGetMv('MV_LOJAPAD', .F., '01'), Substr(self:oRegistro['customerCodeErp'],TamSx3('L1_CLIENTE')[1]+1,TamSx3('L1_LOJA')[1]))",
+	"L1_CLIENTE": "&IIF( Empty(self:oRegistro['customerFederalId']), SuperGetMv('MV_CLIPAD', .F., '000001'), self:DePara('SA1', self:oRegistro['customerFederalId'], 2, 0,,,self:oRegistro['filial']) )",
+	"L1_LOJA": "&IIF( Empty(self:oRegistro['customerFederalId']), SuperGetMv('MV_LOJAPAD', .F., '01'), self:DePara('SA1', self:oRegistro['customerFederalId'], 3, 0,,,self:oRegistro['filial']))",
 	"L1_OPERADO": "C01",
 	"L1_EMISSAO": "&self:oRegistro['taxDocumentIssueDate']",
 	"L1_HORA": "&Substr(self:oRegistro['taxDocumentIssueDate'],12,TamSx3('L1_HORA')[1])",
