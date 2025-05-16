@@ -43,7 +43,7 @@
 			"L2_ITEM": "&StrZero(nItem, TamSx3('L2_ITEM')[1])",
 			"L2_DESCRI": "&Substr(self:oXmlSefaz:getDet({'prod', 'xProd'}, nItem),1,TamSx3('L2_DESCRI')[1])",
 			"L2_QUANT": "&self:oXmlSefaz:getDet({'prod', 'qCom'}, nItem,'')",
-			"L2_VRUNIT": "&A410ARRED(self:oXmlSefaz:getDet({'prod', 'vUnCom'},nItem,0) - ( ( self:oXmlSefaz:getDet({'prod', 'vDesc'}, self:oRegistro['VendaItems'][nItem]['Sequencia'], 0) + self:oXmlSefaz:getDet({'prod', 'vRatDesc'},nItem, 0) ) / self:oXmlSefaz:getDet({'prod', 'qCom'},nItem,0) ))",
+			"L2_VRUNIT": "&A410ARRED(self:oXmlSefaz:getDet({'prod', 'vUnCom'},nItem,0) - ( ( self:oXmlSefaz:getDet({'prod', 'vDesc'}, nItem, 0) + self:oXmlSefaz:getDet({'prod', 'vRatDesc'},nItem, 0) ) / self:oXmlSefaz:getDet({'prod', 'qCom'},nItem,0) ))",
 			"L2_PRCTAB": "&self:oXmlSefaz:getDet({'prod', 'vUnCom'},nItem,0)",
 			"L2_VLRITEM": "&self:oXmlSefaz:getDet({'prod', 'vProd'}, nItem,0) - ( self:oXmlSefaz:getDet({'prod', 'vDesc'},nItem, 0) + self:oXmlSefaz:getDet({'prod', 'vRatDesc'}, nItem, 0) )",
 			"L2_LOCAL": "&SuperGetMv('MV_LOCPAD', .F., '01')",
@@ -88,6 +88,24 @@
 			"L2_ALQFCST": "&self:oXmlSefaz:getDetIcms('pFCPSTRet', nItem, 0)",
 			"L2_VFECPST": "&self:oXmlSefaz:getDetIcms('vFCPSTRet', nItem, 0)",
 			"L2_PREDIC": "&IiF(self:oXmlSefaz:getDetIcms('pRedBC', nItem, 0) > 0,100-(self:oXmlSefaz:getDetIcms('pRedBC', nItem,0)),0)"
+		}
+	],
+	"SL4": [
+		{
+			"L4_FILIAL": "&self:oRegistro['filial']",
+			"L4_FORMA": "&self:oRegistro['paymentMethods'][nItem]['paymentMethod']['paymentMethodAcronymERP']",
+			"L4_DATA": "&IIf(!Empty(self:oRegistro['paymentMethods'][nItem]['dueDate']),self:oRegistro['paymentMethods'][nItem]['dueDate'],self:oRegistro['taxDocumentIssueDate'])",
+			"L4_VALOR": "&self:oRegistro['paymentMethods'][nItem]['paymentValue']",
+			"L4_ADMINIS": "&IIF(!Empty(self:oRegistro['paymentMethods'][nItem]['financialRule']),self:oRegistro['paymentMethods'][nItem]['financialRule'],self:Administradora(self:oRegistro['paymentMethods'][nItem]['paymentMethod']['paymentMethodAcronymERP'],self:oRegistro['paymentMethods'][nItem]['TEFcardFlag'],self:oRegistro['paymentMethods'][nItem]['acquirer']))",
+			"L4_TERCEIR": false,
+			"L4_AUTORIZ": "&self:oRegistro['paymentMethods'][nItem]['TEFAuthCode']",
+			"L4_NSUTEF": "&self:oRegistro['paymentMethods'][nItem]['TEFNSU']",
+			"L4_BANDEIR": "&self:oRegistro['paymentMethods'][nItem]['TEFcardFlag']",
+			"L4_PARCTEF": "",
+			"L4_REDEAUT": "&self:oRegistro['paymentMethods'][nItem]['acquirer']",
+			"L4_DATATEF": "",
+			"L4_HORATEF": "",
+			"L4_DOCTEF": "&self:oRegistro['paymentMethods'][nItem]['TEFDocument']"
 		}
 	],
 	"configPSH": {
