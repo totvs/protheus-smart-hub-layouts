@@ -1,6 +1,5 @@
 {
-    "companies": [
-        "59578d16-5ed8-483d-8216-d02f7424e949"
-    ],
-    "entity": "city"
+	"companies": "&LjAuxPosic('COMPARTILHAMENTOS',,LjRetComp(self:cFilEnv,'CADASTRO DE LOJA'),'CompanyID')",
+	"entity": "city",
+	"qtdEnvio": 100
 }
