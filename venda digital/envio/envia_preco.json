@@ -1,7 +1,6 @@
 {
-    "token": "&Self:cToken",
-    "product_code": "&Self:oPublica['DA1_CODPRO']",
-    "price": "&Self:oPublica['DA1_PRCVEN']",
-    "status": "&IIF(Self:oPublica['DA0'][1]['DA0_ATIVO'] == '1' .AND. Self:oPublica['DA1_ATIVO'] == '1' .and. self:cEvento == '1', .T., .F.)"
-
+	"token": "&Self:cToken",
+	"product_code": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), Self:oPublica['B0_COD'], Self:oPublica['DA1_CODPRO'] )",
+	"price": "&IIF( Posicione('SB1', 1, xFilial('SB1') + IIF( !SuperGetMv('MV_LJCNVDA', , .F.), Self:oPublica['B0_COD'], Self:oPublica['DA1_CODPRO'] ), 'B1_PRV1') > 0, Posicione('SB1', 1, xFilial('SB1') + IIF( !SuperGetMv('MV_LJCNVDA', , .F.), Self:oPublica['B0_COD'], Self:oPublica['DA1_CODPRO'] ), 'B1_PRV1'), IIF( !SuperGetMv('MV_LJCNVDA', , .F.), Self:oPublica['B0_PRV1'], Self:oPublica['DA1_PRCVEN'] ) )",
+	"status": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), IIF(Empty(Self:oPublica['B0_PRV1']) .Or. Self:cEvento <> '1', 0, 1), IIF(Self:cEvento == '1' .AND. Self:oPublica['DA0'][1]['DA0_ATIVO'] == '1' .AND. Self:oPublica['DA1_ATIVO'] == '1', 1, 0) )"
 }
