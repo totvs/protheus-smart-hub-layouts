@@ -1,21 +1,23 @@
 {
+	"FILIAL": "&IIF(self:oRegistro:HasProperty('Loja'),self:oRegistro['Loja']['IdRetaguarda'],Nil)",
 	"A1_FILIAL": "&xFilial('SA1',IIF(self:oRegistro:HasProperty('Loja'),self:oRegistro['Loja']['IdRetaguarda'],Nil))",
 	"A1_NOME": "&UPPER( Alltrim( NoAcento(self:oRegistro['Nome']) ) )",
 	"A1_TIPO": "F",
 	"A1_LOJA": "&SuperGetMV('MV_LOJAPAD',.F., '01')",
 	"A1_CGC": "&self:oRegistro['CpfCnpj']",
+	"A1_RG": "&self:oRegistro['RgInscricao']",
 	"A1_NREDUZ": "&UPPER(SubStr(Alltrim( NoAcento(self:oRegistro['Nome']) ),1,TamSX3('A1_NREDUZ')[1]))",
 	"A1_PESSOA": "&IIF(self:oRegistro['PessoaFisica'] == 1,'F','J')",
 	"A1_BAIRRO": "&UPPER( NoAcento(self:oRegistro['Bairro']) )",
 	"A1_CEP": "&StrTran(self:oRegistro['Cep'], '-', '')",
 	"A1_COMPLEM": "&UPPER(self:oRegistro['Complemento'])",
 	"A1_EST": "&self:oRegistro['Estado']",
-	"A1_END": "&UPPER( AllTrim(self:oRegistro['Endereco']) + ', ' + AllTrim(self:oRegistro['Numero']) )",
+	"A1_END": "&UPPER(Eval({|cEnd,nEnd,cNum| cEnd := AllTrim(self:oRegistro['Endereco']),nEnd := Rat(',',cEnd),cNum := AllTrim(self:oRegistro['Numero']),cEnd+IIf(Alltrim(Substr(cEnd,IIF(nEnd > 0 ,nEnd,Len(cEnd))+1,Len(cEnd))) == cNum, '',', '+cNum)}))",
 	"A1_DDD": "&SubStr( cValToChar( Val(self:oRegistro['Telefone']) ), 1, 2)",
 	"A1_TEL": "&SubStr( cValToChar( Val(self:oRegistro['Telefone']) ), 3)",
 	"A1_COD_MUN": "&Posicione('CC2',4,xFilial('CC2')+self:oRegistro['Estado']+UPPER(PADR(self:oRegistro['Cidade'],TamSX3('CC2_MUN')[1])),'CC2_CODMUN')",
 	"A1_MSBLQL": "2",
 	"A1_EMAIL": "&self:oRegistro['Email']",
 	"A1_DTNASC": "&self:oRegistro['DataNascimento']",
-	"configPSH": {"Version": "1.1"}
+	"configPSH": {"Version": "1.2"}
 }
