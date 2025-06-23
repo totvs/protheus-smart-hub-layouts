@@ -1,7 +1,7 @@
 {
 	"nome": "&self:oPublica['A1_NOME']",
 	"endereco": "&self:oPublica['A1_END']",
-	"numero": "",
+	"numero": "&Eval({|cEnd,nEnd| cEnd := self:oPublica['A1_END'],nEnd := Rat(',',cEnd),Alltrim(Substr(cEnd,IIF(nEnd > 0 ,nEnd,Len(cEnd))+1,Len(cEnd)))})",
 	"complemento": "&self:oPublica['A1_COMPLEM']",
 	"bairro": "&self:oPublica['A1_BAIRRO']",
 	"cidade": "&self:oPublica['A1_MUN']",
@@ -24,7 +24,7 @@
 	"sequencial": 0,
 	"enviarpnet": 0,
 	"configPSH": {
-		"Version": "2.0",
+		"Version": "2.1",
 		"cargaInicial": false
 	}
 }
