@@ -43,12 +43,59 @@
 					"Help": [
 						"Quantidade de dias que serão mantidos na base após a execução do expurgo.",
 						"Os registros fora desse período serão removidos, garantindo a otimização do armazenamento e a manutenção do desempenho do sistema."
-					]					
+					]
 				},
 				"ComponentLabel": "Dias de histórico após expurgo"
 			},
 			"ComponentContent": 90
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "horaLojaLote",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "03",
+					"List": null,
+					"Size": 8,
+					"F3": null,
+					"Required": false,
+					"Picture": "@!",
+					"Valid": null,
+					"CanChange": false,
+					"Help": [
+						"Horário que foi executada a última consulta da API LojaLotes."
+					]
+				},
+				"ComponentLabel": "Hora última consulta LojaLote"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "Number",
+			"IdComponent": "tempoConsultaLojaLote",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "04",
+					"List": null,
+					"Size": 3,
+					"F3": null,
+					"Required": false,
+					"Picture": "999",
+					"Valid": null,
+					"IniPad": "99",
+					"CanChange": true,
+					"Trigger": null,
+					"Help": [
+						"Intervalo (em minutos) de execução da consulta de LojaLotes.",
+						"Intervalo padrão é definido em 30 minutos."
+					]
+				},
+				"ComponentLabel": "Intervalo de execução LojaLote"
+			},
+			"ComponentContent": 90
 		}
 	],
-	"LayoutVersion": 1
+	"LayoutVersion": 2
 }
