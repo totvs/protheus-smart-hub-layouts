@@ -84,7 +84,7 @@
 					"Required": false,
 					"Picture": "999",
 					"Valid": null,
-					"IniPad": "99",
+					"IniPad": "30",
 					"CanChange": true,
 					"Trigger": null,
 					"Help": [
@@ -97,5 +97,5 @@
 			"ComponentContent": 90
 		}
 	],
-	"LayoutVersion": 2
+	"LayoutVersion": 2.1
 }
