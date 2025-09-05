@@ -101,7 +101,7 @@
 					"CanChange": false,
 					"Trigger": null
 				},
-				"ComponentLabel": "Início vigência classificação tributária"
+				"ComponentLabel": "Início vigência"
 			},
 			"ComponentContent": ""
 		},
@@ -122,7 +122,7 @@
 					"CanChange": false,
 					"Trigger": null
 				},
-				"ComponentLabel": "Fim vigência classificação tributária"
+				"ComponentLabel": "Fim vigência"
 			},
 			"ComponentContent": ""
 		},
@@ -209,30 +209,6 @@
 				"ComponentLabel": "Código IBGE"
 			},
 			"ComponentContent": ""
-		},
-		{
-			"ContentType": "String",
-			"IdComponent": "padrao",
-			"Component": {
-				"ComponentType": "COMBO",
-				"Parameters": {
-					"Order": "11",
-					"List": [
-						"0=Não",
-						"1=Sim"
-					],
-					"Size": 1,
-					"F3": null,
-					"Required": false,
-					"Picture": "@!",
-					"Valid": null,
-					"IniPad": "0",
-					"CanChange": false,
-					"Trigger": null
-				},
-				"ComponentLabel": "Utiliza imposto padrão"
-			},
-			"ComponentContent": "0"
 		}
 	],
 	"LayoutVersion": 1
