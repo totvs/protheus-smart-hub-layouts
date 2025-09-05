@@ -1,0 +1,22 @@
+{
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"idRetaguarda": "&self:oPublica['MIH_ID']",
+	"idProprietario": "&LjRetComp()",
+	"loteOrigem": "&Self:cLote",
+	"tipoImposto": "&self:oPublica['tipoImposto']",
+	"cst": "&self:oPublica['cst']",
+	"descricaoCst": "&self:oPublica['descricaoCst']",
+	"cclasstrib": "&self:oPublica['cClassTrib']",
+	"dataInicioVigencia": "&self:oPublica['dataInicioVigencia']",
+	"dataFimVigencia": "&self:oPublica['dataFimVigencia']",
+	"percentualAliquota": "&self:oPublica['percentualAliquota']",
+	"percentualReducaoAliquota": "&self:oPublica['percentualReducaoAliquota']",
+	"percentualAliquotaEspecificaUnidadeMedida": "&self:oPublica['percentualAliquotaEspecificaUnidadeMedida']",
+	"localConsumo": "&self:oPublica['localConsumo']",
+	"padrao": "&self:oPublica['padrao']",
+	"situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 0, 1)",
+	"configPSH": {
+		"Version": "1.0",
+		"cargaInicial": false
+	}
+}
