@@ -1,0 +1,8 @@
+{
+	"url": "https://pdvsync-core-imposto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/101/1",
+	"codigotipo": "101",
+	"descricaotipo": "Impostofiscal",
+	"configPSH": {
+		"Version": "1.0"
+	}
+}
