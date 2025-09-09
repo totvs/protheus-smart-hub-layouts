@@ -44,27 +44,6 @@
 		},
 		{
 			"ContentType": "String",
-			"IdComponent": "descricaoCst",
-			"Component": {
-				"ComponentType": "GET",
-				"Parameters": {
-					"Order": "03",
-					"List": null,
-					"Size": 80,
-					"F3": null,
-					"Required": false,
-					"Picture": "@!",
-					"Valid": null,
-					"IniPad": null,
-					"CanChange": false,
-					"Trigger": null
-				},
-				"ComponentLabel": "Descrição situação tributária"
-			},
-			"ComponentContent": ""
-		},
-		{
-			"ContentType": "String",
 			"IdComponent": "cClassTrib",
 			"Component": {
 				"ComponentType": "GET",
@@ -211,5 +190,5 @@
 			"ComponentContent": ""
 		}
 	],
-	"LayoutVersion": 1
+	"LayoutVersion": 1.1
 }
