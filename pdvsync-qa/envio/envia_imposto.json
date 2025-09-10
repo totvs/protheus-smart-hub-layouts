@@ -5,10 +5,10 @@
 	"loteOrigem": "&Self:cLote",
 	"tipoImposto": "&self:oPublica['tipoImposto']",
 	"cst": "&self:oPublica['cst']",
-	"descricaoCst": "&self:oPublica['descricaoCst']",
+	"descricaoCst": "&Posicione('CKB', 1, xFilial('CKB') + Alltrim(self:oPublica['cClassTrib']) , 'CKB_DESCST')",
 	"cclasstrib": "&self:oPublica['cClassTrib']",
-	"dataInicioVigencia": "&self:oPublica['dataInicioVigencia']",
-	"dataFimVigencia": "&self:oPublica['dataFimVigencia']",
+	"dataInicioVigencia": "&FwTimeStamp(3,SToD(self:oPublica['dataInicioVigencia']),'00:00:00')",
+	"dataFimVigencia": "&IIF(!Empty(self:oPublica['dataFimVigencia']),FwTimeStamp(3,SToD(self:oPublica['dataFimVigencia']),'00:00:00'),'9999-01-31T23:59')",
 	"percentualAliquota": "&self:oPublica['percentualAliquota']",
 	"percentualReducaoAliquota": "&self:oPublica['percentualReducaoAliquota']",
 	"percentualAliquotaEspecificaUnidadeMedida": "&self:oPublica['percentualAliquotaEspecificaUnidadeMedida']",
@@ -21,3 +21,4 @@
 	}
 
 }
+
