@@ -16,9 +16,10 @@
 	"padrao": false,
 	"situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 0, 1)",
 	"configPSH": {
-		"Version": "1.0",
+		"Version": "1.1",
 		"cargaInicial": false
 	}
 
 }
+
 
