@@ -1,5 +1,5 @@
 {
-	"url": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/vendaMensagens/",
+	"url": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/v3/vendaMensagens/",
 	"listasPublicacao": {
 		"SL2": "self:oRegistro['VendaItems']",
 		"SL4": "self:oRegistro['VendaPagamentos']"

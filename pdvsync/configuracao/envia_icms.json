@@ -1,5 +1,5 @@
 {
-    "url":"https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/impostos",
+    "url":"https://pdvsync.varejo.totvs.com.br/imposto/api/retaguarda/v3/impostos",
     "codigotipo":"7",
     "descricaotipo":"Imposto",
 	"configPSH": { "Version": "1.0" }
