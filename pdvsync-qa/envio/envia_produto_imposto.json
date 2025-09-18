@@ -1,0 +1,13 @@
+{
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"idRetaguarda": "&self:oPublica['MIL_SAIDA'] + self:oPublica['MIL_ENTRAD']",
+	"idProprietario": "&LjRetComp( PadR( self:oPublica['MIL_FILENT'], TamSx3('MIL_FILIAL')[1] ),'CADASTRO DE LOJA')",
+	"loteOrigem": "&Self:cLote",
+	"idRetaguardaImpostoFiscal": "&self:oPublica['MIL_SAIDA']",
+	"idRetaguardaProduto": "&self:oPublica['MIL_ENTRAD']",
+	"situacao": "&IIF(self:cEvento == '1', 1, 0)",
+	"configPSH": {
+		"Version": "1.0",
+		"cargaInicial": false
+	}
+}

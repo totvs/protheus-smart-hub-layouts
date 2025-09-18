@@ -1,0 +1,194 @@
+{
+	"Components": [
+		{
+			"ContentType": "String",
+			"IdComponent": "tipoImposto",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "01",
+					"List": null,
+					"Size": 5,
+					"F3": null,
+					"Required": false,
+					"Picture": "@!",
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": false,
+					"Trigger": null
+				},
+				"ComponentLabel": "Tipo do imposto"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "cst",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "02",
+					"List": null,
+					"Size": 3,
+					"F3": null,
+					"Required": false,
+					"Picture": "@!",
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": false,
+					"Trigger": null
+				},
+				"ComponentLabel": "Código de situação tributária"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "cClassTrib",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "04",
+					"List": null,
+					"Size": 6,
+					"F3": null,
+					"Required": false,
+					"Picture": "@!",
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": false,
+					"Trigger": null
+				},
+				"ComponentLabel": "Código da classificação tributária"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "dataInicioVigencia",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "05",
+					"List": null,
+					"Size": 8,
+					"F3": null,
+					"Required": false,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": false,
+					"Trigger": null
+				},
+				"ComponentLabel": "Início vigência"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "dataFimVigencia",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "06",
+					"List": null,
+					"Size": 8,
+					"F3": null,
+					"Required": false,
+					"Picture": "@!",
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": false,
+					"Trigger": null
+				},
+				"ComponentLabel": "Fim vigência"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "Number",
+			"IdComponent": "percentualAliquota",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "07",
+					"List": null,
+					"Size": 4,
+					"F3": null,
+					"Required": false,
+					"Picture": "@E 99.99",
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": false,
+					"Trigger": null
+				},
+				"ComponentLabel": "Percentual da aliquota"
+			},
+			"ComponentContent": 0
+		},
+		{
+			"ContentType": "Number",
+			"IdComponent": "percentualReducaoAliquota",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "08",
+					"List": null,
+					"Size": 4,
+					"F3": null,
+					"Required": false,
+					"Picture": "@E 99.99",
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": false,
+					"Trigger": null
+				},
+				"ComponentLabel": "Percentual de redução da aliquota"
+			},
+			"ComponentContent": 0
+		},
+		{
+			"ContentType": "Number",
+			"IdComponent": "percentualAliquotaEspecificaUnidadeMedida",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "09",
+					"List": null,
+					"Size": 4,
+					"F3": null,
+					"Required": false,
+					"Picture": "@E 99.99",
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": false,
+					"Trigger": null
+				},
+				"ComponentLabel": "Percentual de aliquota unidade de medida"
+			},
+			"ComponentContent": 0
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "localConsumo",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "10",
+					"List": null,
+					"Size": 7,
+					"F3": null,
+					"Required": false,
+					"Picture": "@!",
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": false,
+					"Trigger": null
+				},
+				"ComponentLabel": "Código IBGE"
+			},
+			"ComponentContent": ""
+		}
+	],
+	"LayoutVersion": 1.1
+}

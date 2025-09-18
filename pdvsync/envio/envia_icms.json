@@ -4,7 +4,7 @@
 	"modalidade": "&self:oPublica['Modalidade']",
 	"indiceTributoImpressora": "",
 	"reducaoBaseCalculo": "&AllTrim(Transform(IiF(self:oPublica['IT_PREDIC'] > 0,100-(self:oPublica['IT_PREDIC']),0), PesqPict('SL2', 'L2_PREDIC')))",
-	"situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 0, 1)",
+	"situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 1, 0)",
 	"simbolo": "&SubStr(self:oPublica['Simbolo'],1,2)",
 	"cfop": "&self:oPublica['IT_CF']",
 	"cstCsosn": "&IIF( self:oPublica:hasProperty('CSTCSOSN'), self:oPublica['CSTCSOSN'], '' )",
@@ -15,7 +15,7 @@
 	"idProprietario": "&LjRetComp()",
 	"loteOrigem": "&Self:cLote",
 	"configPSH": {
-		"Version": "3.0",
+		"Version": "3.1",
 		"cargaInicial": false
 	}
 }
