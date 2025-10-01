@@ -2,6 +2,7 @@
 	"url": "https://pdvsync-core-produto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/103/1",
 	"codigotipo": "103",
 	"descricaotipo": "ImpostoFiscalProduto",
+	"qtdEnvio": 100,
 	"configPSH": {
 		"Version": "1.0"
 	}
