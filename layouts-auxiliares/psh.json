@@ -94,8 +94,9 @@
 				},
 				"ComponentLabel": "Intervalo de execução LojaLote"
 			},
-			"ComponentContent": 30
+			"ComponentContent": 5
 		}
 	],
-	"LayoutVersion": 2.2
+	"LayoutVersion": 2.3
 }
+
