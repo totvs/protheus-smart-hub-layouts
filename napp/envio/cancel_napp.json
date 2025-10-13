@@ -1,0 +1,6 @@
+{
+    "sale_code": "&self:oPublica['LX_CUPOM']+self:oPublica['LX_SERIE']",
+    "sale_value": "&self:oPublica['LX_VALOR']",
+    "sale_date": "&self:oPublica['STAMP']",
+    "sale_status": "Cancelada"
+}

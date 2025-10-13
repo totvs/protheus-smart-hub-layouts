@@ -1,0 +1,8 @@
+{
+    "configNAPP": {
+        "url_token": "https://pubdata.nappsolutions.io/api/auth",
+        "usuario": "",
+        "senha": "",
+        "url_upload": "https://pubdata.nappsolutions.io/api/upload"
+    }
+}

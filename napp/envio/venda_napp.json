@@ -1,0 +1,6 @@
+{
+    "sale_code": "&self:oPublica['L1_DOC']+self:oPublica['L1_SERIE']",
+    "sale_value": "&self:oPublica['L1_VLRTOT']",
+    "sale_date": "&self:oPublica['STAMP']",
+    "sale_status": "Faturada"
+}
