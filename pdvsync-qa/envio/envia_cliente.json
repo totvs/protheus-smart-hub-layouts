@@ -7,7 +7,7 @@
 	"cidade": "&self:oPublica['A1_MUN']",
 	"estado": "&self:oPublica['A1_EST']",
 	"cep": "&self:oPublica['A1_CEP']",
-	"telefone": "&self:oPublica['A1_DDD'] + self:oPublica['A1_TEL']",
+	"celular": "&self:oPublica['A1_DDD'] + self:oPublica['A1_TEL']",
 	"email": "&self:oPublica['A1_EMAIL']",
 	"dataNascimento": "&SubStr( FwTimeStamp(6, SToD(self:oPublica['A1_DTNASC'])), 1, 10 )",
 	"situacao": "&IIF(self:oPublica['A1_MSBLQL'] == '1' .OR. self:cEvento == '2', 0, 1)",
