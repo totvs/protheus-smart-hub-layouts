@@ -13,7 +13,7 @@
 	"situacao": "&IIF(self:oPublica['A1_MSBLQL'] == '1' .OR. self:cEvento == '2', 0, 1)",
 	"pessoaFisica": "&IIF(self:oPublica['A1_PESSOA'] == 'F', 1, 0)",
 	"cpfCnpj": "&self:oPublica['A1_CGC']",
-	"rgInscricao": "&self:oPublica['A1_RG']",
+	"rgInscricao": "&IIF(self:oPublica['A1_PESSOA'] == 'F' , self:oPublica['A1_RG'] , self:oPublica['A1_INSCR'])",
 	"atividade": "&self:oPublica['A1_ATIVIDA']",
 	"idInquilino": "&self:oConfAssin['inquilino']",
 	"idRetaguarda": "&self:oPublica['A1_COD'] + self:oPublica['A1_LOJA']",
@@ -24,7 +24,7 @@
 	"sequencial": 0,
 	"enviarpnet": 0,
 	"configPSH": {
-		"Version": "2.1",
+		"Version": "2.2",
 		"cargaInicial": false
 	}
 }
