@@ -6,7 +6,7 @@
 	"A1_LOJA": "&SuperGetMV('MV_LOJAPAD',.F., '01')",
 	"A1_CGC": "&self:oRegistro['CpfCnpj']",
 	"A1_RG": "&IIF(self:oRegistro['PessoaFisica'] == 1,self:oRegistro['RgInscricao'],'')",
-	"A1_INSCR": "&IIF(self:oRegistro['PessoaFisica'] == 2,self:oRegistro['RgInscricao'],'')",	
+	"A1_INSCR": "&IIF(self:oRegistro['PessoaFisica'] == 0,self:oRegistro['RgInscricao'],'')",	
 	"A1_NREDUZ": "&UPPER(SubStr(Alltrim( NoAcento(self:oRegistro['Nome']) ),1,TamSX3('A1_NREDUZ')[1]))",
 	"A1_PESSOA": "&IIF(self:oRegistro['PessoaFisica'] == 1,'F','J')",
 	"A1_BAIRRO": "&UPPER( NoAcento(self:oRegistro['Bairro']) )",
