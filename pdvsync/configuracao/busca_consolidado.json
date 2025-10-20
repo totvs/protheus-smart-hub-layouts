@@ -1,5 +1,5 @@
 {
-	"url": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/v3/v2/dadoConsolidados/",
+	"url": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/v3/dadoConsolidados/",
 	"ChaveUni": [
 		"idRetaguardaLoja",
 		"tipoDado",
@@ -8,4 +8,5 @@
 	"configPSH": {
 		"Version": "1.0"
 	}
+
 }
