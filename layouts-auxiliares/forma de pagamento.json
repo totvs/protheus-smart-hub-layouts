@@ -218,7 +218,7 @@
 				"Parameters": {
 					"Order": "08",
 					"List": null,
-					"Size": 99,
+					"Size": 254,
 					"F3": "{|| LjCadAuxF3('LJF3MU', '', '1', {'AE_COD', 'AE_DESC', 'Condições de Pagamento'})}",
 					"Trigger": null,
 					"Required": false,
@@ -250,7 +250,7 @@
 				"Parameters": {
 					"Order": "09",
 					"List": null,
-					"Size": 99,
+					"Size": 254,
 					"F3": null,
 					"Trigger": null,
 					"Required": false,
@@ -458,7 +458,7 @@
 			"ComponentContent": ""
 		}
 	],
-	"LayoutVersion": 6.1,
+	"LayoutVersion": 6.2,
 	"PreValid": {
 		"Condition": "IIF(oModel:GetOperation() == 4 .and. Empty(AllTrim(oModel:GetValue('MIHDETAIL','TDCNDPGTO'))),oModel:LoadValue('MIHDETAIL','TDCNDPGTO',AllTrim(oModel:GetValue('MIHDETAIL','CONDPGTO'))),.T.),.T."
 	},
