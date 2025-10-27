@@ -36,7 +36,7 @@
 	"L1_INDPRES": "&self:oXmlSefaz:get( , {'ide', 'indPres'}, '')",
 	"L1_TROCO1": "&IIF( self:oRegistro['ModeloFiscal'] == 1, self:oXmlSefaz:get( , {'pgto', 'vTroco'}, 0), self:oXmlSefaz:get( , {'pag', 'vTroco'}, 0) )",
 	"L1_PRONFCE": "&IIF( attIsMemberOf(self, 'nCustodia'), IIF(self:oRegistro['VendaCustodiaXml'][self:nCustodia]['NumeroAutorizacao'] == NIL, '', self:oRegistro['VendaCustodiaXml'][self:nCustodia]['NumeroAutorizacao']), '' )",
-	"L1_RETSFZ": "&IIF( attIsMemberOf(self, 'nCustodia'), IIF(self:oRegistro['VendaCustodiaXml'][self:nCustodia]['NumeroAutorizacao'] == NIL, '', self:oRegistro['VendaCustodiaXml'][self:nCustodia]['NumeroAutorizacao']) + '|' + IIF(self:oRegistro['VendaCustodiaXml'][self:nCustodia]['CodigoRetorno'] == NIL, '', self:oRegistro['VendaCustodiaXml'][self:nCustodia]['CodigoRetorno']) + '|' + self:oRegistro['VendaCustodiaXml'][self:nCustodia]['DescricaoRetorno'], '')",
+	"L1_RETSFZ": "&IIF( attIsMemberOf(self, 'nCustodia'), subStr( IIF(self:oRegistro['VendaCustodiaXml'][self:nCustodia]['NumeroAutorizacao'] == NIL, '', self:oRegistro['VendaCustodiaXml'][self:nCustodia]['NumeroAutorizacao']) + '|' + IIF(self:oRegistro['VendaCustodiaXml'][self:nCustodia]['CodigoRetorno'] == NIL, '', self:oRegistro['VendaCustodiaXml'][self:nCustodia]['CodigoRetorno']) + '|' + self:oRegistro['VendaCustodiaXml'][self:nCustodia]['DescricaoRetorno'], 1, tamSx3('L1_RETSFZ')[1] ), '')",
 	"SL2": [
 		{
 			"L2_FILIAL": "&self:oRegistro['Loja']['IdRetaguarda']",
@@ -93,6 +93,6 @@
 		}
 	],
 	"configPSH": {
-		"Version": "3.2"
+		"Version": "3.3"
 	}
 }
