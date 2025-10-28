@@ -1,0 +1,9 @@
+{
+	"url": "https://pdvsync.varejo.totvs.com.br/produto/api/retaguarda/v3/dadosdinamicos/down/103/1",
+	"codigotipo": "103",
+	"descricaotipo": "ImpostoFiscalProduto",
+	"qtdEnvio": 100,
+	"configPSH": {
+		"Version": "1.0"
+	}
+}
