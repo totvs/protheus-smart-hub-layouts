@@ -11,10 +11,10 @@
 	"idRetaguarda": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), '1' + Self:oPublica['B0_COD'], Self:oPublica['DA1_CODTAB'] + Self:oPublica['DA1_CODPRO'] + Self:oPublica['DA1_ITEM'] )",
 	"dataAtualizacao": "&FwTimeStamp(3)",
 	"dataCadastro": "&FwTimeStamp(3)",
-	"idProprietario": "&LjRetComp()",
+	"idProprietario": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), LjRetComp( padR(self:oPublica['B0_FILIAL'], tamSx3('B0_FILIAL')[1]),'CADASTRO DE LOJA' ), LjAuxPosic('COMPARTILHAMENTOS', 'tabelaPreco', padR(self:oPublica['DA1_FILIAL'], tamSx3('DA1_FILIAL')[1]) + padR(self:oPublica['DA1_CODTAB'], tamSx3('DA1_CODTAB')[1]), 'IdProprietario') )",
 	"loteOrigem": "&Self:cLote",
 	"configPSH": {
-		"Version": "4.0",
+		"Version": 4.1,
 		"cargaInicial": false
 	}
 }
