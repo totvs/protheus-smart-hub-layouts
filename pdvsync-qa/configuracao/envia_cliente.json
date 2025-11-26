@@ -2,8 +2,13 @@
 	"url": "https://pdvsync-core-cliente-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/clientes",
 	"codigotipo": "0",
 	"descricaotipo": "Cliente",
+	"qtdereenvio": [
+		1,
+		3,
+		9
+	],
 	"qtdEnvio": 100,
 	"configPSH": {
-		"Version": "1.0"
+		"Version": "3.0"
 	}
 }
