@@ -8,7 +8,7 @@
 			"addresses": [
 				{
 					"zipCode": "&self:oPublica['A1_CEP']",
-					"street": "&self:oPublica['A1_END']",
+					"street": "&SubStr(self:oPublica['A1_END'],1,Rat(',',self:oPublica['A1_END'])-1)",
 					"number": "&Eval({|cEnd,nEnd| cEnd := self:oPublica['A1_END'],nEnd := Rat(',',cEnd),Alltrim(Substr(cEnd,IIF(nEnd > 0 ,nEnd,Len(cEnd))+1,15))})",
 					"extra": "&self:oPublica['A1_COMPLEM']",
 					"district": "&self:oPublica['A1_BAIRRO']",
