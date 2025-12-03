@@ -1,5 +1,5 @@
 {
-	"L1_NUM": "&IIF(self:oRegistro['PreVenda']['IdRetaguarda'] != NIL ,Substr(self:oRegistro['PreVenda']['IdRetaguarda'],TamSx3('L1_FILIAL')[1]+1,TamSx3('L1_NUM')[1]),'')",
+	"L1_NUM": "&IIF(self:oRegistro['PreVenda'] != NIL .AND. self:oRegistro['PreVenda']['IdRetaguarda'] != NIL ,Substr(self:oRegistro['PreVenda']['IdRetaguarda'],TamSx3('L1_FILIAL')[1]+1,TamSx3('L1_NUM')[1]),'')",
 	"L1_FILIAL": "&self:oRegistro['Loja']['IdRetaguarda']",
 	"L1_CLIENTE": "&IIF( Empty(self:oRegistro['IdentificacaoFidelidade']), SuperGetMv('MV_CLIPAD', .F., '000001'), self:DePara('SA1', self:oRegistro['IdentificacaoFidelidade'], 2, 0,,,self:oRegistro['Loja']['IdRetaguarda']) )",
 	"L1_LOJA": "&IIF( Empty(self:oRegistro['IdentificacaoFidelidade']), SuperGetMv('MV_LOJAPAD', .F., '01'), self:DePara('SA1', self:oRegistro['IdentificacaoFidelidade'], 3, 0,,,self:oRegistro['Loja']['IdRetaguarda']) )",
@@ -93,6 +93,6 @@
 		}
 	],
 	"configPSH": {
-		"Version": "3.3"
+		"Version": "3.4"
 	}
 }
