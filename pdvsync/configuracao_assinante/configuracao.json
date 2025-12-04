@@ -5,6 +5,7 @@
 	"url_lojaloteretornos": "https://pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v3/LojaLoteRetornos",
 	"urlPostStatus": "https://pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v3/statusservico",
 	"url_status": "https://pdvsync.varejo.totvs.com.br/controleprocesso/api/retaguarda/v3/statusservico",
+	"qtdMaxPorLote": 1000,
 	"autenticacao": {
 		"environment": 2,
 		"tenent": "",
@@ -19,6 +20,6 @@
 		"dataDados": "&dDataBase - 1"
 	},
 	"configPSH": {
-		"Version": "2.0"
+		"Version": 3.0
 	}
 }
