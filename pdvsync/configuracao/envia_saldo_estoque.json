@@ -2,8 +2,13 @@
 	"url": "https://pdvsync.varejo.totvs.com.br/estoque/api/retaguarda/v3/estoques",
 	"codigotipo": "14",
 	"descricaotipo": "Estoque",
+	"qtdereenvio": [
+		0.1,
+		0.5,
+		1
+	],
 	"qtdEnvio": 100,
 	"configPSH": {
-		"Version": "3.0"
+		"Version": 4.0
 	}
 }
