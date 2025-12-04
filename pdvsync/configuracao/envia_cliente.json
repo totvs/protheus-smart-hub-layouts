@@ -3,9 +3,9 @@
 	"codigotipo": "0",
 	"descricaotipo": "Cliente",
 	"qtdereenvio": [
-		1,
-		3,
-		9
+		0.1,
+		0.5,
+		1
 	],
 	"qtdEnvio": 100,
 	"configPSH": {
