@@ -37,7 +37,7 @@
 					"Required": false,
 					"Picture": "999",
 					"Valid": null,
-					"IniPad": "99",
+					"IniPad": "45",
 					"CanChange": true,
 					"Trigger": null,
 					"Help": [
@@ -47,7 +47,7 @@
 				},
 				"ComponentLabel": "Dias de histórico após expurgo"
 			},
-			"ComponentContent": 90
+			"ComponentContent": 45
 		},
 		{
 			"ContentType": "String",
@@ -84,12 +84,12 @@
 					"Required": false,
 					"Picture": "999",
 					"Valid": null,
-					"IniPad": "30",
+					"IniPad": "5",
 					"CanChange": true,
 					"Trigger": null,
 					"Help": [
 						"Intervalo (em minutos) de execução da consulta de LojaLotes.",
-						"Intervalo padrão é definido em 30 minutos."
+						"Intervalo padrão é definido em 5 minutos."
 					]
 				},
 				"ComponentLabel": "Intervalo de execução LojaLote"
@@ -97,6 +97,7 @@
 			"ComponentContent": 5
 		}
 	],
-	"LayoutVersion": 2.3
+	"LayoutVersion": 2.4
 }
+
 
