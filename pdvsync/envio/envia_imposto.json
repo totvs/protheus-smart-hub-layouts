@@ -13,7 +13,7 @@
 	"percentualReducaoAliquota": "&self:oPublica['percentualReducaoAliquota']",
 	"percentualAliquotaEspecificaUnidadeMedida": "&self:oPublica['percentualAliquotaEspecificaUnidadeMedida']",
 	"localConsumo": "&self:oPublica['localConsumo']",
-	"padrao": false,
+	"padrao": true,
 	"situacao": "&IIF(self:oPublica['MIH_ATIVO'] == '1' .and. self:cEvento == '1', 1, 0)",
 	"configPSH": {
 		"Version": "1.1",

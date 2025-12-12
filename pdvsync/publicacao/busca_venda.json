@@ -37,6 +37,7 @@
 	"L1_TROCO1": "&IIF( self:oRegistro['ModeloFiscal'] == 1, self:oXmlSefaz:get( , {'pgto', 'vTroco'}, 0), self:oXmlSefaz:get( , {'pag', 'vTroco'}, 0) )",
 	"L1_PRONFCE": "&IIF( attIsMemberOf(self, 'nCustodia'), IIF(self:oRegistro['VendaCustodiaXml'][self:nCustodia]['NumeroAutorizacao'] == NIL, '', self:oRegistro['VendaCustodiaXml'][self:nCustodia]['NumeroAutorizacao']), '' )",
 	"L1_RETSFZ": "&IIF( attIsMemberOf(self, 'nCustodia'), subStr( IIF(self:oRegistro['VendaCustodiaXml'][self:nCustodia]['NumeroAutorizacao'] == NIL, '', self:oRegistro['VendaCustodiaXml'][self:nCustodia]['NumeroAutorizacao']) + '|' + IIF(self:oRegistro['VendaCustodiaXml'][self:nCustodia]['CodigoRetorno'] == NIL, '', self:oRegistro['VendaCustodiaXml'][self:nCustodia]['CodigoRetorno']) + '|' + self:oRegistro['VendaCustodiaXml'][self:nCustodia]['DescricaoRetorno'], 1, tamSx3('L1_RETSFZ')[1] ), '')",
+	"EXECAUT": "",
 	"SL2": [
 		{
 			"L2_FILIAL": "&self:oRegistro['Loja']['IdRetaguarda']",
@@ -89,10 +90,12 @@
 			"L2_VALFECP": "&self:oXmlSefaz:getDetIcms('vFCP', self:oRegistro['VendaItems'][nItem]['Sequencia'], 0)",
 			"L2_ALQFCST": "&self:oXmlSefaz:getDetIcms('pFCPSTRet', self:oRegistro['VendaItems'][nItem]['Sequencia'], 0)",
 			"L2_VFECPST": "&self:oXmlSefaz:getDetIcms('vFCPSTRet', self:oRegistro['VendaItems'][nItem]['Sequencia'], 0)",
-			"L2_PREDIC": "&IiF(self:oXmlSefaz:getDetIcms('pRedBC', self:oRegistro['VendaItems'][nItem]['Sequencia'], 0) > 0,100-(self:oXmlSefaz:getDetIcms('pRedBC', self:oRegistro['VendaItems'][nItem]['Sequencia'],0)),0)"
+			"L2_PREDIC": "&IiF(self:oXmlSefaz:getDetIcms('pRedBC', self:oRegistro['VendaItems'][nItem]['Sequencia'], 0) > 0,100-(self:oXmlSefaz:getDetIcms('pRedBC', self:oRegistro['VendaItems'][nItem]['Sequencia'],0)),0)",
+			"EXECAUT": "&self:oXmlSefaz:GetItemSetImp(self)"
 		}
 	],
+	"DKM": "&self:oXmlSefaz:GetNewImp()",
 	"configPSH": {
-		"Version": "3.4"
+		"Version": "3.5"
 	}
 }
