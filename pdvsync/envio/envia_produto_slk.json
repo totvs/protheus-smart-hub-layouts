@@ -1,79 +1,79 @@
 {
-	"TableNode": "SB1",
-	"descricao": "&self:oPublica['SB1'][1]['B1_DESC']",
-	"unidadeMedida": "&self:oPublica['SB1'][1]['B1_UM']",
-	"descontoMaximo": "99",
-	"arredondaTrunca": 1,
-	"codigoProduto": "&self:oPublica['LK_CODBAR']",
-	"codigoAlternativo": "&self:oPublica['LK_CODBAR']",
-	"origemProduto": "1",
-	"situacao": "&IIF(self:oPublica['LK_MSBLQL'] == '1' .OR. self:cEvento == '2', 0, 1)",
-	"imagem": "",
-	"tipoProduto": "KIT",
-	"fracionado": false,
-	"cnpjFornecedor": "",
-	"escalaRelevante": true,
-	"percentualReducaoIcms": 1,
-	"vlicmsret": 1,
-	"cest": "",
-	"pesoliquido": 0,
-	"pesobruto": 0,
-	"produtoKits": [
-		{
-			"TableNode": "SB1",
-			"idRetaguarda": "&self:oPublica['LK_CODBAR'] + self:oPublica['LK_CODIGO']",
-			"idRetaguardaProduto": "&self:oPublica['LK_CODBAR']",
-			"idRetaguardaProdutoKit": "&self:oPublica['LK_CODIGO']",
-			"descricao": "&self:oPublica['SB1'][1]['B1_DESC']",
-			"quantidadeVendaKit": "&self:oPublica['LK_QUANT']",
-			"tipoValorKit": 0,
-			"situacao": "&IIF(self:oPublica['LK_MSBLQL'] == '1' .OR. self:cEvento == '2', 0, 1)",
-			"valorDesconto": 0,
-			"novoValorUnitario": 0
-		}
-	],
-	"fcps": [
-		{
-			"TableNode": "SB1",
-			"valorBaseFcp": 0,
-			"percentualFcp": 0,
-			"codigoBeneficioFiscal": "",
-			"motivoDesoneracaoIcms": 0,
-			"descontaDesoneracaoNf": true,
-			"IdProprietario": "&LjRetComp(cFilAnt,'CADASTRO DE LOJA')"
-		}
-	],
-	"ncms": [
-		{
-			"TableNode": "SB1",
-			"idRetaguarda": "&self:oPublica['SB1'][1]['B1_POSIPI'] + self:oPublica['SB1'][1]['B1_EX_NCM']",
-			"IdProprietario": "&LjRetComp()"
-		}
-	],
-	"impostos": [
-		{
-			"TableNode": "SB1",
-			"idRetaguarda": "&Alltrim(POSICIONE('MIL',1,xFilial('MIL')+PadR('ICMS',TAMSX3('MIL_TIPREL')[1])+PadR(cFilAnt,TAMSX3('MIL_FILENT')[1])+PadR(self:oPublica['LK_CODIGO'],TAMSX3('MIL_ENTRAD')[1]),'MIL_SAIDA'))",
-			"idProprietario": "&LjRetComp(cFilAnt,'CADASTRO DE LOJA')"
-		}
-	],
-	"pisCofins": [
-		{
-			"TableNode": "SB1",
-			"IdRetaguarda": "&Alltrim(POSICIONE('MIL',1,xFilial('MIL')+PadR('PIS/COFINS',TAMSX3('MIL_TIPREL')[1])+PadR(cFilAnt,TAMSX3('MIL_FILENT')[1])+PadR(self:oPublica['LK_CODIGO'],TAMSX3('MIL_ENTRAD')[1]),'MIL_SAIDA'))",
-			"IdProprietario": "&LjRetComp(cFilAnt,'CADASTRO DE LOJA')"
-		}
-	],
-	"id": "&self:oPublica['LK_CODBAR']",
-	"idInquilino": "&self:oConfAssin['inquilino']",
-	"idRetaguarda": "&self:oPublica['LK_CODBAR']",
-	"dataAtualizacao": "&FwTimeStamp(6)",
-	"dataCadastro": "&FwTimeStamp(6)",
-	"idProprietario": "&LjRetComp()",
-	"loteOrigem": "&Self:cLote",
-	"sequencial": 0,
-	"configPSH": {
-		"Version": "2.1",
-		"cargaInicial": false
-	}
+    "TableNode": "SB1",
+    "descricao": "&self:oPublica['SB1'][1]['B1_DESC']",
+    "unidadeMedida": "&self:oPublica['SB1'][1]['B1_UM']",
+    "descontoMaximo": "99",
+    "arredondaTrunca": 1,
+    "codigoProduto": "&self:oPublica['LK_CODBAR']",
+    "codigoAlternativo": "&self:oPublica['LK_CODBAR']",
+    "origemProduto": "1",
+    "situacao": "&IIF(self:oPublica['LK_MSBLQL'] == '1' .OR. self:cEvento == '2', 0, 1)",
+    "imagem": "",
+    "tipoProduto": "KIT",
+    "fracionado": false,
+    "cnpjFornecedor": "",
+    "escalaRelevante": true,
+    "percentualReducaoIcms": 1,
+    "vlicmsret": 1,
+    "cest": "",
+    "pesoliquido": 0,
+    "pesobruto": 0,
+    "produtoKits": [
+        {
+            "TableNode": "SB1",
+            "idRetaguarda": "&self:oPublica['LK_CODBAR'] + self:oPublica['LK_CODIGO']",
+            "idRetaguardaProduto": "&self:oPublica['LK_CODBAR']",
+            "idRetaguardaProdutoKit": "&self:oPublica['LK_CODIGO']",
+            "descricao": "&self:oPublica['SB1'][1]['B1_DESC']",
+            "quantidadeVendaKit": "&self:oPublica['LK_QUANT']",
+            "tipoValorKit": 0,
+            "situacao": "&IIF(self:oPublica['LK_MSBLQL'] == '1' .OR. self:cEvento == '2', 0, 1)",
+            "valorDesconto": 0,
+            "novoValorUnitario": 0
+        }
+    ],
+    "fcps": [
+        {
+            "TableNode": "SB1",
+            "valorBaseFcp": 0,
+            "percentualFcp": 0,
+            "codigoBeneficioFiscal": "",
+            "motivoDesoneracaoIcms": 0,
+            "descontaDesoneracaoNf": true,
+            "IdProprietario": "&LjRetComp()"
+        }
+    ],
+    "ncms": [
+        {
+            "TableNode": "SB1",
+            "idRetaguarda": "&self:oPublica['SB1'][1]['B1_POSIPI'] + self:oPublica['SB1'][1]['B1_EX_NCM']",
+            "IdProprietario": "&LjRetComp()"
+        }
+    ],
+    "impostos": [
+        {
+            "TableNode": "SB1",
+            "idRetaguarda": "&Alltrim(POSICIONE('MIL',1,xFilial('MIL')+PadR('ICMS',TAMSX3('MIL_TIPREL')[1])+PadR(cFilAnt,TAMSX3('MIL_FILENT')[1])+PadR(self:oPublica['LK_CODIGO'],TAMSX3('MIL_ENTRAD')[1]),'MIL_SAIDA'))",
+            "idProprietario": "&LjRetComp()"
+        }
+    ],
+    "pisCofins": [
+        {
+            "TableNode": "SB1",
+            "IdRetaguarda": "&Alltrim(POSICIONE('MIL',1,xFilial('MIL')+PadR('PIS/COFINS',TAMSX3('MIL_TIPREL')[1])+PadR(cFilAnt,TAMSX3('MIL_FILENT')[1])+PadR(self:oPublica['LK_CODIGO'],TAMSX3('MIL_ENTRAD')[1]),'MIL_SAIDA'))",
+            "IdProprietario": "&LjRetComp()"
+        }
+    ],
+    "id": "&self:oPublica['LK_CODBAR']",
+    "idInquilino": "&self:oConfAssin['inquilino']",
+    "idRetaguarda": "&self:oPublica['LK_CODBAR']",
+    "dataAtualizacao": "&FwTimeStamp(6)",
+    "dataCadastro": "&FwTimeStamp(6)",
+    "idProprietario": "&LjRetComp()",
+    "loteOrigem": "&Self:cLote",
+    "sequencial": 0,
+    "configPSH": {
+        "Version": "2.2",
+        "cargaInicial": false
+    }
 }
