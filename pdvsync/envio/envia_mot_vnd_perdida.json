@@ -1,0 +1,9 @@
+{
+	"descricao": "&self:oPublica['MBQ_DSCVEP']",
+	"tipo": 9,
+	"situacao": 1,
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"idRetaguarda": "&self:oPublica['MBQ_FILIAL'] + self:oPublica['MBQ_CODVEP']",
+	"idProprietario": "&LjRetComp()",
+	"loteOrigem": "&self:cLote"
+}
