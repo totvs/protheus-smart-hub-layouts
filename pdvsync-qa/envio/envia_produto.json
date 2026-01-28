@@ -1,4 +1,8 @@
 {
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"idRetaguarda": "&self:oPublica['B1_COD']",
+	"idProprietario": "&LjRetComp()",
+	"loteOrigem": "&Self:cLote",
 	"descricao": "&self:oPublica['B1_DESC']",
 	"unidadeMedida": "&self:oPublica['B1_UM']",
 	"descontoMaximo": "99",
@@ -17,6 +21,7 @@
 	"cest": "&self:oPublica['B1_CEST']",
 	"pesoliquido": "&self:oPublica['B1_PESO']",
 	"pesobruto": "&self:oPublica['B1_PESBRU']",
+	"controlaLote": "&Eval({|| cFilAnt := FwXFilial('SB1',self:oPublica['B1_FILIAL'],'E','E','E'),rastro(self:oPublica['B1_COD'], 'L')})",
 	"produtoKits": [
 		{
 			"TableNode": "MEV",
@@ -62,16 +67,17 @@
 			"IdProprietario": "&LjRetComp()"
 		}
 	],
-	"id": "&self:oPublica['B1_COD']",
-	"idInquilino": "&self:oConfAssin['inquilino']",
-	"idRetaguarda": "&self:oPublica['B1_COD']",
-	"dataAtualizacao": "&FwTimeStamp(6)",
-	"dataCadastro": "&FwTimeStamp(6)",
-	"idProprietario": "&LjRetComp()",
-	"loteOrigem": "&Self:cLote",
-	"controlaLote": "&Eval({|| cFilAnt := FwXFilial('SB1',self:oPublica['B1_FILIAL'],'E','E','E'),rastro(self:oPublica['B1_COD'], 'L')})",
+	"associacaoProdutosClassificacao": [
+		{
+			"idRetaguarda": "&self:oPublica['ACV'][nItem]['ACV_FILIAL'] + self:oPublica['ACV'][nItem]['ACV_CATEGO'] + self:oPublica['B1_COD']",
+			"idRetaguardaClassificacaoProduto": "&self:oPublica['ACV'][nItem]['ACV_FILIAL'] + self:oPublica['ACV'][nItem]['ACV_CATEGO']",
+			"idRetaguardaProduto": "&self:oPublica['B1_COD']",
+			"ordem": "&self:oPublica['ACV'][nItem]",
+			"situacao": "&IIF(self:oPublica['ACV'][nItem]['D_E_L_E_T_'] == '*' .OR. self:cEvento == '2', 0, 1)"
+		}
+	],
 	"configPSH": {
-		"Version": "3.1",
+		"Version": 4.0,
 		"cargaInicial": false
 	}
 }
