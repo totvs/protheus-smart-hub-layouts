@@ -72,7 +72,7 @@
 			"idRetaguarda": "&self:oPublica['ACV'][nItem]['ACV_FILIAL'] + self:oPublica['ACV'][nItem]['ACV_CATEGO'] + self:oPublica['B1_COD']",
 			"idRetaguardaClassificacaoProduto": "&self:oPublica['ACV'][nItem]['ACV_FILIAL'] + self:oPublica['ACV'][nItem]['ACV_CATEGO']",
 			"idRetaguardaProduto": "&self:oPublica['B1_COD']",
-			"ordem": "&self:oPublica['ACV'][nItem]",
+			"ordem": "&nItem",
 			"situacao": "&IIF(self:oPublica['ACV'][nItem]['D_E_L_E_T_'] == '*' .OR. self:cEvento == '2', 0, 1)"
 		}
 	],
