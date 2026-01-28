@@ -1,18 +1,15 @@
 {
-	"id": "&self:oPublica['ACU_COD']",
-	"descricao": "&self:oPublica['ACU_DESC']",
-	"nome": "&self:oPublica['ACU_DESCC']",
-	"sigla": "&self:oPublica['ACU_DESC']",
-	"idRetaguardaPai": "&self:oPublica['ACU_CODPAI']",
-	"situacao": "&IIF(self:oPublica['ACU_MSBLQL'] == '2' .and. self:cEvento == '1', 1, 0) ",
 	"idInquilino": "&self:oConfAssin['inquilino']",
-	"idRetaguarda": "&self:oPublica['ACU_COD']",
-	"dataAtualizacao": "&FWTimeStamp(3)",
-	"dataCadastro": "&FWTimeStamp(3)",
-	"idProprietario": "78965",
+	"idRetaguarda": "&self:oPublica['ACU_FILIAL'] + self:oPublica['ACU_COD']",
+	"idRetaguardaPai": "&IIF( empty(self:oPublica['ACU_CODPAI']), '', self:oPublica['ACU_FILIAL'] + self:oPublica['ACU_CODPAI'] )",
+	"idProprietario": "&LjRetComp()",
 	"loteOrigem": "&Self:cLote",
+	"descricao": "&self:oPublica['ACU_DESC']",
+	"nome": "&self:oPublica['ACU_DESC']",
+	"sigla": "&self:oPublica['ACU_DESC']",
+	"situacao": "&IIF(self:oPublica['ACU_MSBLQL'] == '1' .or. self:cEvento == '2', 0, 1) ",
 	"configPSH": {
-		"Version": "2.0",
+		"Version": 3.0,
 		"cargaInicial": false
 	}
 }
