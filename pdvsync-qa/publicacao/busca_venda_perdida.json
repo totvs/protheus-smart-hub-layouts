@@ -1,0 +1,10 @@
+{
+	"MBR_FILIAL": "&self:oRegistro['loja']['idRetaguarda']",
+	"MBR_LOJA": "&SuperGetMv('MV_LOJAPAD', .F., '01')",
+	"MBR_PROD": "&self:oRegistro['idRetaguardaProduto']",
+	"MBR_MOTIVO": "&self:oRegistro['idRetaguardaMotivo']",
+	"MBR_CODCLI": "&SuperGetMv('MV_CLIPAD', .F., '000001')",
+	"MBR_VEND": "&self:oRegistro['idRetaguardaOperador']",
+	"MBR_EMISSA": "&self:oRegistro['dataCadastro']",
+	"MBR_JUSTIF": "&self:oRegistro['InformacaoComplementar']"
+}
