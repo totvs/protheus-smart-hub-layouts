@@ -1,10 +1,10 @@
 {
-	"url": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/V3/dadosdinamicos/up/60/",
+	"url": "https://pdvsync-core-comercial-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/V3/vendaperdida/",
 	"ChaveUni": [
-		"loja:idRetaguarda",
-		"idRetaguardaProduto",
-		"idRetaguardaMotivo",
-		"idRetaguarda"
+		"Loja:IdRetaguarda",
+		"IdRetaguardaProduto",
+		"IdRetaguardaMotivo",
+		"IdRetaguarda"
 	],
 	"configPSH": {
 		"Version": "1.0"
