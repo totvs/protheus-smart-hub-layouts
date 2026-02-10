@@ -16,11 +16,11 @@
     "A1_END": "&UPPER(Eval({|cEnd,nEnd,cNum| cEnd := AllTrim(self:oRegistro['Endereco']),nEnd := Rat(',',cEnd),cNum := AllTrim(self:oRegistro['Numero']),cEnd+IIf(Alltrim(Substr(cEnd,IIF(nEnd > 0 ,nEnd,Len(cEnd))+1,Len(cEnd))) == cNum, '',', '+cNum)}))",
     "A1_DDD": "&SubStr( cValToChar( IIf(!Empty(self:oRegistro['Celular']),self:oRegistro['Celular'],self:oRegistro['Telefone'])),1,2)",
     "A1_TEL": "&SubStr( cValToChar( IIf(!Empty(self:oRegistro['Celular']),self:oRegistro['Celular'],self:oRegistro['Telefone'])),3)",
-    "A1_COD_MUN": "&Posicione('CC2',4,xFilial('CC2')+self:oRegistro['Estado']+UPPER(PADR(self:oRegistro['Cidade'],TamSX3('CC2_MUN')[1])),'CC2_CODMUN')",
+    "A1_COD_MUN": "&Posicione('CC2',4,xFilial('CC2')+self:oRegistro['Estado']+UPPER(PADR( fwNoAccent(self:oRegistro['Cidade']), TamSX3('CC2_MUN')[1])),'CC2_CODMUN')",
     "A1_MSBLQL": "2",
     "A1_EMAIL": "&self:oRegistro['Email']",
     "A1_DTNASC": "&self:oRegistro['DataNascimento']",
     "configPSH": {
-        "Version": "1.4"
+        "Version": 1.5
     }
 }
