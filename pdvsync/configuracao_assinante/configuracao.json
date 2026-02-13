@@ -15,11 +15,11 @@
 		"clientSecret": ""
 	},
 	"email": {
-		"destinatarios": "",
-		"horaParaExecucao": "07:00",
-		"dataDados": "&dDataBase - 1"
+		"vendas": {
+			"destinatarios": ""
+		}
 	},
 	"configPSH": {
-		"Version": 3.0
+		"Version": 4.0
 	}
 }
