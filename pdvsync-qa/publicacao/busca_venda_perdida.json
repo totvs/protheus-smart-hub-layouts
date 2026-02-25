@@ -6,5 +6,5 @@
 	"MBR_CODCLI": "&SuperGetMv('MV_CLIPAD', .F., '000001')",
 	"MBR_VEND": "&IIF(Empty(LjAuxPosic('OPERADOR DE LOJA',,self:oRegistro['IdRetaguardaOperador'],'VENDEDOR')),SuperGetMv('MV_VENDPAD', .F., '000001'),LjAuxPosic('OPERADOR DE LOJA',,self:oRegistro['IdRetaguardaOperador'],'VENDEDOR'))",
 	"MBR_EMISSA": "&self:oRegistro['DataCadastro']",
-	"MBR_JUSTIF": "&self:oRegistro['InformacaoComplementar']"
+	"MBR_JUSTIF": "&IIF(Empty(self:oRegistro['InformacaoComplementar']),POSICIONE('MBQ',1,xFilial('MBQ') + self:oRegistro['IdRetaguardaMotivo'],'MBQ_DSCVEP'),self:oRegistro['InformacaoComplementar'])"
 }
