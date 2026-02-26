@@ -1,0 +1,12 @@
+{
+	"url": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/v3/vendaperdida/",
+	"ChaveUni": [
+		"Loja:IdRetaguarda",
+		"IdRetaguardaProduto",
+		"IdRetaguardaMotivo",
+		"IdRetaguarda"
+	],
+	"configPSH": {
+		"Version": "1.0"
+	}
+}
