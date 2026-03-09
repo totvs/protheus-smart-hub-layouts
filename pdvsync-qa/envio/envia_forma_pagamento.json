@@ -2,6 +2,7 @@
 	"descricao": "&self:oPublica['descricao']",
 	"descricaoFiscal": "&self:oPublica['descricaofiscal']",
 	"permiteTroco": "&IIF(self:oPublica['permitetroco'] == .T., 1,0)",
+	"utilizaLimiteCredito":"&IIF(self:oPublica['consultaLimite'] == '1', .T.,.F.)",
 	"idRetaguardaFormaPagTroco": "&self:oPublica['idFormaPagamentoTroco']",
 	"valorMinimoAceito": "&cValtoChar(self:oPublica['valorminimoaceito'])",
 	"codigoSistemaExterno": "&self:oPublica['MIH_ID']",
