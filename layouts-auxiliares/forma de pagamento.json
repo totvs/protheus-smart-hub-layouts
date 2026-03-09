@@ -456,9 +456,41 @@
 				"ComponentLabel": "Consulta Crédito"
 			},
 			"ComponentContent": ""
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "consultaLimite",
+			"IdFieldModel": "CONSULLIMI",
+			"Component": {
+				"ComponentType": "COMBO",
+				"Parameters": {
+					"Order": "16",
+					"Size": 1,
+					"F3": null,
+					"Required": true,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": null,
+					"CanChange": true,
+					"Trigger": null,
+					"visible": true,
+					"List": [
+						"",
+						"0=Não",
+						"1=Sim"
+					],
+					"Help": [
+						"Define se o PDV Omni realizará a consulta do limite de compra do cliente na retaguarda, por meio de fluxo online, para a forma de pagamento configurada.",
+						"Quando habilitado, o sistema verificará o limite disponível do cliente antes de concluir a venda, aplicável apenas às formas de pagamento que consomem o limite de compra do cliente.",
+						"Para as demais formas de pagamento, o valor padrão deste campo é NÃO."
+					]
+				},
+				"ComponentLabel": "Limite de Compra"
+			},
+			"ComponentContent": ""
 		}
 	],
-	"LayoutVersion": 6.2,
+	"LayoutVersion": 6.3,
 	"PreValid": {
 		"Condition": "IIF(oModel:GetOperation() == 4 .and. Empty(AllTrim(oModel:GetValue('MIHDETAIL','TDCNDPGTO'))),oModel:LoadValue('MIHDETAIL','TDCNDPGTO',AllTrim(oModel:GetValue('MIHDETAIL','CONDPGTO'))),.T.),.T."
 	},
