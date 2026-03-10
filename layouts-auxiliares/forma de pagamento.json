@@ -485,7 +485,7 @@
 						"Para as demais formas de pagamento, o valor padrão deste campo é NÃO."
 					]
 				},
-				"ComponentLabel": "Limite de Compra"
+				"ComponentLabel": "Limite de Crédito"
 			},
 			"ComponentContent": ""
 		}
