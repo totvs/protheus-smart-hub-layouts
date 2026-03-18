@@ -37,7 +37,7 @@
 					"Required": false,
 					"Picture": "999",
 					"Valid": null,
-					"IniPad": "45",
+					"IniPad": "30",
 					"CanChange": true,
 					"Trigger": null,
 					"Help": [
@@ -47,7 +47,7 @@
 				},
 				"ComponentLabel": "Dias de histórico após expurgo"
 			},
-			"ComponentContent": 45
+			"ComponentContent": 30
 		},
 		{
 			"ContentType": "String",
