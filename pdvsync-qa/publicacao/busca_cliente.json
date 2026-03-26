@@ -20,6 +20,9 @@
     "A1_MSBLQL": "2",
     "A1_EMAIL": "&self:oRegistro['Email']",
     "A1_DTNASC": "&self:oRegistro['DataNascimento']",
+    "AI0": {
+		"AI0_ANACRE": "&IIF(self:oRegistro['pendenteAnaliseCredito'],2,1)"
+	},
     "configPSH": {
         "Version": 1.5
     }
