@@ -1,0 +1,12 @@
+{
+	"idRetaguarda": "&self:oPublica['ME0_FILIAL'] + self:oPublica['ME0_CODMON']", 
+	"situacao": "&self:oPublica['ME0_ATIVO']",
+	"nome": "&self:oPublica['ME0_NOME']",
+	"loteOrigem": "&self:cLote",	
+	"idProprietario": "&LjRetComp()",
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"configPSH": {
+		"Version": "1.0",
+		"cargaInicial": false
+	}
+}
