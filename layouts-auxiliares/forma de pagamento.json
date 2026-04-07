@@ -338,7 +338,7 @@
 					"Required": true,
 					"Picture": null,
 					"Valid": null,
-					"IniPad": null,
+					"IniPad": "'NaoConfigurado'",
 					"CanChange": true,
 					"Trigger": null,
 					"List": [
@@ -353,7 +353,7 @@
 				},
 				"ComponentLabel": "Modelo Fiscal"
 			},
-			"ComponentContent": ""
+			"ComponentContent": "NaoConfigurado"
 		},
 		{
 			"ContentType": "String",
@@ -439,7 +439,7 @@
 					"Required": true,
 					"Picture": null,
 					"Valid": null,
-					"IniPad": null,
+					"IniPad": "'0'",
 					"CanChange": true,
 					"Trigger": null,
 					"visible": true,
@@ -455,7 +455,7 @@
 				},
 				"ComponentLabel": "Consulta Crédito"
 			},
-			"ComponentContent": ""
+			"ComponentContent": "0"
 		},
 		{
 			"ContentType": "String",
@@ -470,7 +470,7 @@
 					"Required": true,
 					"Picture": null,
 					"Valid": null,
-					"IniPad": null,
+					"IniPad": "'0'",
 					"CanChange": true,
 					"Trigger": null,
 					"visible": true,
@@ -487,10 +487,9 @@
 				},
 				"ComponentLabel": "Limite de Crédito"
 			},
-			"ComponentContent": ""
+			"ComponentContent": "0"
 		}
 	],
-	"LayoutVersion": 6.3,
 	"PreValid": {
 		"Condition": "IIF(oModel:GetOperation() == 4 .and. Empty(AllTrim(oModel:GetValue('MIHDETAIL','TDCNDPGTO'))),oModel:LoadValue('MIHDETAIL','TDCNDPGTO',AllTrim(oModel:GetValue('MIHDETAIL','CONDPGTO'))),.T.),.T."
 	},
@@ -506,5 +505,6 @@
 				"Message": "Ops! Não será possivel prosseguir! Quando o campo \"Tipo de Forma de Pagamento\" for igual a \"5 - POS\", é obrigatorio o preenchimento do campo \"Condições de Pagamento\"."
 			}
 		]
-	}
+	},
+	"LayoutVersion": 6.9
 }
