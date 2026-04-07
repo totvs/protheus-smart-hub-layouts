@@ -1,5 +1,5 @@
 {
-	"url": "https://pdvsync-core-cliente-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/clienteMensagens/",
+	"url": "https://pdvsync-core-cliente-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/V3/dadosdinamicos/up/25/",
 	"listasPublicacao": {
 		"AI0": "self:oRegistro['pendenteAnaliseCredito']"
 	},
