@@ -24,6 +24,6 @@
 		"AI0_ANACRE": "&IIF(self:oRegistro['pendenteAnaliseCredito'],2,1)"
 	},
     "configPSH": {
-        "Version": 1.5
+        "Version": 1.6
     }
 }
