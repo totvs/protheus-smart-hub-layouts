@@ -1,8 +1,13 @@
 {
-    "url": "https://pdvsync-core-cliente-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/clienteMensagens/",
-    "ChaveUni": [
-        "CpfCnpj",
-        "DataAtualizacao"
-    ],
-	"configPSH": { "Version": "1.0" }
+	"url": "https://pdvsync-core-cliente-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/clienteMensagens/",
+	"listasPublicacao": {
+		"AI0": "self:oRegistro['pendenteAnaliseCredito']"
+	},
+	"ChaveUni": [
+		"CpfCnpj",
+		"DataAtualizacao"
+	],
+	"configPSH": {
+		"Version": "1.1"
+	}
 }
