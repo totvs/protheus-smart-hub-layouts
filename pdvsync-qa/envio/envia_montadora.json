@@ -1,6 +1,6 @@
 {
 	"idRetaguarda": "&self:oPublica['ME0_FILIAL'] + self:oPublica['ME0_CODMON']", 
-	"situacao": "&self:oPublica['ME0_ATIVO']",
+	"situacao": "&IIF(self:oPublica['ME0_ATIVO'] == '0' .OR. self:cEvento == '2', 0, 1)",
 	"nome": "&self:oPublica['ME0_NOME']",
 	"loteOrigem": "&self:cLote",	
 	"idProprietario": "&LjRetComp()",
