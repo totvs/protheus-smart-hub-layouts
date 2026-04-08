@@ -1,5 +1,5 @@
 {
-	"url": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/v3/vendaperdida/",
+	"url": "https://pdvsync.varejo.totvs.com.br/comercial/api/retaguarda/V3/dadosdinamicos/up/60/",
 	"ChaveUni": [
 		"Loja:IdRetaguarda",
 		"IdRetaguardaProduto",
