@@ -1,0 +1,13 @@
+{
+	"idRetaguarda": "&self:oPublica['ME6_FILIAL']+self:oPublica['ME6_CODVEI']", 
+	"situacao": "&IIF(self:oPublica['ME6_ATIVO'] == '0' .OR. self:cEvento == '2', '0', '1')",
+	"idRetaguardaMontadoraVeiculo": "&self:oPublica['ME6_FILIAL']+self:oPublica['ME6_CODMON']",  <------ ao inves de ME6_FILIAL, deveria ser xFilial("ME0") ?
+	"nome": "&self:oPublica['ME6_NOME']",
+	"loteOrigem": "&self:cLote",	
+	"idProprietario": "&LjRetComp()",
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"configPSH": {
+		"Version": "2.3",
+		"cargaInicial": false
+	}
+}
