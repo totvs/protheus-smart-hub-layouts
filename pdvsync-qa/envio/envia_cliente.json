@@ -22,7 +22,7 @@
 	"idProprietario": "&LjRetComp()",
 	"loteOrigem": "&self:cLote",
 	"pendenteAnaliseCredito": "&IIF(self:oPublica:hasProperty('AI0') .AND. self:oPublica['AI0'][1]['AI0_ANACRE'] == '1', .T., .F.)",
-	"bloqueado": "&IIF(self:oPublica:hasProperty('AI0') .AND. self:oPublica['AI0'][1]['AI0_BLOVEN'] == '1', .T., .F.)",
+	"bloqueado": "&IIF(self:oPublica:hasProperty('AI0') .AND. self:oPublica['AI0'][1]['AI0_BLOVEN'] == '2', .T., .F.)",
 	"sequencial": 0,
 	"enviarpnet": 0,
 	"configPSH": {
