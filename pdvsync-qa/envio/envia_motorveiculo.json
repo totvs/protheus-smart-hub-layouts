@@ -1,0 +1,18 @@
+{
+	"idRetaguarda": "&self:oPublica['MEA_FILIAL']+self:oPublica['MEA_CODMOT']", 
+	"situacao": "&IIF(self:oPublica['MEA_ATIVO'] == '0' .OR. self:cEvento == '2', '0', '1')",
+	"nome": "&self:oPublica['MEA_NOME']",
+	"descricaoTecnica": "&self:oPublica['MEA_DESCR']",
+	"tipoCombustivel": "&self:oPublica['MEA_COMBUS']",
+	"tipoMotor": "&self:oPublica['MEA_ASPIRA']",
+	"numeroValvula": "&self:oPublica['MEA_TOTVAL']",
+	"comandoValvula": "&self:oPublica['MEA_COMVAL']",
+	"potencia": "&self:oPublica['MEA_POTENC']",
+	"loteOrigem": "&self:cLote",	
+	"idProprietario": "&LjRetComp()",
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"configPSH": {
+		"Version": "1.0",
+		"cargaInicial": false
+	}
+}
