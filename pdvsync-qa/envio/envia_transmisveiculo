@@ -1,9 +1,0 @@
-{
-	"idRetaguarda": "&self:oPublica['ME9_FILIAL'] + self:oPublica['ME9_CODTRA']",
-	"situacao": "&IIF(self:cEvento == '2', 0, 1)",
-	"nomeFabricante": "&POSICIONE('SA2',1,PADR(self:oPublica['ME9_FILFAB'],TAMSX3('A2_FILIAL')[1])+self:oPublica['ME9_CODFAB']+self:oPublica['ME9_LOJFAB'],'A2_NOME')",
-	"modelo": "&POSICIONE('MEW',1,PADR(self:oPublica['ME9_FILIAL'],TAMSX3('MEW_FILIAL')[1])+self:oPublica['ME9_CODMOD'],'MEW_NOME')",
-	"loteOrigem": "&self:cLote",
-	"idProprietario": "&LjRetComp()",
-	"idInquilino": "&self:oConfAssin['inquilino']"
-}
