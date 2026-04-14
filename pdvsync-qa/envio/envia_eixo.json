@@ -1,6 +1,6 @@
 {
 	"idRetaguarda": "&self:oPublica['MEB_FILIAL']+self:oPublica['MEB_CODEIX']",
-	"situacao": "&IIF(self:oPublica['MEB_ATIVO'] == '0' .OR. self:cEvento == '2', '0', '1')",
+	"situacao": "&IIF(self:cEvento == '2', '0', '1')",
 	"nomeFabricante": "&POSICIONE('SA2',1,xFilial('SA2') + self:oPublica['MEB_CODFAB'] + self:oPublica['MEB_LOJFAB'],'A2_NOME')",
 	"modelo": "&POSICIONE('MG2',1,xFilial('MG2') + self:oPublica['MEB_CODMOD'], 'MG2_NOME')",
 	"loteOrigem": "&self:cLote",	
