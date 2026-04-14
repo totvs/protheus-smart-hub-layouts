@@ -1,0 +1,20 @@
+{
+	"idRetaguarda": "&self:oPublica['MEC_MSUID']",
+	"situacao": "&IIF(self:cEvento == '2', 0, 1)",
+	"idRetaguardaVeiculo": "&self:oPublica['MEC_CODVEI']",			
+	"idRetaguardaEixo": "&self:oPublica['MEC_CODEIX']",			 
+	"idRetaguardaMotorVeiculo": "&self:oPublica['MEC_CODMOT']",		 
+	"idRetaguardaTransmissaoVeiculo": "&self:oPublica['MEC_CODTRA']",	 
+	"nome": "&self:oPublica['MEC_MODELO']",
+	"geracao": "&self:oPublica['MEC_GERACA']",		
+	"sistemaDirecao": "&self:oPublica['MEC_TPDIRE']",	 
+	"anoFabricacaoInicio": "&self:oPublica['MEC_FABINI']",	
+	"anoFabricacaoFim": "&self:oPublica['MEC_FABFIM']",	 
+	"loteOrigem": "&self:cLote",
+	"idProprietario": "&LjRetComp()",
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"configPSH": {
+		"Version": "1.0",
+		"cargaInicial": false
+	}
+}
