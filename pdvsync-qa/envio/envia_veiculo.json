@@ -1,6 +1,6 @@
 {
 	"idRetaguarda": "&self:oPublica['ME6_FILIAL']+self:oPublica['ME6_CODVEI']", 
-	"situacao": "&IIF(self:cEvento == '2', '0', '1')",
+	"situacao": "&IIF(self:cEvento == '2', 0, 1)",
 	"idRetaguardaMontadoraVeiculo": "&self:oPublica['ME6_FILIAL']+self:oPublica['ME6_CODMON']",  
 	"nome": "&self:oPublica['ME6_NOME']",
 	"loteOrigem": "&self:cLote",	
