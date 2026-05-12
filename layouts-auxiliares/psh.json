@@ -95,9 +95,103 @@
 				"ComponentLabel": "Intervalo de execução LojaLote"
 			},
 			"ComponentContent": 5
+		},
+		{
+			"ContentType": "Number",
+			"IdComponent": "limiteDiasConsultaStatus",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "05",
+					"List": null,
+					"Size": 2,
+					"F3": null,
+					"Required": false,
+					"Picture": "99",
+					"Valid": null,
+					"IniPad": "7",
+					"CanChange": true,
+					"Trigger": null,
+					"Help": [
+						"Define a quantidade de dias em que será realizada a consulta do status de processamento no sistema de destino. Como base, é considerada a data de envio do registro(MIK_DTFECH), somada a esse período. Caso a data atual ultrapasse esse limite, a consulta de status não será mais realizada."
+					]
+				},
+				"ComponentLabel": "Limite de dias para consulta de status"
+			},
+			"ComponentContent": 7
+		},
+		{
+			"ContentType": "Number",
+			"IdComponent": "qtdRetornoQuery",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "06",
+					"List": null,
+					"Size": 5,
+					"F3": null,
+					"Required": false,
+					"Picture": "99999",
+					"Valid": null,
+					"IniPad": "10000",
+					"CanChange": true,
+					"Trigger": null,
+					"Help": [
+						"Define a quantidade de registros retornados em cada execução das consultas utilizadas na integração."
+					]
+				},
+				"ComponentLabel": "Registros retornados nas consultas"
+			},
+			"ComponentContent": 10000
+		},
+		{
+			"ContentType": "Number",
+			"IdComponent": "timeout",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "07",
+					"List": null,
+					"Size": 3,
+					"F3": null,
+					"Required": false,
+					"Picture": "999",
+					"Valid": null,
+					"IniPad": "300",
+					"CanChange": true,
+					"Trigger": null,
+					"Help": [
+						"Define o tempo máximo de espera, em segundos, pelo retorno das aplicações externas."
+					]
+				},
+				"ComponentLabel": "Tempo de espera"
+			},
+			"ComponentContent": 300
+		},
+		{
+			"ContentType": "Number",
+			"IdComponent": "qtdBulk",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "08",
+					"List": null,
+					"Size": 5,
+					"F3": null,
+					"Required": false,
+					"Picture": "9999",
+					"Valid": null,
+					"IniPad": "1000",
+					"CanChange": true,
+					"Trigger": null,
+					"Help": [
+						"Define a quantidade registros que serão utlizados pelo FwBulk para gravação de dados em massa."
+					]
+				},
+				"ComponentLabel": "Quantidade utilizada para gravação via FwBulk"
+			},
+			"ComponentContent": 1000
 		}
 	],
-	"LayoutVersion": 2.5
+	"LayoutVersion": 3.0
 }
-
-
