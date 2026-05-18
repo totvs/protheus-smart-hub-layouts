@@ -1,0 +1,834 @@
+{
+	"table": {
+		"name": "SB1T10",
+		"alias": "SB1",
+		"schema": "public"
+	},
+	"fields": [
+		{
+			"description": "Descrição",
+			"column_name": "SB1.B1_DESC",
+			"alias": "descricao",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "Unidade de medida",
+			"column_name": "SB1.B1_UM",
+			"alias": "unidadeMedida",
+			"is_physical": true
+		},
+		{
+			"description": "Desconto Maximo",
+			"alias": "descontoMaximo",
+			"is_physical": false,
+			"is_constant": true,
+			"static_value": "99"
+		},
+		{
+			"description": "Arredonda/trunca ?",
+			"alias": "arredondaTrunca",
+			"is_physical": false,
+			"is_constant": true,
+			"static_value": 1
+		},
+		{
+			"description": "Código do Produto",
+			"column_name": "SB1.B1_COD",
+			"alias": "codigoProduto",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			],
+			"cast_to": "VARCHAR(20)"
+		},
+		{
+			"alias": "codigoAlternativo",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"column": "SB1.B1_CODBAR",
+							"operator": "EQUALS",
+							"compare_value": " "
+						},
+						"then": {
+							"value": "SEM GTIN",
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"value": "SB1.B1_CODBAR",
+					"value_type": "COLUMN",
+					"transformations": [
+						{
+							"function": "TRIM"
+						}
+					]
+				}
+			}
+		},
+		{
+			"alias": "origemProduto",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"column": "SB1.B1_ORIGEM",
+							"operator": "NOT_EQUALS",
+							"compare_value": "0"
+						},
+						"then": {
+							"value": 1,
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"value": 0,
+					"value_type": "STATIC"
+				}
+			}
+		},
+		{
+			"alias": "situacao",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"logic_group": "OR",
+							"conditions": [
+								{
+									"column": "SB1.B1_MSBLQL",
+									"operator": "EQUALS",
+									"compare_value": "1"
+								},
+								{
+									"column": "SB1.D_E_L_E_T_",
+									"operator": "EQUALS",
+									"compare_value": "*"
+								}
+							]
+						},
+						"then": {
+							"value": 0,
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"value": 1,
+					"value_type": "STATIC"
+				}
+			}
+		},
+		{
+			"description": "Imagem",
+			"alias": "imagem",
+			"is_physical": false,
+			"is_constant": true,
+			"static_value": ""
+		},
+		{
+			"alias": "tipoProduto",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"column": "SB1.B1_TIPO",
+							"operator": "EQUALS",
+							"compare_value": "KT"
+						},
+						"then": {
+							"value": "KIT",
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"value": "ProdutoAcabado",
+					"value_type": "STATIC"
+				}
+			}
+		},
+		{
+			"alias": "fracionado",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"logic_group": "AND",
+							"conditions": [
+								{
+									"column": "SB1.B1_UM",
+									"operator": "IN",
+									"compare_value": [
+										"G",
+										"MG",
+										"KG"
+									]
+								},
+								{
+									"column": "SB1.B1_BALANCA",
+									"operator": "EQUALS",
+									"compare_value": "2"
+								}
+							]
+						},
+						"then": {
+							"value": true,
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"value": false,
+					"value_type": "STATIC"
+				}
+			}
+		},
+		{
+			"description": "cnpjFornecedor",
+			"alias": "cnpjFornecedor",
+			"is_physical": false,
+			"is_constant": true,
+			"static_value": ""
+		},
+		{
+			"description": "escalaRelevante",
+			"alias": "escalaRelevante",
+			"is_physical": false,
+			"is_constant": true,
+			"static_value": true
+		},
+		{
+			"description": "percentualReducaoIcms",
+			"alias": "percentualReducaoIcms",
+			"is_physical": false,
+			"is_constant": true,
+			"static_value": 1
+		},
+		{
+			"description": "vlicmsret",
+			"alias": "vlicmsret",
+			"is_physical": false,
+			"is_constant": true,
+			"static_value": 1
+		},
+		{
+			"description": "cest",
+			"column_name": "SB1.B1_CEST",
+			"alias": "cest",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "peso liquido",
+			"column_name": "SB1.B1_PESO",
+			"alias": "pesoliquido",
+			"is_physical": true
+		},
+		{
+			"description": "peso bruto",
+			"column_name": "SB1.B1_PESBRU",
+			"alias": "pesobruto",
+			"is_physical": true
+		},
+		{
+			"alias": "produtoKits",
+			"is_physical": false,
+			"is_relationship": true,
+			"relationship_config": {
+				"relationship_type": "ONE_TO_MANY",
+				"target_table": "MEV",
+				"table_alias": "MEV",
+				"parent_key": "SB1.B1_FILIAL+SB1.B1_COD",
+				"child_key": "MEV.MEV_FILIAL+MEV.MEV_CODKIT",
+				"fields": [
+					{
+						"column_name": "SB1.B1_COD",
+						"alias": "idRetaguardaProduto",
+						"is_physical": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					},
+					{
+						"column_name": "MEV.MEV_PRODUT",
+						"alias": "idRetaguardaProdutoKit",
+						"is_physical": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					},
+					{
+						"column_name": "TRIM(SB1.B1_COD)+TRIM(MEV.MEV_PRODUT)",
+						"alias": "idRetaguarda",
+						"is_physical": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					},
+					{
+						"alias": "descricao",
+						"is_posicione": true,
+						"posicione_config": {
+							"target_table": "SB1",
+							"target_alias": "SB1KIT",
+							"target_column": "SB1KIT.B1_DESC",
+							"match_filter": {
+								"logic": "AND",
+								"conditions": [
+									{
+										"column": "SB1KIT.B1_FILIAL",
+										"operator": "EQUALS",
+										"compare_value": "MEV.MEV_FILIAL",
+										"value_type": "COLUMN"
+									},
+									{
+										"column": "SB1KIT.B1_COD",
+										"operator": "EQUALS",
+										"compare_value": "MEV.MEV_PRODUT",
+										"value_type": "COLUMN"
+									}
+								]
+							}
+						},
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					},
+					{
+						"column_name": "MEV.MEV_QTD",
+						"alias": "quantidadeVendaKit",
+						"is_physical": true
+					},
+					{
+						"description": "tipoValorKit",
+						"alias": "tipoValorKit",
+						"is_physical": false,
+						"is_constant": true,
+						"static_value": 0
+					},
+					{
+						"alias": "situacao",
+						"is_physical": false,
+						"logic_operation": {
+							"type": "CASE",
+							"cases": [
+								{
+									"when": {
+										"logic_group": "OR",
+										"conditions": [
+											{
+												"column": "SB1.B1_MSBLQL",
+												"operator": "EQUALS",
+												"compare_value": "1"
+											},
+											{
+												"column": "SB1.D_E_L_E_T_",
+												"operator": "EQUALS",
+												"compare_value": "*"
+											}
+										]
+									},
+									"then": {
+										"value": 0,
+										"value_type": "STATIC"
+									}
+								}
+							],
+							"else": {
+								"value": 1,
+								"value_type": "STATIC"
+							}
+						}
+					},
+					{
+						"column_name": "MEV.MEV_DESCNT",
+						"alias": "valorDesconto",
+						"is_physical": true
+					},
+					{
+						"description": "novoValorUnitario",
+						"alias": "novoValorUnitario",
+						"is_physical": false,
+						"is_constant": true,
+						"static_value": 0
+					}
+				]
+			}
+		},
+		{
+			"alias": "fcps",
+			"is_physical": false,
+			"is_relationship": true,
+			"relationship_config": {
+				"relationship_type": "ONE_TO_MANY",
+				"target_table": "MIL",
+				"table_alias": "MIL",
+				"parent_key": "SB1.B1_COD",
+				"child_key": "MIL.MIL_ENTRAD",
+				"fields": [
+					{
+						"description": "valorBaseFcp",
+						"alias": "valorBaseFcp",
+						"is_json_extract": true,
+						"json_extract_config": {
+							"is_source_posicione": true,
+							"posicione_config": {
+								"target_table": "MIH",
+								"target_alias": "MIH",
+								"target_column": "MIH.MIH_CONFIG",
+								"match_filter": {
+									"column": "MIH.MIH_ID",
+									"operator": "EQUALS",
+									"value_type": "COLUMN",
+									"compare_value": "MIL.MIL_SAIDA"
+								}
+							},
+							"root_path": "$.Components",
+							"fields": [
+								{
+									"alias": "campo",
+									"json_path": "$.IdComponent",
+									"type": "VARCHAR(15)"
+								},
+								{
+									"alias": "conteudo",
+									"json_path": "$.ComponentContent",
+									"type": "VARCHAR",
+									"extract_field": true,
+									"cast_to": "INT"
+								}
+							],
+							"filters": {
+								"column": "campo",
+								"operator": "EQUALS",
+								"compare_value": "IT_BASFECP"
+							}
+						}
+					},
+					{
+						"description": "percentualFcp",
+						"alias": "percentualFcp",
+						"is_json_extract": true,
+						"json_extract_config": {
+							"is_source_posicione": true,
+							"posicione_config": {
+								"target_table": "MIH",
+								"target_alias": "MIH",
+								"target_column": "MIH.MIH_CONFIG",
+								"match_filter": {
+									"column": "MIH.MIH_ID",
+									"operator": "EQUALS",
+									"value_type": "COLUMN",
+									"compare_value": "MIL.MIL_SAIDA"
+								}
+							},
+							"root_path": "$.Components",
+							"fields": [
+								{
+									"alias": "campo",
+									"json_path": "$.IdComponent",
+									"type": "VARCHAR(15)"
+								},
+								{
+									"alias": "conteudo",
+									"json_path": "$.ComponentContent",
+									"type": "VARCHAR",
+									"extract_field": true,
+									"cast_to": "INT"
+								}
+							],
+							"filters": {
+								"column": "campo",
+								"operator": "EQUALS",
+								"compare_value": "IT_ALIQFECP"
+							}
+						}
+					},
+					{
+						"description": "codigoBeneficioFiscal",
+						"alias": "codigoBeneficioFiscal",
+						"is_json_extract": true,
+						"json_extract_config": {
+							"is_source_posicione": true,
+							"posicione_config": {
+								"target_table": "MIH",
+								"target_alias": "MIH",
+								"target_column": "MIH.MIH_CONFIG",
+								"match_filter": {
+									"column": "MIH.MIH_ID",
+									"operator": "EQUALS",
+									"value_type": "COLUMN",
+									"compare_value": "MIL.MIL_SAIDA"
+								}
+							},
+							"root_path": "$.Components",
+							"fields": [
+								{
+									"alias": "campo",
+									"json_path": "$.IdComponent",
+									"type": "VARCHAR(15)"
+								},
+								{
+									"alias": "conteudo",
+									"json_path": "$.ComponentContent",
+									"type": "VARCHAR(15)",
+									"extract_field": true
+								}
+							],
+							"filters": {
+								"column": "campo",
+								"operator": "EQUALS",
+								"compare_value": "IT_CODDECL"
+							}
+						}
+					},
+					{
+						"description": "motivoDesoneracaoIcms",
+						"alias": "motivoDesoneracaoIcms",
+						"is_json_extract": true,
+						"json_extract_config": {
+							"is_source_posicione": true,
+							"posicione_config": {
+								"target_table": "MIH",
+								"target_alias": "MIH",
+								"target_column": "MIH.MIH_CONFIG",
+								"match_filter": {
+									"column": "MIH.MIH_ID",
+									"operator": "EQUALS",
+									"value_type": "COLUMN",
+									"compare_value": "MIL.MIL_SAIDA"
+								}
+							},
+							"root_path": "$.Components",
+							"fields": [
+								{
+									"alias": "campo",
+									"json_path": "$.IdComponent",
+									"type": "VARCHAR(15)"
+								},
+								{
+									"alias": "conteudo",
+									"json_path": "$.ComponentContent",
+									"type": "VARCHAR(15)",
+									"extract_field": true,
+									"cast_to": "INT"
+								}
+							],
+							"filters": {
+								"column": "campo",
+								"operator": "EQUALS",
+								"compare_value": "LF_MOTICMS"
+							}
+						}
+					},
+					{
+						"description": "descontaDesoneracaoNf",
+						"alias": "descontaDesoneracaoNf",
+						"is_json_extract": true,
+						"json_extract_config": {
+							"is_source_posicione": true,
+							"posicione_config": {
+								"target_table": "MIH",
+								"target_alias": "MIH",
+								"target_column": "MIH.MIH_CONFIG",
+								"match_filter": {
+									"column": "MIH.MIH_ID",
+									"operator": "EQUALS",
+									"value_type": "COLUMN",
+									"compare_value": "MIL.MIL_SAIDA"
+								}
+							},
+							"root_path": "$.Components",
+							"fields": [
+								{
+									"alias": "campo",
+									"json_path": "$.IdComponent",
+									"type": "VARCHAR(30)"
+								},
+								{
+									"alias": "conteudo",
+									"json_path": "$.ComponentContent",
+									"type": "BIT",
+									"extract_field": true
+								}
+							],
+							"filters": {
+								"column": "campo",
+								"operator": "EQUALS",
+								"compare_value": "descontaDesoneracaoNf"
+							}
+						}
+					},
+					{
+						"description": "IdProprietario",
+						"alias": "IdProprietario",
+						"is_physical": false,
+						"is_proprietary": true,
+						"proprietary_config": {
+							"level": 2,
+							"value_type": "COLUMN",
+							"id_branch": "SB1.B1_FILIAL"
+						}
+					}
+				],
+				"filters": {
+					"logic_group": "AND",
+					"conditions": [
+						{
+							"column": "MIL.D_E_L_E_T_",
+							"operator": "EQUALS",
+							"compare_value": " "
+						},
+						{
+							"column": "MIL.MIL_TIPREL",
+							"operator": "EQUALS",
+							"compare_value": "FECP"
+						}
+					]
+				}
+			}
+		},
+		{
+			"alias": "impostos",
+			"is_physical": false,
+			"is_relationship": true,
+			"relationship_config": {
+				"relationship_type": "ONE_TO_MANY",
+				"target_table": "MIL",
+				"table_alias": "MIL",
+				"parent_key": "SB1.B1_COD",
+				"child_key": "MIL.MIL_ENTRAD",
+				"fields": [
+					{
+						"column_name": "MIL.MIL_SAIDA",
+						"alias": "idRetaguarda",
+						"is_physical": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					},
+					{
+						"description": "idProprietario",
+						"alias": "idProprietario",
+						"is_physical": false,
+						"is_proprietary": true,
+						"proprietary_config": {
+							"level": 2,
+							"value_type": "COLUMN",
+							"id_branch": "SB1.B1_FILIAL"
+						}
+					}
+				],
+				"filters": {
+					"logic_group": "AND",
+					"conditions": [
+						{
+							"column": "MIL.D_E_L_E_T_",
+							"operator": "EQUALS",
+							"compare_value": " "
+						},
+						{
+							"column": "MIL.MIL_TIPREL",
+							"operator": "EQUALS",
+							"compare_value": "ICMS"
+						}
+					]
+				}
+			}
+		},
+		{
+			"alias": "pisCofins",
+			"is_physical": false,
+			"is_relationship": true,
+			"relationship_config": {
+				"relationship_type": "ONE_TO_MANY",
+				"target_table": "MIL",
+				"table_alias": "MIL",
+				"parent_key": "SB1.B1_COD",
+				"child_key": "MIL.MIL_ENTRAD",
+				"fields": [
+					{
+						"column_name": "MIL.MIL_SAIDA",
+						"alias": "IdRetaguarda",
+						"is_physical": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					},
+					{
+						"description": "IdProprietario",
+						"alias": "IdProprietario",
+						"is_physical": false,
+						"is_proprietary": true,
+						"proprietary_config": {
+							"level": 2,
+							"value_type": "COLUMN",
+							"id_branch": "SB1.B1_FILIAL"
+						}
+					}
+				],
+				"filters": {
+					"logic_group": "AND",
+					"conditions": [
+						{
+							"column": "MIL.D_E_L_E_T_",
+							"operator": "EQUALS",
+							"compare_value": " "
+						},
+						{
+							"column": "MIL.MIL_TIPREL",
+							"operator": "EQUALS",
+							"compare_value": "PIS/COFINS"
+						}
+					]
+				}
+			}
+		},
+		{
+			"alias": "ncms",
+			"is_physical": false,
+			"is_relationship": true,
+			"relationship_config": {
+				"relationship_type": "ONE_TO_MANY",
+				"target_table": "SB1",
+				"table_alias": "SB1NCM",
+				"parent_key": "SB1.B1_COD",
+				"child_key": "SB1NCM.B1_COD",
+				"fields": [
+					{
+						"column_name": "SB1NCM.B1_POSIPI",
+						"alias": "idRetaguarda",
+						"is_physical": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					},
+					{
+						"description": "IdProprietario",
+						"alias": "IdProprietario",
+						"is_physical": false,
+						"is_proprietary": true,
+						"proprietary_config": {
+							"level": 2,
+							"value_type": "COLUMN",
+							"id_branch": "SB1.B1_FILIAL"
+						}
+					}
+				]
+			}
+		},
+		{
+			"description": "id",
+			"column_name": "SB1.B1_COD",
+			"alias": "id",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "idInquilino",
+			"alias": "idInquilino",
+			"is_physical": false,
+			"is_constant": true,
+			"static_value": "69"
+		},
+		{
+			"description": "idRetaguarda",
+			"column_name": "SB1.B1_COD",
+			"alias": "idRetaguarda",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"alias": "dataAtualizacao",
+			"is_physical": false,
+			"db_function": "CURRENT_TIMESTAMP"
+		},
+		{
+			"alias": "dataCadastro",
+			"is_physical": false,
+			"db_function": "CURRENT_TIMESTAMP"
+		},
+		{
+			"description": "idProprietario",
+			"alias": "idProprietario",
+			"is_physical": false,
+			"is_proprietary": true,
+			"proprietary_config": {
+				"level": 2,
+				"value_type": "COLUMN",
+				"id_branch": "SB1.B1_FILIAL"
+			}
+		},
+		{
+			"alias": "controlaLote",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"column": "SB1.B1_RASTRO",
+							"operator": "EQUALS",
+							"compare_value": "L"
+						},
+						"then": {
+							"value": true,
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"value": false,
+					"value_type": "STATIC"
+				}
+			}
+		}
+	]
+}

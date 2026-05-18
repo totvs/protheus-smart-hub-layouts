@@ -1,0 +1,331 @@
+{
+	"table": {
+		"name": "SA1T10",
+		"alias": "SA1",
+		"schema": "public"
+	},
+	"fields": [
+		{
+			"description": "nome",
+			"column_name": "SA1.A1_NOME",
+			"alias": "nome",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "endereco",
+			"column_name": "SA1.A1_END",
+			"alias": "endereco",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			],
+			"cast_to": "VARCHAR(150)"
+		},
+		{
+			"description": "numero",
+			"column_name": "SA1.A1_END",
+			"alias": "numero",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "SPLIT",
+					"params": {
+						"character": ",",
+						"part": 2
+					}
+				},
+				{
+					"function": "TRIM"
+				}
+			],
+			"cast_to": "VARCHAR(15)"
+		},
+		{
+			"description": "complemento",
+			"column_name": "SA1.A1_COMPLEM",
+			"alias": "complemento",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "bairro",
+			"column_name": "SA1.A1_BAIRRO",
+			"alias": "bairro",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "cidade",
+			"column_name": "SA1.A1_MUN",
+			"alias": "cidade",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "estado",
+			"column_name": "SA1.A1_EST",
+			"alias": "estado",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "cep",
+			"column_name": "SA1.A1_CEP",
+			"alias": "cep",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "celular",
+			"alias": "celular",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CONCAT",
+				"parts": [
+					{
+						"value_type": "COLUMN",
+						"value": "SA1.A1_DDD"
+					},
+					{
+						"value_type": "COLUMN",
+						"value": "SA1.A1_TEL"
+					}
+				]
+			}
+		},
+		{
+			"description": "email",
+			"column_name": "SA1.A1_EMAIL",
+			"alias": "email",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "dataNascimento",
+			"column_name": "SA1.A1_DTNASC",
+			"alias": "dataNascimento",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TO_DATE"
+				},
+				{
+					"function": "FORMAT_DATE",
+					"params": {
+						"format": "yyyy-MM-dd"
+					}
+				}
+			]
+		},
+		{
+			"alias": "situacao",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"logic_group": "OR",
+							"conditions": [
+								{
+									"column": "SA1.A1_MSBLQL",
+									"operator": "EQUALS",
+									"compare_value": "1"
+								},
+								{
+									"column": "SA1.D_E_L_E_T_",
+									"operator": "EQUALS",
+									"compare_value": "*"
+								}
+							]
+						},
+						"then": {
+							"value": 0,
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"value": 1,
+					"value_type": "STATIC"
+				}
+			}
+		},
+		{
+			"alias": "pessoaFisica",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"column": "SA1.A1_PESSOA",
+							"operator": "EQUALS",
+							"compare_value": "F"
+						},
+						"then": {
+							"value": 1,
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"value": 0,
+					"value_type": "STATIC"
+				}
+			}
+		},
+		{
+			"description": "cpfCnpj",
+			"column_name": "SA1.A1_CGC",
+			"alias": "cpfCnpj",
+			"is_physical": true
+		},
+		{
+			"alias": "rgInscricao",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"column": "SA1.A1_PESSOA",
+							"operator": "EQUALS",
+							"compare_value": "F"
+						},
+						"then": {
+							"value": "SA1.A1_RG",
+							"value_type": "COLUMN",
+							"transformations": [
+								{
+									"function": "TRIM"
+								}
+							]
+						}
+					}
+				],
+				"else": {
+					"value": "SA1.A1_INSCR",
+					"value_type": "COLUMN",
+					"transformations": [
+						{
+							"function": "TRIM"
+						}
+					]
+				}
+			}
+		},
+		{
+			"description": "atividade",
+			"column_name": "SA1.A1_ATIVIDA",
+			"alias": "atividade",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "idInquilino",
+			"alias": "idInquilino",
+			"is_physical": false,
+			"is_constant": true,
+			"static_value": "69"
+		},
+		{
+			"description": "idRetaguarda",
+			"alias": "idRetaguarda",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CONCAT",
+				"parts": [
+					{
+						"value_type": "COLUMN",
+						"value": "SA1.A1_COD"
+					},
+					{
+						"value_type": "COLUMN",
+						"value": "SA1.A1_LOJA"
+					}
+				]
+			}
+		},
+		{
+			"alias": "dataAtualizacao",
+			"is_physical": false,
+			"db_function": "CURRENT_TIMESTAMP"
+		},
+		{
+			"description": "dataCadastro",
+			"column_name": "SA1.A1_DTCAD",
+			"alias": "dataCadastro",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TO_DATE"
+				},
+				{
+					"function": "FORMAT_DATE",
+					"params": {
+						"format": "yyyy-MM-ddThh:mm:ssZ"
+					}
+				}
+			]
+		},
+		{
+			"description": "idProprietario",
+			"alias": "idProprietario",
+			"is_physical": false,
+			"is_proprietary": true,
+			"proprietary_config": {
+				"level": 0
+			}
+		},
+		{
+			"description": "sequencial",
+			"alias": "sequencial",
+			"is_physical": false,
+			"is_constant": true,
+			"static_value": 0
+		},
+		{
+			"description": "enviarpnet",
+			"alias": "enviarpnet",
+			"is_physical": false,
+			"is_constant": true,
+			"static_value": 0
+		}
+	]
+}
