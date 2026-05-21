@@ -1,0 +1,351 @@
+{
+	"table": {
+		"name": "DA1",
+		"alias": "DA1",
+		"schema": "public"
+	},
+	"fields": [
+		{
+			"alias": "dataHoraVigenciaInicial",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"logic_group": "AND",
+							"conditions": [
+								{
+									"column": "DA1.DA1_DATVIG",
+									"operator": "IS_NULL_OR_EMPTY"
+								}
+							]
+						},
+						"then": {
+							"is_posicione": true,
+							"posicione_config": {
+								"target_table": "DA0",
+								"target_alias": "DA0",
+								"target_column": "DA0.DA0_DATDE",
+								"match_filter": {
+									"logic_group": "AND",
+									"conditions": [
+										{
+											"column": "DA0.DA0_CODTAB",
+											"operator": "EQUALS",
+											"compare_value": "DA1.DA1_CODTAB",
+											"value_type": "COLUMN"
+										}
+									]
+								}
+							},
+							"transformations": [
+								{
+									"function": "TO_DATE"
+								},
+								{
+									"function": "FORMAT_DATE",
+									"params": {
+										"format": "yyyy-MM-ddThh:mm:ssZ"
+									}
+								}
+							]
+						}
+					}
+				],
+				"else": {
+					"value": "DA1.DA1_DATVIG",
+					"value_type": "COLUMN",
+					"transformations": [
+						{
+							"function": "TO_DATE"
+						},
+						{
+							"function": "FORMAT_DATE",
+							"params": {
+								"format": "yyyy-MM-ddThh:mm:ssZ"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"alias": "dataHoraVigenciaFinal",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"is_posicione": true,
+							"posicione_config": {
+								"target_table": "DA0",
+								"target_alias": "DA0",
+								"target_column": "DA0.DA0_DATATE",
+								"match_filter": {
+									"logic_group": "AND",
+									"conditions": [
+										{
+											"column": "DA0.DA0_CODTAB",
+											"operator": "EQUALS",
+											"compare_value": "DA1.DA1_CODTAB",
+											"value_type": "COLUMN"
+										}
+									]
+								}
+							},
+							"operator": "IS_NULL_OR_EMPTY"
+						},
+						"then": {
+							"value": "9999-12-31T23:59:59",
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"is_posicione": true,
+					"posicione_config": {
+						"target_table": "DA0",
+						"target_alias": "DA0",
+						"target_column": "DA0.DA0_DATATE",
+						"match_filter": {
+							"logic_group": "AND",
+							"conditions": [
+								{
+									"column": "DA0.DA0_CODTAB",
+									"operator": "EQUALS",
+									"compare_value": "DA1.DA1_CODTAB",
+									"value_type": "COLUMN"
+								}
+							]
+						}
+					},
+					"transformations": [
+						{
+							"function": "TO_DATE"
+						},
+						{
+							"function": "FORMAT_DATE",
+							"params": {
+								"format": "yyyy-MM-ddThh:mm:ssZ"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"description": "codigoProduto",
+			"column_name": "DA1.DA1_CODPRO",
+			"alias": "codigoProduto",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]			
+		},
+		{
+			"description": "idRetaguardaProduto",
+			"column_name": "DA1.DA1_CODPRO",
+			"alias": "idRetaguardaProduto",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]			
+		},
+		{
+			"alias": "valor",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"logic_group": "AND",
+							"conditions": [
+								{
+									"column": "DA1.DA1_PRCVEN",
+									"operator": "GREATER_THAN",
+									"compare_value": 0
+								}
+							]
+						},
+						"then": {
+							"value": "DA1.DA1_PRCVEN",
+							"value_type": "COLUMN"
+						}
+					}
+				],
+				"else": {
+					"is_posicione": true,
+					"posicione_config": {
+						"target_table": "SB1",
+						"target_alias": "SB1",
+						"target_column": "SB1.B1_PRV1",
+						"match_filter": {
+							"logic_group": "AND",
+							"conditions": [
+								{
+									"column": "SB1.B1_COD",
+									"operator": "EQUALS",
+									"compare_value": "DA1.DA1_CODPRO",
+									"value_type": "COLUMN"
+								}
+							]
+						}
+					}
+				}
+			}
+		},
+		{
+			"alias": "precoPromocional",
+			"is_physical": false,
+			"is_constant": true,
+			"static_value": 0
+		},
+		{
+			"alias": "situacao",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"logic_group": "AND",
+							"conditions": [
+								{
+									"is_posicione": true,
+									"posicione_config": {
+										"target_table": "DA0",
+										"target_alias": "DA0",
+										"target_column": "DA0.DA0_ATIVO",
+										"match_filter": {
+											"logic_group": "AND",
+											"conditions": [
+												{
+													"column": "DA0.DA0_CODTAB",
+													"operator": "EQUALS",
+													"compare_value": "DA1.DA1_CODTAB",
+													"value_type": "COLUMN"
+												}
+											]
+										}
+									},
+									"operator": "EQUALS",
+									"compare_value": "1"
+								},
+								{
+									"column": "DA1.DA1_ATIVO",
+									"operator": "EQUALS",
+									"compare_value": "1"
+								}
+							]
+						},
+						"then": {
+							"value": 1,
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"value": 0,
+					"value_type": "STATIC"
+				}
+			}
+		},
+		{
+			"alias": "sincronizadoEtiquetaEletronica",
+			"is_physical": false,
+			"is_constant": true,
+			"static_value": 0
+		},
+		{
+			"description": "idInquilino",
+			"alias": "idInquilino",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"is_source_posicione": true,
+				"posicione_config": {
+					"target_table": "MHO",
+					"target_alias": "MHO",
+					"target_column": "MHO.MHO_CONFIG",
+					"match_filter": {
+						"column": "MHO.MHO_COD",
+						"operator": "EQUALS",
+						"value_type": "STATIC",
+						"compare_value": "PDVSYNC"
+					}
+				},
+				"root_path": "$",
+				"fields": [
+					{
+						"alias": "inquilino",
+						"json_path": "$.inquilino",
+						"type": "VARCHAR(30)",
+						"extract_field": true
+					}
+				]
+			}
+		},
+		{
+			"description": "idRetaguarda",
+			"alias": "idRetaguarda",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CONCAT",
+				"parts": [
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(DA1.DA1_CODTAB)"
+					},
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(DA1.DA1_CODPRO)"
+					},
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(DA1.DA1_ITEM)"
+					}
+				]
+			}
+		},
+		{
+			"alias": "dataAtualizacao",
+			"is_physical": false,
+			"db_function": "CURRENT_TIMESTAMP"
+		},
+		{
+			"alias": "dataCadastro",
+			"is_physical": false,
+			"db_function": "CURRENT_TIMESTAMP"
+		},
+		{
+			"description": "idProprietario",
+			"alias": "idProprietario",
+			"is_physical": false,
+			"is_proprietary": true,
+			"proprietary_config": {
+				"level": 1,
+				"price_table": {
+					"logic_operation": {
+						"type": "CONCAT",
+						"parts": [
+							{
+								"value_type": "COLUMN",
+								"value": "DA1.DA1_FILIAL"
+							},
+							{
+								"value_type": "COLUMN",
+								"value": "DA1.DA1_CODTAB"
+							}
+						]
+					}
+				}
+			}
+		}
+	]
+}
