@@ -260,9 +260,30 @@
 		{
 			"description": "idInquilino",
 			"alias": "idInquilino",
-			"is_physical": false,
-			"is_constant": true,
-			"static_value": "69"
+			"is_json_extract": true,
+			"json_extract_config": {
+				"is_source_posicione": true,
+				"posicione_config": {
+					"target_table": "MHO",
+					"target_alias": "MHO",
+					"target_column": "MHO.MHO_CONFIG",
+					"match_filter": {
+						"column": "MHO.MHO_COD",
+						"operator": "EQUALS",
+						"value_type": "STATIC",
+						"compare_value": "PDVSYNC"
+					}
+				},
+				"root_path": "$",
+				"fields": [
+					{
+						"alias": "inquilino",
+						"json_path": "$.inquilino",
+						"type": "VARCHAR(30)",
+						"extract_field": true
+					}
+				]
+			}
 		},
 		{
 			"description": "idRetaguarda",

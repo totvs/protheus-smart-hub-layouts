@@ -263,8 +263,8 @@
 				"relationship_type": "ONE_TO_MANY",
 				"target_table": "MEV",
 				"table_alias": "MEV",
-				"parent_key": "SB1.B1_FILIAL+SB1.B1_COD",
-				"child_key": "MEV.MEV_FILIAL+MEV.MEV_CODKIT",
+				"parent_key": "CONCAT(SB1.B1_FILIAL,SB1.B1_COD)",
+				"child_key": "CONCAT(MEV.MEV_FILIAL,MEV.MEV_CODKIT)",
 				"fields": [
 					{
 						"column_name": "SB1.B1_COD",
@@ -287,7 +287,7 @@
 						]
 					},
 					{
-						"column_name": "TRIM(SB1.B1_COD)+TRIM(MEV.MEV_PRODUT)",
+						"column_name": "CONCAT(TRIM(SB1.B1_COD),TRIM(MEV.MEV_PRODUT))",
 						"alias": "idRetaguarda",
 						"is_physical": true,
 						"transformations": [
@@ -410,10 +410,21 @@
 								"target_alias": "MIH",
 								"target_column": "MIH.MIH_CONFIG",
 								"match_filter": {
-									"column": "MIH.MIH_ID",
-									"operator": "EQUALS",
-									"value_type": "COLUMN",
-									"compare_value": "MIL.MIL_SAIDA"
+									"logic_group": "AND",
+									"conditions": [
+										{
+											"column": "MIH.MIH_ID",
+											"operator": "EQUALS",
+											"value_type": "COLUMN",
+											"compare_value": "MIL.MIL_SAIDA"
+										},
+										{
+											"column": "MIH.MIH_TIPCAD",
+											"operator": "EQUALS",
+											"value_type": "STATIC",
+											"compare_value": "FECP"
+										}
+									]
 								}
 							},
 							"root_path": "$.Components",
@@ -449,10 +460,21 @@
 								"target_alias": "MIH",
 								"target_column": "MIH.MIH_CONFIG",
 								"match_filter": {
-									"column": "MIH.MIH_ID",
-									"operator": "EQUALS",
-									"value_type": "COLUMN",
-									"compare_value": "MIL.MIL_SAIDA"
+									"logic_group": "AND",
+									"conditions": [
+										{
+											"column": "MIH.MIH_ID",
+											"operator": "EQUALS",
+											"value_type": "COLUMN",
+											"compare_value": "MIL.MIL_SAIDA"
+										},
+										{
+											"column": "MIH.MIH_TIPCAD",
+											"operator": "EQUALS",
+											"value_type": "STATIC",
+											"compare_value": "FECP"
+										}
+									]
 								}
 							},
 							"root_path": "$.Components",
@@ -488,10 +510,21 @@
 								"target_alias": "MIH",
 								"target_column": "MIH.MIH_CONFIG",
 								"match_filter": {
-									"column": "MIH.MIH_ID",
-									"operator": "EQUALS",
-									"value_type": "COLUMN",
-									"compare_value": "MIL.MIL_SAIDA"
+									"logic_group": "AND",
+									"conditions": [
+										{
+											"column": "MIH.MIH_ID",
+											"operator": "EQUALS",
+											"value_type": "COLUMN",
+											"compare_value": "MIL.MIL_SAIDA"
+										},
+										{
+											"column": "MIH.MIH_TIPCAD",
+											"operator": "EQUALS",
+											"value_type": "STATIC",
+											"compare_value": "FECP"
+										}
+									]
 								}
 							},
 							"root_path": "$.Components",
@@ -526,10 +559,21 @@
 								"target_alias": "MIH",
 								"target_column": "MIH.MIH_CONFIG",
 								"match_filter": {
-									"column": "MIH.MIH_ID",
-									"operator": "EQUALS",
-									"value_type": "COLUMN",
-									"compare_value": "MIL.MIL_SAIDA"
+									"logic_group": "AND",
+									"conditions": [
+										{
+											"column": "MIH.MIH_ID",
+											"operator": "EQUALS",
+											"value_type": "COLUMN",
+											"compare_value": "MIL.MIL_SAIDA"
+										},
+										{
+											"column": "MIH.MIH_TIPCAD",
+											"operator": "EQUALS",
+											"value_type": "STATIC",
+											"compare_value": "FECP"
+										}
+									]
 								}
 							},
 							"root_path": "$.Components",
@@ -565,10 +609,21 @@
 								"target_alias": "MIH",
 								"target_column": "MIH.MIH_CONFIG",
 								"match_filter": {
-									"column": "MIH.MIH_ID",
-									"operator": "EQUALS",
-									"value_type": "COLUMN",
-									"compare_value": "MIL.MIL_SAIDA"
+									"logic_group": "AND",
+									"conditions": [
+										{
+											"column": "MIH.MIH_ID",
+											"operator": "EQUALS",
+											"value_type": "COLUMN",
+											"compare_value": "MIL.MIL_SAIDA"
+										},
+										{
+											"column": "MIH.MIH_TIPCAD",
+											"operator": "EQUALS",
+											"value_type": "STATIC",
+											"compare_value": "FECP"
+										}
+									]
 								}
 							},
 							"root_path": "$.Components",
@@ -598,9 +653,7 @@
 						"is_physical": false,
 						"is_proprietary": true,
 						"proprietary_config": {
-							"level": 2,
-							"value_type": "COLUMN",
-							"id_branch": "SB1.B1_FILIAL"
+							"level": 0
 						}
 					}
 				],
@@ -648,9 +701,7 @@
 						"is_physical": false,
 						"is_proprietary": true,
 						"proprietary_config": {
-							"level": 2,
-							"value_type": "COLUMN",
-							"id_branch": "SB1.B1_FILIAL"
+							"level": 0
 						}
 					}
 				],
@@ -698,9 +749,7 @@
 						"is_physical": false,
 						"is_proprietary": true,
 						"proprietary_config": {
-							"level": 2,
-							"value_type": "COLUMN",
-							"id_branch": "SB1.B1_FILIAL"
+							"level": 0
 						}
 					}
 				],
@@ -748,9 +797,7 @@
 						"is_physical": false,
 						"is_proprietary": true,
 						"proprietary_config": {
-							"level": 2,
-							"value_type": "COLUMN",
-							"id_branch": "SB1.B1_FILIAL"
+							"level": 0
 						}
 					}
 				]
@@ -770,9 +817,30 @@
 		{
 			"description": "idInquilino",
 			"alias": "idInquilino",
-			"is_physical": false,
-			"is_constant": true,
-			"static_value": "69"
+			"is_json_extract": true,
+			"json_extract_config": {
+				"is_source_posicione": true,
+				"posicione_config": {
+					"target_table": "MHO",
+					"target_alias": "MHO",
+					"target_column": "MHO.MHO_CONFIG",
+					"match_filter": {
+						"column": "MHO.MHO_COD",
+						"operator": "EQUALS",
+						"value_type": "STATIC",
+						"compare_value": "PDVSYNC"
+					}
+				},
+				"root_path": "$",
+				"fields": [
+					{
+						"alias": "inquilino",
+						"json_path": "$.inquilino",
+						"type": "VARCHAR(30)",
+						"extract_field": true
+					}
+				]
+			}
 		},
 		{
 			"description": "idRetaguarda",
@@ -801,9 +869,7 @@
 			"is_physical": false,
 			"is_proprietary": true,
 			"proprietary_config": {
-				"level": 2,
-				"value_type": "COLUMN",
-				"id_branch": "SB1.B1_FILIAL"
+				"level": 0
 			}
 		},
 		{
