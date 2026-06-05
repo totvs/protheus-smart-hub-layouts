@@ -1,9 +1,9 @@
 {
-	"url": "https://pdvsync-core-dadosbasicos-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/?/?",
-	"codigotipo": "?",
-	"descricaotipo": "eixo",
+	"url": "https://pdvsync-core-dadosbasicos-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/eixoveiculo",
+	"codigotipo": "72",
+	"descricaotipo": "EixoVeiculo",
 	"qtdEnvio": 100,
 	"configPSH": {
-		"Version": "1.0"
+		"Version": "1.1"
 	}
 }
