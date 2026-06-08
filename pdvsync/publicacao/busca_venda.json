@@ -91,7 +91,8 @@
 			"L2_ALQFCST": "&self:oXmlSefaz:getDetIcms('pFCPSTRet', self:oRegistro['VendaItems'][nItem]['Sequencia'], 0)",
 			"L2_VFECPST": "&self:oXmlSefaz:getDetIcms('vFCPSTRet', self:oRegistro['VendaItems'][nItem]['Sequencia'], 0)",
 			"L2_PREDIC": "&IiF(self:oXmlSefaz:getDetIcms('pRedBC', self:oRegistro['VendaItems'][nItem]['Sequencia'], 0) > 0,100-(self:oXmlSefaz:getDetIcms('pRedBC', self:oRegistro['VendaItems'][nItem]['Sequencia'],0)),0)",
-			"EXECAUT": "&self:oXmlSefaz:GetItemSetImp(self)"
+			"EXECAUT": "&self:oXmlSefaz:GetItemSetImp(self)",
+			"L2_VENDIDO": "S"
 		}
 	],
 	"DKM": "&self:oXmlSefaz:GetNewImp()",
