@@ -1,9 +1,9 @@
 {
-	"url": "https://pdvsync-core-dadosbasicos-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/69/1",
+	"url": "https://pdvsync-core-produto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/69/1",
 	"codigotipo": "69",
 	"descricaotipo": "ModeloVeiculo",
 	"qtdEnvio": 100,
 	"configPSH": {
-		"Version": "1.1"
+		"Version": "1.2"
 	}
 }
