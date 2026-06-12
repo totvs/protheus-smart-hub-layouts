@@ -3,18 +3,16 @@
 	"dataHoraVigenciaFinal": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), '9999-01-31T23:59', IIF(!Empty(Self:oPublica['DA0'][1]['DA0_DATATE']),FwTimeStamp(3,SToD(Self:oPublica['DA0'][1]['DA0_DATATE']),Self:oPublica['DA0'][1]['DA0_HORATE']),'9999-01-31T23:59') )",
 	"codigoProduto": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), Self:oPublica['B0_COD'], Self:oPublica['DA1_CODPRO'] )",
 	"idRetaguardaProduto": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), Self:oPublica['B0_COD'], Self:oPublica['DA1_CODPRO'] )",
-	"valor": "&StrTran( cValToChar( IIF( Posicione('SB1', 1, xFilial('SB1') + IIF( !SuperGetMv('MV_LJCNVDA', , .F.), Self:oPublica['B0_COD'], Self:oPublica['DA1_CODPRO'] ), 'B1_PRV1') > 0, Posicione('SB1', 1, xFilial('SB1') + IIF( !SuperGetMv('MV_LJCNVDA', , .F.), Self:oPublica['B0_COD'], Self:oPublica['DA1_CODPRO'] ), 'B1_PRV1'), IIF( !SuperGetMv('MV_LJCNVDA', , .F.), Self:oPublica['B0_PRV1'], Self:oPublica['DA1_PRCVEN'] ) ) ), '.', ',' )",
+	"valor": "&StrTran( cValToChar( iif( ( nPrLayAux := iif( !superGetMv('MV_LJCNVDA', , .F.), self:oPublica['B0_PRV1'], self:oPublica['DA1_PRCVEN'] ) ) > 0, nPrLayAux, posicione('SB1', 1, xFilial('SB1') + iif( !superGetMv('MV_LJCNVDA', , .F.), self:oPublica['B0_COD'], self:oPublica['DA1_CODPRO'] ), 'B1_PRV1') )	), '.', ',' )",
 	"precoPromocional": "0",
 	"situacao": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), IIF(Empty(Self:oPublica['B0_PRV1']) .Or. Self:cEvento <> '1', 0, 1), IIF(Self:cEvento == '1' .AND. Self:oPublica['DA0'][1]['DA0_ATIVO'] == '1' .AND. Self:oPublica['DA1_ATIVO'] == '1', 1, 0) )",
 	"sincronizadoEtiquetaEletronica": 0,
 	"idInquilino": "&self:oConfAssin['inquilino']",
 	"idRetaguarda": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), '1' + Self:oPublica['B0_COD'], Self:oPublica['DA1_CODTAB'] + Self:oPublica['DA1_CODPRO'] + Self:oPublica['DA1_ITEM'] )",
-	"dataAtualizacao": "&FwTimeStamp(3)",
-	"dataCadastro": "&FwTimeStamp(3)",
 	"idProprietario": "&IIF( !SuperGetMv('MV_LJCNVDA', , .F.), LjRetComp( padR(self:oPublica['B0_FILIAL'], tamSx3('B0_FILIAL')[1]),'CADASTRO DE LOJA' ), LjAuxPosic('COMPARTILHAMENTOS', 'tabelaPreco', padR(self:oPublica['DA1_FILIAL'], tamSx3('DA1_FILIAL')[1]) + padR(self:oPublica['DA1_CODTAB'], tamSx3('DA1_CODTAB')[1]), 'IdProprietario') )",
 	"loteOrigem": "&Self:cLote",
 	"configPSH": {
-		"Version": 4.1,
+		"Version": 5.0,
 		"cargaInicial": false
 	}
 }
