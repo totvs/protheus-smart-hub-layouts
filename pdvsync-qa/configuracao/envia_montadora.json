@@ -1,9 +1,9 @@
 {
-	"url": "https://pdvsync-core-dadosbasicos-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/?/?",
-	"codigotipo": "?",
+	"url": "https://pdvsync-core-produto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/64/1",
+	"codigotipo": "64",
 	"descricaotipo": "montadora",
 	"qtdEnvio": 100,
 	"configPSH": {
-		"Version": "1.0"
+		"Version": "1.3"
 	}
 }

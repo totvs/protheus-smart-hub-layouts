@@ -2,7 +2,6 @@
 	"idRetaguarda": "&self:oPublica['MEC_MSUID']",
 	"situacao": "&IIF(self:cEvento == '2', 0, 1)",
 	"idRetaguardaVeiculo": "&self:oPublica['MEC_CODVEI']",			
-	"idRetaguardaEixo": "&self:oPublica['MEC_CODEIX']",			 
 	"idRetaguardaMotorVeiculo": "&self:oPublica['MEC_CODMOT']",		 
 	"idRetaguardaTransmissaoVeiculo": "&self:oPublica['MEC_CODTRA']",	 
 	"nome": "&self:oPublica['MEC_MODELO']",

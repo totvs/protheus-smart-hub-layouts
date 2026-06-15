@@ -1,0 +1,13 @@
+{
+	"idRetaguarda": "&self:oPublica['MFS_FILIAL']+self:oPublica['MFS_FILEIX']+self:oPublica['MFS_CODEIX']+self:oPublica['MFS_MECUID']",
+	"situacao": "&IIF(self:cEvento == '2', 0, 1)",
+	"idRetaguardaModeloVeiculo": "&self:oPublica['MFS_MECUID']",			
+	"idRetaguardaEixoVeiculo": "&self:oPublica['MFS_FILEIX']+self:oPublica['MFS_CODEIX']",		 
+	"loteOrigem": "&self:cLote",
+	"idProprietario": "&LjRetComp()",
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"configPSH": {
+		"Version": "1.0",
+		"cargaInicial": false
+	}
+}

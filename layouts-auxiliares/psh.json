@@ -64,10 +64,10 @@
 					"Valid": null,
 					"CanChange": false,
 					"Help": [
-						"Horário que foi executada a última consulta da API LojaLotes."
+						"Horário que foi executada a última consulta de status do processamento no sistema destino."
 					]
 				},
-				"ComponentLabel": "Hora última consulta LojaLote"
+				"ComponentLabel": "Hora última consulta de status"
 			},
 			"ComponentContent": ""
 		},
@@ -88,11 +88,11 @@
 					"CanChange": true,
 					"Trigger": null,
 					"Help": [
-						"Intervalo (em minutos) de execução da consulta de LojaLotes.",
+						"Intervalo (em minutos) de execução da consulta de status.",
 						"Intervalo padrão é definido em 5 minutos."
 					]
 				},
-				"ComponentLabel": "Intervalo de execução LojaLote"
+				"ComponentLabel": "Intervalo de execução da consulta de status"
 			},
 			"ComponentContent": 5
 		},
@@ -193,5 +193,5 @@
 			"ComponentContent": 1000
 		}
 	],
-	"LayoutVersion": 3.0
+	"LayoutVersion": 3.1
 }
