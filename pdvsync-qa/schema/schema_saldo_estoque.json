@@ -1,0 +1,197 @@
+{
+	"table": {
+		"name": "SB2",
+		"alias": "SB2",
+		"schema": "public"
+	},
+	"fields": [
+		{
+			"description": "idRetaguardaProduto",
+			"column_name": "SB2.B2_COD",
+			"alias": "idRetaguardaProduto",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "codigoProduto",
+			"column_name": "SB2.B2_COD",
+			"alias": "codigoProduto",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "saldo",
+			"column_name": "SB2.B2_QATU",
+			"alias": "saldo",
+			"is_physical": true,
+			"cast_to": "DECIMAL(18,2)"
+		},
+		{
+			"description": "situacao",
+			"alias": "situacao",
+			"is_physical": false,
+			"is_constant": true,
+			"static_value": 1
+		},
+		{
+			"description": "idInquilino",
+			"alias": "idInquilino",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"is_source_posicione": true,
+				"posicione_config": {
+					"target_table": "MHO",
+					"target_alias": "MHO",
+					"target_column": "MHO.MHO_CONFIG",
+					"match_filter": {
+						"column": "MHO.MHO_COD",
+						"operator": "EQUALS",
+						"value_type": "STATIC",
+						"compare_value": "PDVSYNC"
+					}
+				},
+				"root_path": "$",
+				"fields": [
+					{
+						"alias": "inquilino",
+						"json_path": "$.inquilino",
+						"type": "VARCHAR(30)",
+						"extract_field": true
+					}
+				]
+			}
+		},
+		{
+			"description": "idRetaguarda",
+			"column_name": "SB2.B2_COD",
+			"alias": "idRetaguarda",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"alias": "dataAtualizacao",
+			"is_physical": false,
+			"db_function": "CURRENT_TIMESTAMP"
+		},
+		{
+			"alias": "dataCadastro",
+			"is_physical": false,
+			"db_function": "CURRENT_TIMESTAMP"
+		},
+		{
+			"description": "idProprietario",
+			"alias": "idProprietario",
+			"is_physical": false,
+			"is_proprietary": true,
+			"proprietary_config": {
+				"level": 2,
+				"value_type": "COLUMN",
+				"id_branch": "SB2.B2_FILIAL"
+			}
+		},
+		{
+			"description": "loteOrigem",
+			"column_name": "SB2.B2_LOCAL",
+			"alias": "loteOrigem",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"alias": "produtoLote",
+			"is_physical": false,
+			"is_relationship": true,
+			"relationship_config": {
+				"relationship_type": "ONE_TO_MANY",
+				"target_table": "SB8",
+				"table_alias": "SB8",
+				"parent_key": "SB2.B2_FILIAL||SB2.B2_COD||SB2.B2_LOCAL",
+				"child_key": "SB8.B8_FILIAL||SB8.B8_PRODUTO||SB8.B8_LOCAL",
+				"fields": [
+					{
+						"column_name": "SB8.B8_LOTECTL",
+						"alias": "idRetaguarda",
+						"is_physical": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					},
+					{
+						"alias": "situacao",
+						"is_physical": false,
+						"is_constant": true,
+						"static_value": 1
+					},
+					{
+						"column_name": "SB8.B8_SALDO",
+						"alias": "quantidade",
+						"is_physical": true
+					},
+					{
+						"column_name": "SB8.B8_LOTECTL",
+						"alias": "identificacaoLote",
+						"is_physical": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					},
+					{
+						"column_name": "SB8.B8_DTVALID",
+						"alias": "dataValidade",
+						"is_physical": true,
+						"transformations": [
+							{
+								"function": "TO_DATE"
+							},
+							{
+								"function": "FORMAT_DATE",
+								"params": {
+									"format": "yyyy-MM-ddThh:mm:ssZ"
+								}
+							}
+						]
+					},
+					{
+						"column_name": "SB2.B2_COD",
+						"alias": "estoqueIdRetaguarda",
+						"is_physical": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"logic_group": "AND",
+					"conditions": [
+						{
+							"column": "SB8.B8_SALDO",
+							"operator": "GREATER_THAN",
+							"compare_value": 0
+						}
+					]
+				}
+			}
+		}
+	]
+}
