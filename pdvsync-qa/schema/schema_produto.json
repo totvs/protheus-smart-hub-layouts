@@ -437,9 +437,9 @@
 								{
 									"alias": "conteudo",
 									"json_path": "$.ComponentContent",
-									"type": "VARCHAR",
+									"type": "NVARCHAR(5)",
 									"extract_field": true,
-									"cast_to": "INT"
+									"cast_to": "DECIMAL(5,2)"
 								}
 							],
 							"filters": {
@@ -487,9 +487,9 @@
 								{
 									"alias": "conteudo",
 									"json_path": "$.ComponentContent",
-									"type": "VARCHAR",
+									"type": "NVARCHAR(5)",
 									"extract_field": true,
-									"cast_to": "INT"
+									"cast_to": "DECIMAL(5,2)"
 								}
 							],
 							"filters": {
@@ -586,9 +586,9 @@
 								{
 									"alias": "conteudo",
 									"json_path": "$.ComponentContent",
-									"type": "VARCHAR(15)",
+									"type": "NVARCHAR(5)",
 									"extract_field": true,
-									"cast_to": "INT"
+									"cast_to": "DECIMAL(5,2)"
 								}
 							],
 							"filters": {

@@ -1,0 +1,430 @@
+{
+	"table": {
+		"name": "MIH",
+		"alias": "MIH"
+	},
+	"fields": [
+		{
+			"description": "idInquilino",
+			"alias": "idInquilino",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"is_source_posicione": true,
+				"posicione_config": {
+					"target_table": "MHO",
+					"target_alias": "MHO",
+					"target_column": "MHO.MHO_CONFIG",
+					"match_filter": {
+						"column": "MHO.MHO_COD",
+						"operator": "EQUALS",
+						"value_type": "STATIC",
+						"compare_value": "PDVSYNC"
+					}
+				},
+				"root_path": "$",
+				"fields": [
+					{
+						"alias": "inquilino",
+						"json_path": "$.inquilino",
+						"type": "VARCHAR(30)",
+						"extract_field": true
+					}
+				]
+			}
+		},
+		{
+			"alias": "idRetaguarda",
+			"description": "idRetaguarda",
+			"column_name": "MIH_ID",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "idProprietario",
+			"alias": "idProprietario",
+			"is_physical": false,
+			"is_proprietary": true,
+			"proprietary_config": {
+				"level": 0
+			}
+		},
+		{
+			"alias": "tipoImposto",
+			"description": "tipoImposto",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(15)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(15)",
+						"extract_field": true
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "tipoImposto"
+				}
+			}
+		},
+		{
+			"alias": "cst",
+			"description": "cst",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(15)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(15)",
+						"extract_field": true
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "cst"
+				}
+			}
+		},
+		{
+			"alias": "cclasstrib",
+			"description": "cclasstrib",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(15)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(15)",
+						"extract_field": true
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "cClassTrib"
+				}
+			}
+		},
+		{
+			"alias": "descricaoCst",
+			"is_posicione": true,
+			"posicione_config": {
+				"target_table": "CKB",
+				"target_alias": "CKB",
+				"target_column": "CKB.CKB_DESCST",
+				"match_filter": {
+					"is_json_extract": true,
+					"column": "CKB.CKB_CSTCCT",
+					"operator": "EQUALS",
+					"compare_value": {
+						"source_column": "MIH_CONFIG",
+						"root_path": "$.Components",
+						"fields": [
+							{
+								"alias": "campo",
+								"json_path": "$.IdComponent",
+								"type": "VARCHAR(15)"
+							},
+							{
+								"alias": "conteudo",
+								"json_path": "$.ComponentContent",
+								"type": "VARCHAR(15)",
+								"extract_field": true
+							}
+						],
+						"filters": {
+							"column": "campo",
+							"operator": "EQUALS",
+							"compare_value": "cClassTrib"
+						}
+					}
+				}
+			},
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"alias": "dataInicioVigencia",
+			"description": "dataInicioVigencia",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(18)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(15)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TO_DATE"
+							},
+							{
+								"function": "FORMAT_DATE",
+								"params": {
+									"format": "yyyy-MM-ddThh:mm:ssZ"
+								}
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "dataInicioVigencia"
+				}
+			}
+		},
+		{
+			"alias": "dataFimVigencia",
+			"description": "dataFimVigencia",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(18)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(15)",
+						"extract_field": true,
+						"logic_operation": {
+							"type": "CASE",
+							"cases": [
+								{
+									"when": {
+										"column": "conteudo",
+										"operator": "IS_NULL_OR_EMPTY"
+									},
+									"then": {
+										"value": "9999-12-31T23:59:59",
+										"value_type": "STATIC"
+									}
+								}
+							],
+							"else": {
+								"value_type": "COLUMN",
+								"value": "conteudo",
+								"transformations": [
+									{
+										"function": "TO_DATE"
+									},
+									{
+										"function": "FORMAT_DATE",
+										"params": {
+											"format": "yyyy-MM-ddThh:mm:ssZ"
+										}
+									}
+								]
+							}
+						}
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "dataFimVigencia"
+				}
+			}
+		},
+		{
+			"alias": "percentualAliquota",
+			"description": "percentualAliquota",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(41)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "NVARCHAR(5)",
+						"extract_field": true,
+						"cast_to": "DECIMAL(5,2)"
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "percentualAliquota"
+				}
+			}
+		},
+		{
+			"alias": "percentualReducaoAliquota",
+			"description": "percentualReducaoAliquota",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(41)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "NVARCHAR(5)",
+						"extract_field": true,
+						"cast_to": "DECIMAL(5,2)"
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "percentualReducaoAliquota"
+				}
+			}
+		},
+		{
+			"alias": "percentualAliquotaEspecificaUnidadeMedida",
+			"description": "percentualAliquotaEspecificaUnidadeMedida",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(41)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "NVARCHAR(5)",
+						"extract_field": true,
+						"cast_to": "DECIMAL(5,2)"
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "percentualAliquotaEspecificaUnidadeMedida"
+				}
+			}
+		},
+		{
+			"alias": "localConsumo",
+			"description": "localConsumo",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(15)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(15)",
+						"extract_field": true,
+						"cast_to": "VARCHAR(15)"
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "localConsumo"
+				}
+			}
+		},
+		{
+			"alias": "padrao",
+			"description": "padrao",
+			"is_constant": true,
+			"static_value": true
+		},
+		{
+			"alias": "situacao",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"logic_group": "OR",
+							"conditions": [
+								{
+									"column": "MIH.MIH_ATIVO",
+									"operator": "EQUALS",
+									"compare_value": "2"
+								},
+								{
+									"column": "MIH.D_E_L_E_T_",
+									"operator": "EQUALS",
+									"compare_value": "*"
+								}
+							]
+						},
+						"then": {
+							"value": 0,
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"value": 1,
+					"value_type": "STATIC"
+				}
+			}
+		}
+	],
+	"filters": {
+		"column": "MIH_TIPCAD",
+		"operator": "EQUALS",
+		"compare_value": "IMPOSTO"
+	}
+}
