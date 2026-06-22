@@ -1,0 +1,13 @@
+{
+	"idRetaguarda": "&self:oPublica['MFZ_FILIAL']+self:oPublica['MFZ_CODPRO']+self:oPublica['MFZ_CODPAI']",
+	"idRetaguardaProduto": "&self:oPublica['MFZ_FILPRO']+self:oPublica['MFZ_CODPAI']",			
+	"idRetaguardaProdutoAgregado": "&self:oPublica['MFZ_FILPRO']+self:oPublica['MFZ_CODPRO']",		 
+	"situacao": "&IIF(self:cEvento == '2', 0, 1)",
+	"loteOrigem": "&self:cLote",
+	"idProprietario": "&LjRetComp()",
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"configPSH": {
+		"Version": "1.0",
+		"cargaInicial": false
+	}
+}
