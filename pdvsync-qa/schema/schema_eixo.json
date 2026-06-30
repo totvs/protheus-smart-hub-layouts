@@ -1,0 +1,139 @@
+{
+	"table": {
+		"name": "MEB",
+		"alias": "MEB"
+	},
+	"fields": [
+		{
+			"description": "idRetaguarda",
+			"alias": "idRetaguarda",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CONCAT",
+				"parts": [
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(MEB.MEB_FILIAL)"
+					},
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(MEB.MEB_CODEIX)"
+					}
+				]
+			}
+		},
+		{
+			"alias": "situacao",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"column": "MEB.D_E_L_E_T_",
+							"operator": "EQUALS",
+							"compare_value": "*"
+						},
+						"then": {
+							"value": 0,
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"value": 1,
+					"value_type": "STATIC"
+				}
+			}
+		},
+		{
+			"alias": "nomeFabricante",
+			"is_posicione": true,
+			"posicione_config": {
+				"target_table": "SA2",
+				"target_alias": "SA2",
+				"target_column": "SA2.A2_NOME",
+				"match_filter": {
+					"logic": "AND",
+					"conditions": [
+						{
+							"column": "SA2.A2_COD",
+							"operator": "EQUALS",
+							"compare_value": "MEB.MEB_CODFAB",
+							"value_type": "COLUMN"
+						},
+						{
+							"column": "SA2.A2_LOJA",
+							"operator": "EQUALS",
+							"compare_value": "MEB.MEB_LOJFAB",
+							"value_type": "COLUMN"
+						}
+					]
+				}
+			},
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"alias": "modelo",
+			"is_posicione": true,
+			"posicione_config": {
+				"target_table": "MG2",
+				"target_alias": "MG2",
+				"target_column": "MG2.MG2_NOME",
+				"match_filter": {
+					"column": "MG2.MG2_CODMOD",
+					"operator": "EQUALS",
+					"compare_value": "MEB.MEB_CODMOD",
+					"value_type": "COLUMN"
+				}
+			},
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "IdProprietario",
+			"alias": "IdProprietario",
+			"is_physical": false,
+			"is_proprietary": true,
+			"proprietary_config": {
+				"level": 0
+			}
+		},
+		{
+			"description": "idInquilino",
+			"alias": "idInquilino",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"is_source_posicione": true,
+				"posicione_config": {
+					"target_table": "MHO",
+					"target_alias": "MHO",
+					"target_column": "MHO.MHO_CONFIG",
+					"match_filter": {
+						"column": "MHO.MHO_COD",
+						"operator": "EQUALS",
+						"value_type": "STATIC",
+						"compare_value": "PDVSYNC"
+					}
+				},
+				"root_path": "$",
+				"fields": [
+					{
+						"alias": "inquilino",
+						"json_path": "$.inquilino",
+						"type": "VARCHAR(30)",
+						"extract_field": true
+					}
+				]
+			}
+		}
+	],
+	"view_deleted": false
+}

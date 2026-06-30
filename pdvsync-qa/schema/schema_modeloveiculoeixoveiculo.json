@@ -1,0 +1,125 @@
+{
+	"table": {
+		"name": "MFS",
+		"alias": "MFS"
+	},
+	"fields": [
+		{
+			"description": "idRetaguarda",
+			"alias": "idRetaguarda",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CONCAT",
+				"parts": [
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(MFS.MFS_FILIAL)"
+					},
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(MFS.MFS_FILEIX)"
+					},
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(MFS.MFS_CODEIX)"
+					},
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(MFS.MFS_MECUID)"
+					}
+				]
+			}
+		},
+		{
+			"alias": "situacao",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"column": "MFS.D_E_L_E_T_",
+							"operator": "EQUALS",
+							"compare_value": "*"
+						},
+						"then": {
+							"value": 0,
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"value": 1,
+					"value_type": "STATIC"
+				}
+			}
+		},
+		{
+			"description": "idRetaguardaModeloVeiculo",
+			"alias": "idRetaguardaModeloVeiculo",
+			"column_name": "MFS_MECUID",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "idRetaguardaEixoVeiculo",
+			"alias": "idRetaguardaEixoVeiculo",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CONCAT",
+				"parts": [
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(MFS.MFS_FILEIX)"
+					},
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(MFS.MFS_CODEIX)"
+					}
+				]
+			}
+		},
+		{
+			"description": "IdProprietario",
+			"alias": "IdProprietario",
+			"is_physical": false,
+			"is_proprietary": true,
+			"proprietary_config": {
+				"level": 0
+			}
+		},
+		{
+			"description": "idInquilino",
+			"alias": "idInquilino",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"is_source_posicione": true,
+				"posicione_config": {
+					"target_table": "MHO",
+					"target_alias": "MHO",
+					"target_column": "MHO.MHO_CONFIG",
+					"match_filter": {
+						"column": "MHO.MHO_COD",
+						"operator": "EQUALS",
+						"value_type": "STATIC",
+						"compare_value": "PDVSYNC"
+					}
+				},
+				"root_path": "$",
+				"fields": [
+					{
+						"alias": "inquilino",
+						"json_path": "$.inquilino",
+						"type": "VARCHAR(30)",
+						"extract_field": true
+					}
+				]
+			}
+		}
+	],
+	"view_deleted": false
+}
