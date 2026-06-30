@@ -3,7 +3,7 @@
 	"codigo": "&self:oPublica['MG0_CODMAR']",			
 	"nome": "&self:oPublica['MG0_NOME']",		 
 	"situacao": "&IIF(self:cEvento == '2', 0, 1)",
-	"incentivado": "&IIF(self:oPublica['MGO_INCENT'] == '1', .T., .F.)",
+	"incentivado": "&IIF(self:oPublica['MG0_PDVPRI'] == '1', .T., .F.)",
 	"loteOrigem": "&self:cLote",
 	"idProprietario": "&LjRetComp()",
 	"idInquilino": "&self:oConfAssin['inquilino']",
