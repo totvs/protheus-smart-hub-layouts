@@ -1,0 +1,15 @@
+{
+	"idRetaguarda": "&self:oPublica['A2_FILIAL']+self:oPublica['A2_COD']+self:oPublica['A2_LOJA']",
+	"codigo": "&self:oPublica['A2_FILIAL']+self:oPublica['A2_COD']+self:oPublica['A2_LOJA']",			
+	"nomeFantasia": "&self:oPublica['A2_NREDUZ']",		 
+	"razaoSocial": "&self:oPublica['A2_NOME']",		 
+	"situacao": "&IIF(self:cEvento == '2', 0, 1)",
+	"incentivado": "&IIF( Posicione( 'MG1', 1, oPublica['A2_FILIAL'] + oPublica['A2_COD'] + oPublica['A2_LOJA'], 'MG1_PDVPRI' ) == '1', .T., .F. )",
+	"loteOrigem": "&self:cLote",
+	"idProprietario": "&LjRetComp()",
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"configPSH": {
+		"Version": "1.1",
+		"cargaInicial": false
+	}
+}
