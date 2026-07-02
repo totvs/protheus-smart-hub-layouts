@@ -4,7 +4,6 @@
 	"nomeFantasia": "&self:oPublica['A2_NREDUZ']",		 
 	"razaoSocial": "&self:oPublica['A2_NOME']",		 
 	"situacao": "&IIF(self:cEvento == '2', 0, 1)",
-	"incentivado": "&IIF( Posicione( 'MG1', 1, oPublica['A2_FILIAL'] + oPublica['A2_COD'] + oPublica['A2_LOJA'], 'MG1_PDVPRI' ) == '1', .T., .F. )",
 	"loteOrigem": "&self:cLote",
 	"idProprietario": "&LjRetComp()",
 	"idInquilino": "&self:oConfAssin['inquilino']",
