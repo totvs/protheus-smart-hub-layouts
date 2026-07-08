@@ -1,0 +1,350 @@
+{
+	"table": {
+		"name": "MIH",
+		"alias": "MIH"
+	},
+	"fields": [
+		{
+			"description": "idInquilino",
+			"alias": "idInquilino",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"is_source_posicione": true,
+				"posicione_config": {
+					"target_table": "MHO",
+					"target_alias": "MHO",
+					"target_column": "MHO.MHO_CONFIG",
+					"match_filter": {
+						"column": "MHO.MHO_COD",
+						"operator": "EQUALS",
+						"value_type": "STATIC",
+						"compare_value": "PDVSYNC"
+					}
+				},
+				"root_path": "$",
+				"fields": [
+					{
+						"alias": "inquilino",
+						"json_path": "$.inquilino",
+						"type": "VARCHAR(30)",
+						"extract_field": true
+					}
+				]
+			}
+		},
+		{
+			"alias": "idRetaguarda",
+			"description": "idRetaguarda",
+			"column_name": "MIH_ID",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "idProprietario",
+			"alias": "idProprietario",
+			"is_physical": false,
+			"is_proprietary": true,
+			"proprietary_config": {
+				"level": 0
+			}
+		},
+		{
+			"alias": "situacao",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"logic_group": "OR",
+							"conditions": [
+								{
+									"column": "MIH.MIH_ATIVO",
+									"operator": "EQUALS",
+									"compare_value": "2"
+								},
+								{
+									"column": "MIH.D_E_L_E_T_",
+									"operator": "EQUALS",
+									"compare_value": "*"
+								}
+							]
+						},
+						"then": {
+							"value": 0,
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"value": 1,
+					"value_type": "STATIC"
+				}
+			}
+		},
+		{
+			"description": "aliquotaTributo",
+			"alias": "aliquotaTributo",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(10)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(10)",
+						"extract_field": true
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "IT_ALIQICM"
+				}
+			}
+		},
+		{
+			"description": "tipo",
+			"alias": "tipo",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(10)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(10)",
+						"extract_field": true
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "Tipo"
+				}
+			}
+		},
+		{
+			"description": "modalidade",
+			"alias": "modalidade",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(10)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(10)",
+						"extract_field": true
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "Modalidade"
+				}
+			}
+		},
+		{
+			"description": "indiceTributoImpressora",
+			"alias": "indiceTributoImpressora",
+			"is_physical": false,
+			"is_constant": true,
+			"static_value": " "
+		},
+		{
+			"description": "reducaoBaseCalculo",
+			"alias": "reducaoBaseCalculo",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(10)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "NVARCHAR(5)",
+						"extract_field": true,
+						"cast_to": "DECIMAL(5,2)"
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "IT_PREDIC"
+				}
+			}
+		},
+		{
+			"description": "simbolo",
+			"alias": "simbolo",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(10)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(10)",
+						"extract_field": true
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "Simbolo"
+				}
+			}
+		},
+		{
+			"description": "cfop",
+			"alias": "cfop",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(10)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(10)",
+						"extract_field": true,
+						"logic_operation": {
+							"type": "CASE",
+							"cases": [
+								{
+									"when": {
+										"column": "conteudo",
+										"operator": "IS_NULL_OR_EMPTY"
+									},
+									"then": {
+										"value": " ",
+										"value_type": "STATIC"
+									}
+								}
+							],
+							"else": {
+								"value_type": "COLUMN",
+								"value": "conteudo"
+							}
+						}
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "IT_CF"
+				}
+			},
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "cstCsosn",
+			"alias": "cstCsosn",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(10)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(10)",
+						"extract_field": true,
+						"logic_operation": {
+							"type": "CASE",
+							"cases": [
+								{
+									"when": {
+										"column": "conteudo",
+										"operator": "IS_NULL_OR_EMPTY"
+									},
+									"then": {
+										"value": " ",
+										"value_type": "STATIC"
+									}
+								}
+							],
+							"else": {
+								"value_type": "COLUMN",
+								"value": "conteudo"
+							}
+						}
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "CSTCSOSN"
+				}
+			},
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"alias": "dataAtualizacao",
+			"is_physical": false,
+			"db_function": "CURRENT_TIMESTAMP"
+		},
+		{
+			"alias": "dataCadastro",
+			"is_physical": false,
+			"db_function": "CURRENT_TIMESTAMP"
+		}
+	],
+	"filters": {
+		"column": "MIH_TIPCAD",
+		"operator": "EQUALS",
+		"compare_value": "ICMS"
+	}
+}
