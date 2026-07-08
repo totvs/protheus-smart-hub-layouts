@@ -1,0 +1,14 @@
+{
+	"idRetaguarda": "&self:oPublica['A2_FILIAL']+self:oPublica['A2_COD']+self:oPublica['A2_LOJA']",
+	"codigo": "&self:oPublica['A2_FILIAL']+self:oPublica['A2_COD']+self:oPublica['A2_LOJA']",			
+	"nomeFantasia": "&self:oPublica['A2_NREDUZ']",		 
+	"razaoSocial": "&self:oPublica['A2_NOME']",		 
+	"situacao": "&IIF(self:cEvento == '2', 0, 1)",
+	"loteOrigem": "&self:cLote",
+	"idProprietario": "&LjRetComp()",
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"configPSH": {
+		"Version": "1.1",
+		"cargaInicial": false
+	}
+}
