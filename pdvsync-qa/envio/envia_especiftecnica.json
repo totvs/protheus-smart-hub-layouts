@@ -1,8 +1,7 @@
 {
-	"idRetaguarda": "&self:oPublica['D4X_FILIAL']+self:oPublica['D4X_PROD']+self:oPublica['D4X_CARAC']",
-	"idRetaguardaProduto": "&XFILIAL('SB1')+self:oPublica['D4X_PROD']",
-	"idRetaguardaEspecificacaoTecnica": "&xFILIAL('D4V')+'|'+self:oPublica['D4X_CARAC']+'|'+self:oPublica['D4X_PROD']",
-	"exibir": "&iif( self:oPublica['D4X_EXIPDV'] == '1', .T., .F. )",		 
+	"idRetaguarda": "&self:oPublica['D4V_FILIAL']+'|'+self:oPublica['D4V_COD']+'|'+Posicione( 'D4X', 2, XFILIAL('D4X') + self:oPublica['D4V_COD'], 'D4X_PROD' )",
+	"descricao": "&self:oPublica['D4V_NOME']",		 
+	"valor": "&AllTrim( Posicione( 'D4X', 2, XFILIAL('D4X') + self:oPublica['D4V_COD'], 'D4X_VALOR' ) )",
 	"situacao": "&IIF(self:cEvento == '2', 0, 1)",
 	"loteOrigem": "&self:cLote",
 	"idProprietario": "&LjRetComp()",
