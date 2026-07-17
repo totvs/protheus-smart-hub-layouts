@@ -19,6 +19,7 @@
 	"idRetaguarda": "&self:oPublica['A1_COD'] + self:oPublica['A1_LOJA']",
 	"dataAtualizacao": "&FwTimeStamp(6)",
 	"dataCadastro": "&FwTimeStamp( 6, StoD(self:oPublica['A1_DTCAD']) )",
+	"idRetaguardaTabelaPreco": "&self:oPublica['A1_TABELA']",
 	"idProprietario": "&LjRetComp()",
 	"loteOrigem": "&self:cLote",
 	"pendenteAnaliseCredito": "&IIF(self:oPublica:hasProperty('AI0') .AND. self:oPublica['AI0'][1]['AI0_ANACRE'] == '1', .T., .F.)",

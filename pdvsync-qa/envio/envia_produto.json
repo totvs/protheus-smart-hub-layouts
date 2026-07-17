@@ -22,8 +22,8 @@
 	"pesoliquido": "&self:oPublica['B1_PESO']",
 	"pesobruto": "&self:oPublica['B1_PESBRU']",
 	"controlaLote": "&Eval({|| cFilAnt := FwXFilial('SB1',self:oPublica['B1_FILIAL'],'E','E','E'),rastro(self:oPublica['B1_COD'], 'L')})",
-	"idRetaguardaMarca": "&Posicione( 'D4Z', 1, XFILIAL('D4Z') + self:oPublica['B1_COD'], 'D4Z_CODMAR' )",
-	"incentivado": "&IIF( Posicione( 'D4Z', 1, XFILIAL('D4Z') + self:oPublica['B1_COD'], 'D4Z_PDVPRI' )  == '1', .T., .F.)",
+	"idRetaguardaMarca": "&IIF(FwAliasInDic('D4Z'),Posicione( 'D4Z', 1, XFILIAL('D4Z') + self:oPublica['B1_COD'], 'D4Z_CODMAR' ),'')",
+	"incentivado": "&IIF( FwAliasInDic('D4Z') .And. Posicione( 'D4Z', 1, XFILIAL('D4Z') + self:oPublica['B1_COD'], 'D4Z_PDVPRI' )  == '1', .T., .F.)",
 	"fabricante": [
 		{
 			"TableNode": "MG1",
