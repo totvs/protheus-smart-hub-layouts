@@ -1,0 +1,203 @@
+{
+	"table": {
+		"name": "CLK",
+		"alias": "CLK"
+	},
+	"fields": [
+		{
+			"description": "codigoNcm",
+			"alias": "codigoNcm",
+			"is_physical": true,
+			"column_name": "CLK.CLK_CODNCM",
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "codigoExcecao",
+			"alias": "codigoExcecao",
+			"is_physical": true,
+			"column_name": "CLK.CLK_EX",
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "aliquotaNacional",
+			"alias": "aliquotaNacional",
+			"is_physical": true,
+			"column_name": "CLK.CLK_ALQNAC",
+			"transformations": [
+				{
+					"function": "FORMAT_NUMBER",
+					"params": {
+						"decimals": 2
+					}
+				}
+			]
+		},
+		{
+			"description": "aliquotaImportada",
+			"alias": "aliquotaImportada",
+			"is_physical": true,
+			"column_name": "CLK.CLK_ALQIMP",
+			"transformations": [
+				{
+					"function": "FORMAT_NUMBER",
+					"params": {
+						"decimals": 2
+					}
+				}
+			]
+		},
+		{
+			"description": "aliquotaEstadual",
+			"alias": "aliquotaEstadual",
+			"is_physical": true,
+			"column_name": "CLK.CLK_ALQEST",
+			"transformations": [
+				{
+					"function": "FORMAT_NUMBER",
+					"params": {
+						"decimals": 2
+					}
+				}
+			]
+		},
+		{
+			"description": "aliquotaMunicipal",
+			"alias": "aliquotaMunicipal",
+			"is_physical": true,
+			"column_name": "CLK.CLK_ALQMUN",
+			"transformations": [
+				{
+					"function": "FORMAT_NUMBER",
+					"params": {
+						"decimals": 2
+					}
+				}
+			]
+		},
+		{
+			"description": "chave",
+			"alias": "chave",
+			"is_constant": true,
+			"static_value": " "
+		},
+		{
+			"description": "fonte",
+			"alias": "fonte",
+			"is_physical": true,
+			"column_name": "CLK.CLK_FONTE",
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "situacao",
+			"alias": "situacao",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"logic_group": "OR",
+							"conditions": [
+								{
+									"column": "CLK.D_E_L_E_T_",
+									"operator": "EQUALS",
+									"compare_value": "*"
+								}
+							]
+						},
+						"then": {
+							"value": 0,
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"value": 1,
+					"value_type": "STATIC"
+				}
+			}
+		},
+		{
+			"description": "idInquilino",
+			"alias": "idInquilino",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"is_source_posicione": true,
+				"posicione_config": {
+					"target_table": "MHO",
+					"target_alias": "MHO",
+					"target_column": "MHO.MHO_CONFIG",
+					"match_filter": {
+						"column": "MHO.MHO_COD",
+						"operator": "EQUALS",
+						"value_type": "STATIC",
+						"compare_value": "PDVSYNC"
+					}
+				},
+				"root_path": "$",
+				"fields": [
+					{
+						"alias": "inquilino",
+						"json_path": "$.inquilino",
+						"type": "VARCHAR(30)",
+						"extract_field": true
+					}
+				]
+			}
+		},
+		{
+			"description": "idRetaguarda",
+			"alias": "idRetaguarda",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CONCAT",
+				"parts": [
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(CLK.CLK_CODNCM)"
+					},
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(CLK.CLK_EX)"
+					}
+				]
+			}
+		},
+		{
+			"description": "dataAtualizacao",
+			"alias": "dataAtualizacao",
+			"db_function": "CURRENT_TIMESTAMP"
+		},
+		{
+			"description": "dataCadastro",
+			"alias": "dataCadastro",
+			"db_function": "CURRENT_TIMESTAMP"
+		},
+		{
+			"description": "idProprietario",
+			"alias": "idProprietario",
+			"is_physical": false,
+			"is_proprietary": true,
+			"proprietary_config": {
+				"level": 0
+			}
+		}
+	],
+	"filters": {
+		"column": "CLK.CLK_CODNCM",
+		"operator": "NOT_EQUALS",
+		"compare_value": " "
+	}
+}

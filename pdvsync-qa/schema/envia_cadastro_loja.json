@@ -1,0 +1,872 @@
+{
+	"table": {
+		"name": "MIH",
+		"alias": "MIH"
+	},
+	"fields": [
+		{
+			"description": "idInquilino",
+			"alias": "idInquilino",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"is_source_posicione": true,
+				"posicione_config": {
+					"target_table": "MHO",
+					"target_alias": "MHO",
+					"target_column": "MHO.MHO_CONFIG",
+					"match_filter": {
+						"column": "MHO.MHO_COD",
+						"operator": "EQUALS",
+						"value_type": "STATIC",
+						"compare_value": "PDVSYNC"
+					}
+				},
+				"root_path": "$",
+				"fields": [
+					{
+						"alias": "inquilino",
+						"json_path": "$.inquilino",
+						"type": "VARCHAR(30)",
+						"extract_field": true
+					}
+				]
+			}
+		},
+		{
+			"description": "idRetaguarda",
+			"alias": "idRetaguarda",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(50)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "IDFilialProtheus"
+				}
+			}
+		},
+		{
+			"description": "razaoSocial",
+			"alias": "razaoSocial",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(50)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "RazaoSocial"
+				}
+			}
+		},
+		{
+			"description": "nomeFantasia",
+			"alias": "nomeFantasia",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(50)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "NomeFantasia"
+				}
+			}
+		},
+		{
+			"description": "cnpj",
+			"alias": "cnpj",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(20)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "CNPJ"
+				}
+			}
+		},
+		{
+			"description": "inscricaoEstadual",
+			"alias": "inscricaoEstadual",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(20)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "InscricaoEstadual"
+				}
+			}
+		},
+		{
+			"description": "inscricaoMunicipal",
+			"alias": "inscricaoMunicipal",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(25)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(25)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "InscricaoMunicipal"
+				}
+			}
+		},
+		{
+			"description": "endereco",
+			"alias": "endereco",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(60)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "Endereco"
+				}
+			}
+		},
+		{
+			"description": "numero",
+			"alias": "numero",
+			"is_constant": true,
+			"static_value": 1
+		},
+		{
+			"description": "complemento",
+			"alias": "complemento",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(25)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "Complemento"
+				}
+			}
+		},
+		{
+			"description": "bairro",
+			"alias": "bairro",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(35)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "Bairro"
+				}
+			}
+		},
+		{
+			"description": "cidade",
+			"alias": "cidade",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(35)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "Cidade"
+				}
+			}
+		},
+		{
+			"description": "estado",
+			"alias": "estado",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(2)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "Estado"
+				}
+			}
+		},
+		{
+			"description": "siglauf",
+			"alias": "siglauf",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(2)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "Estado"
+				}
+			}
+		},
+		{
+			"description": "codigoUFIBGE",
+			"alias": "codigoUFIBGE",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(7)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "SUBSTR",
+								"params": {
+									"start": 1,
+									"length": 2
+								}
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "CodigoMunicipio"
+				}
+			}
+		},
+		{
+			"description": "codigoMunicipioIbge",
+			"alias": "codigoMunicipioIbge",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(7)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "SUBSTR",
+								"params": {
+									"start": 1,
+									"length": 7
+								}
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "CodigoMunicipio"
+				}
+			}
+		},
+		{
+			"description": "cep",
+			"alias": "cep",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(8)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "CEP"
+				}
+			}
+		},
+		{
+			"description": "telefone",
+			"alias": "telefone",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(14)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "Telefone"
+				}
+			}
+		},
+		{
+			"description": "codigoIdentificacaoLoja",
+			"alias": "codigoIdentificacaoLoja",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(30)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(20)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "CodigoIdentificacaoLoja"
+				}
+			}
+		},
+		{
+			"alias": "situacao",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"logic_group": "OR",
+							"conditions": [
+								{
+									"column": "MIH.MIH_ATIVO",
+									"operator": "EQUALS",
+									"compare_value": "2"
+								},
+								{
+									"column": "MIH.D_E_L_E_T_",
+									"operator": "EQUALS",
+									"compare_value": "*"
+								}
+							]
+						},
+						"then": {
+							"value": 0,
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"value": 1,
+					"value_type": "STATIC"
+				}
+			}
+		},
+		{
+			"description": "modeloFiscal",
+			"alias": "modeloFiscal",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(16)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "ModeloFiscal"
+				}
+			}
+		},
+		{
+			"description": "regimeTributario",
+			"alias": "regimeTributario",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(30)",
+						"extract_field": true,
+						"logic_operation": {
+							"type": "CASE",
+							"cases": [
+								{
+									"when": {
+										"column": "conteudo",
+										"operator": "EQUALS",
+										"compare_value": "3"
+									},
+									"then": {
+										"value": "RegimeNormal",
+										"value_type": "STATIC"
+									}
+								}
+							],
+							"else": {
+								"value": "SimplesNacional",
+								"value_type": "STATIC"
+							}
+						}
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "RegimeTributario"
+				}
+			}
+		},
+		{
+			"description": "rede",
+			"alias": "rede",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(40)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "NomeMaster"
+				}
+			}
+		},
+		{
+			"description": "codigoMaster",
+			"alias": "codigoMaster",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(10)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "CodigoMaster"
+				}
+			}
+		},
+		{
+			"description": "nomeMaster",
+			"alias": "nomeMaster",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(40)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "NomeMaster"
+				}
+			}
+		},
+		{
+			"description": "numeroLoja",
+			"alias": "numeroLoja",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(20)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "NumeroLoja"
+				}
+			}
+		},
+		{
+			"description": "id",
+			"alias": "id",
+			"column_name": "MIH_ID",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "dataAtualizacao",
+			"column_name": "MIH_DATALT",
+			"alias": "dataAtualizacao",
+			"is_physical": true
+		},
+		{
+			"description": "dataCadastro",
+			"column_name": "MIH_DATINC",
+			"alias": "dataCadastro",
+			"is_physical": true
+		},
+		{
+			"description": "idProprietario",
+			"alias": "idProprietario",
+			"is_physical": false,
+			"is_proprietary": true,
+			"proprietary_config": {
+				"level": 0
+			}
+		}
+	],
+	"filters": {
+		"column": "MIH_TIPCAD",
+		"operator": "EQUALS",
+		"compare_value": "CADASTRO DE LOJA"
+	}
+}

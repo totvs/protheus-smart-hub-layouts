@@ -1,0 +1,196 @@
+{
+	"table": {
+		"name": "SAE",
+		"alias": "SAE"
+	},
+	"fields": [
+		{
+			"description": "descricao",
+			"alias": "descricao",
+			"column_name": "AE_DESC",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"alias": "situacao",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"logic_group": "OR",
+							"conditions": [
+								{
+									"column": "SAE.D_E_L_E_T_",
+									"operator": "EQUALS",
+									"compare_value": "*"
+								}
+							]
+						},
+						"then": {
+							"value": 0,
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"value": 1,
+					"value_type": "STATIC"
+				}
+			}
+		},
+		{
+			"description": "codigoTef",
+			"alias": "codigoTef",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"column": "SAE.AE_ADMCART",
+							"operator": "IS_NULL_OR_EMPTY"
+						},
+						"then": {
+							"value": "SEM TEF",
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"is_posicione": true,
+					"posicione_config": {
+						"target_table": "MDE",
+						"target_alias": "MDE",
+						"target_column": "MDE.MDE_CODSIT",
+						"match_filter": {
+							"column": "MDE.MDE_CODIGO",
+							"operator": "EQUALS",
+							"value_type": "COLUMN",
+							"compare_value": "SAE.AE_ADMCART"
+						}
+					}
+				}
+			}
+		},
+		{
+			"description": "administradora",
+			"alias": "administradora",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CONCAT",
+				"parts": [
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(SAE.AE_FILIAL)"
+					},
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(SAE.AE_COD)"
+					}
+				]
+			}
+		},
+		{
+			"description": "tipoTransacao",
+			"alias": "tipoTransacao",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"column": "SAE.AE_TIPO",
+							"operator": "EQUALS",
+							"compare_value": "CC"
+						},
+						"then": {
+							"value": 0,
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"value": 1,
+					"value_type": "STATIC"
+				}
+			}
+		},
+		{
+			"description": "sequencial",
+			"alias": "sequencial",
+			"is_constant": true,
+			"static_value": 0
+		},
+		{
+			"description": "idInquilino",
+			"alias": "idInquilino",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"is_source_posicione": true,
+				"posicione_config": {
+					"target_table": "MHO",
+					"target_alias": "MHO",
+					"target_column": "MHO.MHO_CONFIG",
+					"match_filter": {
+						"column": "MHO.MHO_COD",
+						"operator": "EQUALS",
+						"value_type": "STATIC",
+						"compare_value": "PDVSYNC"
+					}
+				},
+				"root_path": "$",
+				"fields": [
+					{
+						"alias": "inquilino",
+						"json_path": "$.inquilino",
+						"type": "VARCHAR(30)",
+						"extract_field": true
+					}
+				]
+			}
+		},
+		{
+			"description": "idRetaguarda",
+			"alias": "idRetaguarda",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CONCAT",
+				"parts": [
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(SAE.AE_FILIAL)"
+					},
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(SAE.AE_COD)"
+					}
+				]
+			}
+		},
+		{
+			"description": "dataAtualizacao",
+			"alias": "dataAtualizacao",
+			"db_function": "CURRENT_TIMESTAMP"
+		},
+		{
+			"description": "dataCadastro",
+			"alias": "dataCadastro",
+			"db_function": "CURRENT_TIMESTAMP"
+		},
+		{
+			"description": "idProprietario",
+			"alias": "idProprietario",
+			"is_physical": false,
+			"is_proprietary": true,
+			"proprietary_config": {
+				"level": 0
+			}
+		}
+	]
+}

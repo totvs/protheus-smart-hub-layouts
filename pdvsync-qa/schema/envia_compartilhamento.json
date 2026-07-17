@@ -1,0 +1,294 @@
+{
+	"table": {
+		"name": "MIH",
+		"alias": "MIH"
+	},
+	"fields": [
+		{
+			"description": "idRetaguarda",
+			"alias": "idRetaguarda",
+			"column_name": "MIH_ID",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "idProprietario",
+			"alias": "idProprietario",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(6)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "IdProprietario"
+				}
+			}
+		},
+		{
+			"description": "nomeCompartilhamento",
+			"alias": "nomeCompartilhamento",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(30)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(30)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "NomeCompartilha"
+				}
+			}
+		},
+		{
+			"description": "nivel",
+			"alias": "nivel",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(1)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "nivel"
+				}
+			}
+		},
+		{
+			"description": "idRetaguardaPai",
+			"alias": "idRetaguardaPai",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(6)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "IdRetaguardaPai"
+				}
+			}
+		},
+		{
+			"description": "idRetaguardaLoja",
+			"alias": "idRetaguardaLoja",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"is_source_posicione": true,
+				"posicione_config": {
+					"target_table": "MIH",
+					"target_alias": "MIHLOJA",
+					"target_column": "MIHLOJA.MIH_CONFIG",
+					"match_filter": {
+						"logic_group": "AND",
+						"conditions": [
+							{
+								"is_json_extract": true,
+								"column": "MIHLOJA.MIH_ID",
+								"operator": "EQUALS",
+								"compare_value": {
+									"is_source_posicione": true,
+									"posicione_config": {
+										"target_table": "MIH",
+										"target_alias": "MIHCOMP",
+										"target_column": "MIHCOMP.MIH_CONFIG",
+										"match_filter": {
+											"column": "MIHCOMP.MIH_ID",
+											"operator": "EQUALS",
+											"value_type": "COLUMN",
+											"compare_value": "MIH.MIH_ID"
+										}
+									},
+									"root_path": "$.Components",
+									"fields": [
+										{
+											"alias": "campo",
+											"json_path": "$.IdComponent",
+											"type": "VARCHAR(20)"
+										},
+										{
+											"alias": "conteudo",
+											"json_path": "$.ComponentContent",
+											"type": "VARCHAR(6)",
+											"extract_field": true,
+											"transformations": [
+												{
+													"function": "TRIM"
+												}
+											]
+										}
+									],
+									"filters": {
+										"column": "campo",
+										"operator": "EQUALS",
+										"compare_value": "CodigoLoja"
+									}
+								}
+							},
+							{
+								"column": "MIHLOJA.MIH_TIPCAD",
+								"operator": "EQUALS",
+								"value_type": "STATIC",
+								"compare_value": "CADASTRO DE LOJA"
+							}
+						]
+					}
+				},
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(16)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(10)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "IDFilialProtheus"
+				}
+			}
+		},
+		{
+			"description": "id",
+			"alias": "id",
+			"column_name": "MIH_ID",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "idInquilino",
+			"alias": "idInquilino",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"is_source_posicione": true,
+				"posicione_config": {
+					"target_table": "MHO",
+					"target_alias": "MHO",
+					"target_column": "MHO.MHO_CONFIG",
+					"match_filter": {
+						"column": "MHO.MHO_COD",
+						"operator": "EQUALS",
+						"value_type": "STATIC",
+						"compare_value": "PDVSYNC"
+					}
+				},
+				"root_path": "$",
+				"fields": [
+					{
+						"alias": "inquilino",
+						"json_path": "$.inquilino",
+						"type": "VARCHAR(30)",
+						"extract_field": true
+					}
+				]
+			}
+		},
+		{
+			"description": "dataAtualizacao",
+			"column_name": "MIH_DATALT",
+			"alias": "dataAtualizacao",
+			"is_physical": true
+		},
+		{
+			"description": "dataCadastro",
+			"column_name": "MIH_DATINC",
+			"alias": "dataCadastro",
+			"is_physical": true
+		}
+	],
+	"filters": {
+		"column": "MIH_TIPCAD",
+		"operator": "EQUALS",
+		"compare_value": "COMPARTILHAMENTOS"
+	}
+}
