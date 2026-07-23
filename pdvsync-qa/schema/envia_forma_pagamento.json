@@ -1,0 +1,884 @@
+{
+	"table": {
+		"name": "MIH",
+		"alias": "MIH"
+	},
+	"view_deleted": false,
+	"filters": {
+		"column": "MIH.MIH_TIPCAD",
+		"operator": "EQUALS",
+		"compare_value": "FORMA DE PAGAMENTO  "
+	},
+	"fields": [
+		{
+			"description": "descricao",
+			"alias": "descricao",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH.MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(50)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "descricao"
+				}
+			}
+		},
+		{
+			"description": "descricaoFiscal",
+			"alias": "descricaoFiscal",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH.MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(50)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "descricaofiscal"
+				}
+			}
+		},
+		{
+			"description": "permiteTroco",
+			"alias": "permiteTroco",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH.MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(10)",
+						"extract_field": true,
+						"logic_operation": {
+							"type": "CASE",
+							"cases": [
+								{
+									"when": {
+										"column": "conteudo",
+										"operator": "EQUALS",
+										"compare_value": "true"
+									},
+									"then": {
+										"value": 1,
+										"value_type": "STATIC"
+									}
+								}
+							],
+							"else": {
+								"value": 0,
+								"value_type": "STATIC"
+							}
+						}
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "permitetroco"
+				}
+			}
+		},
+		{
+			"description": "idRetaguardaFormaPagTroco",
+			"alias": "idRetaguardaFormaPagTroco",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH.MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(21)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(50)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "idFormaPagamentoTroco"
+				}
+			}
+		},
+		{
+			"description": "valorMinimoAceito",
+			"alias": "valorMinimoAceito",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH.MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(5)",
+						"extract_field": true
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "valorminimoaceito"
+				}
+			}
+		},
+		{
+			"description": "codigoSistemaExterno",
+			"alias": "codigoSistemaExterno",
+			"column_name": "MIH.MIH_ID",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"alias": "situacao",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"logic_group": "OR",
+							"conditions": [
+								{
+									"column": "MIH.MIH_ATIVO",
+									"operator": "EQUALS",
+									"compare_value": "2"
+								},
+								{
+									"column": "MIH.D_E_L_E_T_",
+									"operator": "EQUALS",
+									"compare_value": "*"
+								}
+							]
+						},
+						"then": {
+							"value": 0,
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"value": 1,
+					"value_type": "STATIC"
+				}
+			}
+		},
+		{
+			"description": "tipo",
+			"alias": "tipo",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH.MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(10)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "tipo"
+				}
+			}
+		},
+		{
+			"description": "tipoCliente",
+			"alias": "tipoCliente",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH.MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "NVARCHAR(5)",
+						"extract_field": true,
+						"transformations": [
+							{
+								"function": "COALESCE",
+								"params": {
+									"fallback_value": 0
+								}
+							}
+						]
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "consultaCredito"
+				}
+			}
+		},
+		{
+			"description": "sequencial",
+			"alias": "sequencial",
+			"is_constant": true,
+			"static_value": 0
+		},
+		{
+			"description": "idInquilino",
+			"alias": "idInquilino",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"is_source_posicione": true,
+				"posicione_config": {
+					"target_table": "MHO",
+					"target_alias": "MHO",
+					"target_column": "MHO.MHO_CONFIG",
+					"match_filter": {
+						"column": "MHO.MHO_COD",
+						"operator": "EQUALS",
+						"value_type": "STATIC",
+						"compare_value": "PDVSYNC"
+					}
+				},
+				"root_path": "$",
+				"fields": [
+					{
+						"alias": "inquilino",
+						"json_path": "$.inquilino",
+						"type": "VARCHAR(30)",
+						"extract_field": true
+					}
+				]
+			}
+		},
+		{
+			"description": "idRetaguarda",
+			"alias": "idRetaguarda",
+			"column_name": "MIH.MIH_ID",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "dataAtualizacao",
+			"alias": "dataAtualizacao",
+			"column_name": "MIH.MIH_DATALT",
+			"is_physical": true
+		},
+		{
+			"description": "dataCadastro",
+			"alias": "dataCadastro",
+			"column_name": "MIH.MIH_DATINC",
+			"is_physical": true
+		},
+		{
+			"description": "idProprietario",
+			"alias": "idProprietario",
+			"is_physical": false,
+			"is_proprietary": true,
+			"proprietary_config": {
+				"level": 0
+			}
+		},
+		{
+			"alias": "formasPagtoCondicoes",
+			"is_physical": false,
+			"is_relationship": true,
+			"relationship_config": {
+				"relationship_type": "ONE_TO_MANY",
+				"target_table": "SAE",
+				"table_alias": "SAE",
+				"parent_key": "SAE.AE_FILIAL+SAE.AE_COD",
+				"child_key": "SAE.AE_FILIAL+SAE.AE_COD",
+				"fields": [
+					{
+						"alias": "idRetaguarda",
+						"is_physical": false,
+						"logic_operation": {
+							"type": "CONCAT",
+							"parts": [
+								{
+									"value_type": "COLUMN",
+									"value": "TRIM(MIH.MIH_ID)"
+								},
+								{
+									"value_type": "COLUMN",
+									"value": "TRIM(SAE.AE_FILIAL)"
+								},
+								{
+									"value_type": "COLUMN",
+									"value": "TRIM(SAE.AE_COD)"
+								}
+							]
+						}
+					},
+					{
+						"alias": "idRetaguardaFormaPagto",
+						"column_name": "MIH.MIH_ID",
+						"is_physical": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					},
+					{
+						"column_name": "SAE.AE_COD",
+						"alias": "idRetaguardaCondicaoPagto",
+						"is_physical": false,
+						"logic_operation": {
+							"type": "CONCAT",
+							"parts": [
+								{
+									"value_type": "COLUMN",
+									"value": "TRIM(SAE.AE_FILIAL)"
+								},
+								{
+									"value_type": "COLUMN",
+									"value": "TRIM(SAE.AE_COD)"
+								}
+							]
+						}
+					},
+					{
+						"description": "situacao",
+						"alias": "situacao",
+						"is_constant": true,
+						"static_value": 1
+					}
+				],
+				"filters": {
+					"is_json_extract": true,
+					"column": "SAE.AE_COD",
+					"operator": "IN",
+					"compare_value": {
+						"source_column": "MIH.MIH_CONFIG",
+						"root_path": "$.Components",
+						"fields": [
+							{
+								"alias": "campo",
+								"json_path": "$.IdComponent",
+								"type": "VARCHAR(17)"
+							},
+							{
+								"alias": "conteudo",
+								"json_path": "$.ComponentContent",
+								"type": "VARCHAR(30)",
+								"extract_field": true
+							}
+						],
+						"filters": {
+							"column": "campo",
+							"operator": "EQUALS",
+							"compare_value": "condicaoPagamento"
+						}
+					},
+					"transformations": [
+						{
+							"function": "STR2ARRAY",
+							"params": {
+								"character": ";"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"alias": "formasPagtoDadosComplementares",
+			"is_physical": false,
+			"is_relationship": true,
+			"relationship_config": {
+				"relationship_type": "ONE_TO_MANY",
+				"target_table": "MIH",
+				"table_alias": "MIHCOMP",
+				"parent_key": "1",
+				"child_key": "1",
+				"fields": [
+					{
+						"alias": "idRetaguarda",
+						"is_physical": false,
+						"logic_operation": {
+							"type": "CONCAT",
+							"parts": [
+								{
+									"value_type": "COLUMN",
+									"value": "TRIM(MIH.MIH_ID)"
+								},
+								{
+									"value_type": "COLUMN",
+									"value": "TRIM(MIHCOMP.MIH_ID)"
+								}
+							]
+						}
+					},
+					{
+						"alias": "idRetaguardaFormaPagto",
+						"column_name": "MIH.MIH_ID",
+						"is_physical": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					},
+					{
+						"alias": "idRetaguardaDadoComplementarPagto",
+						"column_name": "MIHCOMP.MIH_ID",
+						"is_physical": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					},
+					{
+						"alias": "situacao",
+						"is_physical": false,
+						"logic_operation": {
+							"type": "CASE",
+							"cases": [
+								{
+									"when": {
+										"logic_group": "OR",
+										"conditions": [
+											{
+												"column": "MIHCOMP.MIH_ATIVO",
+												"operator": "EQUALS",
+												"compare_value": "2"
+											},
+											{
+												"column": "MIHCOMP.D_E_L_E_T_",
+												"operator": "EQUALS",
+												"compare_value": "*"
+											}
+										]
+									},
+									"then": {
+										"value": 0,
+										"value_type": "STATIC"
+									}
+								}
+							],
+							"else": {
+								"value": 1,
+								"value_type": "STATIC"
+							}
+						}
+					}
+				],
+				"filters": {
+					"logic_group": "AND",
+					"conditions": [
+						{
+							"column": "MIHCOMP.MIH_TIPCAD",
+							"operator": "EQUALS",
+							"compare_value": "COMPLEM PAGAMENTO"
+						},
+						{
+							"is_json_extract": true,
+							"column": "MIHCOMP.MIH_ID",
+							"operator": "IN",
+							"compare_value": {
+								"source_column": "MIH.MIH_CONFIG",
+								"root_path": "$.Components",
+								"fields": [
+									{
+										"alias": "campo",
+										"json_path": "$.IdComponent",
+										"type": "VARCHAR(20)"
+									},
+									{
+										"alias": "conteudo",
+										"json_path": "$.ComponentContent",
+										"type": "VARCHAR(50)",
+										"extract_field": true,
+										"transformations": [
+											{
+												"function": "TRIM"
+											}
+										]
+									}
+								],
+								"filters": {
+									"column": "campo",
+									"operator": "EQUALS",
+									"compare_value": "camposComplementares"
+								}
+							},
+							"transformations": [
+								{
+									"function": "STR2ARRAY",
+									"params": {
+										"character": ";"
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		},
+		{
+			"alias": "formaPagtoModeloFiscal",
+			"is_physical": false,
+			"is_relationship": true,
+			"relationship_config": {
+				"relationship_type": "ONE_TO_MANY",
+				"is_json_extract": true,
+				"target_table": {
+					"source_column": "MIH.MIH_CONFIG",
+					"root_path": "$.Components",
+					"fields": [
+						{
+							"alias": "campo",
+							"json_path": "$.IdComponent",
+							"type": "VARCHAR(16)"
+						},
+						{
+							"alias": "conteudo",
+							"json_path": "$.ComponentContent",
+							"type": "VARCHAR(30)",
+							"extract_field": true,
+							"transformations": [
+								{
+									"function": "TRIM"
+								}
+							]
+						}
+					],
+					"filters": {
+						"column": "campo",
+						"operator": "EQUALS",
+						"compare_value": "listModeloFiscal"
+					}
+				},
+				"transformations": [
+					{
+						"function": "STR2ARRAY",
+						"params": {
+							"character": ";"
+						}
+					}
+				],
+				"table_alias": "PGTOS",
+				"parent_key": "1",
+				"child_key": "1",
+				"fields": [
+					{
+						"alias": "idRetaguarda",
+						"is_physical": false,
+						"logic_operation": {
+							"type": "CONCAT",
+							"parts": [
+								{
+									"value_type": "COLUMN",
+									"value": "TRIM(MIH.MIH_ID)"
+								},
+								{
+									"value_type": "COLUMN",
+									"value": "TRIM(PGTOS.value)"
+								}
+							]
+						}
+					},
+					{
+						"alias": "idRetaguardaFormaPagto",
+						"column_name": "MIH.MIH_ID",
+						"is_physical": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					},
+					{
+						"alias": "modeloFiscal",
+						"column_name": "PGTOS.value",
+						"is_physical": true
+					},
+					{
+						"description": "codigoFiscal",
+						"alias": "codigoFiscal",
+						"is_json_extract": true,
+						"json_extract_config": {
+							"source_column": "MIH.MIH_CONFIG",
+							"root_path": "$.Components",
+							"fields": [
+								{
+									"alias": "campo",
+									"json_path": "$.IdComponent",
+									"type": "VARCHAR(20)"
+								},
+								{
+									"alias": "conteudo",
+									"json_path": "$.ComponentContent",
+									"type": "VARCHAR(10)",
+									"extract_field": true,
+									"transformations": [
+										{
+											"function": "TRIM"
+										}
+									]
+								}
+							],
+							"filters": {
+								"column": "campo",
+								"operator": "EQUALS",
+								"compare_value": "codigoFiscal"
+							}
+						}
+					},
+					{
+						"description": "descricaoFiscal",
+						"alias": "descricaoFiscal",
+						"is_json_extract": true,
+						"json_extract_config": {
+							"source_column": "MIH.MIH_CONFIG",
+							"root_path": "$.Components",
+							"fields": [
+								{
+									"alias": "campo",
+									"json_path": "$.IdComponent",
+									"type": "VARCHAR(15)"
+								},
+								{
+									"alias": "conteudo",
+									"json_path": "$.ComponentContent",
+									"type": "VARCHAR(50)",
+									"extract_field": true,
+									"transformations": [
+										{
+											"function": "TRIM"
+										}
+									]
+								}
+							],
+							"filters": {
+								"column": "campo",
+								"operator": "EQUALS",
+								"compare_value": "descricaofiscal"
+							}
+						}
+					},
+					{
+						"alias": "situacao",
+						"is_physical": false,
+						"logic_operation": {
+							"type": "CASE",
+							"cases": [
+								{
+									"when": {
+										"logic_group": "OR",
+										"conditions": [
+											{
+												"column": "MIH.MIH_ATIVO",
+												"operator": "EQUALS",
+												"compare_value": "2"
+											},
+											{
+												"column": "MIH.D_E_L_E_T_",
+												"operator": "EQUALS",
+												"compare_value": "*"
+											}
+										]
+									},
+									"then": {
+										"value": 0,
+										"value_type": "STATIC"
+									}
+								}
+							],
+							"else": {
+								"value": 1,
+								"value_type": "STATIC"
+							}
+						}
+					}
+				]
+			}
+		},
+		{
+			"alias": "formasPagtoOperadoras",
+			"is_physical": false,
+			"is_relationship": true,
+			"relationship_config": {
+				"relationship_type": "ONE_TO_MANY",
+				"target_table": "SAE",
+				"table_alias": "SAE",
+				"parent_key": "SAE.AE_FILIAL+SAE.AE_COD",
+				"child_key": "SAE.AE_FILIAL+SAE.AE_COD",
+				"fields": [
+					{
+						"alias": "idRetaguarda",
+						"is_physical": false,
+						"logic_operation": {
+							"type": "CONCAT",
+							"parts": [
+								{
+									"value_type": "COLUMN",
+									"value": "TRIM(MIH.MIH_ID)"
+								},
+								{
+									"value_type": "COLUMN",
+									"value": "TRIM(SAE.AE_FILIAL)"
+								},
+								{
+									"value_type": "COLUMN",
+									"value": "TRIM(SAE.AE_COD)"
+								}
+							]
+						}
+					},
+					{
+						"alias": "idRetaguardaFormaPagto",
+						"column_name": "MIH.MIH_ID",
+						"is_physical": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					},
+					{
+						"column_name": "SAE.AE_COD",
+						"alias": "idRetaguardaOperadoraPagto",
+						"is_physical": false,
+						"logic_operation": {
+							"type": "CONCAT",
+							"parts": [
+								{
+									"value_type": "COLUMN",
+									"value": "TRIM(SAE.AE_FILIAL)"
+								},
+								{
+									"value_type": "COLUMN",
+									"value": "TRIM(SAE.AE_COD)"
+								}
+							]
+						}
+					},
+					{
+						"description": "situacao",
+						"alias": "situacao",
+						"is_constant": true,
+						"static_value": 1
+					}
+				],
+				"filters": {
+					"is_json_extract": true,
+					"column": "SAE.AE_COD",
+					"operator": "IN",
+					"compare_value": {
+						"source_column": "MIH.MIH_CONFIG",
+						"root_path": "$.Components",
+						"fields": [
+							{
+								"alias": "campo",
+								"json_path": "$.IdComponent",
+								"type": "VARCHAR(17)"
+							},
+							{
+								"alias": "conteudo",
+								"json_path": "$.ComponentContent",
+								"type": "VARCHAR(30)",
+								"extract_field": true
+							}
+						],
+						"filters": {
+							"column": "campo",
+							"operator": "EQUALS",
+							"compare_value": "operadora"
+						}
+					},
+					"transformations": [
+						{
+							"function": "STR2ARRAY",
+							"params": {
+								"character": ";"
+							}
+						}
+					]
+				}
+			}
+		}
+	]
+}
