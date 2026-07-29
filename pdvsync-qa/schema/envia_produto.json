@@ -439,7 +439,7 @@
 									"json_path": "$.ComponentContent",
 									"type": "NVARCHAR(5)",
 									"extract_field": true,
-									"cast_to": "DECIMAL(5,2)"
+									"cast_to": "FLOAT"
 								}
 							],
 							"filters": {
@@ -489,7 +489,7 @@
 									"json_path": "$.ComponentContent",
 									"type": "NVARCHAR(5)",
 									"extract_field": true,
-									"cast_to": "DECIMAL(5,2)"
+									"cast_to": "FLOAT"
 								}
 							],
 							"filters": {
@@ -588,7 +588,7 @@
 									"json_path": "$.ComponentContent",
 									"type": "NVARCHAR(5)",
 									"extract_field": true,
-									"cast_to": "DECIMAL(5,2)"
+									"cast_to": "FLOAT"
 								}
 							],
 							"filters": {
