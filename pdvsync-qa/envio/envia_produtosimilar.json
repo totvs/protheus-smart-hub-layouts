@@ -1,5 +1,5 @@
 {
-	"idRetaguarda": "&self:oPublica['MFY_FILIAL']+self:oPublica['MFY_CODGRP']+self:oPublica['MFY_FILPRO']+self:oPublica['MFY_CODPRO']",
+	"idRetaguarda": "&self:oPublica['MFY_FILIAL']+self:oPublica['MFY_FILPRO']+self:oPublica['MFY_CODPRO']",
 	"idRetaguardaProduto": "&self:oPublica['MFY_FILPRO']+self:oPublica['MFY_CODPRO']",			
 	"idRetaguardaSimilar": "&self:oPublica['MFY_FILIAL']+self:oPublica['MFY_CODGRP']",		 
 	"situacao": "&IIF(self:cEvento == '2', 0, 1)",
@@ -7,7 +7,7 @@
 	"idProprietario": "&LjRetComp()",
 	"idInquilino": "&self:oConfAssin['inquilino']",
 	"configPSH": {
-		"Version": "1.0",
+		"Version": "1.1",
 		"cargaInicial": false
 	}
 }
