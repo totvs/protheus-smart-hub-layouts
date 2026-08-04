@@ -1,0 +1,12 @@
+{
+	"idRetaguarda": "&self:oPublica['BM_FILIAL']+self:oPublica['BM_GRUPO']", 
+	"situacao": "&IIF(self:cEvento == '2', '0', '1')",
+	"grupo": "&self:oPublica['BM_DESC']",
+	"loteOrigem": "&self:cLote",	
+	"idProprietario": "&LjRetComp()",
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"configPSH": {
+		"Version": "1.0",
+		"cargaInicial": false
+	}
+}
