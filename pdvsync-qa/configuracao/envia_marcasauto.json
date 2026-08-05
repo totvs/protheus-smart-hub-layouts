@@ -1,6 +1,6 @@
 {
-	"url": "https://pdvsync-core-produto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/?/?",
-	"codigotipo": "",
+	"url": "https://pdvsync-core-produto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/78/1",
+	"codigotipo": "78",
 	"descricaotipo": "MarcaAuto",
 	"qtdEnvio": 100,
 	"configPSH": {
