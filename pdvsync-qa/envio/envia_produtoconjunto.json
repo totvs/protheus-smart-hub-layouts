@@ -1,12 +1,12 @@
 {
 	"idRetaguarda": "&self:oPublica['MI2_FILIAL']+self:oPublica['MI2_CODCON']", 
-	"situacao": "&IIF(self:cEvento == '2', '0', '1')",
+	"situacao": "&IIF(self:cEvento == '2', 0, 1)",
 	"conjunto": "&self:oPublica['MI2_DESCRI']",
 	"loteOrigem": "&self:cLote",	
 	"idProprietario": "&LjRetComp()",
 	"idInquilino": "&self:oConfAssin['inquilino']",
 	"configPSH": {
-		"Version": "1.0",
+		"Version": "1.1",
 		"cargaInicial": false
 	}
 }
