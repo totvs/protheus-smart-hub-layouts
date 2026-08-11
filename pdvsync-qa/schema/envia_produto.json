@@ -4,6 +4,24 @@
 		"alias": "SB1",
 		"schema": "public"
 	},
+	"filters": {
+		"logic_group": "AND",
+		"conditions": [
+			{
+				"column": "SB1.B1_TIPO",
+				"operator": "IN",
+				"compare_value": [
+					"PA",
+					"ME"
+				]
+			},
+			{
+				"column": "SB1.B1_CODBAR",
+				"operator": "NOT_EQUALS",
+				"compare_value": " "
+			}
+		]
+	},
 	"fields": [
 		{
 			"description": "Descrição",
