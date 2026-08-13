@@ -1,6 +1,7 @@
 {
 	"idInquilino": "&self:oConfAssin['inquilino']",
 	"idRetaguarda": "&self:oPublica['B1_COD']",
+	"idRetaguardaProdutoGrupo": "&self:oPublica['B1_GRUPO']",	
 	"idProprietario": "&LjRetComp()",
 	"loteOrigem": "&Self:cLote",
 	"descricao": "&self:oPublica['B1_DESC']",
@@ -86,7 +87,7 @@
 		}
 	],
 	"configPSH": {
-		"Version": 4.3,
+		"Version": 4.4,
 		"cargaInicial": false
 	}
 }
