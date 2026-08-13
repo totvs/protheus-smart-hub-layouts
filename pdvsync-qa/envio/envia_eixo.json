@@ -1,13 +1,13 @@
 {
 	"idRetaguarda": "&self:oPublica['MEB_FILIAL']+self:oPublica['MEB_CODEIX']",
-	"situacao": "&IIF(self:oPublica['MEB_ATIVO'] == '0' .OR. self:cEvento == '2', '0', '1')",
+	"situacao": "&IIF(self:oPublica['MEB_ATIVO'] == '0' .OR. self:cEvento == '2', 0, 1)",
 	"nomeFabricante": "&POSICIONE('SA2',1,PADR( self:oPublica['MEB_FILFAB'], TAMSX3('A2_FILIAL')[1] ) + PADR( self:oPublica['MEB_CODFAB'],TAMSX3('A2_COD')[1] ) + self:oPublica['MEB_LOJFAB'],'A2_NOME')",
 	"modelo": "&POSICIONE('MG2',1,PADR( self:oPublica['MEB_FILMOD'], TAMSX3('MG2_FILIAL')[1] ) + self:oPublica['MEB_CODMOD'], 'MG2_NOME')",
 	"loteOrigem": "&self:cLote",	
 	"idProprietario": "&LjRetComp()",
 	"idInquilino": "&self:oConfAssin['inquilino']",
 	"configPSH": {
-		"Version": "2.3",
+		"Version": "2.4",
 		"cargaInicial": false
 	}
 }
