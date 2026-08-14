@@ -17,6 +17,7 @@
 	"atividade": "&self:oPublica['A1_ATIVIDA']",
 	"idInquilino": "&self:oConfAssin['inquilino']",
 	"idRetaguarda": "&self:oPublica['A1_COD'] + self:oPublica['A1_LOJA']",
+	"idRetaguardaGrupoCliente": "&self:oPublica['A1_GRPVEN']",
 	"dataAtualizacao": "&FwTimeStamp(6)",
 	"dataCadastro": "&FwTimeStamp( 6, StoD(self:oPublica['A1_DTCAD']) )",
 	"idRetaguardaTabelaPreco": "&self:oPublica['A1_TABELA']",
@@ -27,7 +28,7 @@
 	"sequencial": 0,
 	"enviarpnet": 0,
 	"configPSH": {
-		"Version": 3.0,
+		"Version": 3.1,
 		"cargaInicial": false
 	}
 }
