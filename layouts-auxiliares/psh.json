@@ -191,7 +191,55 @@
 				"ComponentLabel": "Quantidade utilizada para gravação via FwBulk"
 			},
 			"ComponentContent": 1000
+		},
+		{
+			"ContentType": "Number",
+			"IdComponent": "threads",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "09",
+					"List": null,
+					"Size": 1,
+					"F3": null,
+					"Required": false,
+					"Picture": "9",
+					"Valid": null,
+					"IniPad": "5",
+					"CanChange": true,
+					"Trigger": null,
+					"Help": [
+						"Define a quantidade de threads simultâneas para gerar carga de geração de impostos."
+					]
+				},
+				"ComponentLabel": "Quantidade de threads na geração de impostos"
+			},
+			"ComponentContent": 5
+		},
+		{
+			"ContentType": "Number",
+			"IdComponent": "registrosPorThread",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "10",
+					"List": null,
+					"Size": 4,
+					"F3": null,
+					"Required": false,
+					"Picture": "9999",
+					"Valid": null,
+					"IniPad": "1000",
+					"CanChange": true,
+					"Trigger": null,
+					"Help": [
+						"Define a quantidade de produtos processados por cada thread para gerar carga de impostos."
+					]
+				},
+				"ComponentLabel": "Quantidade de produtos por thread na geração de impostos"
+			},
+			"ComponentContent": 1000
 		}
 	],
-	"LayoutVersion": 3.1
+	"LayoutVersion": 4.0
 }
