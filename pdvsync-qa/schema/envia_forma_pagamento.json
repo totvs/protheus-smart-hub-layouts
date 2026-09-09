@@ -122,6 +122,53 @@
 			}
 		},
 		{
+			"description": "utilizaLimiteCredito",
+			"alias": "utilizaLimiteCredito",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"source_column": "MIH.MIH_CONFIG",
+				"root_path": "$.Components",
+				"fields": [
+					{
+						"alias": "campo",
+						"json_path": "$.IdComponent",
+						"type": "VARCHAR(20)"
+					},
+					{
+						"alias": "conteudo",
+						"json_path": "$.ComponentContent",
+						"type": "VARCHAR(5)",
+						"extract_field": true,
+						"logic_operation": {
+							"type": "CASE",
+							"cases": [
+								{
+									"when": {
+										"column": "conteudo",
+										"operator": "EQUALS",
+										"compare_value": "1"
+									},
+									"then": {
+										"value": true,
+										"value_type": "STATIC"
+									}
+								}
+							],
+							"else": {
+								"value": false,
+								"value_type": "STATIC"
+							}
+						}
+					}
+				],
+				"filters": {
+					"column": "campo",
+					"operator": "EQUALS",
+					"compare_value": "consultalimite"
+				}
+			}
+		},
+		{
 			"description": "idRetaguardaFormaPagTroco",
 			"alias": "idRetaguardaFormaPagTroco",
 			"is_json_extract": true,
