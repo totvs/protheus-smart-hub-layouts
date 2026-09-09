@@ -7,10 +7,12 @@
 	"idRetaguarda": "&self:oPublica['MIH_ID']",
 	"dataAtualizacao": "&self:oPublica['MIH_DATALT']",
 	"dataCadastro": "&self:oPublica['MIH_DATINC']",
+	"descontoMaximoItem": "&LjAuxPosic('PERFIL DE OPERADOR', 'MIH_ID', self:oPublica['MIH_ID'] , 'descontoMaximoItem')",
+	"descontoMaximoTotal": "&LjAuxPosic('PERFIL DE OPERADOR', 'MIH_ID', self:oPublica['MIH_ID'] , 'descontoMaximoTotal')",
 	"idProprietario": "&LjRetComp()",
 	"loteOrigem": "&Self:cLote",
 	"configPSH": {
-		"Version": "3.0",
+		"Version": "3.1",
 		"cargaInicial": false
 	}
 }
