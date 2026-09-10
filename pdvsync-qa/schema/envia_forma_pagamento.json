@@ -164,9 +164,17 @@
 				"filters": {
 					"column": "campo",
 					"operator": "EQUALS",
-					"compare_value": "consultalimite"
+					"compare_value": "consultaLimite"
 				}
-			}
+			},
+			"transformations": [
+				{
+					"function": "COALESCE",
+					"params": {
+						"fallback_value": false
+					}
+				}
+			]			
 		},
 		{
 			"description": "idRetaguardaFormaPagTroco",
