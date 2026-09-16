@@ -21,9 +21,9 @@
     "A1_EMAIL": "&self:oRegistro['Email']",
     "A1_DTNASC": "&self:oRegistro['DataNascimento']",
     "AI0": {
-		"AI0_ANACRE": "&IIF(self:oRegistro['pendenteAnaliseCredito'],'1','2')"
+		"AI0_ANACRE": "&IIF(self:oRegistro['PendenteAnaliseCredito'],'1','2')"
 	},
     "configPSH": {
-        "Version": 1.6
+        "Version": 1.7
     }
 }
