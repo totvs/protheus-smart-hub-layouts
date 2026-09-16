@@ -1,0 +1,23 @@
+{
+	"idRetaguarda": "&self:oPublica['MB8_CODREG'] + self:oPublica['MB8_REFGRD']",
+	"dataHoraVigenciaInicial": "&FwTimeStamp( 3, Posicione('MEI',1, XFILIAL('MEI')+self:oPublica['MB8_CODREG'], 'MEI_DATDE') )",
+	"dataHoraVigenciaFinal": "&FwTimeStamp( 3, Posicione('MEI',1, XFILIAL('MEI')+self:oPublica['MB8_CODREG'], 'MEI_DATATE') )",
+	"tipo": "0",
+	"quantidadeInicial": "&self:oPublica['MB8_QTDPRO']",
+	"tipoValor": "&IIF( self:oPublica['MB8_DESCPR'] > 0, 0, IIF( self:oPublica['MB8_DESCVL'] > 0, 1, 0 ) )",
+	"valor": "&IIF( self:oPublica['MB8_DESCPR'] > 0, self:oPublica['MB8_DESCPR'], self:oPublica['MB8_DESCVL'] )",
+	"idRetaguardaGrupoCliente": "&Posicione( 'MEI',1, XFILIAL('MEI')+self:oPublica['MB8_CODREG'], 'MEI_GRPVEN' )",
+	"idRetaguardaTabelaPreco": "&Posicione( 'MEI',1, XFILIAL('MEI')+self:oPublica['MB8_CODREG'], 'MEI_CODTAB' )",
+	"idRetaguardaCliente": "&Posicione( 'MEI',1, XFILIAL('MEI')+self:oPublica['MB8_CODREG'], 'MEI_CODCLI' ) + Posicione( 'MEI',1, XFILIAL('MEI')+self:oPublica['MB8_CODREG'], 'MEI_LOJA')",
+	"idRetaguardaProduto": "&self:oPublica['MB8_CODPRO']",
+	"idRetaguardaGrupoProduto": "&Posicione( 'SB1',1, XFILIAL('SB1')+self:oPublica['MB8_CODPRO'], 'B1_GRUPO' )",
+	"prioritaria": "&IIF( Posicione('MEJ',2,XFILIAL('MEJ')+self:oPublica['MB8_CODREG'], 'MEJ_PRINUM') == '01', .T., .F. )",
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"idProprietario": "&LjRetComp()",
+	"loteOrigem": "&Self:cLote",
+	"situacao": "&IIF(self:cEvento == '2', 0, 1)",
+	"configPSH": {
+		"Version": 1.0,
+		"cargaInicial": false
+	}
+}
