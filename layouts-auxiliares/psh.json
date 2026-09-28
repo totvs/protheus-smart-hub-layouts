@@ -239,7 +239,55 @@
 				"ComponentLabel": "Quantidade de produtos por thread na geração de impostos"
 			},
 			"ComponentContent": 1000
+		},
+		{
+			"ContentType": "Logical",
+			"IdComponent": "impostoPorGrupo",
+			"Component": {
+				"ComponentType": "CHECKBOX",
+				"Parameters": {
+					"Order": "11",
+					"List": null,
+					"Size": 1,
+					"F3": null,
+					"Required": false,
+					"Picture": null,
+					"Valid": null,
+					"IniPad": ".F.",
+					"CanChange": false,
+					"Trigger": null,
+					"Help": [
+						"Define se a geração de impostos será feita agrupando produtos com as mesmas caracteriscas. Caso esteja ativo, utiliza o campo Agrupador de impostos por grupo para relacionar os produtos do mesmo grupo e assim executar o calculo fiscal uma única vez por grupo."
+					]
+				},
+				"ComponentLabel": "Gera imposto por grupo"
+			},
+			"ComponentContent": false
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "agrupadorImpostos",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "12",
+					"List": null,
+					"Size": 254,
+					"F3": null,
+					"Required": false,
+					"Picture": "@!",
+					"Valid": null,
+					"IniPad": "B1_FILIAL, B1_TIPO, B1_UM, B1_PICM, B1_POSIPI, B1_EX_NCM, B1_PICMRET, B1_ORIGEM, B1_CLASFIS, B1_GRTRIB, B1_CNATREC, B1_TNATREC, B1_GRPNATR, B1_FECP, B1_CEST",
+					"CanChange": false,
+					"Trigger": null,
+					"Help": [
+						"Define os campos do produto que irão determinar o grupo."
+					]
+				},
+				"ComponentLabel": "Agrupador de impostos por grupo"
+			},
+			"ComponentContent": "B1_FILIAL, B1_TIPO, B1_UM, B1_PICM, B1_POSIPI, B1_EX_NCM, B1_PICMRET, B1_ORIGEM, B1_CLASFIS, B1_GRTRIB, B1_CNATREC, B1_TNATREC, B1_GRPNATR, B1_FECP, B1_CEST"
 		}
 	],
-	"LayoutVersion": 4.0
+	"LayoutVersion": 5.0
 }
