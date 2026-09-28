@@ -1,0 +1,29 @@
+{
+	"idRetaguarda": "&self:oPublica['MB2_CODREG'] + self:oPublica['MB2_REFGRD']",
+	"dataHoraVigenciaInicial": "&FwTimeStamp( 3, Iif( Len( self:oPublica['MEI'] ) > 0 , STOD( self:oPublica['MEI'][1]['MEI_DATDE'] ), date() ) )",
+	"dataHoraVigenciaFinal": "&FwTimeStamp( 3, Iif( Len( self:oPublica['MEI'] ) > 0 , STOD( self:oPublica['MEI'][1]['MEI_DATATE'] ), date() ) )",
+	"tipo": "&IIF( Len( self:oPublica['MEI'] ) > 0 , Iif( self:oPublica['MEI'][1]['MEI_TPIMPD'] == 'T', 0, 1), 0 )",
+	"valor": "&IIF( self:oPublica['MB2_PDESC'] > 0, self:oPublica['MB2_PDESC'], self:oPublica['MB2_VLRFX'] )",
+	"tipoValor": "&IIF( self:oPublica['MB2_PDESC'] > 0, 0, 1 )",
+	"valorVendaInicial": "&self:oPublica['MB2_VLRINI']",
+	"valorVendaFinal": "&self:oPublica['MB2_VLRFIM']",
+	"idRetaguardaGrupoCliente": "&IIF( Len( self:oPublica['MEI'] ) > 0, self:oPublica['MEI'][1]['MEI_GRPVEN'], ' ' )",
+	"idRetaguardaCliente": "&IIF( Len( self:oPublica['MEI'] ) > 0, self:oPublica['MEI'][1]['MEI_CODCLI'] + self:oPublica['MEI'][1]['MEI_LOJA'], ' ' )", 
+	"idRetaguardaTabelaPreco": "&IIF( Len( self:oPublica['MEI'] ) > 0, self:oPublica['MEI'][1]['MEI_CODTAB'], ' ' )",
+	"prioritaria": "&IIF( Posicione('MEJ',2,XFILIAL('MEJ')+self:oPublica['MB2_CODREG'], 'MEJ_PRINUM') == '01', .T., .F. )",
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"idProprietario": "&LjRetComp()",
+	"loteOrigem": "&Self:cLote",
+	"situacao": "&IIF( self:cEvento == '2', 0, IIF( Len( self:oPublica['MEI'] ) > 0, IIF( self:oPublica['MEI'][1]['MEI_ATIVA'] == '2', 0, 1 ), 0 ) )",
+	"regraDescontoAcrescimoItens": [
+		{
+			"TableNode": "MB5",
+			"idRetaguardaPagamentoForma": "&self:oPublica['MB5'][nItem]['MB5_CODFRM']",
+			"idRetaguardaPagamentoCondicao": "&self:oPublica['MB5'][nItem]['MB5_CODPG']"
+		}
+	],
+	"configPSH": {
+		"Version": 1.4,
+		"cargaInicial": false
+	}
+}
