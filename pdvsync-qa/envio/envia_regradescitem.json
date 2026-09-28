@@ -1,23 +1,23 @@
 {
 	"idRetaguarda": "&self:oPublica['MB8_CODREG'] + self:oPublica['MB8_REFGRD']",
-	"dataHoraVigenciaInicial": "&FwTimeStamp( 3, Posicione('MEI',1, XFILIAL('MEI')+self:oPublica['MB8_CODREG'], 'MEI_DATDE') )",
-	"dataHoraVigenciaFinal": "&FwTimeStamp( 3, Posicione('MEI',1, XFILIAL('MEI')+self:oPublica['MB8_CODREG'], 'MEI_DATATE') )",
+	"dataHoraVigenciaInicial": "&FwTimeStamp( 3, Iif( Len( self:oPublica['MEI'] ) > 0 , STOD( self:oPublica['MEI'][1]['MEI_DATDE'] ), date() ) )",
+	"dataHoraVigenciaFinal": "&FwTimeStamp( 3, Iif( Len( self:oPublica['MEI'] ) > 0 , STOD( self:oPublica['MEI'][1]['MEI_DATATE'] ), date() ) )",
 	"tipo": "0",
 	"quantidadeInicial": "&self:oPublica['MB8_QTDPRO']",
 	"tipoValor": "&IIF( self:oPublica['MB8_DESCPR'] > 0, 0, IIF( self:oPublica['MB8_DESCVL'] > 0, 1, 0 ) )",
 	"valor": "&IIF( self:oPublica['MB8_DESCPR'] > 0, self:oPublica['MB8_DESCPR'], self:oPublica['MB8_DESCVL'] )",
-	"idRetaguardaGrupoCliente": "&Posicione( 'MEI',1, XFILIAL('MEI')+self:oPublica['MB8_CODREG'], 'MEI_GRPVEN' )",
-	"idRetaguardaTabelaPreco": "&Posicione( 'MEI',1, XFILIAL('MEI')+self:oPublica['MB8_CODREG'], 'MEI_CODTAB' )",
-	"idRetaguardaCliente": "&Posicione( 'MEI',1, XFILIAL('MEI')+self:oPublica['MB8_CODREG'], 'MEI_CODCLI' ) + Posicione( 'MEI',1, XFILIAL('MEI')+self:oPublica['MB8_CODREG'], 'MEI_LOJA')",
+	"idRetaguardaGrupoCliente": "&IIF( Len( self:oPublica['MEI'] ) > 0, self:oPublica['MEI'][1]['MEI_GRPVEN'], ' ' )",
+	"idRetaguardaTabelaPreco": "&IIF( Len( self:oPublica['MEI'] ) > 0, self:oPublica['MEI'][1]['MEI_CODTAB'], ' ' )",
+	"idRetaguardaCliente": "&IIF( Len( self:oPublica['MEI'] ) > 0, self:oPublica['MEI'][1]['MEI_CODCLI'] + self:oPublica['MEI'][1]['MEI_LOJA'], ' ' )", 
 	"idRetaguardaProduto": "&self:oPublica['MB8_CODPRO']",
 	"idRetaguardaGrupoProduto": "&Posicione( 'SB1',1, XFILIAL('SB1')+self:oPublica['MB8_CODPRO'], 'B1_GRUPO' )",
 	"prioritaria": "&IIF( Posicione('MEJ',2,XFILIAL('MEJ')+self:oPublica['MB8_CODREG'], 'MEJ_PRINUM') == '01', .T., .F. )",
 	"idInquilino": "&self:oConfAssin['inquilino']",
 	"idProprietario": "&LjRetComp()",
 	"loteOrigem": "&Self:cLote",
-	"situacao": "&IIF(self:cEvento == '2', 0, 1)",
+	"situacao": "&IIF( self:cEvento == '2', 0, IIF( Len( self:oPublica['MEI'] ) > 0, IIF( self:oPublica['MEI'][1]['MEI_ATIVA'] == '2', 0, 1 ), 0 ) )",
 	"configPSH": {
-		"Version": 1.0,
+		"Version": 1.1,
 		"cargaInicial": false
 	}
 }
