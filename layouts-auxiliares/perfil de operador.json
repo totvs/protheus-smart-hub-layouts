@@ -6,6 +6,7 @@
             "Component": {
                 "ComponentType": "GET",
                 "Parameters": {
+					"Order": "01",
                     "List": null,
                     "Size": "TAMSX3('MIH_DESC')[1]",
                     "F3": null,
@@ -25,7 +26,45 @@
                 "ComponentLabel": "Perfil"
             },
             "ComponentContent": ""
-        }
+        },
+		{
+			"ContentType": "Number",
+			"IdComponent": "descontoMaximoItem",  
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "02",
+					"List": null,
+					"Size": 4,
+					"F3": null,
+					"Required": false,
+					"Picture": "@E 99.99",
+					"Valid": null,
+					"CanChange": true
+				},
+				"ComponentLabel": "Desconto Máximo por Item"
+			},
+			"ComponentContent": ""
+		},
+		{
+			"ContentType": "Number",
+			"IdComponent": "descontoMaximoTotal",  
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "03",
+					"List": null,
+					"Size": 4,
+					"F3": null,
+					"Required": false,
+					"Picture": "@E 99.99",
+					"Valid": null,
+					"CanChange": true
+				},
+				"ComponentLabel": "Desconto Máximo Total"
+			},
+			"ComponentContent": ""
+		}
     ],
-    "LayoutVersion": 1.2
-}  
+    "LayoutVersion": 3.0
+}
