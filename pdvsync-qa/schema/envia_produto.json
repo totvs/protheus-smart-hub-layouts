@@ -822,17 +822,6 @@
 			}
 		},
 		{
-			"description": "id",
-			"column_name": "SB1.B1_COD",
-			"alias": "id",
-			"is_physical": true,
-			"transformations": [
-				{
-					"function": "TRIM"
-				}
-			]
-		},
-		{
 			"description": "idInquilino",
 			"alias": "idInquilino",
 			"is_json_extract": true,
