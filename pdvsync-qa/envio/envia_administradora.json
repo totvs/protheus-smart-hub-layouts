@@ -12,7 +12,8 @@
 	"idProprietario": "&LjRetComp()",
 	"loteOrigem": "&self:cLote",
 	"configPSH": {
-		"Version": "2.1",
-		"cargaInicial": false
+		"Version": 3.0,
+		"cargaInicial": false,
+		"camposExigidos": "AE_PARCATE"
 	}
 }
