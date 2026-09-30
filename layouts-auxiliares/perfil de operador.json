@@ -44,7 +44,7 @@
 				},
 				"ComponentLabel": "Desconto Máximo por Item"
 			},
-			"ComponentContent": ""
+			"ComponentContent": 0
 		},
 		{
 			"ContentType": "Number",
@@ -63,8 +63,8 @@
 				},
 				"ComponentLabel": "Desconto Máximo Total"
 			},
-			"ComponentContent": ""
+			"ComponentContent": 0
 		}
     ],
-    "LayoutVersion": 3.0
+    "LayoutVersion": 3.1
 }
