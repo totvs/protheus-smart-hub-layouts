@@ -7,13 +7,13 @@
 	"nome": "&self:oPublica['MEC_MODELO']",
 	"geracao": "&self:oPublica['MEC_GERACA']",
 	"sistemaDirecao": "&self:oPublica['MEC_TPDIRE']",
-	"anoFabricacaoInicio": "&Substr(self:oPublica['MEC_FABINI'],3,4)",
-	"anoFabricacaoFim": "&Substr(self:oPublica['MEC_FABFIM'],3,4)",
+	"anoFabricacaoInicio": "&Val(self:oPublica['MEC_FABINI'])",	
+	"anoFabricacaoFim": "&Val(self:oPublica['MEC_FABFIM'])",	 
 	"loteOrigem": "&self:cLote",
 	"idProprietario": "&LjRetComp()",
 	"idInquilino": "&self:oConfAssin['inquilino']",
 	"configPSH": {
-		"Version": "1.0",
+		"Version": "1.1",
 		"cargaInicial": false
 	}
 }
