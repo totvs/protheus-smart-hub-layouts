@@ -2,7 +2,7 @@
 	"idRetaguarda": "&self:oPublica['MB8_CODREG'] + self:oPublica['MB8_REFGRD']",
 	"dataHoraVigenciaInicial": "&FwTimeStamp( 3, Iif( Len( self:oPublica['MEI'] ) > 0 , STOD( self:oPublica['MEI'][1]['MEI_DATDE'] ), date() ) )",
 	"dataHoraVigenciaFinal": "&FwTimeStamp( 3, Iif( Len( self:oPublica['MEI'] ) > 0 , STOD( self:oPublica['MEI'][1]['MEI_DATATE'] ), date() ) )",
-	"tipo": "0",
+	"tipo": 0,
 	"quantidadeInicial": "&self:oPublica['MB8_QTDPRO']",
 	"tipoValor": "&IIF( self:oPublica['MB8_DESCPR'] > 0, 0, IIF( self:oPublica['MB8_DESCVL'] > 0, 1, 0 ) )",
 	"valor": "&IIF( self:oPublica['MB8_DESCPR'] > 0, self:oPublica['MB8_DESCPR'], self:oPublica['MB8_DESCVL'] )",
