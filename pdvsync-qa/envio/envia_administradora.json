@@ -12,8 +12,17 @@
 	"idProprietario": "&LjRetComp()",
 	"loteOrigem": "&self:cLote",
 	"configPSH": {
-		"Version": 3.0,
+		"Version": 4.0,
 		"cargaInicial": false,
-		"camposExigidos": "AE_PARCATE"
+		"camposExigidos": [
+			"AE_PARCATE",
+			"MEN_FILIAL",
+			"MEN_CODADM",
+			"MEN_ITEM",
+			"MEN_DESC",
+			"MEN_PARINI",
+			"MEN_PARFIN",
+			"MEN_TAXJUR"
+		]
 	}
 }
