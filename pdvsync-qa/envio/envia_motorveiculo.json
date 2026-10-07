@@ -1,18 +1,18 @@
 {
-	"idRetaguarda": "&self:oPublica['MEA_FILIAL']+self:oPublica['MEA_CODMOT']", 
+	"idRetaguarda": "&self:oPublica['MEA_FILIAL']+self:oPublica['MEA_CODMOT']",
 	"situacao": "&IIF(self:cEvento == '2', 0, 1)",
 	"nome": "&self:oPublica['MEA_NOME']",
 	"descricaoTecnica": "&self:oPublica['MEA_DESCR']",
-	"tipoCombustivel": "&self:oPublica['MEA_COMBUS']",
-	"tipoMotor": "&self:oPublica['MEA_ASPIRA']",
+	"tipoCombustivel": "&allTrim( posicione('SX5', 1, xFilial('SX5')+ 'WP' + self:oPublica['MEA_COMBUS'], 'X5_DESCRI') )",
+	"tipoMotor": "&allTrim( posicione('SX5', 1, xFilial('SX5')+ 'WE' +  self:oPublica['MEA_TPASPI'], 'X5_DESCRI') )",
 	"numeroValvula": "&self:oPublica['MEA_TOTVAL']",
 	"comandoValvula": "&self:oPublica['MEA_COMVAL']",
 	"potencia": "&self:oPublica['MEA_POTENC']",
-	"loteOrigem": "&self:cLote",	
+	"loteOrigem": "&self:cLote",
 	"idProprietario": "&LjRetComp()",
 	"idInquilino": "&self:oConfAssin['inquilino']",
 	"configPSH": {
-		"Version": "1.0",
+		"Version": 1.2,
 		"cargaInicial": false
 	}
 }
