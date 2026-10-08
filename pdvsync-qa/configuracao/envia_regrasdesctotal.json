@@ -1,0 +1,9 @@
+{
+	"url": "https://pdvsync-core-preco-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/59/2",
+	"codigotipo": "59",
+	"descricaotipo": "RegraDescontoAcrescimo",
+	"qtdEnvio": 100,
+	"configPSH": {
+		"Version": "1.1"
+	}
+}
