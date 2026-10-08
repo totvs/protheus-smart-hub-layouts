@@ -1,7 +1,7 @@
 {
 	"idRetaguarda": "&self:oPublica['MB2_CODREG'] + self:oPublica['MB2_REFGRD']",
-	"dataHoraVigenciaInicial": "&FwTimeStamp( 3, Iif( Len( self:oPublica['MEI'] ) > 0 , STOD( self:oPublica['MEI'][1]['MEI_DATDE'] ), date() ) )",
-	"dataHoraVigenciaFinal": "&FwTimeStamp( 3, Iif( Len( self:oPublica['MEI'] ) > 0 , STOD( self:oPublica['MEI'][1]['MEI_DATATE'] ), date() ) )",
+	"dataHoraVigenciaInicial": "&FwTimeStamp( 3, Iif( Len( self:oPublica['MEI'] ) > 0 , STOD( self:oPublica['MEI'][1]['MEI_DATDE'] ), date() ), Iif( Len( self:oPublica['MEI'] ) > 0 , self:oPublica['MEI'][1]['MEI_HORADE'], time() ) )",
+	"dataHoraVigenciaFinal": "&FwTimeStamp( 3, Iif( Len( self:oPublica['MEI'] ) > 0 , STOD( self:oPublica['MEI'][1]['MEI_DATATE'] ), date() ), Iif( Len( self:oPublica['MEI'] ) > 0 , self:oPublica['MEI'][1]['MEI_HORATE'], time() ) )",
 	"tipo": "&IIF( Len( self:oPublica['MEI'] ) > 0 , Iif( self:oPublica['MEI'][1]['MEI_TPIMPD'] == 'T', 0, 1), 0 )",
 	"valor": "&IIF( self:oPublica['MB2_PDESC'] > 0, self:oPublica['MB2_PDESC'], self:oPublica['MB2_VLRFX'] )",
 	"tipoValor": "&IIF( self:oPublica['MB2_PDESC'] > 0, 0, 1 )",
@@ -23,7 +23,7 @@
 		}
 	],
 	"configPSH": {
-		"Version": 1.4,
+		"Version": 1.5,
 		"cargaInicial": false
 	}
 }
