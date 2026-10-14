@@ -1,7 +1,7 @@
 {
 	"descricao": "&'Condição ' + AllTrim(self:oPublica['AE_DESC'])",
 	"diasEntreParcelas": 30,
-	"numeroMaximoParcelas": "&IIF( self:oPublica['AE_PARCATE'] == 0, 1, self:oPublica['AE_PARCATE'] )",
+	"numeroMaximoParcelas": "&IIF( ValType( self:oPublica['MEN'] ) <> 'U', 0, IIF( self:oPublica['AE_PARCATE'] == 0, 1, self:oPublica['AE_PARCATE'] ) )",
 	"percentualMinimoEntrada": 0,
 	"prazoMaximoPrimeiraParcela": 0,
 	"solicitaDataDemaisParcelas": 0,
@@ -17,6 +17,16 @@
 			"situacao": "&IIF(self:cEvento == '1', 1, 0)"
 		}
 	],
+	"parcelas": [
+		{
+			"TableNode": "MEN",
+			"idRetaguardaParcela": "&self:oPublica['MEN'][nItem]['MEN_FILIAL']+self:oPublica['MEN'][nItem]['MEN_CODADM']+self:oPublica['MEN'][nItem]['MEN_ITEM']",
+			"descricaoParcela": "&self:oPublica['MEN'][nItem]['MEN_DESC']",
+			"numeroMinimoParcelas": "&self:oPublica['MEN'][nItem]['MEN_PARINI']",
+			"numeroMaximoParcelas": "&self:oPublica['MEN'][nItem]['MEN_PARFIN']",
+			"taxa": "&self:oPublica['MEN'][nItem]['MEN_TAXJUR']"
+		}
+	],
 	"sequencial": 0,
 	"idInquilino": "&self:oConfAssin['inquilino']",
 	"idRetaguarda": "&self:oPublica['AE_FILIAL'] + self:oPublica['AE_COD']",
@@ -25,7 +35,7 @@
 	"idProprietario": "&LjRetComp()",
 	"loteOrigem": "&self:cLote",
 	"configPSH": {
-		"Version": "2.0",
+		"Version": "3.0",
 		"cargaInicial": false
 	}
 }

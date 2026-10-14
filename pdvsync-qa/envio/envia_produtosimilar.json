@@ -1,13 +1,13 @@
 {
-	"idRetaguarda": "&self:oPublica['MFY_FILIAL']+self:oPublica['MFY_FILPRO']+self:oPublica['MFY_CODPRO']",
-	"idRetaguardaProduto": "&self:oPublica['MFY_FILPRO']+self:oPublica['MFY_CODPRO']",			
-	"idRetaguardaSimilar": "&self:oPublica['MFY_FILIAL']+self:oPublica['MFY_CODGRP']",		 
+	"idRetaguarda": "&PadR( self:oPublica['MFY_FILIAL'], TAMSX3('MFY_FILIAL')[1] ) + PadR( self:oPublica['MFY_FILPRO'], TAMSX3('MFY_FILPRO')[1] ) + self:oPublica['MFY_CODPRO']",
+	"idRetaguardaProduto": "&PadR( self:oPublica['MFY_FILPRO'], TAMSX3('MFY_FILPRO')[1] ) + self:oPublica['MFY_CODPRO']",			
+	"idRetaguardaSimilar": "&PadR( self:oPublica['MFY_FILIAL'], TAMSX3('MFY_FILIAL')[1] ) + self:oPublica['MFY_CODGRP']",		 
 	"situacao": "&IIF(self:cEvento == '2', 0, 1)",
 	"loteOrigem": "&self:cLote",
 	"idProprietario": "&LjRetComp()",
 	"idInquilino": "&self:oConfAssin['inquilino']",
 	"configPSH": {
-		"Version": "1.1",
+		"Version": "1.2",
 		"cargaInicial": false
 	}
 }
