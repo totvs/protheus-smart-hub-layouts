@@ -861,6 +861,17 @@
 			]
 		},
 		{
+			"description": "idRetaguardaProdutoGrupo",
+			"column_name": "SB1.B1_GRUPO",
+			"alias": "idRetaguardaProdutoGrupo",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
 			"alias": "dataAtualizacao",
 			"is_physical": false,
 			"db_function": "CURRENT_TIMESTAMP"

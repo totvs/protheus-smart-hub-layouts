@@ -326,6 +326,17 @@
 			]
 		},
 		{
+			"description": "idRetaguardaTabelaPreco",
+			"column_name": "SA1.A1_TABELA",
+			"alias": "idRetaguardaTabelaPreco",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
 			"description": "idProprietario",
 			"alias": "idProprietario",
 			"is_physical": false,
