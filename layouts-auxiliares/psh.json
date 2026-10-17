@@ -277,7 +277,7 @@
 					"Required": false,
 					"Picture": "@!",
 					"Valid": null,
-					"IniPad": "B1_FILIAL, B1_TIPO, B1_UM, B1_PICM, B1_POSIPI, B1_EX_NCM, B1_PICMRET, B1_ORIGEM, B1_CLASFIS, B1_GRTRIB, B1_CNATREC, B1_TNATREC, B1_GRPNATR, B1_FECP, B1_CEST",
+					"IniPad": "'B1_FILIAL, B1_TIPO, B1_UM, B1_PICM, B1_POSIPI, B1_EX_NCM, B1_PICMRET, B1_ORIGEM, B1_CLASFIS, B1_GRTRIB, B1_CNATREC, B1_TNATREC, B1_GRPNATR, B1_FECP, B1_CEST'",
 					"CanChange": false,
 					"Trigger": null,
 					"Help": [
@@ -289,5 +289,5 @@
 			"ComponentContent": "B1_FILIAL, B1_TIPO, B1_UM, B1_PICM, B1_POSIPI, B1_EX_NCM, B1_PICMRET, B1_ORIGEM, B1_CLASFIS, B1_GRTRIB, B1_CNATREC, B1_TNATREC, B1_GRPNATR, B1_FECP, B1_CEST"
 		}
 	],
-	"LayoutVersion": 5.0
+	"LayoutVersion": 5.1
 }
