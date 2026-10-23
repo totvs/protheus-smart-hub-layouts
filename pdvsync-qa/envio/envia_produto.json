@@ -23,14 +23,9 @@
 	"pesoliquido": "&self:oPublica['B1_PESO']",
 	"pesobruto": "&self:oPublica['B1_PESBRU']",
 	"controlaLote": "&Eval({|| cFilAnt := FwXFilial('SB1',self:oPublica['B1_FILIAL'],'E','E','E'),rastro(self:oPublica['B1_COD'], 'L')})",
-    "idRetaguardaMarca": "&IIF( FwAliasInDic('D4Z') .And. D4Z->( columnPos('D4Z_CODMAR') ) > 0 .And. Len( self:oPublica['D4Z'] ) > 0, self:oPublica['D4Z'][1]['D4Z_FILIAL'] + self:oPublica['D4Z'][1]['D4Z_CODMAR'], '')",
+	"idRetaguardaMarca": "&IIF( FwAliasInDic('D4Z') .And. D4Z->( columnPos('D4Z_CODMAR') ) > 0 .And. Len( self:oPublica['D4Z'] ) > 0, RTrim( self:oPublica['D4Z'][1]['D4Z_FILIAL'] ) + RTrim( self:oPublica['D4Z'][1]['D4Z_CODMAR'] ), '')",
 	"incentivado": "&IIF( FwAliasInDic('D4Z') .And. D4Z->( columnPos('D4Z_PDVPRI') ) > 0 .And. Len( self:oPublica['D4Z'] ) > 0 .And. self:oPublica['D4Z'][1]['D4Z_PDVPRI'] == '1', .T., .F.)",
-	"fabricante": [
-		{
-			"TableNode": "MG1",
-			"idRetaguardaFabricante": "&self:oPublica['MG1'][nItem]['MG1_FILFAB']+self:oPublica['MG1'][nItem]['MG1_CODFAB']+self:oPublica['MG1'][nItem]['MG1_LOJFAB']"
-		}
-	],
+	"idRetaguardaFabricante": "&IIF( Len( self:oPublica['MG1'] ) > 0 , self:oPublica['MG1'][1]['MG1_FILFAB']+self:oPublica['MG1'][1]['MG1_CODFAB']+self:oPublica['MG1'][1]['MG1_LOJFAB'], '')",
 	"produtoKits": [
 		{
 			"TableNode": "MEV",
@@ -72,7 +67,7 @@
 	],
 	"ncms": [
 		{
-			"idRetaguarda": "&self:oPublica['B1_POSIPI'] + self:oPublica['B1_EX_NCM']",
+			"idRetaguarda": "&RTrim( self:oPublica['B1_POSIPI'] ) + RTrim( self:oPublica['B1_EX_NCM'] )",
 			"IdProprietario": "&LjRetComp()"
 		}
 	],
@@ -87,7 +82,7 @@
 		}
 	],
 	"configPSH": {
-		"Version": 4.5,
+		"Version": 5.2,
 		"cargaInicial": false
 	}
 }
