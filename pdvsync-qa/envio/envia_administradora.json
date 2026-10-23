@@ -12,10 +12,11 @@
 	"idProprietario": "&LjRetComp()",
 	"loteOrigem": "&self:cLote",
 	"configPSH": {
-		"Version": 5.0,
+		"Version": 5.1,
 		"cargaInicial": false,
 		"camposExigidos": [
-			"AE_PARCATE"
+			"AE_PARCATE",
+			"AE_PARCDE"
 		]
 	}
 }
