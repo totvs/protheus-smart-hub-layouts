@@ -1,6 +1,7 @@
 {
 	"descricao": "&'Condição ' + AllTrim(self:oPublica['AE_DESC'])",
 	"diasEntreParcelas": 30,
+	"numeroMinimoParcelas": "&IIF( self:oPublica['AE_PARCDE'] == 0, 1, self:oPublica['AE_PARCDE'] )",
 	"numeroMaximoParcelas": "&IIF( self:oPublica['AE_PARCATE'] == 0, 1, self:oPublica['AE_PARCATE'] )",
 	"percentualMinimoEntrada": 0,
 	"prazoMaximoPrimeiraParcela": 0,
@@ -25,7 +26,7 @@
 	"idProprietario": "&LjRetComp()",
 	"loteOrigem": "&self:cLote",
 	"configPSH": {
-		"Version": "4.0",
+		"Version": "4.1",
 		"cargaInicial": false
 	}
 }
