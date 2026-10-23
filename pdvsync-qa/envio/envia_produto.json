@@ -25,7 +25,7 @@
 	"controlaLote": "&Eval({|| cFilAnt := FwXFilial('SB1',self:oPublica['B1_FILIAL'],'E','E','E'),rastro(self:oPublica['B1_COD'], 'L')})",
 	"idRetaguardaMarca": "&IIF( FwAliasInDic('D4Z') .And. D4Z->( columnPos('D4Z_CODMAR') ) > 0 .And. Len( self:oPublica['D4Z'] ) > 0, RTrim( self:oPublica['D4Z'][1]['D4Z_FILIAL'] ) + RTrim( self:oPublica['D4Z'][1]['D4Z_CODMAR'] ), '')",
 	"incentivado": "&IIF( FwAliasInDic('D4Z') .And. D4Z->( columnPos('D4Z_PDVPRI') ) > 0 .And. Len( self:oPublica['D4Z'] ) > 0 .And. self:oPublica['D4Z'][1]['D4Z_PDVPRI'] == '1', .T., .F.)",
-	"idRetaguardaFabricante": "&self:oPublica['MG1'][1]['MG1_FILFAB']+self:oPublica['MG1'][1]['MG1_CODFAB']+self:oPublica['MG1'][1]['MG1_LOJFAB']",
+	"idRetaguardaFabricante": "&IIF( Len( self:oPublica['MG1'] ) > 0 , self:oPublica['MG1'][1]['MG1_FILFAB']+self:oPublica['MG1'][1]['MG1_CODFAB']+self:oPublica['MG1'][1]['MG1_LOJFAB'], '')",
 	"produtoKits": [
 		{
 			"TableNode": "MEV",
@@ -82,7 +82,7 @@
 		}
 	],
 	"configPSH": {
-		"Version": 5.1,
+		"Version": 5.2,
 		"cargaInicial": false
 	}
 }
