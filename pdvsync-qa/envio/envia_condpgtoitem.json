@@ -1,0 +1,15 @@
+{
+	"idRetaguarda": "&self:oPublica['MEN_FILIAL'] + self:oPublica['MEN_ITEM'] + self:oPublica['MEN_CODADM']",
+	"descricao": "&IIF( Len( self:oPublica['SAE'] ) > 0, Left( self:oPublica['SAE'][1]['AE_DESC'], 50 ), 'NÃO LOCALIZADA' )",
+	"taxa": "&IIF( self:oPublica['MEN_PERDES'] > 0 , (0-self:oPublica['MEN_PERDES']), self:oPublica['MEN_TAXJUR'] )",
+	"numeroMinimoParcelas": "&IIF( self:oPublica['MEN_PARINI'] == 0, 1, self:oPublica['MEN_PARINI'] )",
+	"numeroMaximoParcelas": "&IIF( self:oPublica['MEN_PARFIN'] == 0, 1, self:oPublica['MEN_PARFIN'] )",
+	"situacao": "&IIF(self:cEvento == '1', 1, 0)",
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"idProprietario": "&LjRetComp()",
+	"loteOrigem": "&self:cLote",
+	"configPSH": {
+		"Version": "1.0",
+		"cargaInicial": false
+	}
+}
