@@ -2,7 +2,7 @@
   "chave": "&self:oPublica['idExterno']",
   "idRetaguarda": "&self:oPublica['filial'] + self:oPublica['parametro']",
   "valor": "&self:oPublica['valor']",
-  "situacao": "&IIf(self:cEvento == '2', 2, 1)",
+  "situacao": "&IIf(self:cEvento == '1', 1, 0)",
   "idInquilino": "&self:oConfAssin['inquilino']",
   "idProprietario": "&LjRetComp(PadR(self:oPublica['filial'],TamSx3('MIH_FILIAL')[1]),'CADASTRO DE LOJA')",
   "loteOrigem": "&Self:cLote"
