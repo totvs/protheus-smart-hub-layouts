@@ -1,9 +1,9 @@
 {
-  "chave": "&self:oPublica['parametro']",
-  "idRetaguarda": "&self:oPublica['idExterno']",
+  "chave": "&self:oPublica['idExterno']",
+  "idRetaguarda": "&AllTrim(self:oPublica['filial']) + AllTrim(self:oPublica['parametro'])",
   "valor": "&self:oPublica['valor']",
-  "situacao": "&IIf(self:cEvento == '2', 2, 1)",
+  "situacao": 1,
   "idInquilino": "&self:oConfAssin['inquilino']",
-  "idProprietario": "&LjRetComp(PadR(self:oPublica['filial'],TamSx3('A3_FILIAL')[1]),'CADASTRO DE LOJA')",
+  "idProprietario": "&LjRetComp(PadR(self:oPublica['filial'],TamSx3('MIH_FILIAL')[1]),'CADASTRO DE LOJA')",
   "loteOrigem": "&Self:cLote"
 }
