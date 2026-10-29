@@ -1,9 +1,9 @@
 {
-  "chave": "&Val(AllTrim(self:oPublica['MIH_CHAVE']))",
-  "idRetaguarda": "&self:oPublica['MIH_ID']",
-  "valor": "&self:oPublica['MIH_VALOR']",
-  "situacao": 1,
+  "chave": "&self:oPublica['parametro']",
+  "idRetaguarda": "&self:oPublica['idExterno']",
+  "valor": "&self:oPublica['valor']",
+  "situacao": "&IIf(self:cEvento == '2', 2, 1)",
   "idInquilino": "&self:oConfAssin['inquilino']",
-  "idProprietario": "&LjRetComp(PadR(self:oPublica['IDFilialProtheus'],TamSx3('A3_FILIAL')[1]),'CADASTRO DE LOJA')",
+  "idProprietario": "&LjRetComp(PadR(self:oPublica['filial'],TamSx3('A3_FILIAL')[1]),'CADASTRO DE LOJA')",
   "loteOrigem": "&Self:cLote"
 }
