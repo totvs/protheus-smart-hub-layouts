@@ -2,12 +2,12 @@
 	"idRetaguarda": "&self:oPublica['MI4_FILIAL']+self:oPublica['MI4_CODCON']+self:oPublica['MI4_CODGRU']", 
 	"situacao": "&IIF(self:cEvento == '2', 0, 1)",
 	"idRetaguardaProdutoConjunto": "&self:oPublica['MI4_FILIAL']+self:oPublica['MI4_CODCON']",
-	"idRetaguardaProdutoGrupo": "&xFilial('SBM')+self:oPublica['MI4_CODGRU']",
+	"idRetaguardaProdutoGrupo": "&self:oPublica['MI4_FILIAL']+self:oPublica['MI4_CODGRU']",
 	"loteOrigem": "&self:cLote",	
 	"idProprietario": "&LjRetComp()",
 	"idInquilino": "&self:oConfAssin['inquilino']",
 	"configPSH": {
-		"Version": "1.2",
+		"Version": "1.3",
 		"cargaInicial": false
 	}
 }
