@@ -1,14 +1,22 @@
 {
-	"idRetaguarda": "&self:oPublica['D4X_FILIAL']+self:oPublica['D4X_PROD']+self:oPublica['D4X_CARAC']",
-	"idRetaguardaProduto": "&self:oPublica['D4X_PROD']",
-	"idRetaguardaEspecificacaoTecnica": "&xFILIAL('D4V')+'|'+self:oPublica['D4X_CARAC']+'|'+self:oPublica['D4X_PROD']",
-	"exibir": "&iif( self:oPublica['D4X_EXIPDV'] == '1', .T., .F. )",		 
+	"idRetaguarda": "&self:oPublica['D4X_FILIAL']+self:oPublica['D4X_CARAC']+self:oPublica['D4X_PROD']",
 	"situacao": "&IIF(self:cEvento == '2', 0, 1)",
+	"descricao": "&IIF( Len( self:oPublica['D4V'] ) > 0, self:oPublica['D4V'][1]['D4V_NOME'], ' ')",
+	"valor": "&self:oPublica['D4X_VALOR']",
+	"especificacaoTecnicaProduto": [
+			{
+				"TableNode": "D4V",
+				"idRetaguarda": "&self:oPublica['D4X_FILIAL']+self:oPublica['D4X_CARAC']+self:oPublica['D4X_PROD']",
+				"situacao": "&IIF(self:cEvento == '2', 0, 1)",
+				"idRetaguardaProduto": "&self:oPublica['D4X_FILIAL']+self:oPublica['D4X_PROD']",
+				"exibir": "&iif( self:oPublica['D4X_EXIPDV'] == '1', .T., .F. )"
+			}
+		],
 	"loteOrigem": "&self:cLote",
 	"idProprietario": "&LjRetComp()",
 	"idInquilino": "&self:oConfAssin['inquilino']",
 	"configPSH": {
-		"Version": "1.1",
+		"Version": "1.2",
 		"cargaInicial": false
 	}
 }
