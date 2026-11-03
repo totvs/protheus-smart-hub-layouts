@@ -8,7 +8,7 @@
 				"TableNode": "D4V",
 				"idRetaguarda": "&self:oPublica['D4X_FILIAL']+self:oPublica['D4X_CARAC']+self:oPublica['D4X_PROD']",
 				"situacao": "&IIF(self:cEvento == '2', 0, 1)",
-				"idRetaguardaProduto": "&self:oPublica['D4X_FILIAL']+self:oPublica['D4X_PROD']",
+				"idRetaguardaProduto": "&self:oPublica['D4X_PROD']",
 				"exibir": "&iif( self:oPublica['D4X_EXIPDV'] == '1', .T., .F. )"
 			}
 		],
