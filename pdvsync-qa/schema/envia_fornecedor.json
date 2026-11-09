@@ -1,0 +1,180 @@
+{
+	"table": {
+		"name": "SA2",
+		"alias": "SA2"
+	},
+	"fields": [
+		{
+			"description": "idRetaguarda",
+			"alias": "idRetaguarda",
+			"is_physical": true,
+			"logic_operation": {
+				"type": "CONCAT",
+				"parts": [
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(SA2.A2_FILIAL)"
+					},
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(SA2.A2_COD)"
+					},
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(SA2.A2_LOJA)"
+					}
+				]
+			}
+		},
+		{
+			"description": "codigo",
+			"alias": "codigo",
+			"is_physical": true,
+			"logic_operation": {
+				"type": "CONCAT",
+				"parts": [
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(SA2.A2_FILIAL)"
+					},
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(SA2.A2_COD)"
+					},
+					{
+						"value_type": "COLUMN",
+						"value": "TRIM(SA2.A2_LOJA)"
+					}
+				]
+			}
+		},
+		{
+			"description": "nomeFantasia",
+			"alias": "nomeFantasia",
+			"column_name": "A2_NREDUZ",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "razaoSocial",
+			"alias": "razaoSocial",
+			"column_name": "A2_NOME",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"alias": "situacao",
+			"is_physical": false,
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"column": "SA2.D_E_L_E_T_",
+							"operator": "EQUALS",
+							"compare_value": "*"
+						},
+						"then": {
+							"value": 0,
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"value": 1,
+					"value_type": "STATIC"
+				}
+			}
+		},
+		{
+			"description": "incentivado",
+			"alias": "incentivado",
+			"exist_field": {
+				"table_name": "DKE",
+				"field_name": "DKE_PDVPRI",
+				"fallback_value": "0"
+			},
+			"is_physical": false,
+			"is_posicione": true,
+			"posicione_config": {
+				"target_table": "DKE",
+				"target_alias": "DKE",
+				"target_column": "DKE.DKE_PDVPRI",
+				"match_filter": {
+					"logic": "AND",
+					"conditions": [
+						{
+							"column": "DKE.DKE_FILIAL",
+							"operator": "EQUALS",
+							"compare_value": "SA2.A2_FILIAL",
+							"value_type": "COLUMN"
+						},
+						{
+							"column": "DKE.DKE_COD",
+							"operator": "EQUALS",
+							"compare_value": "SA2.A2_COD",
+							"value_type": "COLUMN"
+						},
+						{
+							"column": "DKE.DKE_LOJA",
+							"operator": "EQUALS",
+							"compare_value": "SA2.A2_LOJA",
+							"value_type": "COLUMN"
+						}
+					]
+				}
+			},
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
+			"description": "IdProprietario",
+			"alias": "IdProprietario",
+			"is_physical": false,
+			"is_proprietary": true,
+			"proprietary_config": {
+				"level": 0
+			}
+		},
+		{
+			"description": "idInquilino",
+			"alias": "idInquilino",
+			"is_json_extract": true,
+			"json_extract_config": {
+				"is_source_posicione": true,
+				"posicione_config": {
+					"target_table": "MHO",
+					"target_alias": "MHO",
+					"target_column": "MHO.MHO_CONFIG",
+					"match_filter": {
+						"column": "MHO.MHO_COD",
+						"operator": "EQUALS",
+						"value_type": "STATIC",
+						"compare_value": "PDVSYNC"
+					}
+				},
+				"root_path": "$",
+				"fields": [
+					{
+						"alias": "inquilino",
+						"json_path": "$.inquilino",
+						"type": "VARCHAR(30)",
+						"extract_field": true
+					}
+				]
+			}
+		}
+	],
+	"view_deleted": false
+}
