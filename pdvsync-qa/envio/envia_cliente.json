@@ -37,13 +37,13 @@
 			"estado": "&self:oPublica['A1_ESTE']",
 			"cep": "&self:oPublica['A1_CEPE']",
 			"bairro": "&self:oPublica['A1_BAIRROE']",
-			"situacao": 1,
+			"situacao": "&IIF(!Empty(self:oPublica['A1_ENDENT']) .AND. !Empty(self:oPublica['A1_BAIRROE']) .AND. !Empty(self:oPublica['A1_ESTE']) .AND. !Empty(self:oPublica['A1_MUNE']) .AND. !Empty(self:oPublica['A1_CEPE']),IIF(self:oPublica['A1_MSBLQL'] == '1' .OR. self:cEvento == '2', 0, 1),0)",
 			"tipoEndereco": 0,
 			"idRetaguarda": "&self:oPublica['A1_FILIAL'] + self:oPublica['A1_COD'] + self:oPublica['A1_LOJA']"
 		}
 	],
 	"configPSH": {
-		"Version": 4.0,
+		"Version": 4.1,
 		"cargaInicial": false
 	}
 }
