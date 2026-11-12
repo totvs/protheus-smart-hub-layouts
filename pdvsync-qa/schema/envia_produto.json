@@ -791,16 +791,12 @@
 		{
 			"alias": "ncms",
 			"is_physical": false,
-			"is_relationship": true,
-			"relationship_config": {
-				"relationship_type": "ONE_TO_MANY",
-				"target_table": "SB1",
-				"table_alias": "SB1NCM",
-				"parent_key": "SB1.B1_COD",
-				"child_key": "SB1NCM.B1_COD",
+			"is_node": true,
+			"node_config": {
+				"node_type": "array",
 				"fields": [
 					{
-						"column_name": "SB1NCM.B1_POSIPI",
+						"column_name": "SB1.B1_POSIPI",
 						"alias": "idRetaguarda",
 						"is_physical": true,
 						"transformations": [

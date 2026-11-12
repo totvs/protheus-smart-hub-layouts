@@ -304,6 +304,17 @@
 			}
 		},
 		{
+			"description": "idRetaguardaGrupoCliente",
+			"column_name": "SA1.A1_GRPVEN",
+			"alias": "idRetaguardaGrupoCliente",
+			"is_physical": true,
+			"transformations": [
+				{
+					"function": "TRIM"
+				}
+			]
+		},
+		{
 			"alias": "dataAtualizacao",
 			"is_physical": false,
 			"db_function": "CURRENT_TIMESTAMP"
@@ -337,6 +348,119 @@
 			]
 		},
 		{
+			"description": "pendenteAnaliseCredito",
+			"alias": "pendenteAnaliseCredito",
+			"is_physical": false,
+			"exist_field": {
+				"table_name": "AI0",
+				"field_name": "AI0_ANACRE",
+				"fallback_value": false
+			},
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"is_posicione": true,
+							"posicione_config": {
+								"target_table": "AI0",
+								"target_alias": "AI0",
+								"target_column": "AI0.AI0_ANACRE",
+								"match_filter": {
+									"logic_group": "AND",
+									"conditions": [
+										{
+											"column": "AI0.AI0_CODCLI",
+											"operator": "EQUALS",
+											"compare_value": "SA1.A1_COD",
+											"value_type": "COLUMN"
+										},
+										{
+											"column": "AI0.AI0_LOJA",
+											"operator": "EQUALS",
+											"compare_value": "SA1.A1_LOJA",
+											"value_type": "COLUMN"
+										}
+									]
+								}
+							},
+							"operator": "EQUALS",
+							"compare_value": "2"
+						},
+						"then": {
+							"value": false,
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"value": true,
+					"value_type": "STATIC"
+				}
+			},
+			"cast_to": "BOOLEAN"
+		},
+		{
+			"description": "bloqueado",
+			"alias": "bloqueado",
+			"is_physical": false,
+			"exist_field": {
+				"table_name": "AI0",
+				"field_name": "AI0_BLOVEN",
+				"fallback_value": false
+			},
+			"logic_operation": {
+				"type": "CASE",
+				"cases": [
+					{
+						"when": {
+							"is_posicione": true,
+							"posicione_config": {
+								"target_table": "AI0",
+								"target_alias": "AI0",
+								"target_column": "AI0.AI0_BLOVEN",
+								"match_filter": {
+									"logic_group": "AND",
+									"conditions": [
+										{
+											"column": "AI0.AI0_CODCLI",
+											"operator": "EQUALS",
+											"compare_value": "SA1.A1_COD",
+											"value_type": "COLUMN"
+										},
+										{
+											"column": "AI0.AI0_LOJA",
+											"operator": "EQUALS",
+											"compare_value": "SA1.A1_LOJA",
+											"value_type": "COLUMN"
+										}
+									]
+								},
+								"transformations": [
+									{
+										"function": "COALESCE",
+										"params": {
+											"fallback_value": "2"
+										}
+									}
+								]
+							},
+							"operator": "EQUALS",
+							"compare_value": "2"
+						},
+						"then": {
+							"value": false,
+							"value_type": "STATIC"
+						}
+					}
+				],
+				"else": {
+					"value": true,
+					"value_type": "STATIC"
+				}
+			}
+		},
+		{
 			"description": "idProprietario",
 			"alias": "idProprietario",
 			"is_physical": false,
@@ -358,6 +482,141 @@
 			"is_physical": false,
 			"is_constant": true,
 			"static_value": 0
+		},
+		{
+			"alias": "clienteEndereco",
+			"is_physical": false,
+			"is_node": true,
+			"node_config": {
+				"node_type": "array",
+				"fields": [
+					{
+						"description": "descricaoTipo",
+						"alias": "descricaoTipo",
+						"is_constant": true,
+						"static_value": "Endereco Complementar"
+					},
+					{
+						"alias": "endereco",
+						"column_name": "SA1.A1_ENDENT",
+						"is_physical": true,
+						"transformations": [
+							{
+								"function": "SPLIT",
+								"params": {
+									"character": ",",
+									"part": 1
+								}
+							},							
+							{
+								"function": "TRIM"
+							}
+						]
+					},
+					{
+						"description": "numero",
+						"column_name": "SA1.A1_ENDENT",
+						"alias": "numero",
+						"is_physical": true,
+						"transformations": [
+							{
+								"function": "SPLIT",
+								"params": {
+									"character": ",",
+									"part": 2
+								}
+							},
+							{
+								"function": "TRIM"
+							}
+						],
+						"cast_to": "VARCHAR(15)"
+					},
+					{
+						"alias": "complemento",
+						"column_name": "SA1.A1_COMPENT",
+						"is_physical": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					},
+					{
+						"alias": "cidade",
+						"column_name": "SA1.A1_MUNE",
+						"is_physical": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					},
+					{
+						"alias": "estado",
+						"column_name": "SA1.A1_ESTE",
+						"is_physical": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					},
+					{
+						"alias": "cep",
+						"column_name": "SA1.A1_CEPE",
+						"is_physical": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					},
+					{
+						"alias": "bairro",
+						"column_name": "SA1.A1_BAIRROE",
+						"is_physical": true,
+						"transformations": [
+							{
+								"function": "TRIM"
+							}
+						]
+					},
+					{
+						"description": "situacao",
+						"alias": "situacao",
+						"is_constant": true,
+						"static_value": 1
+					},
+					{
+						"description": "tipoEndereco",
+						"alias": "tipoEndereco",
+						"is_constant": true,
+						"static_value": 0
+					},
+					{
+						"alias": "idRetaguarda",
+						"is_physical": false,
+						"logic_operation": {
+							"type": "CONCAT",
+							"parts": [
+								{
+									"value_type": "COLUMN",
+									"value": "TRIM(SA1.A1_FILIAL)"
+								},
+								{
+									"value_type": "COLUMN",
+									"value": "TRIM(SA1.A1_COD)"
+								},
+								{
+									"value_type": "COLUMN",
+									"value": "TRIM(SA1.A1_LOJA)"
+								}
+							]
+						}
+					}
+				]
+			}
 		}
 	]
 }

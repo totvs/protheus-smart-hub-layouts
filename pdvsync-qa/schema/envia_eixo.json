@@ -30,9 +30,19 @@
 				"cases": [
 					{
 						"when": {
-							"column": "MEB.D_E_L_E_T_",
-							"operator": "EQUALS",
-							"compare_value": "*"
+							"logic_group": "OR",
+							"conditions": [
+								{
+									"column": "MEB.MEB_ATIVO",
+									"operator": "EQUALS",
+									"compare_value": "0"
+								},
+								{
+									"column": "MEB.D_E_L_E_T_",
+									"operator": "EQUALS",
+									"compare_value": "*"
+								}
+							]
 						},
 						"then": {
 							"value": 0,
@@ -54,8 +64,14 @@
 				"target_alias": "SA2",
 				"target_column": "SA2.A2_NOME",
 				"match_filter": {
-					"logic": "AND",
+					"logic_group": "AND",
 					"conditions": [
+						{
+							"column": "SA2.A2_FILIAL",
+							"operator": "EQUALS",
+							"compare_value": "MEB.MEB_FILFAB",
+							"value_type": "COLUMN"
+						},
 						{
 							"column": "SA2.A2_COD",
 							"operator": "EQUALS",
@@ -85,10 +101,21 @@
 				"target_alias": "MG2",
 				"target_column": "MG2.MG2_NOME",
 				"match_filter": {
-					"column": "MG2.MG2_CODMOD",
-					"operator": "EQUALS",
-					"compare_value": "MEB.MEB_CODMOD",
-					"value_type": "COLUMN"
+					"logic_group": "AND",
+					"conditions": [
+						{
+							"column": "MG2.MG2_FILIAL",
+							"operator": "EQUALS",
+							"compare_value": "MEB.MEB_FILMOD",
+							"value_type": "COLUMN"
+						},
+						{
+							"column": "MG2.MG2_CODMOD",
+							"operator": "EQUALS",
+							"compare_value": "MEB.MEB_CODMOD",
+							"value_type": "COLUMN"
+						}
+					]
 				}
 			},
 			"transformations": [

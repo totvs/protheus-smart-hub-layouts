@@ -46,7 +46,7 @@
 								{
 									"function": "FORMAT_DATE",
 									"params": {
-										"format": "yyyy-MM-ddThh:mm:ssZ"
+										"format": "yyyy-MM-ddThh:mm:ss"
 									}
 								}
 							]
@@ -63,7 +63,7 @@
 						{
 							"function": "FORMAT_DATE",
 							"params": {
-								"format": "yyyy-MM-ddThh:mm:ssZ"
+								"format": "yyyy-MM-ddThh:mm:ss"
 							}
 						}
 					]
@@ -128,7 +128,7 @@
 						{
 							"function": "FORMAT_DATE",
 							"params": {
-								"format": "yyyy-MM-ddThh:mm:ssZ"
+								"format": "yyyy-MM-ddThh:mm:ss"
 							}
 						}
 					]

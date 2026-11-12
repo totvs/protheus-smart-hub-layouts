@@ -174,7 +174,7 @@
 						"fallback_value": false
 					}
 				}
-			]			
+			]
 		},
 		{
 			"description": "idRetaguardaFormaPagTroco",
@@ -598,6 +598,11 @@
 								"value_type": "STATIC"
 							}
 						}
+					},
+					{
+						"alias": "ordem",
+						"is_physical": false,
+						"db_function": "ROW_NUMBER() OVER (PARTITION BY MIH.MIH_ID ORDER BY MIHCOMP.MIH_ID)"
 					}
 				],
 				"filters": {
@@ -699,20 +704,47 @@
 				"child_key": "1",
 				"fields": [
 					{
+						"description": "idRetaguarda",
 						"alias": "idRetaguarda",
-						"is_physical": false,
-						"logic_operation": {
-							"type": "CONCAT",
-							"parts": [
+						"is_json_extract": true,
+						"json_extract_config": {
+							"source_column": "MIH.MIH_CONFIG",
+							"root_path": "$.Components",
+							"fields": [
 								{
-									"value_type": "COLUMN",
-									"value": "TRIM(MIH.MIH_ID)"
+									"alias": "campo",
+									"json_path": "$.IdComponent",
+									"type": "VARCHAR(20)"
 								},
 								{
-									"value_type": "COLUMN",
-									"value": "TRIM(PGTOS.value)"
+									"alias": "conteudo",
+									"json_path": "$.ComponentContent",
+									"type": "NVARCHAR(5)",
+									"extract_field": true,
+									"logic_operation": {
+										"type": "CONCAT",
+										"parts": [
+											{
+												"value_type": "COLUMN",
+												"value": "TRIM(MIH.MIH_ID)"
+											},
+											{
+												"value_type": "COLUMN",
+												"value": "TRIM(conteudo)"
+											},
+											{
+												"value_type": "COLUMN",
+												"value": "TRIM(PGTOS.value)"
+											}
+										]
+									}
 								}
-							]
+							],
+							"filters": {
+								"column": "campo",
+								"operator": "EQUALS",
+								"compare_value": "idModelo"
+							}
 						}
 					},
 					{
