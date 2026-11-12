@@ -1,35 +1,34 @@
 {
-    "Components": [
-        {
-            "ContentType": "String",
-            "IdComponent": "Perfil",
-            "Component": {
-                "ComponentType": "GET",
-                "Parameters": {
+	"Components": [
+		{
+			"ContentType": "String",
+			"IdComponent": "Perfil",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
 					"Order": "01",
-                    "List": null,
-                    "Size": "TAMSX3('MIH_DESC')[1]",
-                    "F3": null,
-                    "Required": false,
-                    "Picture": null,
-                    "Valid": null,
-                    "CanChange": true,
-                    "Trigger": 
-                        [
-                            {
-                                "FieldTrigger": "MIH_DESC",
-                                "TargetIdField": "MIH_DESC",
-                                "SetValue": "oModel := FWModelActive(),oModel:LoadValue('MIHDETAIL', 'Perfil', M->MIH_DESC )"
-                            }
-                        ]
-                },
-                "ComponentLabel": "Perfil"
-            },
-            "ComponentContent": ""
-        },
+					"List": null,
+					"Size": "TAMSX3('MIH_DESC')[1]",
+					"F3": null,
+					"Required": false,
+					"Picture": null,
+					"Valid": null,
+					"CanChange": true,
+					"Trigger": [
+						{
+							"FieldTrigger": "MIH_DESC",
+							"TargetIdField": "MIH_DESC",
+							"SetValue": "oModel := FWModelActive(),oModel:LoadValue('MIHDETAIL', 'Perfil', M->MIH_DESC )"
+						}
+					]
+				},
+				"ComponentLabel": "Perfil"
+			},
+			"ComponentContent": ""
+		},
 		{
 			"ContentType": "Number",
-			"IdComponent": "descontoMaximoItem",  
+			"IdComponent": "descontoMaximoItem",
 			"Component": {
 				"ComponentType": "GET",
 				"Parameters": {
@@ -48,7 +47,7 @@
 		},
 		{
 			"ContentType": "Number",
-			"IdComponent": "descontoMaximoTotal",  
+			"IdComponent": "descontoMaximoTotal",
 			"Component": {
 				"ComponentType": "GET",
 				"Parameters": {
@@ -64,7 +63,32 @@
 				"ComponentLabel": "Desconto Máximo Total"
 			},
 			"ComponentContent": 0
+		},
+		{
+			"ContentType": "String",
+			"IdComponent": "tipoPerfil",
+			"Component": {
+				"ComponentType": "GET",
+				"Parameters": {
+					"Order": "04",
+					"List": [
+						"",
+						"1=Administrador",
+						"2=Operador",
+						"3=Vendedor",
+						"4=Profissional"
+					],
+					"Size": 15,
+					"F3": null,
+					"Required": true,
+					"Picture": null,
+					"Valid": null,
+					"CanChange": true
+				},
+				"ComponentLabel": "Tipo do Perfil"
+			},
+			"ComponentContent": ""
 		}
-    ],
-    "LayoutVersion": 3.1
+	],
+	"LayoutVersion": 4.0
 }
