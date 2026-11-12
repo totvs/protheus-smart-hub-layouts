@@ -1,5 +1,5 @@
 {
-	"url": "https://pdvsync-core-preco-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/precos",
+	"url": "https://pdvsync-core-preco-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/13/2",
 	"codigotipo": "13",
 	"descricaotipo": "Preco",
 	"qtdereenvio": [
@@ -9,6 +9,6 @@
 	],
 	"qtdEnvio": 100,
 	"configPSH": {
-		"Version": "2.1"
+		"Version": "3.0"
 	}
 }

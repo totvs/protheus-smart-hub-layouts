@@ -1,0 +1,12 @@
+{
+	"idRetaguarda": "&self:oPublica['ACY_GRPVEN']",
+	"idRetaguardaGrupo": "&self:oPublica['ACY_GRPVEN']",
+	"situacao": "&IIF(self:cEvento == '2', 0, 1)",
+	"loteOrigem": "&self:cLote",
+	"idProprietario": "&LjRetComp()",
+	"idInquilino": "&self:oConfAssin['inquilino']",
+	"configPSH": {
+		"Version": 1.0,
+		"cargaInicial": false
+	}
+}

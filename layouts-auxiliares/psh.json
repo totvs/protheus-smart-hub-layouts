@@ -200,12 +200,12 @@
 				"Parameters": {
 					"Order": "09",
 					"List": null,
-					"Size": 1,
+					"Size": 2,
 					"F3": null,
 					"Required": false,
-					"Picture": "9",
+					"Picture": "99",
 					"Valid": null,
-					"IniPad": "5",
+					"IniPad": "10",
 					"CanChange": true,
 					"Trigger": null,
 					"Help": [
@@ -214,7 +214,7 @@
 				},
 				"ComponentLabel": "Quantidade de threads na geração de impostos"
 			},
-			"ComponentContent": 5
+			"ComponentContent": 10
 		},
 		{
 			"ContentType": "Number",
@@ -289,5 +289,5 @@
 			"ComponentContent": "B1_FILIAL, B1_TIPO, B1_UM, B1_PICM, B1_POSIPI, B1_EX_NCM, B1_PICMRET, B1_ORIGEM, B1_CLASFIS, B1_GRTRIB, B1_CNATREC, B1_TNATREC, B1_GRPNATR, B1_FECP, B1_CEST"
 		}
 	],
-	"LayoutVersion": 5.1
+	"LayoutVersion": 5.2
 }

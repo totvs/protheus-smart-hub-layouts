@@ -1,7 +1,7 @@
 {
 	"idInquilino": "&self:oConfAssin['inquilino']",
 	"idRetaguarda": "&self:oPublica['B1_COD']",
-	"idRetaguardaProdutoGrupo": "&self:oPublica['B1_GRUPO']",	
+	"idRetaguardaProdutoGrupo": "&self:oPublica['B1_FILIAL']+self:oPublica['B1_GRUPO']",	
 	"idProprietario": "&LjRetComp()",
 	"loteOrigem": "&Self:cLote",
 	"descricao": "&self:oPublica['B1_DESC']",
@@ -23,7 +23,7 @@
 	"pesoliquido": "&self:oPublica['B1_PESO']",
 	"pesobruto": "&self:oPublica['B1_PESBRU']",
 	"controlaLote": "&Eval({|| cFilAnt := FwXFilial('SB1',self:oPublica['B1_FILIAL'],'E','E','E'),rastro(self:oPublica['B1_COD'], 'L')})",
-	"idRetaguardaMarca": "&IIF( FwAliasInDic('D4Z') .And. D4Z->( columnPos('D4Z_CODMAR') ) > 0 .And. Len( self:oPublica['D4Z'] ) > 0, RTrim( self:oPublica['D4Z'][1]['D4Z_FILIAL'] ) + RTrim( self:oPublica['D4Z'][1]['D4Z_CODMAR'] ), '')",
+	"idRetaguardaMarcaProduto": "&IIF( FwAliasInDic('D4Z') .And. D4Z->( columnPos('D4Z_CODMAR') ) > 0 .And. Len( self:oPublica['D4Z'] ) > 0, RTrim( self:oPublica['D4Z'][1]['D4Z_FILIAL'] ) + RTrim( self:oPublica['D4Z'][1]['D4Z_CODMAR'] ), '')",
 	"incentivado": "&IIF( FwAliasInDic('D4Z') .And. D4Z->( columnPos('D4Z_PDVPRI') ) > 0 .And. Len( self:oPublica['D4Z'] ) > 0 .And. self:oPublica['D4Z'][1]['D4Z_PDVPRI'] == '1', .T., .F.)",
 	"idRetaguardaFabricante": "&IIF( Len( self:oPublica['MG1'] ) > 0 , self:oPublica['MG1'][1]['MG1_FILFAB']+self:oPublica['MG1'][1]['MG1_CODFAB']+self:oPublica['MG1'][1]['MG1_LOJFAB'], '')",
 	"produtoKits": [
@@ -71,6 +71,15 @@
 			"IdProprietario": "&LjRetComp()"
 		}
 	],
+	"codigosProduto": [
+		{
+			"TableNode": "MGH",
+			"codigo": "&self:oPublica['MGH'][nItem]['MGH_CODREF']",
+			"descricao": "&Left( AllTrim( Posicione( 'SA2', 1, PadR( self:oPublica['MGH'][nItem]['MGH_FILFAB'], TamSX3('A2_FILIAL')[1])+self:oPublica['MGH'][nItem]['MGH_CODFAB']+self:oPublica['MGH'][nItem]['MGH_LOJFAB'], 'A2_NOME' ) ), 200 )",
+			"idRetaguarda": "&self:oPublica['MGH'][nItem]['MGH_FILIAL'] + self:oPublica['MGH'][nItem]['MGH_ID']",
+			"situacao": "&IIF(self:cEvento == '2', 0, 1)" 
+		}
+	],
 	"associacaoProdutosClassificacao": [
 		{
 			"TableNode": "ACV",
@@ -82,7 +91,7 @@
 		}
 	],
 	"configPSH": {
-		"Version": 5.2,
+		"Version": 6.0,
 		"cargaInicial": false
 	}
 }

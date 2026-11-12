@@ -1,5 +1,5 @@
 {
-	"url": "https://pdvsync-core-produto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/produtos",
+	"url": "https://pdvsync-core-produto-qa-ywc7q7nxya-uc.a.run.app/api/retaguarda/v3/dadosdinamicos/down/12/2",
 	"codigotipo": "12",
 	"descricaotipo": "Produto",
 	"qtdereenvio": [
@@ -9,6 +9,6 @@
 	],
 	"qtdEnvio": 100,
 	"configPSH": {
-		"Version": "3.0"
+		"Version": "4.0"
 	}
 }
