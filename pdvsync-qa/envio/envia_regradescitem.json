@@ -1,7 +1,7 @@
 {
 	"idRetaguarda": "&self:oPublica['MB8_CODREG'] + self:oPublica['MB8_REFGRD']",
-	"dataHoraVigenciaInicial": "&FwTimeStamp( 3, Iif( Len( self:oPublica['MEI'] ) > 0 , STOD( self:oPublica['MEI'][1]['MEI_DATDE'] ), date() ) )",
-	"dataHoraVigenciaFinal": "&FwTimeStamp( 3, Iif( Len( self:oPublica['MEI'] ) > 0 , STOD( self:oPublica['MEI'][1]['MEI_DATATE'] ), date() ) )",
+	"dataHoraVigenciaInicial": "&FwTimeStamp( 3, Iif( Len( self:oPublica['MEI'] ) > 0 , STOD( self:oPublica['MEI'][1]['MEI_DATDE'] ), date() ), Iif( Len( self:oPublica['MEI'] ) > 0 , self:oPublica['MEI'][1]['MEI_HORADE'], time() ) )",
+	"dataHoraVigenciaFinal": "&FwTimeStamp( 3, Iif( Len( self:oPublica['MEI'] ) > 0 , STOD( self:oPublica['MEI'][1]['MEI_DATATE'] ), date() ), Iif( Len( self:oPublica['MEI'] ) > 0 , self:oPublica['MEI'][1]['MEI_HORATE'], time() ) )",
 	"tipo": 0,
 	"quantidadeInicial": "&self:oPublica['MB8_QTDPRO']",
 	"tipoValor": "&IIF( self:oPublica['MB8_DESCPR'] > 0, 0, IIF( self:oPublica['MB8_DESCVL'] > 0, 1, 0 ) )",
@@ -17,7 +17,7 @@
 	"loteOrigem": "&Self:cLote",
 	"situacao": "&IIF( self:cEvento == '2', 0, IIF( Len( self:oPublica['MEI'] ) > 0, IIF( self:oPublica['MEI'][1]['MEI_ATIVA'] == '2', 0, 1 ), 0 ) )",
 	"configPSH": {
-		"Version": 2.0,
+		"Version": 2.1,
 		"cargaInicial": false
 	}
 }
