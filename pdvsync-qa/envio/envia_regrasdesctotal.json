@@ -19,11 +19,13 @@
 		{
 			"TableNode": "MB5",
 			"idRetaguardaPagamentoForma": "&self:oPublica['MB5'][nItem]['MB5_CODFRM']",
-			"idRetaguardaPagamentoCondicao": "&self:oPublica['MB5'][nItem]['MB5_CODPG']"
+			"idRetaguardaPagamentoCondicao": "&self:oPublica['MB5'][nItem]['MB5_CODPG']",
+			"situacao": "&IIF( self:cEvento == '2', 0, IIF( Len( self:oPublica['MEI'] ) > 0, IIF( self:oPublica['MEI'][1]['MEI_ATIVA'] == '2', 0, 1 ), 0 ) )",
+			"idRetaguarda": "&self:oPublica['MB2_CODREG'] + self:oPublica['MB2_REFGRD']"
 		}
 	],
 	"configPSH": {
-		"Version": 1.5,
+		"Version": 1.6,
 		"cargaInicial": false
 	}
 }
