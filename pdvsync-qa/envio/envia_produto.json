@@ -26,6 +26,7 @@
 	"idRetaguardaMarcaProduto": "&IIF( FwAliasInDic('D4Z') .And. D4Z->( columnPos('D4Z_CODMAR') ) > 0 .And. Len( self:oPublica['D4Z'] ) > 0, RTrim( self:oPublica['D4Z'][1]['D4Z_FILIAL'] ) + RTrim( self:oPublica['D4Z'][1]['D4Z_CODMAR'] ), '')",
 	"incentivado": "&IIF( FwAliasInDic('D4Z') .And. D4Z->( columnPos('D4Z_PDVPRI') ) > 0 .And. Len( self:oPublica['D4Z'] ) > 0 .And. self:oPublica['D4Z'][1]['D4Z_PDVPRI'] == '1', .T., .F.)",
 	"idRetaguardaFabricante": "&IIF( Len( self:oPublica['MG1'] ) > 0 , self:oPublica['MG1'][1]['MG1_FILFAB']+self:oPublica['MG1'][1]['MG1_CODFAB']+self:oPublica['MG1'][1]['MG1_LOJFAB'], '')",
+	"volume": "&IIF(Len(self:oPublica['SB5']) > 0, self:oPublica['SB5'][1]['B5_COMPR'] * self:oPublica['SB5'][1]['B5_ALTURA'] * self:oPublica['SB5'][1]['B5_LARG'],0)",
 	"produtoKits": [
 		{
 			"TableNode": "MEV",
@@ -91,7 +92,7 @@
 		}
 	],
 	"configPSH": {
-		"Version": 6.1,
+		"Version": 6.2,
 		"cargaInicial": false
 	}
 }
