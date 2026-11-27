@@ -7,7 +7,7 @@
 	"prazoMaximoPrimeiraParcela": 0,
 	"solicitaDataDemaisParcelas": 0,
 	"solicitaDataPrimeiraParcela": 0,
-	"situacao": "&IIF(self:cEvento == '1', 1, 0)",
+	"situacao": "&IIF(self:cEvento == '1' .And. Empty( Posicione('MEN', 2, self:oPublica['AE_FILIAL'] + self:oPublica['AE_COD'], 'MEN_CODADM') ) , 1, 0)",
 	"tipoDadoComplementar": 0,
 	"dadoComplementarDescricao": "",
 	"condicoesPagtoOperadoras": [
@@ -26,7 +26,7 @@
 	"idProprietario": "&LjRetComp()",
 	"loteOrigem": "&self:cLote",
 	"configPSH": {
-		"Version": "4.1",
+		"Version": "4.2",
 		"cargaInicial": false
 	}
 }
